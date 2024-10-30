@@ -1,0 +1,15 @@
+class Assets {
+  // icons
+  static const String logo = 'assets/icons/logo.svg';
+  static const String backArrow = 'assets/icons/back_arrow.svg';
+  static const String phone = 'assets/icons/phone.svg';
+  static const String user = 'assets/icons/user.svg';
+  static const String calendar = 'assets/icons/calendar.svg';
+  static const String male = 'assets/icons/male.svg';
+  static const String female = 'assets/icons/female.svg';
+  static const String flag = 'assets/icons/flag.svg';
+  static const String tawn = 'assets/icons/tawn.svg';
+  static const String email = 'assets/icons/email.svg';
+  // animation
+  static const String loadingAnimation = 'assets/animation/loading_animation.json';
+}
