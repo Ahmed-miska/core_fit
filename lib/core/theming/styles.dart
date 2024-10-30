@@ -12,9 +12,24 @@ class TextStyles {
     fontWeight: FontWeight.w600,
     color: AppColors.darkColor,
   );
-   static TextStyle font16Dark700 = const TextStyle(
+  static TextStyle font18Dark700 = const TextStyle(
+    fontSize: 18,
+    fontWeight: FontWeight.w700,
+    color: AppColors.darkColor,
+  );
+  static TextStyle font16White700 = const TextStyle(
     fontSize: 16,
     fontWeight: FontWeight.w700,
+    color: AppColors.whiteColor,
+  );
+  static TextStyle font16Dark700 = const TextStyle(
+    fontSize: 16,
+    fontWeight: FontWeight.w700,
+    color: AppColors.darkColor,
+  );
+  static TextStyle font12Dark400 = const TextStyle(
+    fontSize: 12,
+    fontWeight: FontWeight.w400,
     color: AppColors.darkColor,
   );
   static TextStyle font14Gray400 = const TextStyle(

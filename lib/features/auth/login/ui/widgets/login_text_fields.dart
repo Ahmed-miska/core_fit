@@ -1,9 +1,12 @@
 import 'package:core_fit/core/helpers/assets.dart';
+import 'package:core_fit/core/helpers/extensions.dart';
 import 'package:core_fit/core/helpers/spacing.dart';
+import 'package:core_fit/core/routing/routes.dart';
 import 'package:core_fit/core/theming/colors.dart';
 import 'package:core_fit/core/theming/styles.dart';
 import 'package:core_fit/core/widgets/app_text_button.dart';
 import 'package:core_fit/core/widgets/app_text_form_field.dart';
+import 'package:core_fit/core/widgets/loading_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
@@ -61,7 +64,10 @@ class _LoginTextFieldsState extends State<LoginTextFields> {
         verticalSpace(32),
         AppTextButton(
           text: 'Login',
-          onTap: () {},
+          onTap: () {
+            // ignore: use_build_context_synchronously
+            loadingWidget(context).then((value) => context.pushNamed(Routes.homeScreen));
+          },
         ),
       ],
     );
