@@ -1,5 +1,7 @@
 import 'package:core_fit/core/helpers/assets.dart';
+import 'package:core_fit/core/helpers/extensions.dart';
 import 'package:core_fit/core/helpers/spacing.dart';
+import 'package:core_fit/core/routing/routes.dart';
 import 'package:core_fit/core/theming/colors.dart';
 import 'package:core_fit/core/theming/styles.dart';
 import 'package:core_fit/core/widgets/app_text_button.dart';
@@ -48,7 +50,7 @@ class _SignUpTextFieldsState extends State<SignUpTextFields> {
           prefixIcon: Padding(
             padding: const EdgeInsets.all(12),
             // ignore: deprecated_member_use
-            child: SvgPicture.asset(Assets.user, color: AppColors.mainColor),
+            child: SvgPicture.asset(Assets.user, color: AppColors.main),
           ),
           validator: (string) {},
         ),
@@ -60,7 +62,7 @@ class _SignUpTextFieldsState extends State<SignUpTextFields> {
           prefixIcon: Padding(
             padding: const EdgeInsets.all(12),
             // ignore: deprecated_member_use
-            child: SvgPicture.asset(Assets.email, color: AppColors.mainColor),
+            child: SvgPicture.asset(Assets.email, color: AppColors.main),
           ),
           validator: (string) {},
         ),
@@ -73,7 +75,7 @@ class _SignUpTextFieldsState extends State<SignUpTextFields> {
           prefixIcon: Padding(
             padding: const EdgeInsets.all(12),
             // ignore: deprecated_member_use
-            child: SvgPicture.asset(Assets.phone, color: AppColors.mainColor),
+            child: SvgPicture.asset(Assets.phone, color: AppColors.main),
           ),
           validator: (string) {},
         ),
@@ -85,13 +87,13 @@ class _SignUpTextFieldsState extends State<SignUpTextFields> {
           isObscureText: isObscure,
           prefixIcon: const Padding(
             padding: EdgeInsets.all(12),
-            child: Icon(Icons.lock_outline, color: AppColors.mainColor, size: 24),
+            child: Icon(Icons.lock_outline, color: AppColors.main, size: 24),
           ),
           suffixIcon: InkWell(
             onTap: () => setState(() => isObscure = !isObscure),
             child: Padding(
               padding: const EdgeInsets.all(12),
-              child: Icon(isObscure ? Icons.visibility_off : Icons.visibility, color: AppColors.mainColor),
+              child: Icon(isObscure ? Icons.visibility_off : Icons.visibility, color: AppColors.main),
             ),
           ),
           validator: (string) {},
@@ -107,7 +109,7 @@ class _SignUpTextFieldsState extends State<SignUpTextFields> {
           prefixIcon: Padding(
             padding: const EdgeInsets.all(12),
             // ignore: deprecated_member_use
-            child: SvgPicture.asset(Assets.calendar, color: AppColors.mainColor),
+            child: SvgPicture.asset(Assets.calendar, color: AppColors.main),
           ),
           validator: (string) {},
         ),
@@ -118,7 +120,11 @@ class _SignUpTextFieldsState extends State<SignUpTextFields> {
         verticalSpace(24),
         const SelectCity(),
         verticalSpace(60),
-        AppTextButton(text: 'Sign Up', onTap: () {}),
+        AppTextButton(
+            text: 'Sign Up',
+            onTap: () {
+              context.pushNamed(Routes.favoriteSportsScreen);
+            }),
         verticalSpace(24),
       ],
     );

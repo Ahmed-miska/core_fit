@@ -15,7 +15,7 @@ class LocationInHome extends StatelessWidget {
     return Row(
       children: [
         // ignore: deprecated_member_use
-        SvgPicture.asset(Assets.location, color: AppColors.mainColor),
+        SvgPicture.asset(Assets.location, color: AppColors.main),
         horizontalSpace(8),
         Text('Cairo', style: TextStyles.font12Dark400),
         horizontalSpace(8),
@@ -23,7 +23,7 @@ class LocationInHome extends StatelessWidget {
         horizontalSpace(8),
         Text('Cairo', style: TextStyles.font12Dark400),
         const Spacer(),
-        Text('change', style: TextStyles.font12Dark400.copyWith(color: AppColors.mainColor)),
+        Text('change', style: TextStyles.font12Dark400.copyWith(color: AppColors.main)),
       ],
     );
   }

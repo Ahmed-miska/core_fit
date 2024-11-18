@@ -18,9 +18,9 @@ class HomeScreen extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              verticalSpace(20),
+              verticalSpace(10),
               const HomeAppBar(),
-              verticalSpace(12),
+              verticalSpace(16),
               const HomeSwiper(),
               verticalSpace(12),
               Padding(
@@ -28,7 +28,7 @@ class HomeScreen extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text('The Activityes', style: TextStyles.font18Dark700),
+                    Text('Welcome Ahmed...!', style: TextStyles.font18Dark700),
                     verticalSpace(8),
                     const LocationInHome(),
                     verticalSpace(12),

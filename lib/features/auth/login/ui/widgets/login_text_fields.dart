@@ -33,7 +33,7 @@ class _LoginTextFieldsState extends State<LoginTextFields> {
           prefixIcon: Padding(
             padding: const EdgeInsets.all(12),
             // ignore: deprecated_member_use
-            child: SvgPicture.asset(Assets.email, color: AppColors.mainColor),
+            child: SvgPicture.asset(Assets.email, color: AppColors.main),
           ),
           validator: (string) {},
         ),
@@ -45,13 +45,13 @@ class _LoginTextFieldsState extends State<LoginTextFields> {
           isObscureText: isObscure,
           prefixIcon: const Padding(
             padding: EdgeInsets.all(10),
-            child: Icon(Icons.lock_outline, color: AppColors.mainColor, size: 24),
+            child: Icon(Icons.lock_outline, color: AppColors.main, size: 24),
           ),
           suffixIcon: InkWell(
             onTap: () => setState(() => isObscure = !isObscure),
             child: Padding(
               padding: const EdgeInsets.all(12),
-              child: Icon(isObscure ? Icons.visibility_off : Icons.visibility, color: AppColors.mainColor),
+              child: Icon(isObscure ? Icons.visibility_off : Icons.visibility, color: AppColors.main),
             ),
           ),
           validator: (string) {},
