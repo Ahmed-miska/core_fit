@@ -13,6 +13,7 @@ class Assets {
   static const String profile = 'assets/icons/profile.svg';
   static const String notification = 'assets/icons/notification.svg';
   static const String location = 'assets/icons/location.svg';
+  static const String appName = 'assets/icons/app_name.svg';
   // animation
   static const String loadingAnimation = 'assets/animation/loading_animation.json';
 }

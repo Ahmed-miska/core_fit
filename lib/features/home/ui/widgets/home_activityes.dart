@@ -67,7 +67,7 @@ class HomeAvtivityes extends StatelessWidget {
             child: Container(
               padding: const EdgeInsets.all(10),
               decoration: BoxDecoration(
-                color: AppColors.mainColor,
+                color: AppColors.main,
                 borderRadius: BorderRadius.circular(12),
                 image: const DecorationImage(
                   colorFilter: ColorFilter.mode(Colors.black12, BlendMode.darken),

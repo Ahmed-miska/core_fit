@@ -21,7 +21,7 @@ class CondationsText extends StatelessWidget {
             ),
             TextSpan(
               text: ' terms and conditions',
-              style: TextStyles.font14Gray400.copyWith(color: AppColors.mainColor),
+              style: TextStyles.font14Gray400.copyWith(color: AppColors.main),
             ),
             TextSpan(
               text: ' and ',
@@ -29,7 +29,7 @@ class CondationsText extends StatelessWidget {
             ),
             TextSpan(
               text: 'privacy policy',
-              style: TextStyles.font14Gray400.copyWith(color: AppColors.mainColor),
+              style: TextStyles.font14Gray400.copyWith(color: AppColors.main),
             ),
             TextSpan(
               text: ' of the application',

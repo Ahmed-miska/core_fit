@@ -19,7 +19,7 @@ class AppTextButton extends StatelessWidget {
       child: Container(
         height: hight ?? 45.h,
         decoration: BoxDecoration(
-          color: AppColors.mainColor,
+          color: AppColors.main,
           borderRadius: BorderRadius.circular(radius ?? 16.0),
         ),
         child: Padding(

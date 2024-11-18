@@ -1,8 +1,8 @@
 import 'package:core_fit/core/helpers/assets.dart';
 import 'package:core_fit/core/helpers/extensions.dart';
 import 'package:core_fit/core/helpers/spacing.dart';
+import 'package:core_fit/core/routing/routes.dart';
 import 'package:core_fit/core/theming/colors.dart';
-import 'package:core_fit/core/theming/styles.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
@@ -17,16 +17,16 @@ class HomeAppBar extends StatelessWidget {
     return Padding(
       padding: mainPadding(),
       child: SizedBox(
-        height: 50.h,
+        height: 40.h,
         child: Row(
           children: [
-            Expanded(child: SvgPicture.asset(Assets.logo)),
+            Expanded(flex: 1, child: SvgPicture.asset(Assets.logo)),
             horizontalSpace(10),
-            Text('Ahmed Miska', style: TextStyles.font18Dark600),
-            const Spacer(flex: 5),
-            Badge.count(count: 3, padding: const EdgeInsets.all(1), backgroundColor: AppColors.mainColor, child: SvgPicture.asset(Assets.notification)),
+            Expanded(flex: 2, child: SvgPicture.asset(Assets.appName, fit: BoxFit.contain)),
+            const Spacer(flex: 4),
+            Badge.count(count: 3, padding: const EdgeInsets.all(1), backgroundColor: AppColors.main, child: SvgPicture.asset(Assets.notification)),
             horizontalSpace(20),
-            SvgPicture.asset(Assets.profile),
+            GestureDetector(onTap: () => context.pushNamed(Routes.profileScreen), child: SvgPicture.asset(Assets.profile)),
           ],
         ),
       ),

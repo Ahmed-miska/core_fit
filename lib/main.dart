@@ -23,7 +23,7 @@ class CoreFit extends StatelessWidget {
           debugShowCheckedModeBanner: false,
           title: 'Core Fit',
           theme: ThemeData(
-            primaryColor: AppColors.mainColor,
+            primaryColor: AppColors.main,
             scaffoldBackgroundColor: Colors.white,
           ),
           initialRoute: Routes.loginScreen,

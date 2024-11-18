@@ -27,9 +27,9 @@ class SelectCity extends StatelessWidget {
                 prefixIcon: Padding(
                   padding: const EdgeInsets.all(12),
                   // ignore: deprecated_member_use
-                  child: SvgPicture.asset(Assets.flag, color: AppColors.mainColor),
+                  child: SvgPicture.asset(Assets.flag, color: AppColors.main),
                 ),
-                suffixIcon: const Icon(Icons.arrow_drop_down, color: AppColors.darkColor),
+                suffixIcon: const Icon(Icons.arrow_drop_down, color: AppColors.dark),
                 onTap: () {
                   showModalBottomSheet(
                     context: context,
@@ -58,9 +58,9 @@ class SelectCity extends StatelessWidget {
                 prefixIcon: Padding(
                   padding: const EdgeInsets.all(12),
                   // ignore: deprecated_member_use
-                  child: SvgPicture.asset(Assets.tawn, color: AppColors.mainColor),
+                  child: SvgPicture.asset(Assets.tawn, color: AppColors.main),
                 ),
-                suffixIcon: const Icon(Icons.arrow_drop_down, color: AppColors.darkColor),
+                suffixIcon: const Icon(Icons.arrow_drop_down, color: AppColors.dark),
                 onTap: () {
                   showModalBottomSheet(
                     context: context,

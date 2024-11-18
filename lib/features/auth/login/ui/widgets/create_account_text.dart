@@ -26,7 +26,7 @@ class CreateAccountText extends StatelessWidget {
                 context.pushNamed(Routes.signUpScreen);
               },
             text: 'Create an account',
-            style: TextStyles.font16Dark700.copyWith(color: AppColors.mainColor),
+            style: TextStyles.font16Dark700.copyWith(color: AppColors.main),
           ),
         ],
       ),

@@ -64,12 +64,12 @@ class AppTextFormField extends StatelessWidget {
         contentPadding: contantPadding ?? EdgeInsets.symmetric(horizontal: 20.w, vertical: 13.h),
         focusedBorder: focusedBorder ??
             OutlineInputBorder(
-              borderSide: const BorderSide(color: AppColors.mainColor, width: 1),
+              borderSide: const BorderSide(color: AppColors.main, width: 1),
               borderRadius: BorderRadius.circular(16),
             ),
         enabledBorder: enabledBorder ??
             OutlineInputBorder(
-              borderSide: const BorderSide(color: Color(0xffCFD1D3), width: 1),
+              borderSide: const BorderSide(color: AppColors.inputStroke, width: 1),
               borderRadius: BorderRadius.circular(16),
             ),
         errorBorder: OutlineInputBorder(
@@ -84,7 +84,7 @@ class AppTextFormField extends StatelessWidget {
         hintText: hintText,
         suffixIcon: suffixIcon,
         prefixIcon: prefixIcon,
-        fillColor: backgroundColor ?? AppColors.lightGreyColor,
+        fillColor: backgroundColor ?? AppColors.inputBG,
         filled: true,
       ),
       obscureText: isObscureText ?? false,

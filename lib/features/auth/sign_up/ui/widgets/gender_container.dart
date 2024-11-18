@@ -32,10 +32,10 @@ class _GenderContainerState extends State<GenderContainer> {
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(16),
             border: Border.all(
-              color: widget.selected ? AppColors.mainColor : AppColors.lightGreyColor,
+              color: widget.selected ? AppColors.main : AppColors.mainBG,
               width: 2,
             ),
-            color: widget.selected ? AppColors.mainColor.withOpacity(.4) : AppColors.lightGreyColor,
+            color: widget.selected ? AppColors.mainBG : AppColors.inputBG,
           ),
           duration: const Duration(milliseconds: 400),
           child: Row(
@@ -43,7 +43,7 @@ class _GenderContainerState extends State<GenderContainer> {
             children: [
               SvgPicture.asset(widget.gendericon),
               horizontalSpace(10),
-              Text(widget.genderText, style: TextStyles.font18Dark600),
+              Text(widget.genderText, style: TextStyles.font18Dark600.copyWith(color: widget.selected ? AppColors.main : AppColors.grey)),
             ],
           ),
         ),
