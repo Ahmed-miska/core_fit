@@ -1,5 +1,6 @@
 import 'package:core_fit/core/helpers/extensions.dart';
 import 'package:core_fit/core/helpers/spacing.dart';
+import 'package:core_fit/core/helpers/test_lists.dart';
 import 'package:core_fit/core/theming/styles.dart';
 import 'package:core_fit/features/home/ui/widgets/home_activityes.dart';
 import 'package:core_fit/features/home/ui/widgets/home_app_bar.dart';
@@ -21,7 +22,7 @@ class HomeScreen extends StatelessWidget {
               verticalSpace(10),
               const HomeAppBar(),
               verticalSpace(16),
-              const HomeSwiper(),
+              HomeSwiper(swiperImages: testSwiperImages),
               verticalSpace(12),
               Padding(
                 padding: mainPadding(),

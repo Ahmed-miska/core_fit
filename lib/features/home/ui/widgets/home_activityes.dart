@@ -1,5 +1,7 @@
-import 'package:core_fit/core/theming/colors.dart';
-import 'package:core_fit/core/theming/styles.dart';
+import 'package:core_fit/core/helpers/extensions.dart';
+import 'package:core_fit/core/helpers/spacing.dart';
+import 'package:core_fit/core/routing/routes.dart';
+import 'package:core_fit/features/home/ui/widgets/home_item.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -17,71 +19,33 @@ class HomeAvtivityes extends StatelessWidget {
         children: [
           Expanded(
             child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Expanded(
-                  child: Container(
-                    padding: const EdgeInsets.all(10),
-                    margin: EdgeInsets.only(right: 8.w, bottom: 8.h),
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(12),
-                      image: const DecorationImage(
-                        colorFilter: ColorFilter.mode(Colors.black12, BlendMode.darken),
-                        image: AssetImage('assets/images/4.jpeg'),
-                        fit: BoxFit.cover,
-                      ),
-                    ),
-                    child: Align(
-                      alignment: Alignment.bottomRight,
-                      child: Text(
-                        'Sports Market',
-                        style: TextStyles.font16White700,
-                      ),
-                    ),
+                  child: HomeItem(
+                    onTap: () => context.pushNamed(Routes.marketHomeScreen),
+                    image: 'assets/images/4.jpeg',
+                    title: 'Sports Market',
                   ),
                 ),
+                verticalSpace(10),
                 Expanded(
-                  child: Container(
-                    padding: const EdgeInsets.all(10),
-                    margin: EdgeInsets.only(right: 8.w),
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(12),
-                      image: const DecorationImage(
-                        colorFilter: ColorFilter.mode(Colors.black12, BlendMode.darken),
-                        image: AssetImage('assets/images/5.jpeg'),
-                        fit: BoxFit.cover,
-                      ),
-                    ),
-                    child: Align(
-                      alignment: Alignment.bottomRight,
-                      child: Text(
-                        'Sports news',
-                        style: TextStyles.font16White700,
-                      ),
-                    ),
+                  child: HomeItem(
+                    onTap: () {},
+                    image: 'assets/images/5.jpeg',
+                    title: 'Sports news',
                   ),
                 )
               ],
             ),
           ),
+          horizontalSpace(10),
           Expanded(
-            child: Container(
-              padding: const EdgeInsets.all(10),
-              decoration: BoxDecoration(
-                color: AppColors.main,
-                borderRadius: BorderRadius.circular(12),
-                image: const DecorationImage(
-                  colorFilter: ColorFilter.mode(Colors.black12, BlendMode.darken),
-                  image: AssetImage('assets/images/6.jpeg'),
-                  fit: BoxFit.cover,
-                ),
-              ),
-              child: Align(
-                alignment: Alignment.bottomRight,
-                child: Text(
-                  'Sports Bookings',
-                  style: TextStyles.font16White700,
-                ),
-              ),
+            child: HomeItem(
+              onTap: () {},
+              title: 'Sports Booking',
+              image: 'assets/images/6.jpeg',
             ),
           )
         ],

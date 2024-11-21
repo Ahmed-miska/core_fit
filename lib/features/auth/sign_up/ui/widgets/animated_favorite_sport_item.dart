@@ -22,7 +22,7 @@ class AnimatedFavoriteSportItem extends StatelessWidget {
           ),
         );
       },
-      child: isSelected ? const Icon(Icons.check, key: ValueKey('icon1'), color: AppColors.dark) : const Icon(Icons.add, key: ValueKey('icon2'), color: AppColors.dark),
+      child: isSelected ? const Icon(Icons.check, key: ValueKey('icon1'), color: AppColors.dark) : const Icon(Icons.add, key: ValueKey('icon2'), color: AppColors.text),
     );
   }
 }

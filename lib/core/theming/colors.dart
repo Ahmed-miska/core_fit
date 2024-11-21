@@ -13,4 +13,5 @@ class AppColors {
   static const Color inputHint = Color(0xFFF8F8F8);
   static const Color inputStroke = Color(0xFFF2F2F2);
   static const Color text = Color(0xFF666B88);
+  static const Color red = Colors.red;
 }
