@@ -3,6 +3,7 @@ import 'package:core_fit/features/auth/login/ui/login_screen.dart';
 import 'package:core_fit/features/auth/sign_up/ui/sign_up_screen.dart';
 import 'package:core_fit/features/auth/sign_up/ui/widgets/favorite_sports_screen.dart';
 import 'package:core_fit/features/home/ui/home_screen.dart';
+import 'package:core_fit/features/market/market_home/ui/market_home_screen.dart';
 import 'package:core_fit/features/profile/ui/profile_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -16,11 +17,13 @@ class AppRouter {
       case Routes.signUpScreen:
         return _slideTransition(const SignUpScreen());
       case Routes.homeScreen:
-        return _fadeTransition(const HomeScreen());
+        return _fadeBottmTransition(const HomeScreen());
       case Routes.profileScreen:
         return _slideTransition(const ProfileScreen());
       case Routes.favoriteSportsScreen:
         return _slideTransition(const FavoriteSportsScreen());
+      case Routes.marketHomeScreen:
+        return _fadeTransition(const MarketHomeScreen());
       default:
         return MaterialPageRoute(
           builder: (_) => Scaffold(
@@ -32,6 +35,21 @@ class AppRouter {
   }
 
   PageRouteBuilder<dynamic> _fadeTransition(Widget child) {
+    return PageRouteBuilder(transitionsBuilder: (context, animation, secondaryAnimation, child) {
+      return FadeTransition(
+        opacity: animation,
+        child: child,
+      );
+    }, pageBuilder: (
+      BuildContext context,
+      Animation<double> animation,
+      Animation<double> secondaryAnimation,
+    ) {
+      return child;
+    });
+  }
+
+  PageRouteBuilder<dynamic> _fadeBottmTransition(Widget child) {
     return PageRouteBuilder(
         transitionDuration: const Duration(seconds: 1),
         transitionsBuilder: (context, animation, secondaryAnimation, child) {

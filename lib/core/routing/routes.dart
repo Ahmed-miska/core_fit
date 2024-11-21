@@ -4,4 +4,5 @@ class Routes {
   static const String favoriteSportsScreen = '/favoriteSportsScreen';
   static const String homeScreen = '/homeScreen';
   static const String profileScreen = '/profileScreen';
+  static const String marketHomeScreen = '/marketHomeScreen';
 }
