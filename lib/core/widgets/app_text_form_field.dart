@@ -24,6 +24,7 @@ class AppTextFormField extends StatelessWidget {
   final FocusNode? focusNode;
   final Function()? onEditingComplete;
   final TextInputAction? textInputAction;
+  final int? maxLines;
 
   const AppTextFormField({
     super.key,
@@ -47,11 +48,13 @@ class AppTextFormField extends StatelessWidget {
     this.focusNode,
     this.onEditingComplete,
     this.textInputAction,
+    this.maxLines,
   });
 
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      maxLines: maxLines ?? 1,
       textInputAction: textInputAction,
       focusNode: focusNode,
       onEditingComplete: onEditingComplete,
