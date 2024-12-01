@@ -1,5 +1,7 @@
+import 'package:core_fit/core/helpers/extensions.dart';
 import 'package:core_fit/core/helpers/spacing.dart';
 import 'package:core_fit/core/helpers/test_lists.dart';
+import 'package:core_fit/core/routing/routes.dart';
 import 'package:core_fit/features/home/ui/widgets/home_swiper.dart';
 import 'package:core_fit/features/market/market_store/ui/widgets/items_types_list_view.dart';
 import 'package:core_fit/features/market/market_store/ui/widgets/market_home_products_list_view.dart';
@@ -25,7 +27,9 @@ class MarketStoresScreen extends StatelessWidget {
         Padding(
           padding: EdgeInsets.symmetric(horizontal: 16.w),
           child: ShowMoreStoresRow(
-            onTap: () {},
+            onTap: () async {
+              await context.pushNamed(Routes.storesScreen);
+            },
             title: 'Verified Stores',
             subtitle: 'Shops that have been verified',
           ),
@@ -36,13 +40,16 @@ class MarketStoresScreen extends StatelessWidget {
         Padding(
           padding: EdgeInsets.symmetric(horizontal: 16.w),
           child: ShowMoreStoresRow(
-            onTap: () {},
+            onTap: () async {
+              await context.pushNamed(Routes.productsScreen);
+            },
             title: 'Most requested',
             subtitle: 'Most requested products from stores',
           ),
         ),
         verticalSpace(16),
         SizedBox(height: 300.h, child: const MarketHomeProductsListView()),
+        verticalSpace(16),
       ],
     );
   }

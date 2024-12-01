@@ -21,6 +21,11 @@ class Assets {
   static const String storesGray = 'assets/icons/stores_gray.svg';
   static const String ordersGreen = 'assets/icons/orders_green.svg';
   static const String ordersGray = 'assets/icons/orders_gray.svg';
+  static const String order1 = 'assets/icons/order1.svg';
+  static const String order2 = 'assets/icons/order2.svg';
+  static const String order3 = 'assets/icons/order3.svg';
+  static const String order4 = 'assets/icons/order4.svg';
+
   // animation
   static const String loadingAnimation = 'assets/animation/loading_animation.json';
 

@@ -3,8 +3,11 @@ import 'package:flutter/material.dart';
 
 class AddFavoriteIcon extends StatefulWidget {
   final bool isFavorite;
+  final bool? isBorder;
   const AddFavoriteIcon({
-    super.key, required this.isFavorite,
+    super.key,
+    required this.isFavorite,
+    this.isBorder,
   });
 
   @override
@@ -18,6 +21,7 @@ class _AddFavoriteIconState extends State<AddFavoriteIcon> {
     isFavorite = widget.isFavorite;
     super.initState();
   }
+
   @override
   Widget build(BuildContext context) {
     return IconButton(
@@ -30,6 +34,7 @@ class _AddFavoriteIconState extends State<AddFavoriteIcon> {
       style: ButtonStyle(
         backgroundColor: WidgetStateProperty.all(AppColors.white),
         shape: WidgetStateProperty.all(const CircleBorder()),
+        side: WidgetStateProperty.all(widget.isBorder == null ? BorderSide.none : const BorderSide(color: AppColors.grey, width: .5)),
       ),
       icon: Icon(Icons.favorite, color: isFavorite ? AppColors.main : AppColors.grey),
     );

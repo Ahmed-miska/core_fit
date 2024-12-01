@@ -3,7 +3,15 @@ import 'package:core_fit/features/auth/login/ui/login_screen.dart';
 import 'package:core_fit/features/auth/sign_up/ui/sign_up_screen.dart';
 import 'package:core_fit/features/auth/sign_up/ui/widgets/favorite_sports_screen.dart';
 import 'package:core_fit/features/home/ui/home_screen.dart';
+import 'package:core_fit/features/market/cart/ui/cart_screen.dart';
+import 'package:core_fit/features/market/invoice/ui/invoice_screen.dart';
+import 'package:core_fit/features/market/market_home/ui/favorite_screen.dart';
 import 'package:core_fit/features/market/market_home/ui/market_home_screen.dart';
+import 'package:core_fit/features/market/market_orders/ui/order_details_screen.dart';
+import 'package:core_fit/features/market/product_details/ui/product_details_screen.dart';
+import 'package:core_fit/features/market/products/ui/products_screen.dart';
+import 'package:core_fit/features/market/store_details/ui/store_details_screen.dart';
+import 'package:core_fit/features/market/stores/ui/stores_screen.dart';
 import 'package:core_fit/features/profile/ui/profile_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -24,6 +32,22 @@ class AppRouter {
         return _slideTransition(const FavoriteSportsScreen());
       case Routes.marketHomeScreen:
         return _fadeTransition(const MarketHomeScreen());
+      case Routes.storesScreen:
+        return _fadeTransition(const StoresScreen());
+      case Routes.productsScreen:
+        return _slideTransition(const ProductsScreen());
+      case Routes.invoiceScreen:
+        return _slideTransition(const InvoiceScreen());
+      case Routes.storeDetailsScreen:
+        return _fadeTransition(const StoreDetailsScreen());
+      case Routes.favoriteScreen:
+        return _slideTransition(const FavoriteScreen());
+      case Routes.productDetailsScreen:
+        return _fadeTransition(const ProductDetails());
+      case Routes.cartScreen:
+        return _fadeTransition(const CartScreen());
+      case Routes.orderDetailsScreen:
+        return _fadeTransition(const OrderDetailsScreen());
       default:
         return MaterialPageRoute(
           builder: (_) => Scaffold(
