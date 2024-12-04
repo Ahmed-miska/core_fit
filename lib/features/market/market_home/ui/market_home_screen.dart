@@ -35,12 +35,7 @@ class _MarketHomeScreenState extends State<MarketHomeScreen> with TickerProvider
         backgroundColor: Colors.white,
         title: const MarketHomeAppBar(),
       ),
-      body: AnimatedBuilder(
-        animation: animationController,
-        builder: (context, child) {
-          return currentIndex == 0 ? const MarketStoresScreen() : const MarketOrdersScreen();
-        },
-      ),
+      body: currentIndex == 0 ? const MarketStoresScreen() : const MarketOrdersScreen(),
       bottomNavigationBar: MarketHomeNavBar(
         onValueSelected: (index) {
           setState(() => currentIndex = index);

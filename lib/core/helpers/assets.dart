@@ -25,17 +25,21 @@ class Assets {
   static const String order2 = 'assets/icons/order2.svg';
   static const String order3 = 'assets/icons/order3.svg';
   static const String order4 = 'assets/icons/order4.svg';
+  static const String homeGreen = 'assets/icons/home_green.svg';
+  static const String homeGray = 'assets/icons/home_gray.svg';
+  static const String bookingGreen = 'assets/icons/booking_green.svg';
+  static const String bookingGray = 'assets/icons/booking_gray.svg';
 
   // animation
   static const String loadingAnimation = 'assets/animation/loading_animation.json';
 
-
-
-
-
-
-
-
-
-  static const String cachImage = 'https://fastly.picsum.photos/id/904/200/200.jpg?hmac=QegM9tS4hRwLbLWCb2W91mYYovO_itG2JmSQiz0PnrM';
+  static const String cachImage = 'https://picsum.photos/id/31/200/300';
+  static const String cachImage2 = 'https://picsum.photos/id/32/200/300';
+  static const String cachImage3 = 'https://picsum.photos/id/33/200/300';
+  static const String cachImage4 = 'https://picsum.photos/id/34/200/300';
+  static const String cachImage5 = 'https://picsum.photos/id/35/200/300';
+  static const String cachImage6 = 'https://picsum.photos/id/36/200/300';
+  static const String cachImage7 = 'https://picsum.photos/id/37/200/300';
+  static const String cachImage8 = 'https://picsum.photos/id/38/200/300';
+  static const String cachImage9 = 'https://picsum.photos/id/39/200/300';
 }

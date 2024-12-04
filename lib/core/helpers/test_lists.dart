@@ -372,3 +372,29 @@ List<String> typesItems = [
 
 String productDec =
     'X SPEEDPORTAL MESSI.1 FIRM GROUNDA speed boot that showcases MESSI style, made in part with recycled materials.Mind. Body. Boot. Connected in a flash. Slip on the adidas X Speedportal to unleash speed in every dimension. The Speedskin upper of this football boot features a montage of Messi-inspired designs, with a flexible adidas PRIMEKNIT collar, carbon heel lock and stability studs for a secure fit at high speeds. Additional forefoot studs on the Speedframe outsole help boost acceleration on firm ground';
+
+List<String> productImages = [
+  'https://picsum.photos/id/70/200/300',
+  'https://picsum.photos/id/71/200/300',
+  'https://picsum.photos/id/72/200/300',
+  'https://picsum.photos/id/73/200/300',
+  'https://picsum.photos/id/74/200/300',
+  'https://picsum.photos/id/35/200/300',
+  'https://picsum.photos/id/36/200/300',
+  'https://picsum.photos/id/37/200/300',
+  'https://picsum.photos/id/38/200/300',
+  'https://picsum.photos/id/39/200/300',
+  'https://picsum.photos/id/40/200/300',
+  'https://picsum.photos/id/41/200/300',
+  'https://picsum.photos/id/42/200/300',
+  'https://picsum.photos/id/43/200/300',
+  'https://picsum.photos/id/44/200/300',
+  'https://picsum.photos/id/45/200/300',
+  'https://picsum.photos/id/46/200/300',
+  'https://picsum.photos/id/47/200/300',
+  'https://picsum.photos/id/48/200/300',
+  'https://picsum.photos/id/49/200/300',
+  'https://picsum.photos/id/50/200/300',
+  'https://picsum.photos/id/51/200/300',
+  'https://picsum.photos/id/52/200/300',
+];

@@ -34,6 +34,7 @@ class HomeScreen extends StatelessWidget {
                     const LocationInHome(),
                     verticalSpace(12),
                     const HomeAvtivityes(),
+                    verticalSpace(12),
                   ],
                 ),
               ),

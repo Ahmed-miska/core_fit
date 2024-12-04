@@ -13,6 +13,9 @@ import 'package:core_fit/features/market/products/ui/products_screen.dart';
 import 'package:core_fit/features/market/store_details/ui/store_details_screen.dart';
 import 'package:core_fit/features/market/stores/ui/stores_screen.dart';
 import 'package:core_fit/features/profile/ui/profile_screen.dart';
+import 'package:core_fit/features/reservation/featured_booking/ui/featured_booking_screen.dart';
+import 'package:core_fit/features/reservation/sports/ui/sports_home_screen.dart';
+import 'package:core_fit/features/reservation/sports_home/ui/sports_list_screen.dart';
 import 'package:flutter/material.dart';
 
 class AppRouter {
@@ -48,6 +51,12 @@ class AppRouter {
         return _fadeTransition(const CartScreen());
       case Routes.orderDetailsScreen:
         return _fadeTransition(const OrderDetailsScreen());
+      case Routes.sportsHomeScreen:
+        return _fadeTransition(const SportsHomeScreen());
+      case Routes.sportsListScreen:
+        return _scaleTransition(const SportsListScreen());
+        case Routes.featuredBookingScreen:
+        return _scaleTransition(const FeaturedBookingScreen());
       default:
         return MaterialPageRoute(
           builder: (_) => Scaffold(
@@ -62,6 +71,21 @@ class AppRouter {
     return PageRouteBuilder(transitionsBuilder: (context, animation, secondaryAnimation, child) {
       return FadeTransition(
         opacity: animation,
+        child: child,
+      );
+    }, pageBuilder: (
+      BuildContext context,
+      Animation<double> animation,
+      Animation<double> secondaryAnimation,
+    ) {
+      return child;
+    });
+  }
+
+  PageRouteBuilder<dynamic> _scaleTransition(Widget child) {
+    return PageRouteBuilder(transitionsBuilder: (context, animation, secondaryAnimation, child) {
+      return ScaleTransition(
+        scale: animation,
         child: child,
       );
     }, pageBuilder: (
