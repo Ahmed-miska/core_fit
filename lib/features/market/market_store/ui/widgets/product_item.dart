@@ -51,35 +51,32 @@ class ProductItem extends StatelessWidget {
             const Spacer(),
             Text(productModel.type, style: TextStyles.font12Main600),
             verticalSpace(8),
-            Expanded(
-              flex: 2,
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Text(productModel.price, style: TextStyles.font16Dark700),
-                  horizontalSpace(4),
-                  Text(productModel.currency, style: TextStyles.font12Dark400),
-                  horizontalSpace(6),
-                  productModel.isOffer ? Text(productModel.oldPrice, style: TextStyles.font12Gray400.copyWith(decoration: TextDecoration.lineThrough)) : const SizedBox(),
-                  horizontalSpace(4),
-                  productModel.isOffer ? Text(productModel.currency, style: TextStyles.font12Gray400.copyWith(decoration: TextDecoration.lineThrough)) : const SizedBox(),
-                  const Spacer(),
-                  SizedBox(
-                    height: 35.h,
-                    width: 35.h,
-                    child: IconButton(
-                      onPressed: () {},
-                      style: ButtonStyle(
-                        elevation: WidgetStateProperty.all(0),
-                        shape: WidgetStateProperty.all(const CircleBorder()),
-                        side: WidgetStateProperty.all(const BorderSide(color: AppColors.main, width: 2)),
-                      ),
-                      padding: EdgeInsets.zero,
-                      icon: Expanded(child: Icon(Icons.shopping_cart, color: AppColors.main, size: 20.h)),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text(productModel.price, style: TextStyles.font16Dark700),
+                horizontalSpace(4),
+                Text(productModel.currency, style: TextStyles.font12Dark400),
+                horizontalSpace(6),
+                productModel.isOffer ? Text(productModel.oldPrice, style: TextStyles.font12Gray400.copyWith(decoration: TextDecoration.lineThrough)) : const SizedBox(),
+                horizontalSpace(4),
+                productModel.isOffer ? Text(productModel.currency, style: TextStyles.font12Gray400.copyWith(decoration: TextDecoration.lineThrough)) : const SizedBox(),
+                const Spacer(),
+                SizedBox(
+                  height: 35.h,
+                  width: 35.h,
+                  child: IconButton(
+                    onPressed: () {},
+                    style: ButtonStyle(
+                      elevation: WidgetStateProperty.all(0),
+                      shape: WidgetStateProperty.all(const CircleBorder()),
+                      side: WidgetStateProperty.all(const BorderSide(color: AppColors.main, width: 2)),
                     ),
-                  )
-                ],
-              ),
+                    padding: EdgeInsets.zero,
+                    icon: Icon(Icons.shopping_cart, color: AppColors.main, size: 18.h),
+                  ),
+                )
+              ],
             )
           ],
         ),

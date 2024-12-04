@@ -3,6 +3,7 @@ import 'package:core_fit/core/helpers/assets.dart';
 import 'package:core_fit/core/helpers/extensions.dart';
 import 'package:core_fit/core/theming/colors.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 
 class MarketHomeNavBar extends StatefulWidget {
@@ -14,13 +15,13 @@ class MarketHomeNavBar extends StatefulWidget {
   State<MarketHomeNavBar> createState() => _MarketHomeNavBarState();
 }
 
-class _MarketHomeNavBarState extends State<MarketHomeNavBar> with TickerProviderStateMixin {
+class _MarketHomeNavBarState extends State<MarketHomeNavBar> {
   int currentIndex = 0;
 
   @override
   Widget build(BuildContext context) {
     return ConvexAppBar(
-      height: 60,
+      height: 50.h,
       style: TabStyle.fixedCircle,
       initialActiveIndex: currentIndex,
       color: AppColors.grey,

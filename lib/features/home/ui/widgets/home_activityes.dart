@@ -1,7 +1,8 @@
+import 'package:core_fit/core/helpers/assets.dart';
 import 'package:core_fit/core/helpers/extensions.dart';
 import 'package:core_fit/core/helpers/spacing.dart';
 import 'package:core_fit/core/routing/routes.dart';
-import 'package:core_fit/features/home/ui/widgets/home_item.dart';
+import 'package:core_fit/core/widgets/stacket_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -13,41 +14,34 @@ class HomeAvtivityes extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 280.h,
-      width: double.infinity,
+      height: 300.h,
       child: Row(
         children: [
           Expanded(
+            child: InkWell(
+              onTap: () {
+                context.pushNamed(Routes.sportsHomeScreen);
+              },
+              child: const StacketImage(imageUrl: Assets.cachImage, text: 'Sports Bookings'),
+            ),
+          ),
+          horizontalSpace(8),
+          Expanded(
             child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Expanded(
-                  child: HomeItem(
-                    onTap: () => context.pushNamed(Routes.marketHomeScreen),
-                    image: 'assets/images/4.jpeg',
-                    title: 'Sports Market',
+                  child: InkWell(
+                    onTap: () {
+                      context.pushNamed(Routes.marketHomeScreen);
+                    },
+                    child: const StacketImage(imageUrl: Assets.cachImage2, text: 'Sports Market'),
                   ),
                 ),
-                verticalSpace(10),
-                Expanded(
-                  child: HomeItem(
-                    onTap: () {},
-                    image: 'assets/images/5.jpeg',
-                    title: 'Sports news',
-                  ),
-                )
+                verticalSpace(8),
+                const Expanded(child: StacketImage(imageUrl: Assets.cachImage3, text: 'Tennis')),
               ],
             ),
           ),
-          horizontalSpace(10),
-          Expanded(
-            child: HomeItem(
-              onTap: () {},
-              title: 'Sports Booking',
-              image: 'assets/images/6.jpeg',
-            ),
-          )
         ],
       ),
     );

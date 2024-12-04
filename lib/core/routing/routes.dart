@@ -13,4 +13,7 @@ class Routes {
   static const String invoiceScreen = '/invoiceScreen';
   static const String favoriteScreen = '/favoriteScreen';
   static const String orderDetailsScreen = '/orderDetailsScreen';
+  static const String sportsHomeScreen = '/sportsHomeScreen';
+  static const String sportsListScreen = '/sportsListScreen';
+  static const String featuredBookingScreen = '/featuredBookingScreen';
 }
