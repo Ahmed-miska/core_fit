@@ -47,6 +47,7 @@ class TextStyles {
     fontWeight: FontWeight.w400,
     color: AppColors.grey,
   );
+  
     static TextStyle font12White400 = const TextStyle(
     fontSize: 12,
     fontWeight: FontWeight.w400,
@@ -106,6 +107,11 @@ class TextStyles {
   static TextStyle b16 = const TextStyle(
     fontSize: 16,
     fontWeight: FontWeight.w700,
+    color: AppColors.dark,
+  );
+    static TextStyle r14 = const TextStyle(
+    fontSize: 14,
+    fontWeight: FontWeight.w400,
     color: AppColors.dark,
   );
 }

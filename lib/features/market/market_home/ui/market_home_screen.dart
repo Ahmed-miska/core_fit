@@ -24,6 +24,12 @@ class _MarketHomeScreenState extends State<MarketHomeScreen> with TickerProvider
   }
 
   @override
+  void dispose() {
+    animationController.dispose();
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(

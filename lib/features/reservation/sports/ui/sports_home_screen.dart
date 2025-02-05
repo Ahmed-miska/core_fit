@@ -1,5 +1,6 @@
 import 'package:core_fit/core/helpers/extensions.dart';
 import 'package:core_fit/core/helpers/spacing.dart';
+import 'package:core_fit/features/reservation/my_reservation/ui/my_reservation_home.dart';
 import 'package:core_fit/features/reservation/sports_home/ui/sports_home.dart';
 import 'package:core_fit/features/reservation/sports/ui/widgets/sports_home_nav_bar.dart';
 import 'package:flutter/material.dart';
@@ -29,7 +30,7 @@ class _SportsHomeScreenState extends State<SportsHomeScreen> {
               child: SizedBox(height: 30.h, child: SvgPicture.asset('assets/icons/nameandlogo.svg', alignment: Alignment.bottomLeft)),
             ),
             verticalSpace(10),
-            currentIndex == 0 ? const SportsHome() : const Text(' sssssssssssss'),
+            currentIndex == 0 ? const SportsHome() : const MyReservationHome(),
           ],
         ),
       ),

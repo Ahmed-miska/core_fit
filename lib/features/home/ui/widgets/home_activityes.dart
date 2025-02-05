@@ -4,7 +4,6 @@ import 'package:core_fit/core/helpers/spacing.dart';
 import 'package:core_fit/core/routing/routes.dart';
 import 'package:core_fit/core/widgets/stacket_image.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class HomeAvtivityes extends StatelessWidget {
   const HomeAvtivityes({
@@ -14,7 +13,6 @@ class HomeAvtivityes extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 300.h,
       child: Row(
         children: [
           Expanded(

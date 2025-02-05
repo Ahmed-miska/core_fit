@@ -1,16 +1,14 @@
 import 'package:card_swiper/card_swiper.dart';
 import 'package:core_fit/core/helpers/test_lists.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class HomeSwiper extends StatelessWidget {
-  final List<String> swiperImages ;
+  final List<String> swiperImages;
   const HomeSwiper({super.key, required this.swiperImages});
 
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 343.h,
       width: double.infinity,
       child: Swiper(
         viewportFraction: 0.9,

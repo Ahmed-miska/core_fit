@@ -57,8 +57,9 @@ class SportsHome extends StatelessWidget {
           ),
           verticalSpace(20),
           SizedBox(
-            height: 220.h,
+            height: 235.h,
             child: ListView.builder(
+              shrinkWrap: true,
               padding: EdgeInsets.zero,
               scrollDirection: Axis.horizontal,
               itemCount: 7,

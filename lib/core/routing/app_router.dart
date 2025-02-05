@@ -1,7 +1,8 @@
 import 'package:core_fit/core/routing/routes.dart';
+import 'package:core_fit/features/auth/forget_password/ui/forget_password_screen.dart';
+import 'package:core_fit/features/auth/forget_password/ui/reset_password_screen.dart';
 import 'package:core_fit/features/auth/login/ui/login_screen.dart';
 import 'package:core_fit/features/auth/sign_up/ui/sign_up_screen.dart';
-import 'package:core_fit/features/auth/sign_up/ui/widgets/favorite_sports_screen.dart';
 import 'package:core_fit/features/home/ui/home_screen.dart';
 import 'package:core_fit/features/market/cart/ui/cart_screen.dart';
 import 'package:core_fit/features/market/invoice/ui/invoice_screen.dart';
@@ -13,9 +14,20 @@ import 'package:core_fit/features/market/products/ui/products_screen.dart';
 import 'package:core_fit/features/market/store_details/ui/store_details_screen.dart';
 import 'package:core_fit/features/market/stores/ui/stores_screen.dart';
 import 'package:core_fit/features/profile/ui/profile_screen.dart';
+import 'package:core_fit/features/profile/ui/widgets/edit_profile_screen.dart';
+import 'package:core_fit/features/profile/ui/widgets/favorite_staduims_screen.dart';
+import 'package:core_fit/features/profile/ui/widgets/private_wallet_screen.dart';
+import 'package:core_fit/features/profile/ui/widgets/support_screen.dart';
 import 'package:core_fit/features/reservation/featured_booking/ui/featured_booking_screen.dart';
+import 'package:core_fit/features/reservation/my_reservation/ui/my_reservation_details_screen.dart';
+import 'package:core_fit/features/reservation/reservation_details/ui/reservation_booking_details_screen.dart';
+import 'package:core_fit/features/reservation/reservation_details/ui/reservation_booking_details_screen_two.dart';
+import 'package:core_fit/features/reservation/reservation_type/ui/reservation_type_screen.dart';
+import 'package:core_fit/features/reservation/sport_details.dart/ui/sport_details_screen.dart';
 import 'package:core_fit/features/reservation/sports/ui/sports_home_screen.dart';
 import 'package:core_fit/features/reservation/sports_home/ui/sports_list_screen.dart';
+import 'package:core_fit/features/reservation/staduims/ui/staduim_details_screen.dart';
+import 'package:core_fit/features/reservation/staduims/ui/staduims_screen.dart';
 import 'package:flutter/material.dart';
 
 class AppRouter {
@@ -28,11 +40,9 @@ class AppRouter {
       case Routes.signUpScreen:
         return _slideTransition(const SignUpScreen());
       case Routes.homeScreen:
-        return _fadeBottmTransition(const HomeScreen());
+        return _fadeTransition(const HomeScreen());
       case Routes.profileScreen:
         return _slideTransition(const ProfileScreen());
-      case Routes.favoriteSportsScreen:
-        return _slideTransition(const FavoriteSportsScreen());
       case Routes.marketHomeScreen:
         return _fadeTransition(const MarketHomeScreen());
       case Routes.storesScreen:
@@ -53,10 +63,36 @@ class AppRouter {
         return _fadeTransition(const OrderDetailsScreen());
       case Routes.sportsHomeScreen:
         return _fadeTransition(const SportsHomeScreen());
+      case Routes.sportDetailsScreen:
+        return _fadeTransition(const SportDetailsScreen());
       case Routes.sportsListScreen:
         return _scaleTransition(const SportsListScreen());
-        case Routes.featuredBookingScreen:
-        return _scaleTransition(const FeaturedBookingScreen());
+      case Routes.featuredBookingScreen:
+        return _fadeTransition(const FeaturedBookingScreen());
+      case Routes.reservationTypeScreen:
+        return _fadeTransition(const ReservationTypeScreen());
+      case Routes.staduimsScreen:
+        return _fadeTransition(const StaduimsScreen());
+      case Routes.staduimDetailsScreen:
+        return _fadeTransition(const StaduimDetailsScreen());
+      case Routes.reservationBookingDetailsScreen:
+        return _fadeTransition(const ReservationBookingDetailsScreen());
+      case Routes.forgetPasswordScreen:
+        return _fadeTransition(const ForgetPasswordScreen());
+      case Routes.resetPasswordScreen:
+        return _fadeTransition(const ResetPasswordScreen());
+      case Routes.reservationBookingDetailsScreenTwo:
+        return _fadeTransition(const ReservationBookingDetailsScreenTwo());
+      case Routes.myReservationDetailsScreen:
+        return _fadeTransition(const MyReservationDetailsScreen());
+      case Routes.editProfileScreen:
+        return _fadeTransition(const EditProfileScreen());
+      case Routes.supportScreen:
+        return _fadeTransition(const SupportScreen());
+      case Routes.privatWalletScreen:
+        return _fadeTransition(const PrivateWalletScreen());
+      case Routes.favoriteStadiumsScreen:
+        return _fadeTransition(const FavoriteStaduimsScreen());
       default:
         return MaterialPageRoute(
           builder: (_) => Scaffold(
@@ -72,6 +108,24 @@ class AppRouter {
       return FadeTransition(
         opacity: animation,
         child: child,
+      );
+    }, pageBuilder: (
+      BuildContext context,
+      Animation<double> animation,
+      Animation<double> secondaryAnimation,
+    ) {
+      return child;
+    });
+  }
+
+  PageRouteBuilder<dynamic> _slideBottomTransition(Widget child) {
+    return PageRouteBuilder(transitionsBuilder: (context, animation, secondaryAnimation, child) {
+      return Align(
+        alignment: Alignment.bottomCenter,
+        child: SlideTransition(
+          position: Tween<Offset>(begin: const Offset(0.0, 1.0), end: Offset.zero).animate(animation),
+          child: child,
+        ),
       );
     }, pageBuilder: (
       BuildContext context,

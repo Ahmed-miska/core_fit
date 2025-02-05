@@ -1,3 +1,4 @@
+import 'package:card_swiper/card_swiper.dart';
 import 'package:core_fit/core/helpers/assets.dart';
 import 'package:core_fit/core/helpers/spacing.dart';
 import 'package:core_fit/core/theming/colors.dart';
@@ -24,9 +25,14 @@ class ImageAndRatingContainer extends StatelessWidget {
           SizedBox(
             height: 200.h,
             width: double.infinity,
-            child: ClipRRect(
-              borderRadius: BorderRadius.circular(8),
-              child: const CustomCachedImage(imageUrl: Assets.cachImage),
+            child: Swiper(
+              itemCount: 3,
+              autoplay: true,
+              pagination: const SwiperPagination(alignment: Alignment.bottomCenter),
+              itemBuilder: (context, index) => ClipRRect(
+                borderRadius: BorderRadius.circular(12),
+                child: const CustomCachedImage(imageUrl: Assets.cachImage),
+              ),
             ),
           ),
           verticalSpace(12),

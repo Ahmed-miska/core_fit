@@ -8,14 +8,15 @@ class IncreaseOrDecreseIcon extends StatelessWidget {
   const IncreaseOrDecreseIcon({
     super.key,
     this.onTap,
-    required this.isIncrease, this.color,
+    required this.isIncrease,
+    this.color,
   });
 
   @override
   Widget build(BuildContext context) {
-    return InkWell(
-      onTap: onTap,
-      child: Container(
+    return IconButton(
+      onPressed: onTap,
+      icon: Container(
         padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 8),
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(12),

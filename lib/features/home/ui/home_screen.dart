@@ -15,16 +15,16 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
-        child: SingleChildScrollView(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              verticalSpace(10),
-              const HomeAppBar(),
-              verticalSpace(16),
-              HomeSwiper(swiperImages: testSwiperImages),
-              verticalSpace(12),
-              Padding(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            verticalSpace(10),
+            const HomeAppBar(),
+            verticalSpace(16),
+            Expanded(child: HomeSwiper(swiperImages: testSwiperImages)),
+            verticalSpace(12),
+            Expanded(
+              child: Padding(
                 padding: mainPadding(),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -33,13 +33,13 @@ class HomeScreen extends StatelessWidget {
                     verticalSpace(8),
                     const LocationInHome(),
                     verticalSpace(12),
-                    const HomeAvtivityes(),
+                    const Expanded(child: HomeAvtivityes()),
                     verticalSpace(12),
                   ],
                 ),
               ),
-            ],
-          ),
+            ),
+          ],
         ),
       ),
     );
