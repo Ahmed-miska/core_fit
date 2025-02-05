@@ -2,14 +2,38 @@ import 'package:core_fit/core/theming/colors.dart';
 import 'package:core_fit/core/theming/styles.dart';
 import 'package:flutter/material.dart';
 
-class CustomSearchBar extends StatelessWidget {
+class CustomSearchBar extends StatefulWidget {
   const CustomSearchBar({
     super.key,
   });
 
   @override
+  State<CustomSearchBar> createState() => _CustomSearchBarState();
+}
+
+class _CustomSearchBarState extends State<CustomSearchBar> {
+  TextEditingController controller = TextEditingController();
+  @override
+  void initState() {
+    controller = TextEditingController();
+    controller.addListener(() => setState(() {}));
+    super.initState();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return SearchBar(
+      controller: controller,
+      leading: controller.text.isEmpty
+          ? null
+          : InkWell(
+              onTap: () {
+                setState(() {
+                  controller.clear();
+                });
+              },
+              child: const Icon(Icons.close, color: AppColors.red, size: 24),
+            ),
       padding: WidgetStateProperty.all(const EdgeInsets.only(left: 8)),
       elevation: const WidgetStatePropertyAll(0),
       backgroundColor: WidgetStateProperty.all(AppColors.lightGrey),

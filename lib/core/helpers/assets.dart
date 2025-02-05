@@ -29,6 +29,8 @@ class Assets {
   static const String homeGray = 'assets/icons/home_gray.svg';
   static const String bookingGreen = 'assets/icons/booking_green.svg';
   static const String bookingGray = 'assets/icons/booking_gray.svg';
+  static const String otpLogo = 'assets/icons/otp_logo.svg';
+  static const String eveningPeriod = 'assets/icons/evening_period.svg';
 
   // animation
   static const String loadingAnimation = 'assets/animation/loading_animation.json';

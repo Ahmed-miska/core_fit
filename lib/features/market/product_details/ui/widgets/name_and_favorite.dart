@@ -1,3 +1,4 @@
+import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:core_fit/core/helpers/spacing.dart';
 import 'package:core_fit/core/theming/styles.dart';
 import 'package:core_fit/core/widgets/add_favorite_icon.dart';
@@ -13,11 +14,14 @@ class NameAndFavorite extends StatelessWidget {
     return Row(
       children: [
         Expanded(
-          child: Text(
-            'X SPEEDPORTAL MESSI.1 FIRM GROUND X SPEEDPORTAL MESSI.1 FIRM GROUND',
-            style: TextStyles.font16Dark700,
-            maxLines: 2,
-            overflow: TextOverflow.ellipsis,
+          child: AnimatedTextKit(
+            isRepeatingAnimation: false,
+            animatedTexts: [
+              TypewriterAnimatedText(
+                'X SPEEDPORTAL MESSI.1 FIRM GROUND X SPEEDPORTAL MESSI.1 FIRM GROUND',
+                textStyle: TextStyles.font16Dark700,
+              ),
+            ],
           ),
         ),
         verticalSpace(10),

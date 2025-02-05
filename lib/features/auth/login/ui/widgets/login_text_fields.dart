@@ -57,9 +57,14 @@ class _LoginTextFieldsState extends State<LoginTextFields> {
           validator: (string) {},
         ),
         verticalSpace(16),
-        Text(
-          'Forgot Password?',
-          style: TextStyles.font18Dark600,
+        InkWell(
+          onTap: () {
+            context.pushNamed(Routes.forgetPasswordScreen);
+          },
+          child: Text(
+            'Forgot Password?',
+            style: TextStyles.font18Dark600,
+          ),
         ),
         verticalSpace(32),
         AppTextButton(

@@ -1,10 +1,7 @@
 import 'package:core_fit/core/helpers/assets.dart';
-import 'package:core_fit/core/helpers/extensions.dart';
 import 'package:core_fit/core/helpers/spacing.dart';
-import 'package:core_fit/core/routing/routes.dart';
 import 'package:core_fit/core/theming/colors.dart';
 import 'package:core_fit/core/theming/styles.dart';
-import 'package:core_fit/core/widgets/app_text_button.dart';
 import 'package:core_fit/core/widgets/app_text_form_field.dart';
 import 'package:core_fit/features/auth/sign_up/ui/widgets/select_city.dart';
 import 'package:core_fit/features/auth/sign_up/ui/widgets/select_gender_row.dart';
@@ -119,13 +116,7 @@ class _SignUpTextFieldsState extends State<SignUpTextFields> {
         const SelectGenderRow(),
         verticalSpace(24),
         const SelectCity(),
-        verticalSpace(60),
-        AppTextButton(
-            text: 'Sign Up',
-            onTap: () {
-              context.pushNamed(Routes.favoriteSportsScreen);
-            }),
-        verticalSpace(24),
+        verticalSpace(20),
       ],
     );
   }

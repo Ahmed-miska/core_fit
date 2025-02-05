@@ -9,12 +9,13 @@ class BackArrow extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return InkWell(
-      onTap: () => Navigator.pop(context),
-      child: SizedBox(
-        height: 24,
-        width: 24,
-        child: SvgPicture.asset(Assets.backArrow),
+    return SizedBox(
+      height: 24,
+      width: 24,
+      child: IconButton(
+        padding: EdgeInsets.zero,
+        onPressed: () => Navigator.pop(context),
+        icon: SvgPicture.asset(Assets.backArrow),
       ),
     );
   }

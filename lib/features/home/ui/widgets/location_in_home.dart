@@ -21,7 +21,7 @@ class LocationInHome extends StatelessWidget {
         horizontalSpace(8),
         Text('-', style: TextStyles.font12Dark400),
         horizontalSpace(8),
-        Text('Cairo', style: TextStyles.font12Dark400),
+        Text('Egypt', style: TextStyles.font12Dark400),
         const Spacer(),
         Text('change', style: TextStyles.font12Dark400.copyWith(color: AppColors.main)),
       ],

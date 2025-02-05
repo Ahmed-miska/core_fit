@@ -13,16 +13,14 @@ class FeaturedBookingScreen extends StatelessWidget {
       appBar: const CustomAppBar(title: 'Featured Booking'),
       body: Padding(
         padding: mainPadding(),
-        child: Expanded(
-          child: ListView.builder(
-            itemCount: 15,
-            itemBuilder: (context, index) {
-              return Padding(
-                padding: EdgeInsets.only(bottom: 12.h),
-                child: const ReservationsContainer(),
-              );
-            },
-          ),
+        child: ListView.builder(
+          itemCount: 15,
+          itemBuilder: (context, index) {
+            return Padding(
+              padding: EdgeInsets.only(bottom: 12.h),
+              child: const ReservationsContainer(),
+            );
+          },
         ),
       ),
     );

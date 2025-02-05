@@ -1,6 +1,7 @@
 import 'package:convex_bottom_bar/convex_bottom_bar.dart';
 import 'package:core_fit/core/helpers/assets.dart';
 import 'package:core_fit/core/helpers/extensions.dart';
+import 'package:core_fit/core/routing/routes.dart';
 import 'package:core_fit/core/theming/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -44,7 +45,7 @@ class _MarketHomeNavBarState extends State<MarketHomeNavBar> {
       ],
       onTap: (int i) {
         if (i == 1) {
-          context.pop();
+          context.pushNamedAndRemoveUntil(Routes.homeScreen, predicate: (Route<dynamic> route) => false);
         }
         widget.onValueSelected?.call(i);
       },

@@ -1,7 +1,9 @@
 import 'package:core_fit/core/helpers/extensions.dart';
 import 'package:core_fit/core/helpers/spacing.dart';
-import 'package:core_fit/core/theming/styles.dart';
-import 'package:core_fit/core/widgets/back_arrow.dart';
+import 'package:core_fit/core/routing/routes.dart';
+import 'package:core_fit/core/widgets/app_text_button.dart';
+import 'package:core_fit/core/widgets/custom_app_bar.dart';
+import 'package:core_fit/core/widgets/otp_bottom_sheet.dart';
 import 'package:core_fit/features/auth/sign_up/ui/widgets/sign_up_text_fields.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -13,19 +15,12 @@ class SignUpScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: const CustomAppBar(title: 'Sign Up'),
       body: SafeArea(
         child: Padding(
           padding: mainPadding(),
           child: Column(
             children: [
-              verticalSpace(20),
-              Row(
-                children: [
-                  const BackArrow(),
-                  horizontalSpace(20),
-                  Text('Sign Up', style: TextStyles.font16Dark700),
-                ],
-              ),
               verticalSpace(10),
               Expanded(
                 child: SingleChildScrollView(
@@ -43,6 +38,15 @@ class SignUpScreen extends StatelessWidget {
                   ),
                 ),
               ),
+              AppTextButton(
+                text: 'Sign Up',
+                onTap: () {
+                  otpBottomSheet(context, () {
+                    context.pushNamed(Routes.homeScreen);
+                  });
+                },
+              ),
+              verticalSpace(15),
             ],
           ),
         ),
