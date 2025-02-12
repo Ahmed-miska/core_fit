@@ -1,28 +1,22 @@
+import 'package:core_fit/core/di/dependency_injection.dart';
 import 'package:core_fit/core/theming/styles.dart';
 import 'package:core_fit/core/widgets/app_text_form_field.dart';
+import 'package:core_fit/features/auth/sign_up/data/models/governorates_response_model.dart';
+import 'package:core_fit/features/auth/sign_up/logic/cubit/signup_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class SelectArea extends StatefulWidget {
+class SelectGovernrate extends StatefulWidget {
+  final List<Governorate> governorateList;
   final String hintText;
 
-  const SelectArea({super.key, required this.hintText});
+  const SelectGovernrate({super.key, required this.hintText, required this.governorateList});
 
   @override
-  State<SelectArea> createState() => _SelectAreaState();
+  State<SelectGovernrate> createState() => _SelectGovernrateState();
 }
 
-class _SelectAreaState extends State<SelectArea> {
-  List<String> areasList = [
-    'الجزيره',
-    'المنطقه الشرقيه',
-    'المنطقه الشماليه',
-    'المنطقه الغربيه',
-    'المنطقه الشرقيه',
-    'المنطقه الشماليه',
-    'المنطقه الغربيه',
-  ];
-
+class _SelectGovernrateState extends State<SelectGovernrate> {
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -38,6 +32,7 @@ class _SelectAreaState extends State<SelectArea> {
         child: Column(
           children: [
             AppTextFormField(
+                controller: getIt<SignupCubit>().governorateController,
                 hintText: widget.hintText,
                 prefixIcon: const Icon(Icons.search),
                 onChanged: (p0) async {},
@@ -47,15 +42,23 @@ class _SelectAreaState extends State<SelectArea> {
             Expanded(
               child: ListView.builder(
                 physics: const BouncingScrollPhysics(),
-                itemCount: areasList.length,
+                itemCount: widget.governorateList.length,
                 shrinkWrap: true,
                 itemBuilder: (context, index) {
                   return Padding(
                     padding: const EdgeInsets.all(10),
                     child: InkWell(
-                      onTap: () {},
+                      onTap: () {
+                        print(widget.governorateList[index].name);
+                        getIt<SignupCubit>().governorateController.text = widget.governorateList[index].name ?? '';
+                        print(getIt<SignupCubit>().governorateController.text);
+                        getIt<SignupCubit>().governorateId = widget.governorateList[index].id ?? 0;
+                        print('${getIt<SignupCubit>().governorateId}');
+
+                        setState(() {});
+                      },
                       child: Text(
-                        areasList[index],
+                        widget.governorateList[index].name ?? '',
                         style: TextStyles.font16Dark700,
                       ),
                     ),

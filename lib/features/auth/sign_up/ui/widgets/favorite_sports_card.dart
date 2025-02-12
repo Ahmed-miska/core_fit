@@ -27,6 +27,7 @@ class _FavoriteSportsCardState extends State<FavoriteSportsCard> {
         padding: const EdgeInsets.all(10),
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(16),
+          // ignore: deprecated_member_use
           border: Border.all(color: isSelected ? Colors.transparent : AppColors.text.withOpacity(0.3)),
           color: isSelected ? AppColors.mainBG : Colors.transparent,
         ),

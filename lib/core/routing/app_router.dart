@@ -1,7 +1,10 @@
+import 'package:core_fit/core/di/dependency_injection.dart';
 import 'package:core_fit/core/routing/routes.dart';
 import 'package:core_fit/features/auth/forget_password/ui/forget_password_screen.dart';
 import 'package:core_fit/features/auth/forget_password/ui/reset_password_screen.dart';
+import 'package:core_fit/features/auth/login/logic/cubit/login_cubit.dart';
 import 'package:core_fit/features/auth/login/ui/login_screen.dart';
+import 'package:core_fit/features/auth/sign_up/logic/cubit/signup_cubit.dart';
 import 'package:core_fit/features/auth/sign_up/ui/sign_up_screen.dart';
 import 'package:core_fit/features/home/ui/home_screen.dart';
 import 'package:core_fit/features/market/cart/ui/cart_screen.dart';
@@ -29,6 +32,7 @@ import 'package:core_fit/features/reservation/sports_home/ui/sports_list_screen.
 import 'package:core_fit/features/reservation/staduims/ui/staduim_details_screen.dart';
 import 'package:core_fit/features/reservation/staduims/ui/staduims_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 class AppRouter {
   Route? generateRoute(RouteSettings settings) {
@@ -36,9 +40,19 @@ class AppRouter {
 
     switch (settings.name) {
       case Routes.loginScreen:
-        return _slideTransition(const LoginScreen());
+        return _slideTransition(
+          BlocProvider(
+            create: (context) => getIt<LoginCubit>(),
+            child: const LoginScreen(),
+          ),
+        );
       case Routes.signUpScreen:
-        return _slideTransition(const SignUpScreen());
+        return _slideTransition(
+          BlocProvider(
+            create: (context) => getIt<SignupCubit>()..getGovernorates(),
+            child: const SignUpScreen(),
+          ),
+        );
       case Routes.homeScreen:
         return _fadeTransition(const HomeScreen());
       case Routes.profileScreen:
@@ -118,23 +132,23 @@ class AppRouter {
     });
   }
 
-  PageRouteBuilder<dynamic> _slideBottomTransition(Widget child) {
-    return PageRouteBuilder(transitionsBuilder: (context, animation, secondaryAnimation, child) {
-      return Align(
-        alignment: Alignment.bottomCenter,
-        child: SlideTransition(
-          position: Tween<Offset>(begin: const Offset(0.0, 1.0), end: Offset.zero).animate(animation),
-          child: child,
-        ),
-      );
-    }, pageBuilder: (
-      BuildContext context,
-      Animation<double> animation,
-      Animation<double> secondaryAnimation,
-    ) {
-      return child;
-    });
-  }
+  // PageRouteBuilder<dynamic> _slideBottomTransition(Widget child) {
+  //   return PageRouteBuilder(transitionsBuilder: (context, animation, secondaryAnimation, child) {
+  //     return Align(
+  //       alignment: Alignment.bottomCenter,
+  //       child: SlideTransition(
+  //         position: Tween<Offset>(begin: const Offset(0.0, 1.0), end: Offset.zero).animate(animation),
+  //         child: child,
+  //       ),
+  //     );
+  //   }, pageBuilder: (
+  //     BuildContext context,
+  //     Animation<double> animation,
+  //     Animation<double> secondaryAnimation,
+  //   ) {
+  //     return child;
+  //   });
+  // }
 
   PageRouteBuilder<dynamic> _scaleTransition(Widget child) {
     return PageRouteBuilder(transitionsBuilder: (context, animation, secondaryAnimation, child) {
@@ -151,27 +165,27 @@ class AppRouter {
     });
   }
 
-  PageRouteBuilder<dynamic> _fadeBottmTransition(Widget child) {
-    return PageRouteBuilder(
-        transitionDuration: const Duration(seconds: 1),
-        transitionsBuilder: (context, animation, secondaryAnimation, child) {
-          return Align(
-            alignment: Alignment.bottomCenter,
-            child: SizeTransition(
-              sizeFactor: animation,
-              axis: Axis.vertical,
-              child: child,
-            ),
-          );
-        },
-        pageBuilder: (
-          BuildContext context,
-          Animation<double> animation,
-          Animation<double> secondaryAnimation,
-        ) {
-          return child;
-        });
-  }
+  // PageRouteBuilder<dynamic> _fadeBottmTransition(Widget child) {
+  //   return PageRouteBuilder(
+  //       transitionDuration: const Duration(seconds: 1),
+  //       transitionsBuilder: (context, animation, secondaryAnimation, child) {
+  //         return Align(
+  //           alignment: Alignment.bottomCenter,
+  //           child: SizeTransition(
+  //             sizeFactor: animation,
+  //             axis: Axis.vertical,
+  //             child: child,
+  //           ),
+  //         );
+  //       },
+  //       pageBuilder: (
+  //         BuildContext context,
+  //         Animation<double> animation,
+  //         Animation<double> secondaryAnimation,
+  //       ) {
+  //         return child;
+  //       });
+  // }
 
   PageRouteBuilder<dynamic> _slideTransition(Widget child) {
     return PageRouteBuilder(
