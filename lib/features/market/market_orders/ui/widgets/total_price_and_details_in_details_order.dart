@@ -16,6 +16,7 @@ class TotalPriceAndDetailsInDetailsOrder extends StatelessWidget {
       padding: const EdgeInsets.all(16),
       decoration: BoxDecoration(borderRadius: BorderRadius.circular(12), color: AppColors.inputStroke, boxShadow: [
         BoxShadow(
+          // ignore: deprecated_member_use
           color: AppColors.dark.withOpacity(.1),
           blurRadius: 2,
           offset: const Offset(0, 2),

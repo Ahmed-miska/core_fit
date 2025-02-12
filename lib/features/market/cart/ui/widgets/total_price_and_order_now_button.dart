@@ -17,6 +17,7 @@ class TotalPriceAndOrderNowButton extends StatelessWidget {
         color: AppColors.white,
         boxShadow: [
           BoxShadow(
+            // ignore: deprecated_member_use
             color: Colors.black.withOpacity(0.1),
             blurRadius: 12,
             offset: const Offset(0, -2),

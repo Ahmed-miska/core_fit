@@ -9,15 +9,15 @@ class FavoriteStaduimsScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: CustomAppBar(title: 'Favorite Staduims'),
+      appBar: const CustomAppBar(title: 'Favorite Staduims'),
       body: Padding(
         padding: mainPadding(),
         child: ListView.builder(
           itemCount: 15,
           itemBuilder: (context, index) {
-            return Padding(
-              padding: const EdgeInsets.only(bottom: 12),
-              child: const StaduimItemInStaduimsScreen(),
+            return const Padding(
+              padding: EdgeInsets.only(bottom: 12),
+              child: StaduimItemInStaduimsScreen(),
             );
           },
         ),

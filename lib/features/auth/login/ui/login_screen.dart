@@ -3,6 +3,7 @@ import 'package:core_fit/core/helpers/spacing.dart';
 import 'package:core_fit/core/theming/styles.dart';
 import 'package:core_fit/features/auth/login/ui/widgets/condations_text.dart';
 import 'package:core_fit/features/auth/login/ui/widgets/create_account_text.dart';
+import 'package:core_fit/features/auth/login/ui/widgets/login_bloc_listener.dart';
 import 'package:core_fit/features/auth/login/ui/widgets/login_text_fields.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -39,6 +40,7 @@ class LoginScreen extends StatelessWidget {
                   child: CreateAccountText(),
                 ),
                 verticalSpace(24),
+                LoginBlocListener(),
               ],
             ),
           ),

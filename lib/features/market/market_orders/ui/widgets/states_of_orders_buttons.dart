@@ -21,6 +21,7 @@ class _StatesOfOrdersButtonsState extends State<StatesOfOrdersButtons> {
         color: AppColors.lightGrey,
         boxShadow: [
           BoxShadow(
+            // ignore: deprecated_member_use
             color: AppColors.dark.withOpacity(.1),
             blurRadius: 2,
             offset: const Offset(0, 4),

@@ -1,3 +1,4 @@
+import 'package:core_fit/core/di/dependency_injection.dart';
 import 'package:core_fit/core/routing/app_router.dart';
 import 'package:core_fit/core/routing/routes.dart';
 import 'package:core_fit/core/theming/colors.dart';
@@ -6,6 +7,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 void main() async {
   await ScreenUtil.ensureScreenSize();
+  setupGetIt();
   runApp(CoreFit(appRouter: AppRouter()));
 }
 

@@ -16,6 +16,7 @@ class OrderContainer extends StatelessWidget {
       padding: const EdgeInsets.all(12),
       decoration: BoxDecoration(borderRadius: BorderRadius.circular(16), color: AppColors.inputBG, boxShadow: [
         BoxShadow(
+          // ignore: deprecated_member_use
           color: AppColors.dark.withOpacity(.1),
           blurRadius: 2,
           offset: const Offset(0, 6),
@@ -35,6 +36,7 @@ class OrderContainer extends StatelessWidget {
                   context.pushNamed(Routes.orderDetailsScreen);
                 },
                 style: ButtonStyle(
+                  // ignore: deprecated_member_use
                   backgroundColor: WidgetStateProperty.all(AppColors.main.withOpacity(.2)),
                   shape: WidgetStateProperty.all(
                     RoundedRectangleBorder(
