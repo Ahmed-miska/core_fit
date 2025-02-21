@@ -21,7 +21,7 @@ class AppTextButton extends StatelessWidget {
       style: ButtonStyle(
         minimumSize: WidgetStateProperty.all(Size(double.maxFinite, 45.h)),
         padding: WidgetStateProperty.all(EdgeInsets.symmetric(vertical: 5.h)),
-        backgroundColor: WidgetStateProperty.all(AppColors.main),
+        backgroundColor: WidgetStateProperty.all(color ?? AppColors.main),
         shape: WidgetStateProperty.all(RoundedRectangleBorder(borderRadius: BorderRadius.circular(16))),
       ),
       child: Row(

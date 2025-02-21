@@ -1,4 +1,5 @@
 import 'package:core_fit/core/di/dependency_injection.dart';
+import 'package:core_fit/core/helpers/extensions.dart';
 import 'package:core_fit/core/theming/styles.dart';
 import 'package:core_fit/core/widgets/app_text_form_field.dart';
 import 'package:core_fit/features/auth/sign_up/data/models/governorates_response_model.dart';
@@ -7,16 +8,20 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class SelectGovernrate extends StatefulWidget {
-  final List<Governorate> governorateList;
   final String hintText;
-
-  const SelectGovernrate({super.key, required this.hintText, required this.governorateList});
-
+  const SelectGovernrate({super.key, required this.hintText});
   @override
   State<SelectGovernrate> createState() => _SelectGovernrateState();
 }
 
 class _SelectGovernrateState extends State<SelectGovernrate> {
+  List<Governorate> governorateList = [];
+  @override
+  void initState() {
+    governorateList = getIt<SignupCubit>().governoratesList;
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -34,31 +39,37 @@ class _SelectGovernrateState extends State<SelectGovernrate> {
             AppTextFormField(
                 controller: getIt<SignupCubit>().governorateController,
                 hintText: widget.hintText,
+                inputTextStyle: TextStyles.font16Dark700,
                 prefixIcon: const Icon(Icons.search),
-                onChanged: (p0) async {},
+                onChanged: (p0) async {
+                  governorateList = getIt<SignupCubit>().governoratesList.where((element) => element.name!.toLowerCase().contains(p0.toLowerCase())).toList();
+                  setState(() {});
+                },
                 validator: (value) {
                   return null;
                 }),
             Expanded(
               child: ListView.builder(
                 physics: const BouncingScrollPhysics(),
-                itemCount: widget.governorateList.length,
+                itemCount: governorateList.length,
                 shrinkWrap: true,
                 itemBuilder: (context, index) {
                   return Padding(
                     padding: const EdgeInsets.all(10),
                     child: InkWell(
-                      onTap: () {
-                        print(widget.governorateList[index].name);
-                        getIt<SignupCubit>().governorateController.text = widget.governorateList[index].name ?? '';
-                        print(getIt<SignupCubit>().governorateController.text);
-                        getIt<SignupCubit>().governorateId = widget.governorateList[index].id ?? 0;
-                        print('${getIt<SignupCubit>().governorateId}');
-
-                        setState(() {});
+                      onTap: () async {
+                        // print(governorateList[index].name);
+                        getIt<SignupCubit>().governorateController.text = governorateList[index].name ?? '';
+                        // print(getIt<SignupCubit>().governorateController.text);
+                        getIt<SignupCubit>().governorateId = governorateList[index].id ?? 0;
+                        // print('${getIt<SignupCubit>().governorateId}');
+                        getIt<SignupCubit>().cityController.clear();
+                        getIt<SignupCubit>().citiesList = [];
+                        getIt<SignupCubit>().getCities(governorateList[index].id.toString());
+                        context.pop();
                       },
                       child: Text(
-                        widget.governorateList[index].name ?? '',
+                        governorateList[index].name ?? '',
                         style: TextStyles.font16Dark700,
                       ),
                     ),

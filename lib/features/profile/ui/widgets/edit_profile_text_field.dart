@@ -3,7 +3,7 @@ import 'package:core_fit/core/helpers/spacing.dart';
 import 'package:core_fit/core/theming/colors.dart';
 import 'package:core_fit/core/theming/styles.dart';
 import 'package:core_fit/core/widgets/app_text_form_field.dart';
-import 'package:core_fit/features/auth/sign_up/ui/widgets/select_city.dart';
+import 'package:core_fit/features/auth/sign_up/ui/widgets/select_governrate_and_city.dart';
 import 'package:core_fit/features/auth/sign_up/ui/widgets/select_gender_row.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
@@ -93,7 +93,7 @@ class _EditProfileTextFieldState extends State<EditProfileTextField> {
         verticalSpace(8),
         const SelectGenderRow(),
         verticalSpace(24),
-        const SelectCity(),
+        const SelectGovernRateAndCity(),
         verticalSpace(20),
       ],
     );

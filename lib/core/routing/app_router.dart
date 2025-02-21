@@ -1,5 +1,6 @@
 import 'package:core_fit/core/di/dependency_injection.dart';
 import 'package:core_fit/core/routing/routes.dart';
+import 'package:core_fit/features/auth/forget_password/logic/cubit/forget_password_cubit.dart';
 import 'package:core_fit/features/auth/forget_password/ui/forget_password_screen.dart';
 import 'package:core_fit/features/auth/forget_password/ui/reset_password_screen.dart';
 import 'package:core_fit/features/auth/login/logic/cubit/login_cubit.dart';
@@ -49,7 +50,7 @@ class AppRouter {
       case Routes.signUpScreen:
         return _slideTransition(
           BlocProvider(
-            create: (context) => getIt<SignupCubit>()..getGovernorates(),
+            create: (context) => getIt<SignupCubit>(),
             child: const SignUpScreen(),
           ),
         );
@@ -91,10 +92,25 @@ class AppRouter {
         return _fadeTransition(const StaduimDetailsScreen());
       case Routes.reservationBookingDetailsScreen:
         return _fadeTransition(const ReservationBookingDetailsScreen());
-      case Routes.forgetPasswordScreen:
-        return _fadeTransition(const ForgetPasswordScreen());
+       case Routes.forgetPasswordScreen:
+        return _fadeTransition(
+          BlocProvider(
+            create: (context) => getIt<ForgetPasswordCubit>(), // إنشاء Provider للـ Cubit هنا
+            child: const ForgetPasswordScreen(),
+          ),
+        );
       case Routes.resetPasswordScreen:
-        return _fadeTransition(const ResetPasswordScreen());
+        final arguments = settings.arguments as Map<String, String>?;
+
+        return _fadeTransition(
+          BlocProvider(
+            create: (context) => getIt<ForgetPasswordCubit>(),
+            child: ResetPasswordScreen(
+              email: arguments?['email'] ?? '', // تأكد من استلام email
+              otp: arguments?['otp'] ?? '', // تأكد من استلام otp
+            ),
+          ),
+        );
       case Routes.reservationBookingDetailsScreenTwo:
         return _fadeTransition(const ReservationBookingDetailsScreenTwo());
       case Routes.myReservationDetailsScreen:
