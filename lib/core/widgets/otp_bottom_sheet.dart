@@ -2,7 +2,7 @@ import 'package:core_fit/core/theming/colors.dart';
 import 'package:core_fit/features/auth/otp/ui/otp_screen.dart';
 import 'package:flutter/material.dart';
 
-Future<dynamic> otpBottomSheet(BuildContext context ,final VoidCallback onTap) {
+Future<dynamic> otpBottomSheet(BuildContext context) {
   return showModalBottomSheet(
     isScrollControlled: true,
     backgroundColor: AppColors.white,
@@ -17,10 +17,8 @@ Future<dynamic> otpBottomSheet(BuildContext context ,final VoidCallback onTap) {
     builder: (BuildContext context) {
       return Padding(
         padding: EdgeInsets.only(bottom: MediaQuery.of(context).viewInsets.bottom),
-        child:  OTPScreen(
-          onTap: onTap ,
-        ),
-      ); // Your custom widget
+        child: OTPScreen(),
+      );
     },
   );
 }

@@ -1,116 +1,81 @@
 import 'package:core_fit/core/di/dependency_injection.dart';
-import 'package:core_fit/core/helpers/assets.dart';
-import 'package:core_fit/core/helpers/spacing.dart';
-import 'package:core_fit/core/theming/colors.dart';
+import 'package:core_fit/core/helpers/extensions.dart';
 import 'package:core_fit/core/theming/styles.dart';
 import 'package:core_fit/core/widgets/app_text_form_field.dart';
-import 'package:core_fit/features/auth/sign_up/data/models/governorates_response_model.dart';
+import 'package:core_fit/features/auth/sign_up/data/models/cities_response_model.dart';
 import 'package:core_fit/features/auth/sign_up/logic/cubit/signup_cubit.dart';
-import 'package:core_fit/features/auth/sign_up/ui/widgets/select_governrate.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_svg/svg.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class SelectCity extends StatefulWidget {
-  const SelectCity({
-    super.key,
-  });
+  final String hintText;
+
+  const SelectCity({super.key, required this.hintText});
 
   @override
   State<SelectCity> createState() => _SelectCityState();
 }
 
 class _SelectCityState extends State<SelectCity> {
-  List<Governorate> governorateList = [];
+  List<City> citysList = [];
+  @override
+  void initState() {
+    citysList = getIt<SignupCubit>().citiesList;
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
-    return BlocConsumer<SignupCubit, SignupState>(
-      listener: (context, state) {
-        state.maybeWhen(
-          orElse: () {
-            return Text('wwwwwwwwwwwwwwwwww');
-          },
-          governoratesSuccess: (response) {
-            governorateList = response;
-          },
-          governoratesError: (error) {
-            print(error);
-          },
-        );
-      },
-      builder: (context, state) {
-        return Row(
+    return Padding(
+      padding: const EdgeInsets.all(50),
+      child: Container(
+        height: 350.h,
+        width: 300.w,
+        padding: EdgeInsets.symmetric(horizontal: 5.w, vertical: 5.h),
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(20),
+          color: const Color(0xffF9F9F9),
+        ),
+        child: Column(
           children: [
+            AppTextFormField(
+                controller: getIt<SignupCubit>().cityController,
+                hintText: widget.hintText,
+                inputTextStyle: TextStyles.font16Dark700,
+                prefixIcon: const Icon(Icons.search),
+                onChanged: (p0) async {
+                  citysList = getIt<SignupCubit>().citiesList.where((element) => element.name!.toLowerCase().contains(p0.toLowerCase())).toList();
+                },
+                validator: (value) {
+                  return null;
+                }),
+            citysList.isEmpty ? const Center(child: Text('No cities found')) : const SizedBox(),
             Expanded(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text('The governorate', style: TextStyles.font18Dark600),
-                  verticalSpace(8),
-                  AppTextFormField(
-                    controller: getIt<SignupCubit>().governorateController,
-                    readOnly: true,
-                    prefixIcon: Padding(
-                      padding: const EdgeInsets.all(12),
-                      // ignore: deprecated_member_use
-                      child: SvgPicture.asset(Assets.flag, color: AppColors.main),
+              child: ListView.builder(
+                physics: const BouncingScrollPhysics(),
+                itemCount: citysList.length,
+                shrinkWrap: true,
+                itemBuilder: (context, index) {
+                  return Padding(
+                    padding: const EdgeInsets.all(10),
+                    child: InkWell(
+                      onTap: () {
+                        getIt<SignupCubit>().cityController.text = citysList[index].name ?? '';
+                        getIt<SignupCubit>().cityId = citysList[index].id ?? 0;
+                        context.pop();
+                      },
+                      child: Text(
+                        citysList[index].name ?? '',
+                        style: TextStyles.font16Dark700,
+                      ),
                     ),
-                    suffixIcon: const Icon(Icons.arrow_drop_down, color: AppColors.dark),
-                    onChanged: (p0) {
-                      print(p0);
-                    },
-                    onTap: () {
-                      showModalBottomSheet(
-                        context: context,
-                        useSafeArea: true,
-                        backgroundColor: Colors.transparent,
-                        builder: (context) => SelectGovernrate(
-                          governorateList: governorateList,
-                          hintText: 'The governorate',
-                        ),
-                      );
-                    },
-                    hintText: 'The governorate',
-                    validator: (string) {},
-                  ),
-                ],
-              ),
-            ),
-            horizontalSpace(16),
-            Expanded(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text('The city', style: TextStyles.font18Dark600),
-                  verticalSpace(8),
-                  AppTextFormField(
-                    readOnly: true,
-                    prefixIcon: Padding(
-                      padding: const EdgeInsets.all(12),
-                      // ignore: deprecated_member_use
-                      child: SvgPicture.asset(Assets.tawn, color: AppColors.main),
-                    ),
-                    suffixIcon: const Icon(Icons.arrow_drop_down, color: AppColors.dark),
-                    onTap: () {
-                      showModalBottomSheet(
-                        context: context,
-                        useSafeArea: true,
-                        backgroundColor: Colors.transparent,
-                        builder: (context) => const SelectGovernrate(
-                          governorateList: [],
-                          hintText: 'The city',
-                        ),
-                      );
-                    },
-                    hintText: 'The city',
-                    validator: (string) {},
-                  ),
-                ],
+                  );
+                },
               ),
             ),
           ],
-        );
-      },
+        ),
+      ),
     );
   }
 }
