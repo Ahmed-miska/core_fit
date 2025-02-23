@@ -3,35 +3,34 @@ import 'package:core_fit/core/theming/styles.dart';
 import 'package:flutter/material.dart';
 
 class CustomSearchBar extends StatefulWidget {
-  const CustomSearchBar({
-    super.key,
-  });
+  final TextEditingController controller;
+  final Function()? onClear;
+  final Function()? onSearch;
+  const CustomSearchBar({super.key, required this.controller, this.onClear, this.onSearch});
 
   @override
   State<CustomSearchBar> createState() => _CustomSearchBarState();
 }
 
 class _CustomSearchBarState extends State<CustomSearchBar> {
-  TextEditingController controller = TextEditingController();
   @override
   void initState() {
-    controller = TextEditingController();
-    controller.addListener(() => setState(() {}));
+    widget.controller.addListener(
+      () {
+        setState(() {});
+      },
+    );
     super.initState();
   }
 
   @override
   Widget build(BuildContext context) {
     return SearchBar(
-      controller: controller,
-      leading: controller.text.isEmpty
+      controller: widget.controller,
+      leading: widget.controller.text.isEmpty
           ? null
           : InkWell(
-              onTap: () {
-                setState(() {
-                  controller.clear();
-                });
-              },
+              onTap: widget.onClear,
               child: const Icon(Icons.close, color: AppColors.red, size: 24),
             ),
       padding: WidgetStateProperty.all(const EdgeInsets.only(left: 8)),
@@ -41,14 +40,17 @@ class _CustomSearchBarState extends State<CustomSearchBar> {
       hintStyle: WidgetStateProperty.all(TextStyles.font12Gray400),
       shape: WidgetStateProperty.all(RoundedRectangleBorder(borderRadius: BorderRadius.circular(12))),
       trailing: Iterable.castFrom([
-        Container(
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(8),
-            color: AppColors.main,
-          ),
-          child: const Padding(
-            padding: EdgeInsets.all(12),
-            child: Icon(Icons.search, color: AppColors.white, size: 32),
+        InkWell(
+          onTap: widget.onSearch,
+          child: Container(
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(8),
+              color: AppColors.main,
+            ),
+            child: const Padding(
+              padding: EdgeInsets.all(12),
+              child: Icon(Icons.search, color: AppColors.white, size: 32),
+            ),
           ),
         )
       ]),

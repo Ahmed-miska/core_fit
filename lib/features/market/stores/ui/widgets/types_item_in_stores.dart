@@ -1,12 +1,15 @@
+import 'package:core_fit/core/helpers/assets.dart';
 import 'package:core_fit/core/helpers/spacing.dart';
+import 'package:core_fit/core/networking/api_constants.dart';
 import 'package:core_fit/core/theming/colors.dart';
 import 'package:core_fit/core/theming/styles.dart';
-import 'package:core_fit/features/market/market_home/data/item_types_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
+import '../../../market_store/data/models/categories_response_model.dart';
+
 class TypesItemInStores extends StatelessWidget {
-  final ItemTypesModel model;
+  final Category model;
   final bool isSelected;
   const TypesItemInStores({
     super.key,
@@ -27,9 +30,13 @@ class TypesItemInStores extends StatelessWidget {
       child: Row(
         children: [
           // ignore: deprecated_member_use
-          SvgPicture.asset(model.image, color: isSelected ? AppColors.white : AppColors.main),
+          model.imageUrl == null
+              // ignore: deprecated_member_use
+              ? SizedBox(height: 20, width: 20, child: SvgPicture.asset(Assets.logo, color: isSelected ? AppColors.white : AppColors.main))
+              // ignore: deprecated_member_use
+              : SvgPicture.network(ApiConstants.apiBaseUrl + model.imageUrl!, color: isSelected ? AppColors.white : AppColors.main),
           horizontalSpace(10),
-          Text(model.title, style: isSelected ? TextStyles.font12White400 : TextStyles.font12Dark600),
+          Text(model.name ?? '', style: isSelected ? TextStyles.font12White400 : TextStyles.font12Dark600),
         ],
       ),
     );

@@ -1,4 +1,5 @@
 import 'package:core_fit/core/di/dependency_injection.dart';
+import 'package:core_fit/core/helpers/shared_pref_helper.dart';
 import 'package:core_fit/core/routing/app_router.dart';
 import 'package:core_fit/core/routing/routes.dart';
 import 'package:core_fit/core/theming/colors.dart';
@@ -9,8 +10,10 @@ import 'core/helpers/trigger_cuibts.dart';
 
 void main() async {
   await ScreenUtil.ensureScreenSize();
+  await SharedPrefHelper.init();
   Bloc.observer = SimpleBlocObserver();
   setupGetIt();
+
   runApp(CoreFit(appRouter: AppRouter()));
 }
 
@@ -31,7 +34,7 @@ class CoreFit extends StatelessWidget {
             primaryColor: AppColors.main,
             scaffoldBackgroundColor: Colors.white,
           ),
-          initialRoute: Routes.loginScreen,
+          initialRoute: SharedPrefHelper().isUserLoggedIn() ? Routes.homeScreen : Routes.loginScreen,
           onGenerateRoute: appRouter.generateRoute,
         );
       },

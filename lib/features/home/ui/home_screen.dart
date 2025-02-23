@@ -1,4 +1,5 @@
 import 'package:core_fit/core/helpers/extensions.dart';
+import 'package:core_fit/core/helpers/shared_pref_helper.dart';
 import 'package:core_fit/core/helpers/spacing.dart';
 import 'package:core_fit/core/helpers/test_lists.dart';
 import 'package:core_fit/core/theming/styles.dart';
@@ -29,7 +30,7 @@ class HomeScreen extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text('Welcome Ahmed...!', style: TextStyles.font18Dark700),
+                    Text('Welcome ${SharedPrefHelper().getUserData()?.username}...!', style: TextStyles.font18Dark700),
                     verticalSpace(8),
                     const LocationInHome(),
                     verticalSpace(12),

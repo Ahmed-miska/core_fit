@@ -3,8 +3,7 @@ import 'package:core_fit/core/helpers/spacing.dart';
 import 'package:core_fit/core/theming/colors.dart';
 import 'package:core_fit/core/theming/styles.dart';
 import 'package:core_fit/core/widgets/app_text_form_field.dart';
-import 'package:core_fit/features/auth/sign_up/ui/widgets/select_governrate_and_city.dart';
-import 'package:core_fit/features/auth/sign_up/ui/widgets/select_gender_row.dart';
+import 'package:core_fit/features/profile/ui/widgets/edit_gender_in_edit_profile.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
@@ -27,7 +26,7 @@ class _EditProfileTextFieldState extends State<EditProfileTextField> {
     );
     if (selectedDate != null) {
       setState(() {
-        dateController.text = '${selectedDate.year}/${selectedDate.month}/${selectedDate.day}';
+        dateController.text = '${selectedDate.year}-${selectedDate.month}-${selectedDate.day}';
       });
     }
   }
@@ -91,10 +90,8 @@ class _EditProfileTextFieldState extends State<EditProfileTextField> {
         verticalSpace(24),
         Text('Gender', style: TextStyles.font18Dark600),
         verticalSpace(8),
-        const SelectGenderRow(),
+        const EditGenderInEditProfile(),
         verticalSpace(24),
-        const SelectGovernRateAndCity(),
-        verticalSpace(20),
       ],
     );
   }

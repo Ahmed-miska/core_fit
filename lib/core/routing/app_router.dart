@@ -13,7 +13,10 @@ import 'package:core_fit/features/market/invoice/ui/invoice_screen.dart';
 import 'package:core_fit/features/market/market_home/ui/favorite_screen.dart';
 import 'package:core_fit/features/market/market_home/ui/market_home_screen.dart';
 import 'package:core_fit/features/market/market_orders/ui/order_details_screen.dart';
+import 'package:core_fit/features/market/market_store/logic/cubits/category/category_cubit.dart';
+import 'package:core_fit/features/market/market_store/logic/cubits/market/market_cubit.dart';
 import 'package:core_fit/features/market/product_details/ui/product_details_screen.dart';
+import 'package:core_fit/features/market/products/logic/products/products_cubit.dart';
 import 'package:core_fit/features/market/products/ui/products_screen.dart';
 import 'package:core_fit/features/market/store_details/ui/store_details_screen.dart';
 import 'package:core_fit/features/market/stores/ui/stores_screen.dart';
@@ -59,19 +62,57 @@ class AppRouter {
       case Routes.profileScreen:
         return _slideTransition(const ProfileScreen());
       case Routes.marketHomeScreen:
-        return _fadeTransition(const MarketHomeScreen());
+        return _fadeTransition(MultiBlocProvider(
+          providers: [
+            BlocProvider(create: (context) => MarketCubit(getIt())..getMarkets()),
+            BlocProvider(create: (context) => CategoryCubit(getIt())..getCategories()),
+            BlocProvider(create: (context) => ProductsCubit(getIt())..getProducts()),
+          ],
+          child: const MarketHomeScreen(),
+        ));
       case Routes.storesScreen:
-        return _fadeTransition(const StoresScreen());
+        return _fadeTransition(MultiBlocProvider(
+          providers: [
+            BlocProvider(create: (context) => MarketCubit(getIt())..getMarkets()),
+            BlocProvider(create: (context) => CategoryCubit(getIt())..getCategories()),
+            BlocProvider(create: (context) => ProductsCubit(getIt())..getProducts()),
+          ],
+          child: const StoresScreen(),
+        ));
       case Routes.productsScreen:
-        return _slideTransition(const ProductsScreen());
+        return _slideTransition(
+          MultiBlocProvider(
+            providers: [
+              BlocProvider(create: (context) => ProductsCubit(getIt())..getProducts()),
+              BlocProvider(create: (context) => CategoryCubit(getIt())..getCategories()),
+            ],
+            child: const ProductsScreen(),
+          ),
+        );
       case Routes.invoiceScreen:
         return _slideTransition(const InvoiceScreen());
       case Routes.storeDetailsScreen:
-        return _fadeTransition(const StoreDetailsScreen());
+        return _fadeTransition(
+          MultiBlocProvider(
+            providers: [
+              BlocProvider(create: (context) => MarketCubit(getIt())..getMarketDetails(settings.arguments as int)),
+              BlocProvider(create: (context) => CategoryCubit(getIt())..getSubCategories(settings.arguments as int)),
+              BlocProvider(create: (context) => ProductsCubit(getIt())..getProducts(marketId: settings.arguments as int)),
+            ],
+            child: const StoreDetailsScreen(),
+          ),
+        );
       case Routes.favoriteScreen:
         return _slideTransition(const FavoriteScreen());
       case Routes.productDetailsScreen:
-        return _fadeTransition(const ProductDetails());
+        return _fadeTransition(
+          MultiBlocProvider(
+            providers: [
+              BlocProvider(create: (context) => ProductsCubit(getIt())..getProductById( settings.arguments as int)),
+            ],
+            child: const ProductDetails(),
+          ),
+        );
       case Routes.cartScreen:
         return _fadeTransition(const CartScreen());
       case Routes.orderDetailsScreen:
@@ -92,7 +133,7 @@ class AppRouter {
         return _fadeTransition(const StaduimDetailsScreen());
       case Routes.reservationBookingDetailsScreen:
         return _fadeTransition(const ReservationBookingDetailsScreen());
-       case Routes.forgetPasswordScreen:
+      case Routes.forgetPasswordScreen:
         return _fadeTransition(
           BlocProvider(
             create: (context) => getIt<ForgetPasswordCubit>(), // إنشاء Provider للـ Cubit هنا

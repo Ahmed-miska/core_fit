@@ -7,6 +7,12 @@ import 'package:core_fit/features/auth/login/logic/cubit/login_cubit.dart';
 import 'package:core_fit/features/auth/sign_up/data/apis/sign_up_api_service.dart';
 import 'package:core_fit/features/auth/sign_up/data/repos/signup_repo.dart';
 import 'package:core_fit/features/auth/sign_up/logic/cubit/signup_cubit.dart';
+import 'package:core_fit/features/market/market_store/data/apis/category_api_service.dart';
+import 'package:core_fit/features/market/market_store/data/apis/market_api_service.dart';
+import 'package:core_fit/features/market/market_store/data/repo/category_repo.dart';
+import 'package:core_fit/features/market/market_store/data/repo/market_repo.dart';
+import 'package:core_fit/features/market/products/data/apis/products_api_service.dart';
+import 'package:core_fit/features/market/products/data/repos/products_repo.dart';
 import 'package:dio/dio.dart';
 import 'package:get_it/get_it.dart';
 
@@ -32,4 +38,16 @@ Future<void> setupGetIt() async {
   getIt.registerLazySingleton<ForgetPasswordServices>(() => ForgetPasswordServices(dio));
   getIt.registerLazySingleton<ForgetPasswordRepo>(() => ForgetPasswordRepo(getIt()));
   getIt.registerFactory<ForgetPasswordCubit>(() => ForgetPasswordCubit(getIt()));
+
+  // category
+  getIt.registerLazySingleton<CategoryApiService>(() => CategoryApiService(dio));
+  getIt.registerLazySingleton<CategoryRepo>(() => CategoryRepo(getIt()));
+
+  // market
+  getIt.registerLazySingleton<MarketApiService>(() => MarketApiService(dio));
+  getIt.registerLazySingleton<MarketRepo>(() => MarketRepo(getIt()));
+
+  // products
+  getIt.registerLazySingleton<ProductsApiService>(() => ProductsApiService(dio));
+  getIt.registerLazySingleton<ProductsRepo>(() => ProductsRepo(getIt()));
 }

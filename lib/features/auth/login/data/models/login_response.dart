@@ -9,6 +9,7 @@ class LoginResponse {
   LoginResponse({this.message, this.data});
 
   factory LoginResponse.fromJson(Map<String, dynamic> json) => _$LoginResponseFromJson(json);
+  Map<String, dynamic> toJson() => _$LoginResponseToJson(this);
 }
 
 @JsonSerializable()
@@ -19,6 +20,7 @@ class Data {
   Data({this.token, this.user});
 
   factory Data.fromJson(Map<String, dynamic> json) => _$DataFromJson(json);
+  Map<String, dynamic> toJson() => _$DataToJson(this);
 }
 
 @JsonSerializable()
@@ -31,8 +33,11 @@ class User {
   String? governorate;
   String? city;
   String? gender;
+  String? imageUrl;
 
-  User({this.id, this.username, this.email, this.phone, this.birthDate, this.governorate, this.city, this.gender});
+  User({this.id, this.username, this.email, this.phone, this.birthDate, this.governorate, this.city, this.gender, this.imageUrl});
 
   factory User.fromJson(Map<String, dynamic> json) => _$UserFromJson(json);
+
+  Map<String, dynamic> toJson() => _$UserToJson(this);
 }

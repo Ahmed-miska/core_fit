@@ -1,9 +1,13 @@
 import 'package:core_fit/core/helpers/extensions.dart';
 import 'package:core_fit/core/helpers/test_lists.dart';
 import 'package:core_fit/core/widgets/custom_app_bar.dart';
+import 'package:core_fit/features/market/market_store/data/models/markets_response_model.dart';
 import 'package:core_fit/features/market/market_store/ui/widgets/product_item.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+
+import '../../market_store/data/models/categories_response_model.dart';
+import '../../products/data/models/products_response_model.dart';
 
 class FavoriteScreen extends StatelessWidget {
   const FavoriteScreen({super.key});
@@ -23,7 +27,16 @@ class FavoriteScreen extends StatelessWidget {
           ),
           itemCount: testProducts.length,
           itemBuilder: (context, index) => ProductItem(
-            productModel: testProducts[index],
+            productModel: Product(
+              id: index,
+              name: 'Product $index',
+              description: 'Description $index',
+              price: 100,
+              images: ['uploads/ea93cb40-7286-4b1e-9129-2af05e68820d_1.jpg'],
+              offer: 10,
+              market: Market(),
+              subCategory: Category(),
+            ),
           ),
         ),
       ),

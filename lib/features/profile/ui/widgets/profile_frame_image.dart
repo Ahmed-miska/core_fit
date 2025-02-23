@@ -1,4 +1,4 @@
-import 'package:core_fit/core/helpers/assets.dart';
+import 'package:core_fit/core/helpers/shared_pref_helper.dart';
 import 'package:core_fit/core/widgets/custom_cached_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -17,7 +17,7 @@ class ProfileFrameImage extends StatelessWidget {
         SizedBox(
           height: 150.h,
           width: 130.h,
-          child: const CustomCachedImage(imageUrl: Assets.cachImage5),
+          child: CustomCachedImage(imageUrl: SharedPrefHelper().getUserData()!.imageUrl ?? ''),
         ),
         SvgPicture.asset(
           'assets/icons/user_frame.svg',

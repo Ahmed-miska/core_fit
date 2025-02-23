@@ -1,4 +1,5 @@
 import 'package:core_fit/core/helpers/extensions.dart';
+import 'package:core_fit/core/helpers/shared_pref_helper.dart';
 import 'package:core_fit/core/helpers/spacing.dart';
 import 'package:core_fit/core/routing/routes.dart';
 import 'package:core_fit/core/theming/colors.dart';
@@ -22,9 +23,9 @@ class ProfileScreen extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             const ProfileFrameImage(),
-            Text('Ahmed Miska', style: TextStyles.font18Dark700),
+            Text(SharedPrefHelper().getUserData()?.username ?? '', style: TextStyles.font18Dark700),
             verticalSpace(8),
-            Text('Joining date: 20/10/2022', style: TextStyles.font14Gray400),
+            Text('Birthday date: ${SharedPrefHelper().getUserData()?.birthDate}', style: TextStyles.font14Gray400),
             verticalSpace(16),
             Row(
               children: [
