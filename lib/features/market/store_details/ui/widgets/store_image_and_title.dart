@@ -1,9 +1,11 @@
-import 'package:core_fit/core/helpers/assets.dart';
 import 'package:core_fit/core/helpers/spacing.dart';
 import 'package:core_fit/core/theming/colors.dart';
 import 'package:core_fit/core/theming/styles.dart';
 import 'package:core_fit/core/widgets/custom_cached_image.dart';
+import 'package:core_fit/core/widgets/custom_shimmer.dart';
+import 'package:core_fit/features/market/market_store/logic/cubits/market/market_cubit.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class StoreImageAndTitle extends StatelessWidget {
@@ -27,28 +29,63 @@ class StoreImageAndTitle extends StatelessWidget {
           ),
         ],
       ),
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          SizedBox(
-            height: 84.h,
-            width: 84.w,
-            child: ClipRRect(
-              borderRadius: BorderRadius.circular(12),
-              child: const CustomCachedImage(imageUrl: Assets.cachImage),
-            ),
-          ),
-          verticalSpace(16),
-          Text(
-            'Store Name',
-            style: TextStyles.font16Dark700,
-          ),
-          verticalSpace(8),
-          Text(
-            'Store Type',
-            style: TextStyles.font12Main600,
-          ),
-        ],
+      child: BlocBuilder<MarketCubit, MarketState>(
+        builder: (context, state) {
+          return state.maybeWhen(
+              loadingMarketDetails: () {
+                return CustomShimmer(
+                    child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    SizedBox(
+                      height: 120.h,
+                      width: 200.w,
+                      child: ClipRRect(
+                        borderRadius: BorderRadius.circular(12),
+                        child: CustomCachedImage(imageUrl: ''),
+                      ),
+                    ),
+                    verticalSpace(16),
+                    Text(
+                      '',
+                      style: TextStyles.font16Dark700,
+                    ),
+                    verticalSpace(8),
+                    Text(
+                      '',
+                      style: TextStyles.font12Main600,
+                    )
+                  ],
+                ));
+              },
+              successMarketDetails: (marketDetails) {
+                return Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    SizedBox(
+                      height: 120.h,
+                      width: 200.w,
+                      child: ClipRRect(
+                        borderRadius: BorderRadius.circular(12),
+                        child: CustomCachedImage(imageUrl: marketDetails.marketData!.market?.imageUrl ?? ''),
+                      ),
+                    ),
+                    verticalSpace(16),
+                    Text(
+                      marketDetails.marketData!.market!.name ?? '',
+                      style: TextStyles.font16Dark700,
+                    ),
+                    verticalSpace(8),
+                    Text(
+                      marketDetails.marketData!.market?.category?.name ?? '',
+                      style: TextStyles.font12Main600,
+                    ),
+                  ],
+                );
+              },
+              errorMarketDetails: (error) => Center(child: Text(error)),
+              orElse: () => SizedBox.shrink());
+        },
       ),
     );
   }

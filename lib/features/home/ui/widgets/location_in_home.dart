@@ -1,4 +1,5 @@
 import 'package:core_fit/core/helpers/assets.dart';
+import 'package:core_fit/core/helpers/shared_pref_helper.dart';
 import 'package:core_fit/core/helpers/spacing.dart';
 import 'package:core_fit/core/theming/colors.dart';
 import 'package:core_fit/core/theming/styles.dart';
@@ -17,11 +18,11 @@ class LocationInHome extends StatelessWidget {
         // ignore: deprecated_member_use
         SvgPicture.asset(Assets.location, color: AppColors.main),
         horizontalSpace(8),
-        Text('Cairo', style: TextStyles.font12Dark400),
+        Text(SharedPrefHelper().getUserData()?.governorate ?? '', style: TextStyles.font12Dark400),
         horizontalSpace(8),
         Text('-', style: TextStyles.font12Dark400),
         horizontalSpace(8),
-        Text('Egypt', style: TextStyles.font12Dark400),
+        Text(SharedPrefHelper().getUserData()?.city ?? '', style: TextStyles.font12Dark400),
         const Spacer(),
         Text('change', style: TextStyles.font12Dark400.copyWith(color: AppColors.main)),
       ],

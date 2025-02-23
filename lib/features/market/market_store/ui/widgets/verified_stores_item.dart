@@ -4,12 +4,12 @@ import 'package:core_fit/core/routing/routes.dart';
 import 'package:core_fit/core/theming/colors.dart';
 import 'package:core_fit/core/theming/styles.dart';
 import 'package:core_fit/core/widgets/custom_cached_image.dart';
-import 'package:core_fit/features/market/market_home/data/market_model.dart';
+import 'package:core_fit/features/market/market_store/data/models/markets_response_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class VerfiedStoresItem extends StatelessWidget {
-  final MarketModel model;
+  final Market model;
   const VerfiedStoresItem({
     super.key,
     required this.model,
@@ -19,13 +19,14 @@ class VerfiedStoresItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return InkWell(
       onTap: () async {
-        await context.pushNamed(Routes.storeDetailsScreen);
+        await context.pushNamed(Routes.storeDetailsScreen, arguments: model.id);
       },
       child: Container(
         width: 100.w,
         decoration: BoxDecoration(
           color: AppColors.white,
           borderRadius: BorderRadius.circular(8),
+          // ignore: deprecated_member_use
           border: Border.all(color: AppColors.text.withOpacity(0.2)),
         ),
         child: Column(
@@ -50,17 +51,18 @@ class VerfiedStoresItem extends StatelessWidget {
                     child: Stack(
                       fit: StackFit.expand,
                       children: [
-                        CustomCachedImage(imageUrl: model.image),
-                        if (model.isClosed) Container(color: AppColors.dark.withOpacity(0.7)),
-                        if (model.isClosed) Align(alignment: Alignment.center, child: Text('Closed', style: TextStyles.font16White700)),
+                        CustomCachedImage(imageUrl: model.imageUrl ?? ''),
+                        // ignore: deprecated_member_use
+                        if (!model.opened!) Container(color: AppColors.dark.withOpacity(0.7)),
+                        if (!model.opened!) Align(alignment: Alignment.center, child: Text('Closed', style: TextStyles.font16White700)),
                       ],
                     ),
                   ),
                 ),
               ),
             ),
-            Text(model.title, style: TextStyles.font14Dark400, maxLines: 1, overflow: TextOverflow.ellipsis, textAlign: TextAlign.center),
-            Text(model.subtitle, style: TextStyles.font12Main600, maxLines: 1, overflow: TextOverflow.ellipsis, textAlign: TextAlign.center),
+            Text(model.name ?? '', style: TextStyles.font14Dark400, maxLines: 1, overflow: TextOverflow.ellipsis, textAlign: TextAlign.center),
+            Text(model.description ?? '', style: TextStyles.font12Main600, maxLines: 1, overflow: TextOverflow.ellipsis, textAlign: TextAlign.center),
             verticalSpace(4),
           ],
         ),

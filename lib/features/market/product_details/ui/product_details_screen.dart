@@ -1,8 +1,7 @@
 import 'package:core_fit/core/helpers/extensions.dart';
 import 'package:core_fit/core/helpers/spacing.dart';
-import 'package:core_fit/core/helpers/test_lists.dart';
-import 'package:core_fit/core/theming/styles.dart';
 import 'package:core_fit/core/widgets/custom_app_bar.dart';
+import 'package:core_fit/features/market/product_details/ui/widgets/description_and_sub_cat.dart';
 import 'package:core_fit/features/market/product_details/ui/widgets/image_and_rating_container.dart';
 import 'package:core_fit/features/market/product_details/ui/widgets/name_and_favorite.dart';
 import 'package:core_fit/features/market/product_details/ui/widgets/price_and_amount_container.dart';
@@ -31,10 +30,8 @@ class ProductDetails extends StatelessWidget {
                     const ImageAndRatingContainer(),
                     verticalSpace(20),
                     const NameAndFavorite(),
-                    verticalSpace(10),
-                    Text('Shose', style: TextStyles.font12Main600),
-                    verticalSpace(10),
-                    Text(productDec + productDec, style: TextStyles.font12Gray400),
+                     verticalSpace(10),
+                    DescriptionAndSubCat(),
                     verticalSpace(10),
                     const PriceAndAmountContainer(),
                     verticalSpace(20),
@@ -49,3 +46,4 @@ class ProductDetails extends StatelessWidget {
     );
   }
 }
+

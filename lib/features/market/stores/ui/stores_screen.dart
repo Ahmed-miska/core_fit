@@ -3,9 +3,11 @@ import 'package:core_fit/core/helpers/extensions.dart';
 import 'package:core_fit/core/helpers/spacing.dart';
 import 'package:core_fit/core/theming/styles.dart';
 import 'package:core_fit/core/widgets/custom_search_bar.dart';
+import 'package:core_fit/features/market/market_store/logic/cubits/market/market_cubit.dart';
 import 'package:core_fit/features/market/stores/ui/widgets/stores_list_view.dart';
 import 'package:core_fit/features/market/stores/ui/widgets/types_item_list_view.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 
@@ -28,13 +30,30 @@ class StoresScreen extends StatelessWidget {
       ),
       body: Column(
         children: [
-          SizedBox(height: 35.h, child: const TypesItemsListView()),
-          verticalSpace(16),
-          const Padding(padding: EdgeInsets.all(8.0), child: CustomSearchBar()),
-          const Expanded(
-            child: SingleChildScrollView(
-              child: StoresListView(),
+          SizedBox(
+            height: 35.h,
+            child: TypesItemsListView(
+              onCategorySelected: (id) {
+                context.read<MarketCubit>().categoryId = id.toString();
+                context.read<MarketCubit>().reset();
+              },
             ),
+          ),
+          verticalSpace(16),
+          Padding(
+              padding: EdgeInsets.all(8.0),
+              child: CustomSearchBar(
+                controller: context.read<MarketCubit>().marketSearchController,
+                onSearch: () {
+                  context.read<MarketCubit>().reset();
+                },
+                onClear: () {
+                  context.read<MarketCubit>().marketSearchController.clear();
+                  context.read<MarketCubit>().reset();
+                },
+              )),
+          const Expanded(
+            child: StoresListView(),
           ),
         ],
       ),

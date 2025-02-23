@@ -1,4 +1,5 @@
 import 'package:cached_network_image/cached_network_image.dart';
+import 'package:core_fit/core/networking/api_constants.dart';
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
 
@@ -9,7 +10,7 @@ class CustomCachedImage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return CachedNetworkImage(
-      imageUrl: imageUrl,
+      imageUrl: ApiConstants.apiBaseUrl + imageUrl,
       errorWidget: (context, url, error) => const Icon(Icons.error),
       placeholder: (context, url) => Center(child: Lottie.asset('assets/animation/loading_image2.json', height: 50)),
       fit: BoxFit.fill,

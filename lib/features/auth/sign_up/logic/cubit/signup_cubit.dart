@@ -81,7 +81,7 @@ class SignupCubit extends Cubit<SignupState> {
       password: passwordController.text,
       birthDate: birthDateController.text,
       gender: genderController.text,
-      cityId: '5',
+      cityId: cityId.toString(),
       otp: otpController.text,
       type: 'GENERAL',
       image: image,
