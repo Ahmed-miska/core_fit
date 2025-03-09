@@ -14,7 +14,8 @@ class ProductsCubit extends Cubit<ProductsState> {
   List<Product> products = [];
   TextEditingController searchController = TextEditingController();
 
-  int categoryId = 1;
+  int? categoryId;
+  int? marketId;
   int page = 1;
   bool hasReachedMax = false;
   void reset() {
@@ -24,17 +25,17 @@ class ProductsCubit extends Cubit<ProductsState> {
     getProducts();
   }
 
-  Future<void> getProducts({int? marketId, String? name}) async {
+  Future<void> getProducts({int? marketIdd, String? name, int? categoryIdd}) async {
     if (page == 1) {
       emit(ProductsState.productsLoading());
     }
-    final result = await _productsRepo.getProducts(page: page, subCategoryId: categoryId, marketId: marketId, name: searchController.text);
+    final result = await _productsRepo.getProducts(page: page, subCategoryId: categoryIdd ?? categoryId, marketId: marketIdd ?? marketId, name: searchController.text);
     result.when(
       success: (response) {
-        if (response.products!.isNotEmpty) {
-          products = products + response.products!;
+        if (response.data!.products!.isNotEmpty) {
+          products = products + response.data!.products!;
         }
-        hasReachedMax = response.totalPages == page;
+        hasReachedMax = response.data!.totalPages == page;
         page++;
         emit(ProductsState.productsSuccess(products));
       },
@@ -44,8 +45,9 @@ class ProductsCubit extends Cubit<ProductsState> {
     );
   }
 
-  Product? product;
+  ProductDetails? product;
   Future<void> getProductById(int id) async {
+    emit(ProductsState.productByIdLoading());
     final result = await _productsRepo.findProductById(id);
     result.when(
       success: (response) async {
@@ -62,5 +64,13 @@ class ProductsCubit extends Cubit<ProductsState> {
   Future<void> close() {
     searchController.dispose();
     return super.close();
+  }
+
+  void toggleFavorite(int productId, bool isAdding) {
+    int index = products.indexWhere((p) => p.id == productId);
+    if (index != -1) {
+      products[index].favourite = !isAdding;
+      emit(ProductsState.productsSuccess(List.from(products)));
+    }
   }
 }

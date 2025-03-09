@@ -13,7 +13,6 @@ void main() async {
   await SharedPrefHelper.init();
   Bloc.observer = SimpleBlocObserver();
   setupGetIt();
-
   runApp(CoreFit(appRouter: AppRouter()));
 }
 

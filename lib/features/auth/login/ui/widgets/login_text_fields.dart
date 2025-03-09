@@ -5,6 +5,7 @@ import 'package:core_fit/core/helpers/spacing.dart';
 import 'package:core_fit/core/routing/routes.dart';
 import 'package:core_fit/core/theming/colors.dart';
 import 'package:core_fit/core/theming/styles.dart';
+import 'package:core_fit/core/widgets/animated_widget.dart';
 import 'package:core_fit/core/widgets/app_text_button.dart';
 import 'package:core_fit/core/widgets/app_text_form_field.dart';
 import 'package:core_fit/features/auth/login/data/models/login_request_body.dart';
@@ -84,11 +85,14 @@ class _LoginTextFieldsState extends State<LoginTextFields> {
             ),
           ),
           verticalSpace(32),
-          AppTextButton(
-            text: 'Login',
-            onTap: () {
-              validateThenDoLogin(context);
-            },
+          animatedWidget(
+            begin: const Offset(0, 5),
+            child: AppTextButton(
+              text: 'Login',
+              onTap: () {
+                validateThenDoLogin(context);
+              },
+            ),
           ),
         ],
       ),

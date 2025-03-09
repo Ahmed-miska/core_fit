@@ -38,8 +38,7 @@ class ProductsOfStoreListView extends StatelessWidget {
                       price: 0,
                       images: [],
                       offer: 10,
-                      market: Market(),
-                      subCategory: Category(),
+                     
                     ),
                   );
                 },
@@ -54,7 +53,7 @@ class ProductsOfStoreListView extends StatelessWidget {
                     physics: const NeverScrollableScrollPhysics(),
                     gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                       crossAxisCount: 2,
-                      childAspectRatio: 0.6,
+                      childAspectRatio: 0.45.sp,
                       crossAxisSpacing: 10.w,
                       mainAxisSpacing: 10.h,
                     ),

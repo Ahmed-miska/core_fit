@@ -41,7 +41,7 @@ class StaduimItemInStaduimsScreen extends StatelessWidget {
                   child: const CustomCachedImage(imageUrl: Assets.cachImage5),
                 ),
               ),
-              const AddFavoriteIcon(isFavorite: false),
+              const AddFavoriteIcon( isFavorite: false),
             ],
           ),
           horizontalSpace(12),

@@ -1,13 +1,19 @@
+import 'package:core_fit/core/di/dependency_injection.dart';
 import 'package:core_fit/core/theming/colors.dart';
+import 'package:core_fit/features/market/market_home/logic/favorite/favorite_cubit.dart';
+import 'package:core_fit/features/market/market_store/logic/cubits/market/market_cubit.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 class AddFavoriteIcon extends StatefulWidget {
   final bool isFavorite;
   final bool? isBorder;
+  final Function()? onTap;
+
   const AddFavoriteIcon({
     super.key,
     required this.isFavorite,
-    this.isBorder,
+    this.isBorder, this.onTap, 
   });
 
   @override
@@ -25,7 +31,10 @@ class _AddFavoriteIconState extends State<AddFavoriteIcon> {
   @override
   Widget build(BuildContext context) {
     return IconButton(
-      onPressed: () {
+      onPressed: () async {
+        if (widget.onTap != null) {
+          widget.onTap!();
+        }
         setState(() {
           isFavorite = !isFavorite;
         });

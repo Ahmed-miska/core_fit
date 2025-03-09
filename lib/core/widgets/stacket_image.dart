@@ -1,5 +1,5 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:core_fit/core/theming/styles.dart';
-import 'package:core_fit/core/widgets/custom_cached_image.dart';
 import 'package:flutter/material.dart';
 
 class StacketImage extends StatelessWidget {
@@ -22,7 +22,10 @@ class StacketImage extends StatelessWidget {
         children: [
           ClipRRect(
             borderRadius: BorderRadius.circular(8),
-            child: CustomCachedImage(imageUrl: imageUrl),
+            child: CachedNetworkImage(
+              imageUrl: imageUrl,
+              fit: BoxFit.fill,
+            ),
           ),
           Align(
             alignment: Alignment.bottomRight,

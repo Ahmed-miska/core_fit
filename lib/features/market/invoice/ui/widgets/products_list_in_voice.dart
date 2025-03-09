@@ -28,8 +28,7 @@ class ProductsListInInvoice extends StatelessWidget {
               price: 100,
               images: ['uploads/ea93cb40-7286-4b1e-9129-2af05e68820d_1.jpg'],
               offer: 10,
-              market: Market(),
-              subCategory: Category(),
+             
             )),
           );
         },

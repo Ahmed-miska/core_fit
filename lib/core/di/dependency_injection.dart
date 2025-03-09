@@ -7,6 +7,9 @@ import 'package:core_fit/features/auth/login/logic/cubit/login_cubit.dart';
 import 'package:core_fit/features/auth/sign_up/data/apis/sign_up_api_service.dart';
 import 'package:core_fit/features/auth/sign_up/data/repos/signup_repo.dart';
 import 'package:core_fit/features/auth/sign_up/logic/cubit/signup_cubit.dart';
+import 'package:core_fit/features/market/market_home/data/apis/favorite_api_service.dart';
+import 'package:core_fit/features/market/market_home/data/repos/favorite_repo.dart';
+import 'package:core_fit/features/market/market_home/logic/favorite/favorite_cubit.dart';
 import 'package:core_fit/features/market/market_store/data/apis/category_api_service.dart';
 import 'package:core_fit/features/market/market_store/data/apis/market_api_service.dart';
 import 'package:core_fit/features/market/market_store/data/repo/category_repo.dart';
@@ -15,7 +18,6 @@ import 'package:core_fit/features/market/products/data/apis/products_api_service
 import 'package:core_fit/features/market/products/data/repos/products_repo.dart';
 import 'package:dio/dio.dart';
 import 'package:get_it/get_it.dart';
-
 import '../networking/dio_factory.dart';
 
 final getIt = GetIt.instance;
@@ -50,4 +52,9 @@ Future<void> setupGetIt() async {
   // products
   getIt.registerLazySingleton<ProductsApiService>(() => ProductsApiService(dio));
   getIt.registerLazySingleton<ProductsRepo>(() => ProductsRepo(getIt()));
+
+  // favorites
+  getIt.registerLazySingleton<FavoriteApiService>(() => FavoriteApiService(dio));
+  getIt.registerLazySingleton<FavoriteRepo>(() => FavoriteRepo(getIt()));
+  getIt.registerLazySingleton<FavoriteCubit>(() => FavoriteCubit(getIt()));
 }

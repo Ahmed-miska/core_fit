@@ -73,6 +73,7 @@ class AppRouter {
       case Routes.storesScreen:
         return _fadeTransition(MultiBlocProvider(
           providers: [
+            // BlocProvider(create: (context) =>FavoriteCubit(getIt())),
             BlocProvider(create: (context) => MarketCubit(getIt())..getMarkets()),
             BlocProvider(create: (context) => CategoryCubit(getIt())..getCategories()),
             BlocProvider(create: (context) => ProductsCubit(getIt())..getProducts()),
@@ -83,7 +84,7 @@ class AppRouter {
         return _slideTransition(
           MultiBlocProvider(
             providers: [
-              BlocProvider(create: (context) => ProductsCubit(getIt())..getProducts()),
+              BlocProvider(create: (context) => ProductsCubit(getIt())..getProducts(categoryIdd: 1)),
               BlocProvider(create: (context) => CategoryCubit(getIt())..getCategories()),
             ],
             child: const ProductsScreen(),
@@ -97,18 +98,23 @@ class AppRouter {
             providers: [
               BlocProvider(create: (context) => MarketCubit(getIt())..getMarketDetails(settings.arguments as int)),
               BlocProvider(create: (context) => CategoryCubit(getIt())..getSubCategories(settings.arguments as int)),
-              BlocProvider(create: (context) => ProductsCubit(getIt())..getProducts(marketId: settings.arguments as int)),
+              BlocProvider(
+                create: (context) => ProductsCubit(getIt())
+                  ..getProducts(marketIdd: settings.arguments as int, categoryIdd: 1)
+                  ..marketId = settings.arguments as int
+                  ..categoryId = 1,
+              ),
             ],
             child: const StoreDetailsScreen(),
           ),
         );
       case Routes.favoriteScreen:
-        return _slideTransition(const FavoriteScreen());
+        return _slideTransition(FavoriteScreen());
       case Routes.productDetailsScreen:
         return _fadeTransition(
           MultiBlocProvider(
             providers: [
-              BlocProvider(create: (context) => ProductsCubit(getIt())..getProductById( settings.arguments as int)),
+              BlocProvider(create: (context) => ProductsCubit(getIt())..getProductById(settings.arguments as int)),
             ],
             child: const ProductDetails(),
           ),

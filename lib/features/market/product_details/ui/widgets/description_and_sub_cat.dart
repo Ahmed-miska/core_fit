@@ -4,6 +4,7 @@ import 'package:core_fit/core/widgets/custom_shimmer.dart';
 import 'package:core_fit/features/market/products/logic/products/products_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class DescriptionAndSubCat extends StatelessWidget {
   const DescriptionAndSubCat({
@@ -15,8 +16,11 @@ class DescriptionAndSubCat extends StatelessWidget {
     return BlocBuilder<ProductsCubit, ProductsState>(
       builder: (context, state) {
         return state.maybeWhen(
-          productByIdLoading: () => CustomShimmer(
-            child: Column(children: [Text(''), Spacer(), Text('')]),
+          productByIdLoading: () => SizedBox(
+            height: 100.h,
+            child: CustomShimmer(
+              child: Column(children: [Text(''), Spacer(), Text('')]),
+            ),
           ),
           productByIdSuccess: (product) {
             return Column(

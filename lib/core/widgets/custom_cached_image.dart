@@ -10,9 +10,10 @@ class CustomCachedImage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return CachedNetworkImage(
-      imageUrl: ApiConstants.apiBaseUrl + imageUrl,
+      imageUrl: 'https://picsum.photos/id/71/200/300',
+      // imageUrl: ApiConstants.apiBaseUrl + imageUrl,
       errorWidget: (context, url, error) => const Icon(Icons.error),
-      placeholder: (context, url) => Center(child: Lottie.asset('assets/animation/loading_image2.json', height: 50)),
+      placeholder: (context, url) => Center(child: Lottie.asset('assets/animation/loading_image.json', height: 50)),
       fit: BoxFit.fill,
     );
   }

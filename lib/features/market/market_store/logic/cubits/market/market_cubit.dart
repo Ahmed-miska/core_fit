@@ -31,10 +31,10 @@ class MarketCubit extends Cubit<MarketState> {
     final result = await _marketRepo.getMarkets(page: page, name: marketSearchController.text, categoryId: categoryId);
     result.when(
       success: (response) {
-        if (response.markets!.isNotEmpty) {
-          markets = markets + response.markets!;
+        if (response.data!.markets!.isNotEmpty) {
+          markets = markets + response.data!.markets!;
         }
-        hasReachMax = response.totalPages == page;
+        hasReachMax = response.data!.totalPages == page;
         page++;
         emit(MarketState.success(markets));
       },

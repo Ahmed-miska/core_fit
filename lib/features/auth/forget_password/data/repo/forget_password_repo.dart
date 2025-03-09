@@ -10,7 +10,10 @@ class ForgetPasswordRepo {
 
   Future<ApiResult<MessageResponseModel>> forgetPassword(String email) async {
     try {
-      final response = await _forgetPasswordServices.forgetPassword({'email': email});
+      final response = await _forgetPasswordServices.forgetPassword({
+        'email': email,
+        "type": "GENERAL",
+      });
       return ApiResult.success(response);
     } catch (error) {
       return ApiResult.failure(ErrorHandler.handle(error));

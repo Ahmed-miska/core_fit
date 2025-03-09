@@ -3,6 +3,7 @@ import 'package:core_fit/core/helpers/shared_pref_helper.dart';
 import 'package:core_fit/core/helpers/spacing.dart';
 import 'package:core_fit/core/helpers/test_lists.dart';
 import 'package:core_fit/core/theming/styles.dart';
+import 'package:core_fit/core/widgets/animated_widget.dart';
 import 'package:core_fit/features/home/ui/widgets/home_activityes.dart';
 import 'package:core_fit/features/home/ui/widgets/home_app_bar.dart';
 import 'package:core_fit/features/home/ui/widgets/home_swiper.dart';
@@ -30,9 +31,12 @@ class HomeScreen extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text('Welcome ${SharedPrefHelper().getUserData()?.username}...!', style: TextStyles.font18Dark700),
+                    animatedWidget(
+                        delay: Duration(milliseconds: 500),
+                        begin: const Offset(-10, 0),
+                        child: Text('Welcome ${SharedPrefHelper().getUserData()?.username}...!', style: TextStyles.font18Dark700)),
                     verticalSpace(8),
-                    const LocationInHome(),
+                    animatedWidget(delay: Duration(milliseconds: 600), begin: const Offset(10, 0), child: const LocationInHome()),
                     verticalSpace(12),
                     const Expanded(child: HomeAvtivityes()),
                     verticalSpace(12),

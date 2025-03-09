@@ -5,8 +5,9 @@ part 'login_request_body.g.dart';
 class LoginRequestBody {
   final String email;
   final String password;
+  final String type = 'GENERAL';
 
-  LoginRequestBody({required this.email, required this.password});
+  LoginRequestBody({required this.email, required this.password, type = 'GENERAL'});
 
   Map<String, dynamic> toJson() => _$LoginRequestBodyToJson(this);
 }

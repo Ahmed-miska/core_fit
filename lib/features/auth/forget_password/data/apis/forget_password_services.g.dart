@@ -10,7 +10,7 @@ part of 'forget_password_services.dart';
 
 class _ForgetPasswordServices implements ForgetPasswordServices {
   _ForgetPasswordServices(this._dio, {this.baseUrl, this.errorLogger}) {
-    baseUrl ??= 'http://10.0.2.2:8000/';
+    baseUrl ??= 'https://core-fit-production.up.railway.app/';
   }
 
   final Dio _dio;

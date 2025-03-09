@@ -9,16 +9,28 @@ part of 'markets_response_model.dart';
 MarketsResponseModel _$MarketsResponseModelFromJson(
         Map<String, dynamic> json) =>
     MarketsResponseModel(
-      markets: (json['content'] as List<dynamic>?)
-          ?.map((e) => Market.fromJson(e as Map<String, dynamic>))
-          .toList(),
-      totalPages: (json['totalPages'] as num?)?.toInt(),
+      message: json['message'] as String?,
+      data: json['data'] == null
+          ? null
+          : Data.fromJson(json['data'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$MarketsResponseModelToJson(
         MarketsResponseModel instance) =>
     <String, dynamic>{
-      'content': instance.markets,
+      'message': instance.message,
+      'data': instance.data,
+    };
+
+Data _$DataFromJson(Map<String, dynamic> json) => Data(
+      markets: (json['markets'] as List<dynamic>?)
+          ?.map((e) => Market.fromJson(e as Map<String, dynamic>))
+          .toList(),
+      totalPages: (json['totalPages'] as num?)?.toInt(),
+    );
+
+Map<String, dynamic> _$DataToJson(Data instance) => <String, dynamic>{
+      'markets': instance.markets,
       'totalPages': instance.totalPages,
     };
 

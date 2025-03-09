@@ -1,8 +1,10 @@
 import 'package:animated_text_kit/animated_text_kit.dart';
+import 'package:core_fit/core/di/dependency_injection.dart';
 import 'package:core_fit/core/helpers/spacing.dart';
 import 'package:core_fit/core/theming/styles.dart';
 import 'package:core_fit/core/widgets/add_favorite_icon.dart';
 import 'package:core_fit/core/widgets/custom_shimmer.dart';
+import 'package:core_fit/features/market/market_home/logic/favorite/favorite_cubit.dart';
 import 'package:core_fit/features/market/products/logic/products/products_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -18,7 +20,7 @@ class NameAndFavorite extends StatelessWidget {
       builder: (context, state) {
         return state.maybeWhen(
           productByIdLoading: () => CustomShimmer(
-            child: Row(children: [Text('ddddddddddddd'), Spacer(), AddFavoriteIcon(isFavorite: false)]),
+            child: Row(children: [Text(''), Spacer(), AddFavoriteIcon(isFavorite: true)]),
           ),
           productByIdSuccess: (product) {
             return Row(
@@ -35,7 +37,8 @@ class NameAndFavorite extends StatelessWidget {
                   ),
                 ),
                 verticalSpace(10),
-                const AddFavoriteIcon(isFavorite: false, isBorder: true),
+                AddFavoriteIcon(
+                    onTap: () => getIt<FavoriteCubit>().toggleFavorite(product.product!.id!, product.product!.favourite!), isFavorite: product.product!.favourite!, isBorder: true),
               ],
             );
           },
