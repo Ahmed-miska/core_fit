@@ -1,5 +1,6 @@
 import 'dart:convert';
 import 'package:core_fit/core/helpers/constants.dart';
+import 'package:core_fit/core/networking/dio_factory.dart';
 import 'package:core_fit/features/auth/login/data/models/login_response.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -17,7 +18,6 @@ class SharedPrefHelper {
       await _prefs.setString(SharedPrefKeys.user, userSavedData);
       await saveUserId(user.data!.user!.id.toString());
       await saveUserToken(user.data!.token ?? "");
-      
     } catch (e) {
       rethrow;
     }
@@ -61,10 +61,14 @@ class SharedPrefHelper {
   Future<bool> clearSharedData() async {
     return await _prefs.clear();
   }
+
+  Future<void> logout() async {
+    await clearSharedData();
+    DioFactory.removeTokenAfterLogout();
+  }
+
   bool isUserLoggedIn() {
     String? token = _prefs.getString(SharedPrefKeys.userToken);
     return token != null && token.isNotEmpty;
   }
-
-  
 }

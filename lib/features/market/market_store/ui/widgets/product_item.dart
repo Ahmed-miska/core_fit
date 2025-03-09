@@ -1,3 +1,4 @@
+import 'package:core_fit/core/di/dependency_injection.dart';
 import 'package:core_fit/core/helpers/extensions.dart';
 import 'package:core_fit/core/helpers/function.dart';
 import 'package:core_fit/core/helpers/spacing.dart';
@@ -6,6 +7,7 @@ import 'package:core_fit/core/theming/colors.dart';
 import 'package:core_fit/core/theming/styles.dart';
 import 'package:core_fit/core/widgets/add_favorite_icon.dart';
 import 'package:core_fit/core/widgets/custom_cached_image.dart';
+import 'package:core_fit/features/market/market_home/logic/favorite/favorite_cubit.dart';
 import 'package:core_fit/features/market/market_store/ui/widgets/offer_padge.dart';
 import 'package:core_fit/features/market/products/data/models/products_response_model.dart';
 import 'package:flutter/material.dart';
@@ -45,7 +47,15 @@ class ProductItem extends StatelessWidget {
                     borderRadius: BorderRadius.circular(8),
                     child: CustomCachedImage(imageUrl: productModel.images!.isEmpty ? '' : productModel.images!.first),
                   ),
-                  Align(alignment: Alignment.topRight, child: AddFavoriteIcon(isFavorite: true)),
+                  Align(
+                    alignment: Alignment.topRight,
+                    child: AddFavoriteIcon(
+                      onTap: () async {
+                        await getIt<FavoriteCubit>().toggleFavorite(productModel.id!, productModel.favourite!);
+                      },
+                      isFavorite: productModel.favourite ?? false,
+                    ),
+                  ),
                   productModel.offer != 0 ? Align(alignment: Alignment.topLeft, child: OfferPadge(title: productModel.offer.toString())) : const SizedBox(),
                 ],
               ),

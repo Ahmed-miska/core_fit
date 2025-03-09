@@ -4,7 +4,6 @@ import 'package:core_fit/features/market/market_store/logic/cubits/category/cate
 import 'package:core_fit/features/market/market_store/ui/widgets/items_types.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:skeletonizer/skeletonizer.dart';
 
 class ItemsTypesListView extends StatelessWidget {
   const ItemsTypesListView({

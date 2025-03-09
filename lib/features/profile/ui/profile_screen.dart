@@ -19,13 +19,13 @@ class ProfileScreen extends StatelessWidget {
       appBar: const CustomAppBar(title: 'Profile'),
       body: Padding(
         padding: mainPadding(),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
+        child: ListView(
+          //   crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             const ProfileFrameImage(),
-            Text(SharedPrefHelper().getUserData()?.username ?? '', style: TextStyles.font18Dark700),
+            Center(child: Text(SharedPrefHelper().getUserData()?.username ?? '', style: TextStyles.font18Dark700)),
             verticalSpace(8),
-            Text('Birthday date: ${SharedPrefHelper().getUserData()?.birthDate}', style: TextStyles.font14Gray400),
+            Center(child: Text('Birthday date: ${SharedPrefHelper().getUserData()?.birthDate}', style: TextStyles.font14Gray400)),
             verticalSpace(16),
             Row(
               children: [
@@ -108,7 +108,10 @@ class ProfileScreen extends StatelessWidget {
                   ),
                   verticalSpace(12),
                   InkWell(
-                    onTap: () {},
+                    onTap: () {
+                      SharedPrefHelper().logout();
+                      context.pushNamedAndRemoveUntil(Routes.loginScreen, predicate: (Route<dynamic> route) => false);
+                    },
                     child: Container(
                       padding: const EdgeInsets.all(16),
                       decoration: BoxDecoration(

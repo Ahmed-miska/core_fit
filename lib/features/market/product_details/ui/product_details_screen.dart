@@ -7,7 +7,6 @@ import 'package:core_fit/features/market/product_details/ui/widgets/name_and_fav
 import 'package:core_fit/features/market/product_details/ui/widgets/price_and_amount_container.dart';
 import 'package:core_fit/features/market/product_details/ui/widgets/total_price_and_add_to_cart_button.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_animate/flutter_animate.dart';
 
 class ProductDetails extends StatelessWidget {
   const ProductDetails({super.key});
@@ -15,12 +14,8 @@ class ProductDetails extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: const CustomAppBar(title: 'Product'),
-      body: Animate(
-        effects: const [
-          FadeEffect(delay: Duration(milliseconds: 300)),
-        ],
-        child: Column(
+        appBar: const CustomAppBar(title: 'Product'),
+        body: Column(
           children: [
             Expanded(
               child: Padding(
@@ -30,7 +25,7 @@ class ProductDetails extends StatelessWidget {
                     const ImageAndRatingContainer(),
                     verticalSpace(20),
                     const NameAndFavorite(),
-                     verticalSpace(10),
+                    verticalSpace(10),
                     DescriptionAndSubCat(),
                     verticalSpace(10),
                     const PriceAndAmountContainer(),
@@ -41,9 +36,6 @@ class ProductDetails extends StatelessWidget {
             ),
             const TotalPriceAndAddToCartButton(),
           ],
-        ),
-      ),
-    );
+        ));
   }
 }
-

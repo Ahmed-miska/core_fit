@@ -16,7 +16,7 @@ abstract class ProductsApiService {
     @Query('size') int size,
     @Query('subCategoryId') int? subCategoryId,
     @Query('marketId') int? marketId,
-    @Query('name') String? name,
+    @Query('search') String? name,
   );
 
   @GET('products/find_by_id')

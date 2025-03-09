@@ -6,12 +6,25 @@ part 'markets_response_model.g.dart';
 
 @JsonSerializable()
 class MarketsResponseModel {
-  @JsonKey(name: 'content')
+  String? message;
+  Data? data;
+
+  MarketsResponseModel({this.message, this.data});
+
+  factory MarketsResponseModel.fromJson(Map<String, dynamic> json) => _$MarketsResponseModelFromJson(json); 
+ 
+
+ 
+}
+
+@JsonSerializable()
+class Data {
   List<Market>? markets;
   int? totalPages;
 
-  MarketsResponseModel({this.markets, this.totalPages});
-  factory MarketsResponseModel.fromJson(Map<String, dynamic> json) => _$MarketsResponseModelFromJson(json);
+  Data({this.markets, this.totalPages});
+
+  factory Data.fromJson(Map<String, dynamic> json) => _$DataFromJson(json);
 }
 
 @JsonSerializable()

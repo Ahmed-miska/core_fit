@@ -32,7 +32,7 @@ class ImageAndPriceOfStaduimDetails extends StatelessWidget {
               pagination: const SwiperPagination(alignment: Alignment.topCenter),
             ),
           ),
-          const Align(alignment: Alignment.topRight, child: AddFavoriteIcon(isFavorite: false)),
+          const Align(alignment: Alignment.topRight, child: AddFavoriteIcon( isFavorite: false)),
           const Align(alignment: Alignment.topLeft, child: OfferPadge(title: '10%')),
           Align(
             alignment: Alignment.bottomCenter,

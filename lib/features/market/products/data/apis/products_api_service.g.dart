@@ -10,7 +10,7 @@ part of 'products_api_service.dart';
 
 class _ProductsApiService implements ProductsApiService {
   _ProductsApiService(this._dio, {this.baseUrl, this.errorLogger}) {
-    baseUrl ??= 'http://10.0.2.2:8000/';
+    baseUrl ??= 'https://core-fit-production.up.railway.app/';
   }
 
   final Dio _dio;
@@ -33,7 +33,7 @@ class _ProductsApiService implements ProductsApiService {
       r'size': size,
       r'subCategoryId': subCategoryId,
       r'marketId': marketId,
-      r'name': name,
+      r'search': name,
     };
     queryParameters.removeWhere((k, v) => v == null);
     final _headers = <String, dynamic>{};

@@ -1,8 +1,6 @@
 import 'package:core_fit/core/theming/colors.dart';
 import 'package:core_fit/core/widgets/custom_refresh_indicator.dart';
 import 'package:core_fit/core/widgets/custom_shimmer.dart';
-import 'package:core_fit/features/market/market_store/data/models/categories_response_model.dart';
-import 'package:core_fit/features/market/market_store/data/models/markets_response_model.dart';
 import 'package:core_fit/features/market/market_store/ui/widgets/product_item.dart';
 import 'package:core_fit/features/market/products/data/models/products_response_model.dart';
 import 'package:core_fit/features/market/products/logic/products/products_cubit.dart';
@@ -52,13 +50,13 @@ class _ProductsListInProductsScreenState extends State<ProductsListInProductsScr
                 child: GridView.builder(
                   gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                     crossAxisCount: 2,
-                    childAspectRatio: 0.6,
+                    childAspectRatio: 0.5.sp,
                     crossAxisSpacing: 10.w,
                     mainAxisSpacing: 10.h,
                   ),
                   itemCount: 10,
                   itemBuilder: (context, index) => ProductItem(
-                    productModel: Product(id: 0, name: '', description: '', price: 0, images: [], offer: 10, market: Market(), subCategory: Category()),
+                    productModel: Product(id: 0, name: '', description: '', price: 0, images: [], offer: 10),
                   ),
                 ),
               ),

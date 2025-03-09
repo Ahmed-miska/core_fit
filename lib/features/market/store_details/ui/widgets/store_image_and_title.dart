@@ -16,7 +16,7 @@ class StoreImageAndTitle extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 190.h,
+      height: 300.h,
       width: double.infinity,
       decoration: BoxDecoration(
         color: AppColors.white,
@@ -24,8 +24,8 @@ class StoreImageAndTitle extends StatelessWidget {
         boxShadow: [
           BoxShadow(
             color: Colors.black.withOpacity(0.1),
-            blurRadius: 6,
-            offset: const Offset(2, 2),
+            blurRadius: 10,
+            offset: const Offset(0, 0),
           ),
         ],
       ),
@@ -63,8 +63,8 @@ class StoreImageAndTitle extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     SizedBox(
-                      height: 120.h,
-                      width: 200.w,
+                      height: 200.h,
+                      width: 300.w,
                       child: ClipRRect(
                         borderRadius: BorderRadius.circular(12),
                         child: CustomCachedImage(imageUrl: marketDetails.marketData!.market?.imageUrl ?? ''),

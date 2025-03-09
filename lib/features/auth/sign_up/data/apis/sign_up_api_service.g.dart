@@ -10,7 +10,7 @@ part of 'sign_up_api_service.dart';
 
 class _SignUpApiService implements SignUpApiService {
   _SignUpApiService(this._dio, {this.baseUrl, this.errorLogger}) {
-    baseUrl ??= 'http://10.0.2.2:8000/';
+    baseUrl ??= 'https://core-fit-production.up.railway.app/';
   }
 
   final Dio _dio;

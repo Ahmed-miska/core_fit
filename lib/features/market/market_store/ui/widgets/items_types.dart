@@ -26,18 +26,17 @@ class ItemsTypesContainer extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Container(
-              width: double.infinity,
-              height: 55.h,
-              padding: const EdgeInsets.all(10),
-              decoration: BoxDecoration(borderRadius: BorderRadius.circular(8), color: AppColors.mainBG),
-              child: model.imageUrl == null
-                  ? SvgPicture.asset(Assets.logo)
-                  : SvgPicture.network(
-                      ApiConstants.apiBaseUrl + model.imageUrl!,
-                      placeholderBuilder: (context) => const Icon(Icons.image),
-                      errorBuilder: (context, error, stackTrace) => const Icon(Icons.error),
-                    ),
-            ),
+                width: double.infinity,
+                height: 55.h,
+                padding: const EdgeInsets.all(10),
+                decoration: BoxDecoration(borderRadius: BorderRadius.circular(8), color: AppColors.mainBG),
+                child: model.imageUrl == null ? SvgPicture.asset(Assets.logo) : SvgPicture.asset(Assets.logo)
+                // : SvgPicture.network(
+                //     ApiConstants.apiBaseUrl + model.imageUrl!,
+                //     placeholderBuilder: (context) => const Icon(Icons.image),
+                //     errorBuilder: (context, error, stackTrace) => const Icon(Icons.error),
+                //   ),
+                ),
             verticalSpace(5),
             Expanded(child: Text(model.name ?? '', style: TextStyles.font12Dark600, textAlign: TextAlign.center, maxLines: 2)),
           ],

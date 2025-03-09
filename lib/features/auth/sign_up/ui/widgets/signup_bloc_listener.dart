@@ -1,4 +1,3 @@
-import 'package:core_fit/core/di/dependency_injection.dart';
 import 'package:core_fit/core/helpers/extensions.dart';
 import 'package:core_fit/core/routing/routes.dart';
 import 'package:core_fit/core/theming/styles.dart';
@@ -22,7 +21,6 @@ class SignupBlocListener extends StatelessWidget {
         }, signupSuccess: (response) {
           context.pop();
           context.pushNamedAndRemoveUntil(Routes.loginScreen, predicate: (route) => true);
-          getIt.unregister<SignupCubit>();
           ScaffoldMessenger.of(context).showSnackBar(
             SnackBar(
               content: Text('${response.message}'),

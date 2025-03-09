@@ -10,10 +10,12 @@ LoginRequestBody _$LoginRequestBodyFromJson(Map<String, dynamic> json) =>
     LoginRequestBody(
       email: json['email'] as String,
       password: json['password'] as String,
+      type: json['type'] ?? 'GENERAL',
     );
 
 Map<String, dynamic> _$LoginRequestBodyToJson(LoginRequestBody instance) =>
     <String, dynamic>{
       'email': instance.email,
       'password': instance.password,
+      'type': instance.type,
     };

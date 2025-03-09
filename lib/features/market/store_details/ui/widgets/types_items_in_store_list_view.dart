@@ -46,9 +46,8 @@ class _TypesItemsInStoreListViewState extends State<TypesItemsInStoreListView> {
                         padding: const EdgeInsets.only(left: 20),
                         child: InkWell(
                           onTap: () {
-                            context.read<ProductsCubit>().categoryId = categoriesResponseModel.subCategories![index].id ?? 0;
+                            context.read<ProductsCubit>().categoryId = categoriesResponseModel.subCategories![index].id ?? 0;                          
                             context.read<ProductsCubit>().reset();
-
                             setState(() {
                               selectedIndex = index;
                             });
