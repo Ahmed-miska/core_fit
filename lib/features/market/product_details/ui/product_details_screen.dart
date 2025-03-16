@@ -14,28 +14,29 @@ class ProductDetails extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: const CustomAppBar(title: 'Product'),
-        body: Column(
-          children: [
-            Expanded(
-              child: Padding(
-                padding: mainPadding(),
-                child: ListView(
-                  children: [
-                    const ImageAndRatingContainer(),
-                    verticalSpace(20),
-                    const NameAndFavorite(),
-                    verticalSpace(10),
-                    DescriptionAndSubCat(),
-                    verticalSpace(10),
-                    const PriceAndAmountContainer(),
-                    verticalSpace(20),
-                  ],
-                ),
+      appBar: const CustomAppBar(title: 'Product'),
+      body: Column(
+        children: [
+          Expanded(
+            child: Padding(
+              padding: mainPadding(),
+              child: ListView(
+                children: [
+                  const ImageAndRatingContainer(),
+                  verticalSpace(20),
+                  const NameAndFavorite(),
+                  verticalSpace(10),
+                  DescriptionAndSubCat(),
+                  verticalSpace(10),
+                  const PriceAndAmountContainer(),
+                  verticalSpace(20),
+                ],
               ),
             ),
-            const TotalPriceAndAddToCartButton(),
-          ],
-        ));
+          ),
+          const TotalPriceAndAddToCartButton(),
+        ],
+      ),
+    );
   }
 }

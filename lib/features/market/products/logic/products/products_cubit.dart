@@ -1,3 +1,4 @@
+import 'package:core_fit/core/helpers/function.dart';
 import 'package:core_fit/features/market/products/data/models/product_by_id_response_model.dart';
 import 'package:core_fit/features/market/products/data/models/products_response_model.dart';
 import 'package:core_fit/features/market/products/data/repos/products_repo.dart';
@@ -19,6 +20,9 @@ class ProductsCubit extends Cubit<ProductsState> {
   int page = 1;
   bool hasReachedMax = false;
   void reset() {
+    if (categoryId == 0) {
+      categoryId = null;
+    }
     products = [];
     page = 1;
     hasReachedMax = false;
@@ -46,12 +50,15 @@ class ProductsCubit extends Cubit<ProductsState> {
   }
 
   ProductDetails? product;
+  int productAmount = 1;
+  double productTotalPrice = 0.0;
   Future<void> getProductById(int id) async {
     emit(ProductsState.productByIdLoading());
     final result = await _productsRepo.findProductById(id);
     result.when(
       success: (response) async {
         product = response.product;
+        productTotalPrice = calculateNewPrice(product!.price!, product!.offer!);
         emit(ProductsState.productByIdSuccess(response));
       },
       failure: (error) {
@@ -60,9 +67,16 @@ class ProductsCubit extends Cubit<ProductsState> {
     );
   }
 
+  void getTotalPriceOfProduct() {
+    productTotalPrice = productAmount * calculateNewPrice(product!.price!, product!.offer!);
+    productTotalPrice = double.parse(productTotalPrice.toStringAsFixed(4));
+    emit(ProductsState.productByIdSuccess(ProductByIdResponseModel(product: product)));
+  }
+
   @override
   Future<void> close() {
     searchController.dispose();
+
     return super.close();
   }
 

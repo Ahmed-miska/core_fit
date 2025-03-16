@@ -29,8 +29,12 @@ class ItemsTypesListView extends StatelessWidget {
           },
           categoriesSuccess: (categoriesResponseModel) {
             var categories = categoriesResponseModel.data?.categories;
+            if (categories![0].id == 0) {
+              categories.removeAt(0);
+            }
+
             return ListView.builder(
-              itemCount: categories!.length,
+              itemCount: categories.length,
               scrollDirection: Axis.horizontal,
               itemBuilder: (context, index) {
                 return ItemsTypesContainer(model: categories[index]);

@@ -22,7 +22,7 @@ class MarketStoresScreen extends StatelessWidget {
         verticalSpace(10),
         SizedBox(height: 172.h, child: HomeSwiper(swiperImages: testSwiperImages)),
         verticalSpace(20),
-        SizedBox(height: 100.h, child: const ItemsTypesListView()),
+        SizedBox(height: 120.h, child: const ItemsTypesListView()),
         verticalSpace(20),
         Padding(
           padding: EdgeInsets.symmetric(horizontal: 16.w),
@@ -35,7 +35,7 @@ class MarketStoresScreen extends StatelessWidget {
           ),
         ),
         verticalSpace(16),
-        SizedBox(height: 140.h, child: const VerifiedStoresListView()),
+        SizedBox(height: 200.h, child: const VerifiedStoresListView()),
         verticalSpace(20),
         Padding(
           padding: EdgeInsets.symmetric(horizontal: 16.w),
@@ -48,7 +48,7 @@ class MarketStoresScreen extends StatelessWidget {
           ),
         ),
         verticalSpace(16),
-        SizedBox(height: 300.h, child: const MarketHomeProductsListView()),
+        SizedBox(height: 320.h, child: const MarketHomeProductsListView()),
         verticalSpace(16),
       ],
     );

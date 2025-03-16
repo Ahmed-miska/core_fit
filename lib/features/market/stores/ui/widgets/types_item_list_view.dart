@@ -9,7 +9,8 @@ import '../../../market_store/data/models/categories_response_model.dart';
 class TypesItemsListView extends StatefulWidget {
   final Function(int) onCategorySelected;
   const TypesItemsListView({
-    super.key, required this.onCategorySelected, 
+    super.key,
+    required this.onCategorySelected,
   });
   @override
   State<TypesItemsListView> createState() => _TypesItemsListViewState();
@@ -48,7 +49,7 @@ class _TypesItemsListViewState extends State<TypesItemsListView> {
                   padding: const EdgeInsets.symmetric(horizontal: 10),
                   child: InkWell(
                     onTap: () {
-                     widget.onCategorySelected(categoriesResponseModel.data!.categories![index].id!);
+                      widget.onCategorySelected(categoriesResponseModel.data!.categories![index].id!);
                       setState(() {
                         selectedIndex = index;
                       });

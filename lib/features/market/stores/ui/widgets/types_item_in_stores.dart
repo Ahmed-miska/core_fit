@@ -1,6 +1,5 @@
 import 'package:core_fit/core/helpers/assets.dart';
 import 'package:core_fit/core/helpers/spacing.dart';
-import 'package:core_fit/core/networking/api_constants.dart';
 import 'package:core_fit/core/theming/colors.dart';
 import 'package:core_fit/core/theming/styles.dart';
 import 'package:flutter/material.dart';
@@ -34,7 +33,7 @@ class TypesItemInStores extends StatelessWidget {
               // ignore: deprecated_member_use
               ? SizedBox(height: 20, width: 20, child: SvgPicture.asset(Assets.logo, color: isSelected ? AppColors.white : AppColors.main))
               // ignore: deprecated_member_use
-              : SvgPicture.network(ApiConstants.apiBaseUrl + model.imageUrl!, color: isSelected ? AppColors.white : AppColors.main),
+              : SizedBox(height: 20, width: 30, child: SvgPicture.network(model.imageUrl ?? '', color: isSelected ? AppColors.white : AppColors.main)),
           horizontalSpace(10),
           Text(model.name ?? '', style: isSelected ? TextStyles.font12White400 : TextStyles.font12Dark600),
         ],

@@ -5,8 +5,9 @@ import 'package:flutter/material.dart';
 
 class TotalPriceAndOrderNowButton extends StatelessWidget {
   final void Function()? onPressed;
+  final double totalPrice;
   const TotalPriceAndOrderNowButton({
-    super.key, this.onPressed,
+    super.key, this.onPressed, required this.totalPrice,
   });
 
   @override
@@ -30,7 +31,7 @@ class TotalPriceAndOrderNowButton extends StatelessWidget {
           children: [
             Text('Total Price : ', style: TextStyles.font12Dark600),
             horizontalSpace(8),
-            Text('699', style: TextStyles.font16Dark700),
+            Text(totalPrice.toString(), style: TextStyles.font16Dark700),
             horizontalSpace(4),
             Text('EG', style: TextStyles.font12Dark400),
             const Spacer(),
