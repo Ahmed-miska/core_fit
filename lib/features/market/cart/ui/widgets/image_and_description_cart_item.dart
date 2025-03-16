@@ -1,12 +1,13 @@
+import 'package:core_fit/core/helpers/function.dart';
 import 'package:core_fit/core/helpers/spacing.dart';
 import 'package:core_fit/core/theming/styles.dart';
 import 'package:core_fit/core/widgets/custom_cached_image.dart';
-import 'package:core_fit/features/market/market_home/data/product_model.dart';
+import 'package:core_fit/features/market/cart/data/models/cart_response_model.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class ImageAndDescriptionCartItem extends StatelessWidget {
-  final ProductModel productModel;
+  final CartProduct productModel;
   const ImageAndDescriptionCartItem({
     super.key,
     required this.productModel,
@@ -18,11 +19,11 @@ class ImageAndDescriptionCartItem extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         SizedBox(
-          height: 70.h,
-          width: 70.h,
+          height: 90.h,
+          width: 90.h,
           child: ClipRRect(
             borderRadius: BorderRadius.circular(8),
-            child: CustomCachedImage(imageUrl: productModel.image),
+            child: CustomCachedImage(imageUrl: productModel.images!.isEmpty ? '' : productModel.images!.first),
           ),
         ),
         horizontalSpace(12),
@@ -32,14 +33,22 @@ class ImageAndDescriptionCartItem extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                productModel.title,
+                productModel.description ?? '',
                 style: TextStyles.font14Dark400,
-                maxLines: 2,
+                maxLines: 3,
               ),
               verticalSpace(8),
-              Text(productModel.type, style: TextStyles.font12Main600),
+              Text(productModel.name ?? '', style: TextStyles.font12Main600, maxLines: 1),
               verticalSpace(8),
-              Text('${productModel.price} EG', style: TextStyles.font14Dark400),
+              Row(
+                children: [
+                  Text('${calculateNewPrice(productModel.price ?? 0, productModel.offer ?? 0)} EG', style: TextStyles.font14Dark400),
+                  const Spacer(),
+                  productModel.offer != 0
+                      ? Text('${productModel.price} EG', style: TextStyles.font14Dark400.copyWith(decoration: TextDecoration.lineThrough))
+                      : Text('', style: TextStyles.font14Dark400),
+                ],
+              ),
             ],
           ),
         ),

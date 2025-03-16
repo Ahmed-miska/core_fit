@@ -84,7 +84,7 @@ class AppRouter {
         return _slideTransition(
           MultiBlocProvider(
             providers: [
-              BlocProvider(create: (context) => ProductsCubit(getIt())..getProducts(categoryIdd: 1)),
+              BlocProvider(create: (context) => ProductsCubit(getIt())..getProducts()),
               BlocProvider(create: (context) => CategoryCubit(getIt())..getCategories()),
             ],
             child: const ProductsScreen(),
@@ -99,11 +99,9 @@ class AppRouter {
               BlocProvider(create: (context) => MarketCubit(getIt())..getMarketDetails(settings.arguments as int)),
               BlocProvider(create: (context) => CategoryCubit(getIt())..getSubCategories(settings.arguments as int)),
               BlocProvider(
-                create: (context) => ProductsCubit(getIt())
-                  ..getProducts(marketIdd: settings.arguments as int, categoryIdd: 1)
-                  ..marketId = settings.arguments as int
-                  ..categoryId = 1,
-              ),
+                  create: (context) => ProductsCubit(getIt())
+                    ..getProducts(marketIdd: settings.arguments as int)
+                    ..marketId = settings.arguments as int),
             ],
             child: const StoreDetailsScreen(),
           ),

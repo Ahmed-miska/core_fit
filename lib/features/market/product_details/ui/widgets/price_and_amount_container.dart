@@ -3,7 +3,6 @@ import 'package:core_fit/core/theming/colors.dart';
 import 'package:core_fit/features/market/product_details/ui/widgets/amount_row.dart';
 import 'package:core_fit/features/market/product_details/ui/widgets/price_container.dart';
 import 'package:flutter/material.dart';
-import 'package:redacted/redacted.dart';
 
 class PriceAndAmountContainer extends StatelessWidget {
   const PriceAndAmountContainer({

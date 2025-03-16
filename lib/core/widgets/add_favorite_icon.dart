@@ -1,9 +1,5 @@
-import 'package:core_fit/core/di/dependency_injection.dart';
 import 'package:core_fit/core/theming/colors.dart';
-import 'package:core_fit/features/market/market_home/logic/favorite/favorite_cubit.dart';
-import 'package:core_fit/features/market/market_store/logic/cubits/market/market_cubit.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 
 class AddFavoriteIcon extends StatefulWidget {
   final bool isFavorite;

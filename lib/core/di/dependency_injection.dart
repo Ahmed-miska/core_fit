@@ -7,6 +7,9 @@ import 'package:core_fit/features/auth/login/logic/cubit/login_cubit.dart';
 import 'package:core_fit/features/auth/sign_up/data/apis/sign_up_api_service.dart';
 import 'package:core_fit/features/auth/sign_up/data/repos/signup_repo.dart';
 import 'package:core_fit/features/auth/sign_up/logic/cubit/signup_cubit.dart';
+import 'package:core_fit/features/market/cart/data/apis/cart_api_services.dart';
+import 'package:core_fit/features/market/cart/data/repos/cart_repo.dart';
+import 'package:core_fit/features/market/cart/logic/cubit/cart_cubit.dart';
 import 'package:core_fit/features/market/market_home/data/apis/favorite_api_service.dart';
 import 'package:core_fit/features/market/market_home/data/repos/favorite_repo.dart';
 import 'package:core_fit/features/market/market_home/logic/favorite/favorite_cubit.dart';
@@ -57,4 +60,9 @@ Future<void> setupGetIt() async {
   getIt.registerLazySingleton<FavoriteApiService>(() => FavoriteApiService(dio));
   getIt.registerLazySingleton<FavoriteRepo>(() => FavoriteRepo(getIt()));
   getIt.registerLazySingleton<FavoriteCubit>(() => FavoriteCubit(getIt()));
+
+  // cart
+  getIt.registerLazySingleton<CartApiServices>(() => CartApiServices(dio));
+  getIt.registerLazySingleton<CartRepo>(() => CartRepo(getIt()));
+  getIt.registerLazySingleton<CartCubit>(() => CartCubit(getIt())..getCart());
 }

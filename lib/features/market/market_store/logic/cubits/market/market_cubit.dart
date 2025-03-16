@@ -13,22 +13,25 @@ class MarketCubit extends Cubit<MarketState> {
   MarketCubit(this._marketRepo) : super(MarketState.initial());
   List<Market> markets = [];
   TextEditingController marketSearchController = TextEditingController();
-  String categoryId = '1';
+  String? categoryId ;
   int page = 1;
   bool hasReachMax = false;
 
   void reset() {
+    if (categoryId=='0') {
+      categoryId = null;    
+    }
     markets = [];
     page = 1;
     hasReachMax = false;
     getMarkets();
   }
 
-  Future<void> getMarkets() async {
+  Future<void> getMarkets({ String? categoryIdd} ) async {
     if (page == 1) {
       emit(MarketState.loading());
     }
-    final result = await _marketRepo.getMarkets(page: page, name: marketSearchController.text, categoryId: categoryId);
+    final result = await _marketRepo.getMarkets(page: page, name: marketSearchController.text, categoryId: categoryIdd ?? categoryId);
     result.when(
       success: (response) {
         if (response.data!.markets!.isNotEmpty) {

@@ -1,3 +1,6 @@
+import 'package:core_fit/core/di/dependency_injection.dart';
+import 'package:core_fit/features/market/cart/logic/cubit/cart_cubit.dart';
+import 'package:core_fit/features/market/market_home/logic/favorite/favorite_cubit.dart';
 import 'package:core_fit/features/market/market_home/ui/widgets/market_home_app_bar.dart';
 import 'package:core_fit/features/market/market_home/ui/widgets/market_home_nav_bar.dart';
 import 'package:core_fit/features/market/market_orders/ui/market_orders_screen.dart';
@@ -18,6 +21,8 @@ class _MarketHomeScreenState extends State<MarketHomeScreen> with TickerProvider
   late AnimationController animationController;
   @override
   void initState() {
+    getIt<CartCubit>().getCart();
+    getIt<FavoriteCubit>().getFavourites();
     currentIndex = 0;
     animationController = AnimationController(vsync: this, duration: const Duration(milliseconds: 400));
     super.initState();
