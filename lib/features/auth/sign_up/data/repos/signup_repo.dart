@@ -62,4 +62,16 @@ class SignupRepo {
       return ApiResult.failure(ErrorHandler.handle(e));
     }
   }
+   Future<ApiResult<MessageResponseModel>> sendFirebaseToken(String token) async {
+    try {
+      final response = await _signUpApiService.sendFirebaseToken({
+        'token': token,
+      });
+      print(token);
+      return ApiResult.success(response);
+    } catch (error) {
+      print(error);
+      return ApiResult.failure(ErrorHandler.handle(error));
+    }
+  }
 }

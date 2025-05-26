@@ -1,6 +1,4 @@
 import 'package:core_fit/core/helpers/test_lists.dart';
-import 'package:core_fit/features/market/market_store/data/models/categories_response_model.dart';
-import 'package:core_fit/features/market/market_store/data/models/markets_response_model.dart';
 import 'package:core_fit/features/market/market_store/ui/widgets/product_item.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';

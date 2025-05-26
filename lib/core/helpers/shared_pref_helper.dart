@@ -63,12 +63,34 @@ class SharedPrefHelper {
   }
 
   Future<void> logout() async {
+    // Save FCM token before clearing data
+    String fcmToken = getFcmToken();
+
+    // Clear all data
     await clearSharedData();
+
+    // Restore FCM token
+    if (fcmToken.isNotEmpty) {
+      await setFcmToken(fcmToken);
+    }
+
     DioFactory.removeTokenAfterLogout();
   }
 
   bool isUserLoggedIn() {
     String? token = _prefs.getString(SharedPrefKeys.userToken);
     return token != null && token.isNotEmpty;
+  }
+
+  Future<void> setFcmToken(String token) async {
+    try {
+      await _prefs.setString(SharedPrefKeys.fcmToken, token);
+    } catch (e) {
+      rethrow;
+    }
+  }
+
+  String getFcmToken() {
+    return _prefs.getString(SharedPrefKeys.fcmToken) ?? "";
   }
 }

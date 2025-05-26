@@ -13,6 +13,9 @@ import 'package:core_fit/features/market/cart/logic/cubit/cart_cubit.dart';
 import 'package:core_fit/features/market/market_home/data/apis/favorite_api_service.dart';
 import 'package:core_fit/features/market/market_home/data/repos/favorite_repo.dart';
 import 'package:core_fit/features/market/market_home/logic/favorite/favorite_cubit.dart';
+import 'package:core_fit/features/market/market_orders/data/apis/orders_api_services.dart';
+import 'package:core_fit/features/market/market_orders/data/repo/orders_repo.dart';
+import 'package:core_fit/features/market/market_orders/logic/cubit/orders_cubit.dart';
 import 'package:core_fit/features/market/market_store/data/apis/category_api_service.dart';
 import 'package:core_fit/features/market/market_store/data/apis/market_api_service.dart';
 import 'package:core_fit/features/market/market_store/data/repo/category_repo.dart';
@@ -65,4 +68,11 @@ Future<void> setupGetIt() async {
   getIt.registerLazySingleton<CartApiServices>(() => CartApiServices(dio));
   getIt.registerLazySingleton<CartRepo>(() => CartRepo(getIt()));
   getIt.registerLazySingleton<CartCubit>(() => CartCubit(getIt())..getCart());
+
+  // orders
+    getIt.registerLazySingleton<OrdersApiServices>(() => OrdersApiServices(dio));
+    getIt.registerLazySingleton<OrdersRepo>(() => OrdersRepo(getIt()));
+    getIt.registerFactory<OrdersCubit>(() => OrdersCubit(getIt()));
+
+
 }

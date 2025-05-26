@@ -30,4 +30,5 @@ class Routes {
   static const String supportScreen = '/supportScreen';
   static const String privatWalletScreen = '/privatWalletScreen';
   static const String favoriteStadiumsScreen = '/favoriteStadiumsScreen';
+  static const String marketOrdersScreen = '/marketOrdersScreen';
 }

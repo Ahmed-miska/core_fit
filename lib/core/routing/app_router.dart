@@ -8,11 +8,15 @@ import 'package:core_fit/features/auth/login/ui/login_screen.dart';
 import 'package:core_fit/features/auth/sign_up/logic/cubit/signup_cubit.dart';
 import 'package:core_fit/features/auth/sign_up/ui/sign_up_screen.dart';
 import 'package:core_fit/features/home/ui/home_screen.dart';
+import 'package:core_fit/features/market/cart/logic/cubit/cart_cubit.dart';
 import 'package:core_fit/features/market/cart/ui/cart_screen.dart';
 import 'package:core_fit/features/market/invoice/ui/invoice_screen.dart';
+import 'package:core_fit/features/market/market_home/logic/favorite/favorite_cubit.dart';
 import 'package:core_fit/features/market/market_home/ui/favorite_screen.dart';
 import 'package:core_fit/features/market/market_home/ui/market_home_screen.dart';
+import 'package:core_fit/features/market/market_orders/logic/cubit/orders_cubit.dart';
 import 'package:core_fit/features/market/market_orders/ui/order_details_screen.dart';
+import 'package:core_fit/features/market/market_orders/ui/market_orders_screen.dart';
 import 'package:core_fit/features/market/market_store/logic/cubits/category/category_cubit.dart';
 import 'package:core_fit/features/market/market_store/logic/cubits/market/market_cubit.dart';
 import 'package:core_fit/features/market/product_details/ui/product_details_screen.dart';
@@ -67,6 +71,9 @@ class AppRouter {
             BlocProvider(create: (context) => MarketCubit(getIt())..getMarkets()),
             BlocProvider(create: (context) => CategoryCubit(getIt())..getCategories()),
             BlocProvider(create: (context) => ProductsCubit(getIt())..getProducts()),
+            BlocProvider(create: (context) => CartCubit(getIt())),
+            BlocProvider(create: (context) => FavoriteCubit(getIt())),
+            BlocProvider(create: (context) => OrdersCubit(getIt())),
           ],
           child: const MarketHomeScreen(),
         ));
@@ -91,7 +98,12 @@ class AppRouter {
           ),
         );
       case Routes.invoiceScreen:
-        return _slideTransition(const InvoiceScreen());
+        return _slideTransition(MultiBlocProvider(
+          providers: [
+            BlocProvider(create: (context) => OrdersCubit(getIt())),
+          ],
+          child: const InvoiceScreen(),
+        ));
       case Routes.storeDetailsScreen:
         return _fadeTransition(
           MultiBlocProvider(
@@ -120,7 +132,16 @@ class AppRouter {
       case Routes.cartScreen:
         return _fadeTransition(const CartScreen());
       case Routes.orderDetailsScreen:
-        return _fadeTransition(const OrderDetailsScreen());
+        return _fadeTransition(
+          MultiBlocProvider(
+            providers: [
+              BlocProvider(create: (context) => OrdersCubit(getIt())),
+            ],
+            child: OrderDetailsScreen(
+              ordrId: settings.arguments as int,
+            ),
+          ),
+        );
       case Routes.sportsHomeScreen:
         return _fadeTransition(const SportsHomeScreen());
       case Routes.sportDetailsScreen:
@@ -168,6 +189,13 @@ class AppRouter {
         return _fadeTransition(const PrivateWalletScreen());
       case Routes.favoriteStadiumsScreen:
         return _fadeTransition(const FavoriteStaduimsScreen());
+      case Routes.marketOrdersScreen:
+        return _fadeTransition(
+          BlocProvider(
+            create: (context) => getIt<OrdersCubit>(),
+            child: const MarketOrdersScreen(),
+          ),
+        );
       default:
         return MaterialPageRoute(
           builder: (_) => Scaffold(
@@ -250,7 +278,7 @@ class AppRouter {
 
   PageRouteBuilder<dynamic> _slideTransition(Widget child) {
     return PageRouteBuilder(
-      transitionDuration: const Duration(seconds: 1),
+      transitionDuration: const Duration(milliseconds: 300),
       transitionsBuilder: (context, animation, secondaryAnimation, child) {
         const begin = Offset(-1.0, 0.0); // Start off-screen to the right
         const end = Offset.zero; // End at the center of the screen

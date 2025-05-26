@@ -17,8 +17,9 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class ProductItem extends StatefulWidget {
+  final bool? isOrder;
   final Product productModel;
-  const ProductItem({super.key, required this.productModel});
+  const ProductItem({super.key, required this.productModel, this.isOrder = false});
 
   @override
   State<ProductItem> createState() => _ProductItemState();
@@ -61,34 +62,36 @@ class _ProductItemState extends State<ProductItem> {
                     ),
 
                     /// أيقونة المفضلة
-                    Align(
-                      alignment: Alignment.topRight,
-                      child: BlocListener<FavoriteCubit, FavoriteState>(
-                        bloc: getIt<FavoriteCubit>(),
-                        listener: (context, state) {
-                          state.maybeWhen(
-                            success: (success) {
-                              for (var element in success) {
-                                if (element.id == widget.productModel.id) {
-                                  widget.productModel.favourite = true;
-                                  break;
-                                } else {
-                                  widget.productModel.favourite = false;
-                                }
-                                setState(() {});
-                              }
-                            },
-                            orElse: () {},
-                          );
-                        },
-                        child: AddFavoriteIcon(
-                          onTap: () async {
-                            await getIt<FavoriteCubit>().toggleFavorite(widget.productModel.id!, widget.productModel.favourite!);
-                          },
-                          isFavorite: widget.productModel.favourite ?? false,
-                        ),
-                      ),
-                    ),
+                    !widget.isOrder!
+                        ? Align(
+                            alignment: Alignment.topRight,
+                            child: BlocListener<FavoriteCubit, FavoriteState>(
+                              bloc: getIt<FavoriteCubit>(),
+                              listener: (context, state) {
+                                state.maybeWhen(
+                                  success: (success) {
+                                    for (var element in success) {
+                                      if (element.id == widget.productModel.id) {
+                                        widget.productModel.favourite = true;
+                                        break;
+                                      } else {
+                                        widget.productModel.favourite = false;
+                                      }
+                                      setState(() {});
+                                    }
+                                  },
+                                  orElse: () {},
+                                );
+                              },
+                              child: AddFavoriteIcon(
+                                onTap: () async {
+                                  await getIt<FavoriteCubit>().toggleFavorite(widget.productModel.id!, widget.productModel.favourite!);
+                                },
+                                isFavorite: widget.productModel.favourite ?? false,
+                              ),
+                            ),
+                          )
+                        : SizedBox(),
 
                     /// شارة العرض إذا كان هناك خصم
                     if (widget.productModel.offer != 0)
@@ -150,77 +153,79 @@ class _ProductItemState extends State<ProductItem> {
                     ),
 
                   /// زر إضافة المنتج إلى السلة
-                  BlocBuilder<CartCubit, CartState>(
-                    bloc: getIt<CartCubit>(),
-                    builder: (context, state) {
-                      return SizedBox(
-                        height: 35.h,
-                        width: 35.h,
-                        child: IconButton(
-                          onPressed: () async {
-                            loadingDialog(context);
-                            await getIt<CartCubit>().addCartItem(widget.productModel.id!, 1);
-                            getIt<CartCubit>().state.maybeWhen(
-                                  addSuccess: (data) {
-                                    context.pop();
-                                  },
-                                  addError: (error) {
-                                    context.pop();
-                                    showDialog(
-                                      context: context,
-                                      builder: (context) {
-                                        return AlertDialog(
-                                          backgroundColor: AppColors.white,
-                                          title: Text('Error', style: TextStyles.font28Dark700),
-                                          content: Text('You can\'t add items from another market. Remove existing cart items first.', style: TextStyles.font14Dark400),
-                                          actions: [
-                                            TextButton(
-                                              child: const Text('Cancel', style: TextStyle(color: AppColors.red)),
-                                              onPressed: () {
-                                                Navigator.of(context).pop();
-                                              },
-                                            ),
-                                            TextButton(
-                                              child: const Text('OK', style: TextStyle(color: AppColors.main)),
-                                              onPressed: () async {
-                                                loadingDialog(context);
-                                                await getIt<CartCubit>().deleteCartItem();
-                                                getIt<CartCubit>().state.maybeWhen(
-                                                  deleteSuccess: (data) async {
-                                                    await getIt<CartCubit>().addCartItem(widget.productModel.id!, 1);
-                                                    // ignore: use_build_context_synchronously
-                                                    context.pop();
-                                                    // ignore: use_build_context_synchronously
-                                                    context.pop();
-                                                  },
-                                                  deleteError: (error) {
-                                                    context.pop();
-                                                  },
-                                                  orElse: () {
-                                                    context.pop();
-                                                  },
-                                                );
-                                              },
-                                            ),
-                                          ],
-                                        );
-                                      },
-                                    );
-                                  },
-                                  orElse: () {},
-                                );
+                  !widget.isOrder!
+                      ? BlocBuilder<CartCubit, CartState>(
+                          bloc: getIt<CartCubit>(),
+                          builder: (context, state) {
+                            return SizedBox(
+                              height: 35.h,
+                              width: 35.h,
+                              child: IconButton(
+                                onPressed: () async {
+                                  loadingDialog(context);
+                                  await getIt<CartCubit>().addCartItem(widget.productModel.id!, 1);
+                                  getIt<CartCubit>().state.maybeWhen(
+                                        addSuccess: (data) {
+                                          context.pop();
+                                        },
+                                        addError: (error) {
+                                          context.pop();
+                                          showDialog(
+                                            context: context,
+                                            builder: (context) {
+                                              return AlertDialog(
+                                                backgroundColor: AppColors.white,
+                                                title: Text('Error', style: TextStyles.font28Dark700),
+                                                content: Text('You can\'t add items from another market. Remove existing cart items first.', style: TextStyles.font14Dark400),
+                                                actions: [
+                                                  TextButton(
+                                                    child: const Text('Cancel', style: TextStyle(color: AppColors.red)),
+                                                    onPressed: () {
+                                                      Navigator.of(context).pop();
+                                                    },
+                                                  ),
+                                                  TextButton(
+                                                    child: const Text('OK', style: TextStyle(color: AppColors.main)),
+                                                    onPressed: () async {
+                                                      loadingDialog(context);
+                                                      await getIt<CartCubit>().deleteCartItem();
+                                                      getIt<CartCubit>().state.maybeWhen(
+                                                        deleteSuccess: (data) async {
+                                                          await getIt<CartCubit>().addCartItem(widget.productModel.id!, 1);
+                                                          // ignore: use_build_context_synchronously
+                                                          context.pop();
+                                                          // ignore: use_build_context_synchronously
+                                                          context.pop();
+                                                        },
+                                                        deleteError: (error) {
+                                                          context.pop();
+                                                        },
+                                                        orElse: () {
+                                                          context.pop();
+                                                        },
+                                                      );
+                                                    },
+                                                  ),
+                                                ],
+                                              );
+                                            },
+                                          );
+                                        },
+                                        orElse: () {},
+                                      );
+                                },
+                                style: ButtonStyle(
+                                  elevation: WidgetStateProperty.all(0),
+                                  shape: WidgetStateProperty.all(const CircleBorder()),
+                                  side: WidgetStateProperty.all(const BorderSide(color: AppColors.main, width: 2)),
+                                ),
+                                padding: EdgeInsets.zero,
+                                icon: Icon(Icons.shopping_cart, color: AppColors.main, size: 18.h),
+                              ),
+                            );
                           },
-                          style: ButtonStyle(
-                            elevation: WidgetStateProperty.all(0),
-                            shape: WidgetStateProperty.all(const CircleBorder()),
-                            side: WidgetStateProperty.all(const BorderSide(color: AppColors.main, width: 2)),
-                          ),
-                          padding: EdgeInsets.zero,
-                          icon: Icon(Icons.shopping_cart, color: AppColors.main, size: 18.h),
-                        ),
-                      );
-                    },
-                  ),
+                        )
+                      : SizedBox(),
                 ],
               )
             ],

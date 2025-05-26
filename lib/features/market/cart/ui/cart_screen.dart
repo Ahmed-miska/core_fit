@@ -41,6 +41,9 @@ class _CartScreenState extends State<CartScreen> {
           );
         },
         builder: (context, state) {
+          if (cartProducts.isEmpty) {
+            return const Center(child: Text('No products in cart'));
+          }
           return Column(
             children: [
               Expanded(

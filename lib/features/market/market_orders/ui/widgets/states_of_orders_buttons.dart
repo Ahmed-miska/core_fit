@@ -1,6 +1,8 @@
 import 'package:core_fit/core/theming/colors.dart';
 import 'package:core_fit/core/theming/styles.dart';
+import 'package:core_fit/features/market/market_orders/logic/cubit/orders_cubit.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 class StatesOfOrdersButtons extends StatefulWidget {
   const StatesOfOrdersButtons({
@@ -37,6 +39,7 @@ class _StatesOfOrdersButtonsState extends State<StatesOfOrdersButtons> {
                 setState(() {
                   currentIndex = 0;
                 });
+                context.read<OrdersCubit>().getOrders('current');
               }),
           OrdersStateButton(
               text: 'Previous',
@@ -45,6 +48,7 @@ class _StatesOfOrdersButtonsState extends State<StatesOfOrdersButtons> {
                 setState(() {
                   currentIndex = 1;
                 });
+                context.read<OrdersCubit>().getOrders('previous');
               }),
         ],
       ),
