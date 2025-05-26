@@ -9,9 +9,9 @@ class CustomShimmer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Skeletonizer(
-      enabled: enabled ?? true,
-      ignoreContainers: false,
-      //containersColor: Colors.transparent,
+      // enabled: enabled ?? true,
+      // ignoreContainers: false,
+      containersColor: Colors.transparent,
       effect: ShimmerEffect(
         baseColor: Colors.grey.shade300,
         highlightColor: Colors.grey.shade100,

@@ -3,11 +3,14 @@ import 'package:core_fit/core/helpers/spacing.dart';
 import 'package:core_fit/core/routing/routes.dart';
 import 'package:core_fit/core/theming/colors.dart';
 import 'package:core_fit/core/theming/styles.dart';
+import 'package:core_fit/features/market/market_orders/data/models/orders_response_model.dart';
 import 'package:flutter/material.dart';
 
 class OrderContainer extends StatelessWidget {
+  final OrderModel order;
   const OrderContainer({
     super.key,
+    required this.order,
   });
 
   @override
@@ -29,11 +32,12 @@ class OrderContainer extends StatelessWidget {
             children: [
               Text(' #   ', style: TextStyles.font18Main600),
               Text('Order Number : ', style: TextStyles.font14Dark400),
-              Text('1234 #', style: TextStyles.font14Main700),
+              Text('${order.id} #', style: TextStyles.font14Main700),
               const Spacer(),
               TextButton(
                 onPressed: () {
-                  context.pushNamed(Routes.orderDetailsScreen);
+                  // context.read<OrdersCubit>().getOrderDetails(order.id);
+                  context.pushNamed(Routes.orderDetailsScreen, arguments: order.id);
                 },
                 style: ButtonStyle(
                   // ignore: deprecated_member_use
@@ -55,21 +59,31 @@ class OrderContainer extends StatelessWidget {
             children: [
               const Icon(Icons.location_on_outlined, color: AppColors.main),
               Text('  Location : ', style: TextStyles.font14Dark400),
-              Text('Cairo, Egypt', style: TextStyles.font14Main700),
+              Text(order.clientAddress, style: TextStyles.font14Main700),
             ],
           ),
           verticalSpace(12),
           Row(
             children: [
-              Text('Status : ', style: TextStyles.font14Dark400),
-              Text('Delivered', style: TextStyles.font14Main700),
+              Text('Market Name : ', style: TextStyles.font14Dark400),
+              Text(order.marketName, style: TextStyles.font14Main700),
+              const Spacer(),
             ],
           ),
           verticalSpace(2),
           Row(
             children: [
+              Text('Status : ', style: TextStyles.font14Dark400),
+              Text(order.status, style: TextStyles.font14Main700),
+            ],
+          ),
+          verticalSpace(2),
+          Row(
+            children: [
+              Text('Total : ', style: TextStyles.font14Dark400),
+              Text('\$${order.totalPrice}', style: TextStyles.font14Main700),
               const Spacer(),
-              Text('2024/11/29', style: TextStyles.font12Gray400),
+              Text(order.formattedTime, style: TextStyles.font12Gray400),
             ],
           ),
         ],

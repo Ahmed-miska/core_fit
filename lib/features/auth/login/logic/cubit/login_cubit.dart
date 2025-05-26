@@ -21,7 +21,14 @@ class LoginCubit extends Cubit<LoginState> {
     response.when(
       success: (loginResponse) async {
         await SharedPrefHelper().saveUserData(loginResponse);
-        DioFactory.setTokenIntoHeaderAfterLogin(loginResponse.data?.token??'');
+        DioFactory.setTokenIntoHeaderAfterLogin(loginResponse.data?.token ?? '');
+
+        // Send Firebase token after successful login
+        String fcmToken = SharedPrefHelper().getFcmToken();
+        if (fcmToken.isNotEmpty) {
+          await _loginRepo.sendFirebaseToken(fcmToken);
+        }
+
         emit(LoginState.success(loginResponse));
       },
       failure: (error) => emit(LoginState.error(error: error.apiErrorModel.message ?? '')),

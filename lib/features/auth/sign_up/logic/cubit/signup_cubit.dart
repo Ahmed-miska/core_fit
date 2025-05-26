@@ -1,5 +1,6 @@
 import 'dart:io';
 
+import 'package:core_fit/core/helpers/shared_pref_helper.dart';
 import 'package:core_fit/features/auth/sign_up/data/models/governorates_response_model.dart';
 import 'package:core_fit/features/auth/sign_up/data/models/sign_up_request_model.dart';
 import 'package:core_fit/features/auth/sign_up/data/repos/signup_repo.dart';
@@ -87,8 +88,12 @@ class SignupCubit extends Cubit<SignupState> {
       image: image,
     ));
     result.when(
-      success: (response) {
+      success: (response)async {
         emit(SignupState.signupSuccess(response));
+         String fcmToken = SharedPrefHelper().getFcmToken();
+        if (fcmToken.isNotEmpty) {
+          await _signupRepo.sendFirebaseToken(fcmToken);
+        }
       },
       failure: (error) {
         emit(SignupState.signupError(error: error.apiErrorModel.message ?? ''));

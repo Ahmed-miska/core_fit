@@ -1,13 +1,15 @@
 import 'package:core_fit/core/helpers/spacing.dart';
-import 'package:core_fit/core/helpers/test_lists.dart';
 import 'package:core_fit/core/theming/colors.dart';
 import 'package:core_fit/core/theming/styles.dart';
+import 'package:core_fit/features/market/market_orders/data/models/order_details_response_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class TotalPriceAndDetailsInDetailsOrder extends StatelessWidget {
+  final OrderDetailsItem order;
   const TotalPriceAndDetailsInDetailsOrder({
     super.key,
+    required this.order,
   });
 
   @override
@@ -28,19 +30,19 @@ class TotalPriceAndDetailsInDetailsOrder extends StatelessWidget {
             padding: EdgeInsets.zero,
             shrinkWrap: true,
             physics: const NeverScrollableScrollPhysics(),
-            itemCount: 6,
+            itemCount: order.orderItems?.length,
             itemBuilder: (context, index) {
               return Column(
                 children: [
                   Row(
                     children: [
                       Expanded(
-                        child: Text(testProducts[index].title, style: TextStyles.font14Dark700, maxLines: 3, textAlign: TextAlign.start),
+                        child: Text(order.orderItems?[index].name ?? '', style: TextStyles.font14Dark700, maxLines: 3, textAlign: TextAlign.start),
                       ),
                       horizontalSpace(8),
-                      Text("x 2", style: TextStyles.font14Dark400),
+                      Text("x ${order.orderItems?[index].count ?? '0'}", style: TextStyles.font14Dark400),
                       horizontalSpace(8),
-                      Text(testProducts[index].price, style: TextStyles.font16Dark700),
+                      Text(order.orderItems?[index].price.toString() ?? '', style: TextStyles.font16Dark700),
                       horizontalSpace(8),
                       Text('EG', style: TextStyles.font14Gray400),
                     ],
@@ -55,7 +57,7 @@ class TotalPriceAndDetailsInDetailsOrder extends StatelessWidget {
             children: [
               Text('Total Price : ', style: TextStyles.font18Dark700),
               const Spacer(),
-              Text('20', style: TextStyles.font18Main600),
+              Text(order.totalPrice.toString(), style: TextStyles.font18Main600),
               horizontalSpace(8),
               Text('EG', style: TextStyles.font14Main700),
             ],

@@ -23,5 +23,10 @@ abstract class SignUpApiService {
   Future<MessageResponseModel> signUp(
     @Body() FormData formData,
   );
+
+    @POST('auth/firebase-token')
+  Future<MessageResponseModel> sendFirebaseToken(
+    @Body() Map<String, dynamic> body,
+  );
 }
 

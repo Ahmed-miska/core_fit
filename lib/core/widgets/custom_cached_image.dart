@@ -12,7 +12,7 @@ class CustomCachedImage extends StatelessWidget {
     return CachedNetworkImage(
       // imageUrl: 'https://picsum.photos/id/71/200/300',
       imageUrl: imageUrl,
-      errorWidget: (context, url, error) => const Icon(Icons.error),
+      errorWidget: (context, url, error) => Icon(Icons.image, color: Colors.grey),
       placeholder: (context, url) => Center(child: Lottie.asset('assets/animation/loading_image.json', height: 50)),
       fit: BoxFit.contain,
     );

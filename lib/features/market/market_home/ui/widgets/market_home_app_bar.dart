@@ -49,12 +49,14 @@ class _MarketHomeAppBarState extends State<MarketHomeAppBar> {
                 borderRadius: BorderRadius.circular(8),
                 color: AppColors.lightGrey,
               ),
-              child: Badge.count(
-                count: cartCount,
-                padding: const EdgeInsets.all(1),
-                backgroundColor: AppColors.main,
-                child: SvgPicture.asset(Assets.cart),
-              ),
+              child: cartCount == 0
+                  ? SvgPicture.asset(Assets.cart)
+                  : Badge.count(
+                      count: cartCount,
+                      padding: const EdgeInsets.all(1),
+                      backgroundColor: AppColors.main,
+                      child: SvgPicture.asset(Assets.cart),
+                    ),
             ),
           ),
         ),
@@ -80,14 +82,16 @@ class _MarketHomeAppBarState extends State<MarketHomeAppBar> {
                 borderRadius: BorderRadius.circular(8),
                 color: AppColors.lightGrey,
               ),
-              child: Badge.count(
-                count: favouriteCount,
-                padding: const EdgeInsets.all(1),
-                backgroundColor: AppColors.main,
-                child: SvgPicture.asset(
-                  Assets.favorite,
-                ),
-              ),
+              child: favouriteCount == 0
+                  ? SvgPicture.asset(Assets.favorite)
+                  : Badge.count(
+                      count: favouriteCount,
+                      padding: const EdgeInsets.all(1),
+                      backgroundColor: AppColors.main,
+                      child: SvgPicture.asset(
+                        Assets.favorite,
+                      ),
+                    ),
             ),
           ),
         ),

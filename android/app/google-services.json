@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "966477146243",
+    "project_id": "core-fit-ff7e9",
+    "storage_bucket": "core-fit-ff7e9.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:966477146243:android:0752542422a7392e1f53b6",
+        "android_client_info": {
+          "package_name": "com.corefit"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDmy_nSEcEcIktYCoafGDi8y1IHyxrXV5U"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:966477146243:android:a3f6aa4f51e1a0211f53b6",
+        "android_client_info": {
+          "package_name": "com.example.core_fit"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDmy_nSEcEcIktYCoafGDi8y1IHyxrXV5U"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
