@@ -23,9 +23,11 @@ mixin _$ProductsState<T> {
     required TResult Function(List<Product> products) productsSuccess,
     required TResult Function(String error) productsError,
     required TResult Function() productByIdLoading,
-    required TResult Function(ProductByIdResponseModel product)
-        productByIdSuccess,
+    required TResult Function(ProductData product) productByIdSuccess,
     required TResult Function(String error) productByIdError,
+    required TResult Function() reviewsLoading,
+    required TResult Function(List<ReviewModel>? rates) reviewsSuccess,
+    required TResult Function(String error) reviewsError,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -35,8 +37,11 @@ mixin _$ProductsState<T> {
     TResult? Function(List<Product> products)? productsSuccess,
     TResult? Function(String error)? productsError,
     TResult? Function()? productByIdLoading,
-    TResult? Function(ProductByIdResponseModel product)? productByIdSuccess,
+    TResult? Function(ProductData product)? productByIdSuccess,
     TResult? Function(String error)? productByIdError,
+    TResult? Function()? reviewsLoading,
+    TResult? Function(List<ReviewModel>? rates)? reviewsSuccess,
+    TResult? Function(String error)? reviewsError,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -46,8 +51,11 @@ mixin _$ProductsState<T> {
     TResult Function(List<Product> products)? productsSuccess,
     TResult Function(String error)? productsError,
     TResult Function()? productByIdLoading,
-    TResult Function(ProductByIdResponseModel product)? productByIdSuccess,
+    TResult Function(ProductData product)? productByIdSuccess,
     TResult Function(String error)? productByIdError,
+    TResult Function()? reviewsLoading,
+    TResult Function(List<ReviewModel>? rates)? reviewsSuccess,
+    TResult Function(String error)? reviewsError,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -60,6 +68,9 @@ mixin _$ProductsState<T> {
     required TResult Function(ProductByIdLoading<T> value) productByIdLoading,
     required TResult Function(ProductByIdSuccess<T> value) productByIdSuccess,
     required TResult Function(ProductByIdError<T> value) productByIdError,
+    required TResult Function(ReviewsLoading<T> value) reviewsLoading,
+    required TResult Function(ReviewsSuccess<T> value) reviewsSuccess,
+    required TResult Function(ReviewsError<T> value) reviewsError,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -71,6 +82,9 @@ mixin _$ProductsState<T> {
     TResult? Function(ProductByIdLoading<T> value)? productByIdLoading,
     TResult? Function(ProductByIdSuccess<T> value)? productByIdSuccess,
     TResult? Function(ProductByIdError<T> value)? productByIdError,
+    TResult? Function(ReviewsLoading<T> value)? reviewsLoading,
+    TResult? Function(ReviewsSuccess<T> value)? reviewsSuccess,
+    TResult? Function(ReviewsError<T> value)? reviewsError,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -82,6 +96,9 @@ mixin _$ProductsState<T> {
     TResult Function(ProductByIdLoading<T> value)? productByIdLoading,
     TResult Function(ProductByIdSuccess<T> value)? productByIdSuccess,
     TResult Function(ProductByIdError<T> value)? productByIdError,
+    TResult Function(ReviewsLoading<T> value)? reviewsLoading,
+    TResult Function(ReviewsSuccess<T> value)? reviewsSuccess,
+    TResult Function(ReviewsError<T> value)? reviewsError,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -129,12 +146,18 @@ class __$$InitialImplCopyWithImpl<T, $Res>
 
 /// @nodoc
 
-class _$InitialImpl<T> implements _Initial<T> {
+class _$InitialImpl<T> with DiagnosticableTreeMixin implements _Initial<T> {
   const _$InitialImpl();
 
   @override
-  String toString() {
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
     return 'ProductsState<$T>.initial()';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties..add(DiagnosticsProperty('type', 'ProductsState<$T>.initial'));
   }
 
   @override
@@ -154,9 +177,11 @@ class _$InitialImpl<T> implements _Initial<T> {
     required TResult Function(List<Product> products) productsSuccess,
     required TResult Function(String error) productsError,
     required TResult Function() productByIdLoading,
-    required TResult Function(ProductByIdResponseModel product)
-        productByIdSuccess,
+    required TResult Function(ProductData product) productByIdSuccess,
     required TResult Function(String error) productByIdError,
+    required TResult Function() reviewsLoading,
+    required TResult Function(List<ReviewModel>? rates) reviewsSuccess,
+    required TResult Function(String error) reviewsError,
   }) {
     return initial();
   }
@@ -169,8 +194,11 @@ class _$InitialImpl<T> implements _Initial<T> {
     TResult? Function(List<Product> products)? productsSuccess,
     TResult? Function(String error)? productsError,
     TResult? Function()? productByIdLoading,
-    TResult? Function(ProductByIdResponseModel product)? productByIdSuccess,
+    TResult? Function(ProductData product)? productByIdSuccess,
     TResult? Function(String error)? productByIdError,
+    TResult? Function()? reviewsLoading,
+    TResult? Function(List<ReviewModel>? rates)? reviewsSuccess,
+    TResult? Function(String error)? reviewsError,
   }) {
     return initial?.call();
   }
@@ -183,8 +211,11 @@ class _$InitialImpl<T> implements _Initial<T> {
     TResult Function(List<Product> products)? productsSuccess,
     TResult Function(String error)? productsError,
     TResult Function()? productByIdLoading,
-    TResult Function(ProductByIdResponseModel product)? productByIdSuccess,
+    TResult Function(ProductData product)? productByIdSuccess,
     TResult Function(String error)? productByIdError,
+    TResult Function()? reviewsLoading,
+    TResult Function(List<ReviewModel>? rates)? reviewsSuccess,
+    TResult Function(String error)? reviewsError,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -203,6 +234,9 @@ class _$InitialImpl<T> implements _Initial<T> {
     required TResult Function(ProductByIdLoading<T> value) productByIdLoading,
     required TResult Function(ProductByIdSuccess<T> value) productByIdSuccess,
     required TResult Function(ProductByIdError<T> value) productByIdError,
+    required TResult Function(ReviewsLoading<T> value) reviewsLoading,
+    required TResult Function(ReviewsSuccess<T> value) reviewsSuccess,
+    required TResult Function(ReviewsError<T> value) reviewsError,
   }) {
     return initial(this);
   }
@@ -217,6 +251,9 @@ class _$InitialImpl<T> implements _Initial<T> {
     TResult? Function(ProductByIdLoading<T> value)? productByIdLoading,
     TResult? Function(ProductByIdSuccess<T> value)? productByIdSuccess,
     TResult? Function(ProductByIdError<T> value)? productByIdError,
+    TResult? Function(ReviewsLoading<T> value)? reviewsLoading,
+    TResult? Function(ReviewsSuccess<T> value)? reviewsSuccess,
+    TResult? Function(ReviewsError<T> value)? reviewsError,
   }) {
     return initial?.call(this);
   }
@@ -231,6 +268,9 @@ class _$InitialImpl<T> implements _Initial<T> {
     TResult Function(ProductByIdLoading<T> value)? productByIdLoading,
     TResult Function(ProductByIdSuccess<T> value)? productByIdSuccess,
     TResult Function(ProductByIdError<T> value)? productByIdError,
+    TResult Function(ReviewsLoading<T> value)? reviewsLoading,
+    TResult Function(ReviewsSuccess<T> value)? reviewsSuccess,
+    TResult Function(ReviewsError<T> value)? reviewsError,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -265,12 +305,21 @@ class __$$ProductsLoadingImplCopyWithImpl<T, $Res>
 
 /// @nodoc
 
-class _$ProductsLoadingImpl<T> implements ProductsLoading<T> {
+class _$ProductsLoadingImpl<T>
+    with DiagnosticableTreeMixin
+    implements ProductsLoading<T> {
   const _$ProductsLoadingImpl();
 
   @override
-  String toString() {
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
     return 'ProductsState<$T>.productsLoading()';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type', 'ProductsState<$T>.productsLoading'));
   }
 
   @override
@@ -290,9 +339,11 @@ class _$ProductsLoadingImpl<T> implements ProductsLoading<T> {
     required TResult Function(List<Product> products) productsSuccess,
     required TResult Function(String error) productsError,
     required TResult Function() productByIdLoading,
-    required TResult Function(ProductByIdResponseModel product)
-        productByIdSuccess,
+    required TResult Function(ProductData product) productByIdSuccess,
     required TResult Function(String error) productByIdError,
+    required TResult Function() reviewsLoading,
+    required TResult Function(List<ReviewModel>? rates) reviewsSuccess,
+    required TResult Function(String error) reviewsError,
   }) {
     return productsLoading();
   }
@@ -305,8 +356,11 @@ class _$ProductsLoadingImpl<T> implements ProductsLoading<T> {
     TResult? Function(List<Product> products)? productsSuccess,
     TResult? Function(String error)? productsError,
     TResult? Function()? productByIdLoading,
-    TResult? Function(ProductByIdResponseModel product)? productByIdSuccess,
+    TResult? Function(ProductData product)? productByIdSuccess,
     TResult? Function(String error)? productByIdError,
+    TResult? Function()? reviewsLoading,
+    TResult? Function(List<ReviewModel>? rates)? reviewsSuccess,
+    TResult? Function(String error)? reviewsError,
   }) {
     return productsLoading?.call();
   }
@@ -319,8 +373,11 @@ class _$ProductsLoadingImpl<T> implements ProductsLoading<T> {
     TResult Function(List<Product> products)? productsSuccess,
     TResult Function(String error)? productsError,
     TResult Function()? productByIdLoading,
-    TResult Function(ProductByIdResponseModel product)? productByIdSuccess,
+    TResult Function(ProductData product)? productByIdSuccess,
     TResult Function(String error)? productByIdError,
+    TResult Function()? reviewsLoading,
+    TResult Function(List<ReviewModel>? rates)? reviewsSuccess,
+    TResult Function(String error)? reviewsError,
     required TResult orElse(),
   }) {
     if (productsLoading != null) {
@@ -339,6 +396,9 @@ class _$ProductsLoadingImpl<T> implements ProductsLoading<T> {
     required TResult Function(ProductByIdLoading<T> value) productByIdLoading,
     required TResult Function(ProductByIdSuccess<T> value) productByIdSuccess,
     required TResult Function(ProductByIdError<T> value) productByIdError,
+    required TResult Function(ReviewsLoading<T> value) reviewsLoading,
+    required TResult Function(ReviewsSuccess<T> value) reviewsSuccess,
+    required TResult Function(ReviewsError<T> value) reviewsError,
   }) {
     return productsLoading(this);
   }
@@ -353,6 +413,9 @@ class _$ProductsLoadingImpl<T> implements ProductsLoading<T> {
     TResult? Function(ProductByIdLoading<T> value)? productByIdLoading,
     TResult? Function(ProductByIdSuccess<T> value)? productByIdSuccess,
     TResult? Function(ProductByIdError<T> value)? productByIdError,
+    TResult? Function(ReviewsLoading<T> value)? reviewsLoading,
+    TResult? Function(ReviewsSuccess<T> value)? reviewsSuccess,
+    TResult? Function(ReviewsError<T> value)? reviewsError,
   }) {
     return productsLoading?.call(this);
   }
@@ -367,6 +430,9 @@ class _$ProductsLoadingImpl<T> implements ProductsLoading<T> {
     TResult Function(ProductByIdLoading<T> value)? productByIdLoading,
     TResult Function(ProductByIdSuccess<T> value)? productByIdSuccess,
     TResult Function(ProductByIdError<T> value)? productByIdError,
+    TResult Function(ReviewsLoading<T> value)? reviewsLoading,
+    TResult Function(ReviewsSuccess<T> value)? reviewsSuccess,
+    TResult Function(ReviewsError<T> value)? reviewsError,
     required TResult orElse(),
   }) {
     if (productsLoading != null) {
@@ -415,7 +481,9 @@ class __$$ProductsSuccessImplCopyWithImpl<T, $Res>
 
 /// @nodoc
 
-class _$ProductsSuccessImpl<T> implements ProductsSuccess<T> {
+class _$ProductsSuccessImpl<T>
+    with DiagnosticableTreeMixin
+    implements ProductsSuccess<T> {
   const _$ProductsSuccessImpl(final List<Product> products)
       : _products = products;
 
@@ -428,8 +496,16 @@ class _$ProductsSuccessImpl<T> implements ProductsSuccess<T> {
   }
 
   @override
-  String toString() {
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
     return 'ProductsState<$T>.productsSuccess(products: $products)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type', 'ProductsState<$T>.productsSuccess'))
+      ..add(DiagnosticsProperty('products', products));
   }
 
   @override
@@ -461,9 +537,11 @@ class _$ProductsSuccessImpl<T> implements ProductsSuccess<T> {
     required TResult Function(List<Product> products) productsSuccess,
     required TResult Function(String error) productsError,
     required TResult Function() productByIdLoading,
-    required TResult Function(ProductByIdResponseModel product)
-        productByIdSuccess,
+    required TResult Function(ProductData product) productByIdSuccess,
     required TResult Function(String error) productByIdError,
+    required TResult Function() reviewsLoading,
+    required TResult Function(List<ReviewModel>? rates) reviewsSuccess,
+    required TResult Function(String error) reviewsError,
   }) {
     return productsSuccess(products);
   }
@@ -476,8 +554,11 @@ class _$ProductsSuccessImpl<T> implements ProductsSuccess<T> {
     TResult? Function(List<Product> products)? productsSuccess,
     TResult? Function(String error)? productsError,
     TResult? Function()? productByIdLoading,
-    TResult? Function(ProductByIdResponseModel product)? productByIdSuccess,
+    TResult? Function(ProductData product)? productByIdSuccess,
     TResult? Function(String error)? productByIdError,
+    TResult? Function()? reviewsLoading,
+    TResult? Function(List<ReviewModel>? rates)? reviewsSuccess,
+    TResult? Function(String error)? reviewsError,
   }) {
     return productsSuccess?.call(products);
   }
@@ -490,8 +571,11 @@ class _$ProductsSuccessImpl<T> implements ProductsSuccess<T> {
     TResult Function(List<Product> products)? productsSuccess,
     TResult Function(String error)? productsError,
     TResult Function()? productByIdLoading,
-    TResult Function(ProductByIdResponseModel product)? productByIdSuccess,
+    TResult Function(ProductData product)? productByIdSuccess,
     TResult Function(String error)? productByIdError,
+    TResult Function()? reviewsLoading,
+    TResult Function(List<ReviewModel>? rates)? reviewsSuccess,
+    TResult Function(String error)? reviewsError,
     required TResult orElse(),
   }) {
     if (productsSuccess != null) {
@@ -510,6 +594,9 @@ class _$ProductsSuccessImpl<T> implements ProductsSuccess<T> {
     required TResult Function(ProductByIdLoading<T> value) productByIdLoading,
     required TResult Function(ProductByIdSuccess<T> value) productByIdSuccess,
     required TResult Function(ProductByIdError<T> value) productByIdError,
+    required TResult Function(ReviewsLoading<T> value) reviewsLoading,
+    required TResult Function(ReviewsSuccess<T> value) reviewsSuccess,
+    required TResult Function(ReviewsError<T> value) reviewsError,
   }) {
     return productsSuccess(this);
   }
@@ -524,6 +611,9 @@ class _$ProductsSuccessImpl<T> implements ProductsSuccess<T> {
     TResult? Function(ProductByIdLoading<T> value)? productByIdLoading,
     TResult? Function(ProductByIdSuccess<T> value)? productByIdSuccess,
     TResult? Function(ProductByIdError<T> value)? productByIdError,
+    TResult? Function(ReviewsLoading<T> value)? reviewsLoading,
+    TResult? Function(ReviewsSuccess<T> value)? reviewsSuccess,
+    TResult? Function(ReviewsError<T> value)? reviewsError,
   }) {
     return productsSuccess?.call(this);
   }
@@ -538,6 +628,9 @@ class _$ProductsSuccessImpl<T> implements ProductsSuccess<T> {
     TResult Function(ProductByIdLoading<T> value)? productByIdLoading,
     TResult Function(ProductByIdSuccess<T> value)? productByIdSuccess,
     TResult Function(ProductByIdError<T> value)? productByIdError,
+    TResult Function(ReviewsLoading<T> value)? reviewsLoading,
+    TResult Function(ReviewsSuccess<T> value)? reviewsSuccess,
+    TResult Function(ReviewsError<T> value)? reviewsError,
     required TResult orElse(),
   }) {
     if (productsSuccess != null) {
@@ -595,15 +688,25 @@ class __$$ProductsErrorImplCopyWithImpl<T, $Res>
 
 /// @nodoc
 
-class _$ProductsErrorImpl<T> implements ProductsError<T> {
+class _$ProductsErrorImpl<T>
+    with DiagnosticableTreeMixin
+    implements ProductsError<T> {
   const _$ProductsErrorImpl({required this.error});
 
   @override
   final String error;
 
   @override
-  String toString() {
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
     return 'ProductsState<$T>.productsError(error: $error)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type', 'ProductsState<$T>.productsError'))
+      ..add(DiagnosticsProperty('error', error));
   }
 
   @override
@@ -634,9 +737,11 @@ class _$ProductsErrorImpl<T> implements ProductsError<T> {
     required TResult Function(List<Product> products) productsSuccess,
     required TResult Function(String error) productsError,
     required TResult Function() productByIdLoading,
-    required TResult Function(ProductByIdResponseModel product)
-        productByIdSuccess,
+    required TResult Function(ProductData product) productByIdSuccess,
     required TResult Function(String error) productByIdError,
+    required TResult Function() reviewsLoading,
+    required TResult Function(List<ReviewModel>? rates) reviewsSuccess,
+    required TResult Function(String error) reviewsError,
   }) {
     return productsError(error);
   }
@@ -649,8 +754,11 @@ class _$ProductsErrorImpl<T> implements ProductsError<T> {
     TResult? Function(List<Product> products)? productsSuccess,
     TResult? Function(String error)? productsError,
     TResult? Function()? productByIdLoading,
-    TResult? Function(ProductByIdResponseModel product)? productByIdSuccess,
+    TResult? Function(ProductData product)? productByIdSuccess,
     TResult? Function(String error)? productByIdError,
+    TResult? Function()? reviewsLoading,
+    TResult? Function(List<ReviewModel>? rates)? reviewsSuccess,
+    TResult? Function(String error)? reviewsError,
   }) {
     return productsError?.call(error);
   }
@@ -663,8 +771,11 @@ class _$ProductsErrorImpl<T> implements ProductsError<T> {
     TResult Function(List<Product> products)? productsSuccess,
     TResult Function(String error)? productsError,
     TResult Function()? productByIdLoading,
-    TResult Function(ProductByIdResponseModel product)? productByIdSuccess,
+    TResult Function(ProductData product)? productByIdSuccess,
     TResult Function(String error)? productByIdError,
+    TResult Function()? reviewsLoading,
+    TResult Function(List<ReviewModel>? rates)? reviewsSuccess,
+    TResult Function(String error)? reviewsError,
     required TResult orElse(),
   }) {
     if (productsError != null) {
@@ -683,6 +794,9 @@ class _$ProductsErrorImpl<T> implements ProductsError<T> {
     required TResult Function(ProductByIdLoading<T> value) productByIdLoading,
     required TResult Function(ProductByIdSuccess<T> value) productByIdSuccess,
     required TResult Function(ProductByIdError<T> value) productByIdError,
+    required TResult Function(ReviewsLoading<T> value) reviewsLoading,
+    required TResult Function(ReviewsSuccess<T> value) reviewsSuccess,
+    required TResult Function(ReviewsError<T> value) reviewsError,
   }) {
     return productsError(this);
   }
@@ -697,6 +811,9 @@ class _$ProductsErrorImpl<T> implements ProductsError<T> {
     TResult? Function(ProductByIdLoading<T> value)? productByIdLoading,
     TResult? Function(ProductByIdSuccess<T> value)? productByIdSuccess,
     TResult? Function(ProductByIdError<T> value)? productByIdError,
+    TResult? Function(ReviewsLoading<T> value)? reviewsLoading,
+    TResult? Function(ReviewsSuccess<T> value)? reviewsSuccess,
+    TResult? Function(ReviewsError<T> value)? reviewsError,
   }) {
     return productsError?.call(this);
   }
@@ -711,6 +828,9 @@ class _$ProductsErrorImpl<T> implements ProductsError<T> {
     TResult Function(ProductByIdLoading<T> value)? productByIdLoading,
     TResult Function(ProductByIdSuccess<T> value)? productByIdSuccess,
     TResult Function(ProductByIdError<T> value)? productByIdError,
+    TResult Function(ReviewsLoading<T> value)? reviewsLoading,
+    TResult Function(ReviewsSuccess<T> value)? reviewsSuccess,
+    TResult Function(ReviewsError<T> value)? reviewsError,
     required TResult orElse(),
   }) {
     if (productsError != null) {
@@ -754,12 +874,22 @@ class __$$ProductByIdLoadingImplCopyWithImpl<T, $Res>
 
 /// @nodoc
 
-class _$ProductByIdLoadingImpl<T> implements ProductByIdLoading<T> {
+class _$ProductByIdLoadingImpl<T>
+    with DiagnosticableTreeMixin
+    implements ProductByIdLoading<T> {
   const _$ProductByIdLoadingImpl();
 
   @override
-  String toString() {
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
     return 'ProductsState<$T>.productByIdLoading()';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(
+          DiagnosticsProperty('type', 'ProductsState<$T>.productByIdLoading'));
   }
 
   @override
@@ -780,9 +910,11 @@ class _$ProductByIdLoadingImpl<T> implements ProductByIdLoading<T> {
     required TResult Function(List<Product> products) productsSuccess,
     required TResult Function(String error) productsError,
     required TResult Function() productByIdLoading,
-    required TResult Function(ProductByIdResponseModel product)
-        productByIdSuccess,
+    required TResult Function(ProductData product) productByIdSuccess,
     required TResult Function(String error) productByIdError,
+    required TResult Function() reviewsLoading,
+    required TResult Function(List<ReviewModel>? rates) reviewsSuccess,
+    required TResult Function(String error) reviewsError,
   }) {
     return productByIdLoading();
   }
@@ -795,8 +927,11 @@ class _$ProductByIdLoadingImpl<T> implements ProductByIdLoading<T> {
     TResult? Function(List<Product> products)? productsSuccess,
     TResult? Function(String error)? productsError,
     TResult? Function()? productByIdLoading,
-    TResult? Function(ProductByIdResponseModel product)? productByIdSuccess,
+    TResult? Function(ProductData product)? productByIdSuccess,
     TResult? Function(String error)? productByIdError,
+    TResult? Function()? reviewsLoading,
+    TResult? Function(List<ReviewModel>? rates)? reviewsSuccess,
+    TResult? Function(String error)? reviewsError,
   }) {
     return productByIdLoading?.call();
   }
@@ -809,8 +944,11 @@ class _$ProductByIdLoadingImpl<T> implements ProductByIdLoading<T> {
     TResult Function(List<Product> products)? productsSuccess,
     TResult Function(String error)? productsError,
     TResult Function()? productByIdLoading,
-    TResult Function(ProductByIdResponseModel product)? productByIdSuccess,
+    TResult Function(ProductData product)? productByIdSuccess,
     TResult Function(String error)? productByIdError,
+    TResult Function()? reviewsLoading,
+    TResult Function(List<ReviewModel>? rates)? reviewsSuccess,
+    TResult Function(String error)? reviewsError,
     required TResult orElse(),
   }) {
     if (productByIdLoading != null) {
@@ -829,6 +967,9 @@ class _$ProductByIdLoadingImpl<T> implements ProductByIdLoading<T> {
     required TResult Function(ProductByIdLoading<T> value) productByIdLoading,
     required TResult Function(ProductByIdSuccess<T> value) productByIdSuccess,
     required TResult Function(ProductByIdError<T> value) productByIdError,
+    required TResult Function(ReviewsLoading<T> value) reviewsLoading,
+    required TResult Function(ReviewsSuccess<T> value) reviewsSuccess,
+    required TResult Function(ReviewsError<T> value) reviewsError,
   }) {
     return productByIdLoading(this);
   }
@@ -843,6 +984,9 @@ class _$ProductByIdLoadingImpl<T> implements ProductByIdLoading<T> {
     TResult? Function(ProductByIdLoading<T> value)? productByIdLoading,
     TResult? Function(ProductByIdSuccess<T> value)? productByIdSuccess,
     TResult? Function(ProductByIdError<T> value)? productByIdError,
+    TResult? Function(ReviewsLoading<T> value)? reviewsLoading,
+    TResult? Function(ReviewsSuccess<T> value)? reviewsSuccess,
+    TResult? Function(ReviewsError<T> value)? reviewsError,
   }) {
     return productByIdLoading?.call(this);
   }
@@ -857,6 +1001,9 @@ class _$ProductByIdLoadingImpl<T> implements ProductByIdLoading<T> {
     TResult Function(ProductByIdLoading<T> value)? productByIdLoading,
     TResult Function(ProductByIdSuccess<T> value)? productByIdSuccess,
     TResult Function(ProductByIdError<T> value)? productByIdError,
+    TResult Function(ReviewsLoading<T> value)? reviewsLoading,
+    TResult Function(ReviewsSuccess<T> value)? reviewsSuccess,
+    TResult Function(ReviewsError<T> value)? reviewsError,
     required TResult orElse(),
   }) {
     if (productByIdLoading != null) {
@@ -876,7 +1023,7 @@ abstract class _$$ProductByIdSuccessImplCopyWith<T, $Res> {
           $Res Function(_$ProductByIdSuccessImpl<T>) then) =
       __$$ProductByIdSuccessImplCopyWithImpl<T, $Res>;
   @useResult
-  $Res call({ProductByIdResponseModel product});
+  $Res call({ProductData product});
 }
 
 /// @nodoc
@@ -898,22 +1045,32 @@ class __$$ProductByIdSuccessImplCopyWithImpl<T, $Res>
       null == product
           ? _value.product
           : product // ignore: cast_nullable_to_non_nullable
-              as ProductByIdResponseModel,
+              as ProductData,
     ));
   }
 }
 
 /// @nodoc
 
-class _$ProductByIdSuccessImpl<T> implements ProductByIdSuccess<T> {
+class _$ProductByIdSuccessImpl<T>
+    with DiagnosticableTreeMixin
+    implements ProductByIdSuccess<T> {
   const _$ProductByIdSuccessImpl(this.product);
 
   @override
-  final ProductByIdResponseModel product;
+  final ProductData product;
 
   @override
-  String toString() {
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
     return 'ProductsState<$T>.productByIdSuccess(product: $product)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type', 'ProductsState<$T>.productByIdSuccess'))
+      ..add(DiagnosticsProperty('product', product));
   }
 
   @override
@@ -944,9 +1101,11 @@ class _$ProductByIdSuccessImpl<T> implements ProductByIdSuccess<T> {
     required TResult Function(List<Product> products) productsSuccess,
     required TResult Function(String error) productsError,
     required TResult Function() productByIdLoading,
-    required TResult Function(ProductByIdResponseModel product)
-        productByIdSuccess,
+    required TResult Function(ProductData product) productByIdSuccess,
     required TResult Function(String error) productByIdError,
+    required TResult Function() reviewsLoading,
+    required TResult Function(List<ReviewModel>? rates) reviewsSuccess,
+    required TResult Function(String error) reviewsError,
   }) {
     return productByIdSuccess(product);
   }
@@ -959,8 +1118,11 @@ class _$ProductByIdSuccessImpl<T> implements ProductByIdSuccess<T> {
     TResult? Function(List<Product> products)? productsSuccess,
     TResult? Function(String error)? productsError,
     TResult? Function()? productByIdLoading,
-    TResult? Function(ProductByIdResponseModel product)? productByIdSuccess,
+    TResult? Function(ProductData product)? productByIdSuccess,
     TResult? Function(String error)? productByIdError,
+    TResult? Function()? reviewsLoading,
+    TResult? Function(List<ReviewModel>? rates)? reviewsSuccess,
+    TResult? Function(String error)? reviewsError,
   }) {
     return productByIdSuccess?.call(product);
   }
@@ -973,8 +1135,11 @@ class _$ProductByIdSuccessImpl<T> implements ProductByIdSuccess<T> {
     TResult Function(List<Product> products)? productsSuccess,
     TResult Function(String error)? productsError,
     TResult Function()? productByIdLoading,
-    TResult Function(ProductByIdResponseModel product)? productByIdSuccess,
+    TResult Function(ProductData product)? productByIdSuccess,
     TResult Function(String error)? productByIdError,
+    TResult Function()? reviewsLoading,
+    TResult Function(List<ReviewModel>? rates)? reviewsSuccess,
+    TResult Function(String error)? reviewsError,
     required TResult orElse(),
   }) {
     if (productByIdSuccess != null) {
@@ -993,6 +1158,9 @@ class _$ProductByIdSuccessImpl<T> implements ProductByIdSuccess<T> {
     required TResult Function(ProductByIdLoading<T> value) productByIdLoading,
     required TResult Function(ProductByIdSuccess<T> value) productByIdSuccess,
     required TResult Function(ProductByIdError<T> value) productByIdError,
+    required TResult Function(ReviewsLoading<T> value) reviewsLoading,
+    required TResult Function(ReviewsSuccess<T> value) reviewsSuccess,
+    required TResult Function(ReviewsError<T> value) reviewsError,
   }) {
     return productByIdSuccess(this);
   }
@@ -1007,6 +1175,9 @@ class _$ProductByIdSuccessImpl<T> implements ProductByIdSuccess<T> {
     TResult? Function(ProductByIdLoading<T> value)? productByIdLoading,
     TResult? Function(ProductByIdSuccess<T> value)? productByIdSuccess,
     TResult? Function(ProductByIdError<T> value)? productByIdError,
+    TResult? Function(ReviewsLoading<T> value)? reviewsLoading,
+    TResult? Function(ReviewsSuccess<T> value)? reviewsSuccess,
+    TResult? Function(ReviewsError<T> value)? reviewsError,
   }) {
     return productByIdSuccess?.call(this);
   }
@@ -1021,6 +1192,9 @@ class _$ProductByIdSuccessImpl<T> implements ProductByIdSuccess<T> {
     TResult Function(ProductByIdLoading<T> value)? productByIdLoading,
     TResult Function(ProductByIdSuccess<T> value)? productByIdSuccess,
     TResult Function(ProductByIdError<T> value)? productByIdError,
+    TResult Function(ReviewsLoading<T> value)? reviewsLoading,
+    TResult Function(ReviewsSuccess<T> value)? reviewsSuccess,
+    TResult Function(ReviewsError<T> value)? reviewsError,
     required TResult orElse(),
   }) {
     if (productByIdSuccess != null) {
@@ -1031,10 +1205,10 @@ class _$ProductByIdSuccessImpl<T> implements ProductByIdSuccess<T> {
 }
 
 abstract class ProductByIdSuccess<T> implements ProductsState<T> {
-  const factory ProductByIdSuccess(final ProductByIdResponseModel product) =
+  const factory ProductByIdSuccess(final ProductData product) =
       _$ProductByIdSuccessImpl<T>;
 
-  ProductByIdResponseModel get product;
+  ProductData get product;
 
   /// Create a copy of ProductsState
   /// with the given fields replaced by the non-null parameter values.
@@ -1078,15 +1252,25 @@ class __$$ProductByIdErrorImplCopyWithImpl<T, $Res>
 
 /// @nodoc
 
-class _$ProductByIdErrorImpl<T> implements ProductByIdError<T> {
+class _$ProductByIdErrorImpl<T>
+    with DiagnosticableTreeMixin
+    implements ProductByIdError<T> {
   const _$ProductByIdErrorImpl({required this.error});
 
   @override
   final String error;
 
   @override
-  String toString() {
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
     return 'ProductsState<$T>.productByIdError(error: $error)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type', 'ProductsState<$T>.productByIdError'))
+      ..add(DiagnosticsProperty('error', error));
   }
 
   @override
@@ -1117,9 +1301,11 @@ class _$ProductByIdErrorImpl<T> implements ProductByIdError<T> {
     required TResult Function(List<Product> products) productsSuccess,
     required TResult Function(String error) productsError,
     required TResult Function() productByIdLoading,
-    required TResult Function(ProductByIdResponseModel product)
-        productByIdSuccess,
+    required TResult Function(ProductData product) productByIdSuccess,
     required TResult Function(String error) productByIdError,
+    required TResult Function() reviewsLoading,
+    required TResult Function(List<ReviewModel>? rates) reviewsSuccess,
+    required TResult Function(String error) reviewsError,
   }) {
     return productByIdError(error);
   }
@@ -1132,8 +1318,11 @@ class _$ProductByIdErrorImpl<T> implements ProductByIdError<T> {
     TResult? Function(List<Product> products)? productsSuccess,
     TResult? Function(String error)? productsError,
     TResult? Function()? productByIdLoading,
-    TResult? Function(ProductByIdResponseModel product)? productByIdSuccess,
+    TResult? Function(ProductData product)? productByIdSuccess,
     TResult? Function(String error)? productByIdError,
+    TResult? Function()? reviewsLoading,
+    TResult? Function(List<ReviewModel>? rates)? reviewsSuccess,
+    TResult? Function(String error)? reviewsError,
   }) {
     return productByIdError?.call(error);
   }
@@ -1146,8 +1335,11 @@ class _$ProductByIdErrorImpl<T> implements ProductByIdError<T> {
     TResult Function(List<Product> products)? productsSuccess,
     TResult Function(String error)? productsError,
     TResult Function()? productByIdLoading,
-    TResult Function(ProductByIdResponseModel product)? productByIdSuccess,
+    TResult Function(ProductData product)? productByIdSuccess,
     TResult Function(String error)? productByIdError,
+    TResult Function()? reviewsLoading,
+    TResult Function(List<ReviewModel>? rates)? reviewsSuccess,
+    TResult Function(String error)? reviewsError,
     required TResult orElse(),
   }) {
     if (productByIdError != null) {
@@ -1166,6 +1358,9 @@ class _$ProductByIdErrorImpl<T> implements ProductByIdError<T> {
     required TResult Function(ProductByIdLoading<T> value) productByIdLoading,
     required TResult Function(ProductByIdSuccess<T> value) productByIdSuccess,
     required TResult Function(ProductByIdError<T> value) productByIdError,
+    required TResult Function(ReviewsLoading<T> value) reviewsLoading,
+    required TResult Function(ReviewsSuccess<T> value) reviewsSuccess,
+    required TResult Function(ReviewsError<T> value) reviewsError,
   }) {
     return productByIdError(this);
   }
@@ -1180,6 +1375,9 @@ class _$ProductByIdErrorImpl<T> implements ProductByIdError<T> {
     TResult? Function(ProductByIdLoading<T> value)? productByIdLoading,
     TResult? Function(ProductByIdSuccess<T> value)? productByIdSuccess,
     TResult? Function(ProductByIdError<T> value)? productByIdError,
+    TResult? Function(ReviewsLoading<T> value)? reviewsLoading,
+    TResult? Function(ReviewsSuccess<T> value)? reviewsSuccess,
+    TResult? Function(ReviewsError<T> value)? reviewsError,
   }) {
     return productByIdError?.call(this);
   }
@@ -1194,6 +1392,9 @@ class _$ProductByIdErrorImpl<T> implements ProductByIdError<T> {
     TResult Function(ProductByIdLoading<T> value)? productByIdLoading,
     TResult Function(ProductByIdSuccess<T> value)? productByIdSuccess,
     TResult Function(ProductByIdError<T> value)? productByIdError,
+    TResult Function(ReviewsLoading<T> value)? reviewsLoading,
+    TResult Function(ReviewsSuccess<T> value)? reviewsSuccess,
+    TResult Function(ReviewsError<T> value)? reviewsError,
     required TResult orElse(),
   }) {
     if (productByIdError != null) {
@@ -1213,5 +1414,575 @@ abstract class ProductByIdError<T> implements ProductsState<T> {
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   _$$ProductByIdErrorImplCopyWith<T, _$ProductByIdErrorImpl<T>> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$ReviewsLoadingImplCopyWith<T, $Res> {
+  factory _$$ReviewsLoadingImplCopyWith(_$ReviewsLoadingImpl<T> value,
+          $Res Function(_$ReviewsLoadingImpl<T>) then) =
+      __$$ReviewsLoadingImplCopyWithImpl<T, $Res>;
+}
+
+/// @nodoc
+class __$$ReviewsLoadingImplCopyWithImpl<T, $Res>
+    extends _$ProductsStateCopyWithImpl<T, $Res, _$ReviewsLoadingImpl<T>>
+    implements _$$ReviewsLoadingImplCopyWith<T, $Res> {
+  __$$ReviewsLoadingImplCopyWithImpl(_$ReviewsLoadingImpl<T> _value,
+      $Res Function(_$ReviewsLoadingImpl<T>) _then)
+      : super(_value, _then);
+
+  /// Create a copy of ProductsState
+  /// with the given fields replaced by the non-null parameter values.
+}
+
+/// @nodoc
+
+class _$ReviewsLoadingImpl<T>
+    with DiagnosticableTreeMixin
+    implements ReviewsLoading<T> {
+  const _$ReviewsLoadingImpl();
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'ProductsState<$T>.reviewsLoading()';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type', 'ProductsState<$T>.reviewsLoading'));
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$ReviewsLoadingImpl<T>);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() productsLoading,
+    required TResult Function(List<Product> products) productsSuccess,
+    required TResult Function(String error) productsError,
+    required TResult Function() productByIdLoading,
+    required TResult Function(ProductData product) productByIdSuccess,
+    required TResult Function(String error) productByIdError,
+    required TResult Function() reviewsLoading,
+    required TResult Function(List<ReviewModel>? rates) reviewsSuccess,
+    required TResult Function(String error) reviewsError,
+  }) {
+    return reviewsLoading();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? productsLoading,
+    TResult? Function(List<Product> products)? productsSuccess,
+    TResult? Function(String error)? productsError,
+    TResult? Function()? productByIdLoading,
+    TResult? Function(ProductData product)? productByIdSuccess,
+    TResult? Function(String error)? productByIdError,
+    TResult? Function()? reviewsLoading,
+    TResult? Function(List<ReviewModel>? rates)? reviewsSuccess,
+    TResult? Function(String error)? reviewsError,
+  }) {
+    return reviewsLoading?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? productsLoading,
+    TResult Function(List<Product> products)? productsSuccess,
+    TResult Function(String error)? productsError,
+    TResult Function()? productByIdLoading,
+    TResult Function(ProductData product)? productByIdSuccess,
+    TResult Function(String error)? productByIdError,
+    TResult Function()? reviewsLoading,
+    TResult Function(List<ReviewModel>? rates)? reviewsSuccess,
+    TResult Function(String error)? reviewsError,
+    required TResult orElse(),
+  }) {
+    if (reviewsLoading != null) {
+      return reviewsLoading();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial<T> value) initial,
+    required TResult Function(ProductsLoading<T> value) productsLoading,
+    required TResult Function(ProductsSuccess<T> value) productsSuccess,
+    required TResult Function(ProductsError<T> value) productsError,
+    required TResult Function(ProductByIdLoading<T> value) productByIdLoading,
+    required TResult Function(ProductByIdSuccess<T> value) productByIdSuccess,
+    required TResult Function(ProductByIdError<T> value) productByIdError,
+    required TResult Function(ReviewsLoading<T> value) reviewsLoading,
+    required TResult Function(ReviewsSuccess<T> value) reviewsSuccess,
+    required TResult Function(ReviewsError<T> value) reviewsError,
+  }) {
+    return reviewsLoading(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial<T> value)? initial,
+    TResult? Function(ProductsLoading<T> value)? productsLoading,
+    TResult? Function(ProductsSuccess<T> value)? productsSuccess,
+    TResult? Function(ProductsError<T> value)? productsError,
+    TResult? Function(ProductByIdLoading<T> value)? productByIdLoading,
+    TResult? Function(ProductByIdSuccess<T> value)? productByIdSuccess,
+    TResult? Function(ProductByIdError<T> value)? productByIdError,
+    TResult? Function(ReviewsLoading<T> value)? reviewsLoading,
+    TResult? Function(ReviewsSuccess<T> value)? reviewsSuccess,
+    TResult? Function(ReviewsError<T> value)? reviewsError,
+  }) {
+    return reviewsLoading?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial<T> value)? initial,
+    TResult Function(ProductsLoading<T> value)? productsLoading,
+    TResult Function(ProductsSuccess<T> value)? productsSuccess,
+    TResult Function(ProductsError<T> value)? productsError,
+    TResult Function(ProductByIdLoading<T> value)? productByIdLoading,
+    TResult Function(ProductByIdSuccess<T> value)? productByIdSuccess,
+    TResult Function(ProductByIdError<T> value)? productByIdError,
+    TResult Function(ReviewsLoading<T> value)? reviewsLoading,
+    TResult Function(ReviewsSuccess<T> value)? reviewsSuccess,
+    TResult Function(ReviewsError<T> value)? reviewsError,
+    required TResult orElse(),
+  }) {
+    if (reviewsLoading != null) {
+      return reviewsLoading(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class ReviewsLoading<T> implements ProductsState<T> {
+  const factory ReviewsLoading() = _$ReviewsLoadingImpl<T>;
+}
+
+/// @nodoc
+abstract class _$$ReviewsSuccessImplCopyWith<T, $Res> {
+  factory _$$ReviewsSuccessImplCopyWith(_$ReviewsSuccessImpl<T> value,
+          $Res Function(_$ReviewsSuccessImpl<T>) then) =
+      __$$ReviewsSuccessImplCopyWithImpl<T, $Res>;
+  @useResult
+  $Res call({List<ReviewModel>? rates});
+}
+
+/// @nodoc
+class __$$ReviewsSuccessImplCopyWithImpl<T, $Res>
+    extends _$ProductsStateCopyWithImpl<T, $Res, _$ReviewsSuccessImpl<T>>
+    implements _$$ReviewsSuccessImplCopyWith<T, $Res> {
+  __$$ReviewsSuccessImplCopyWithImpl(_$ReviewsSuccessImpl<T> _value,
+      $Res Function(_$ReviewsSuccessImpl<T>) _then)
+      : super(_value, _then);
+
+  /// Create a copy of ProductsState
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? rates = freezed,
+  }) {
+    return _then(_$ReviewsSuccessImpl<T>(
+      freezed == rates
+          ? _value._rates
+          : rates // ignore: cast_nullable_to_non_nullable
+              as List<ReviewModel>?,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$ReviewsSuccessImpl<T>
+    with DiagnosticableTreeMixin
+    implements ReviewsSuccess<T> {
+  const _$ReviewsSuccessImpl(final List<ReviewModel>? rates) : _rates = rates;
+
+  final List<ReviewModel>? _rates;
+  @override
+  List<ReviewModel>? get rates {
+    final value = _rates;
+    if (value == null) return null;
+    if (_rates is EqualUnmodifiableListView) return _rates;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'ProductsState<$T>.reviewsSuccess(rates: $rates)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type', 'ProductsState<$T>.reviewsSuccess'))
+      ..add(DiagnosticsProperty('rates', rates));
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$ReviewsSuccessImpl<T> &&
+            const DeepCollectionEquality().equals(other._rates, _rates));
+  }
+
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(_rates));
+
+  /// Create a copy of ProductsState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$ReviewsSuccessImplCopyWith<T, _$ReviewsSuccessImpl<T>> get copyWith =>
+      __$$ReviewsSuccessImplCopyWithImpl<T, _$ReviewsSuccessImpl<T>>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() productsLoading,
+    required TResult Function(List<Product> products) productsSuccess,
+    required TResult Function(String error) productsError,
+    required TResult Function() productByIdLoading,
+    required TResult Function(ProductData product) productByIdSuccess,
+    required TResult Function(String error) productByIdError,
+    required TResult Function() reviewsLoading,
+    required TResult Function(List<ReviewModel>? rates) reviewsSuccess,
+    required TResult Function(String error) reviewsError,
+  }) {
+    return reviewsSuccess(rates);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? productsLoading,
+    TResult? Function(List<Product> products)? productsSuccess,
+    TResult? Function(String error)? productsError,
+    TResult? Function()? productByIdLoading,
+    TResult? Function(ProductData product)? productByIdSuccess,
+    TResult? Function(String error)? productByIdError,
+    TResult? Function()? reviewsLoading,
+    TResult? Function(List<ReviewModel>? rates)? reviewsSuccess,
+    TResult? Function(String error)? reviewsError,
+  }) {
+    return reviewsSuccess?.call(rates);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? productsLoading,
+    TResult Function(List<Product> products)? productsSuccess,
+    TResult Function(String error)? productsError,
+    TResult Function()? productByIdLoading,
+    TResult Function(ProductData product)? productByIdSuccess,
+    TResult Function(String error)? productByIdError,
+    TResult Function()? reviewsLoading,
+    TResult Function(List<ReviewModel>? rates)? reviewsSuccess,
+    TResult Function(String error)? reviewsError,
+    required TResult orElse(),
+  }) {
+    if (reviewsSuccess != null) {
+      return reviewsSuccess(rates);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial<T> value) initial,
+    required TResult Function(ProductsLoading<T> value) productsLoading,
+    required TResult Function(ProductsSuccess<T> value) productsSuccess,
+    required TResult Function(ProductsError<T> value) productsError,
+    required TResult Function(ProductByIdLoading<T> value) productByIdLoading,
+    required TResult Function(ProductByIdSuccess<T> value) productByIdSuccess,
+    required TResult Function(ProductByIdError<T> value) productByIdError,
+    required TResult Function(ReviewsLoading<T> value) reviewsLoading,
+    required TResult Function(ReviewsSuccess<T> value) reviewsSuccess,
+    required TResult Function(ReviewsError<T> value) reviewsError,
+  }) {
+    return reviewsSuccess(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial<T> value)? initial,
+    TResult? Function(ProductsLoading<T> value)? productsLoading,
+    TResult? Function(ProductsSuccess<T> value)? productsSuccess,
+    TResult? Function(ProductsError<T> value)? productsError,
+    TResult? Function(ProductByIdLoading<T> value)? productByIdLoading,
+    TResult? Function(ProductByIdSuccess<T> value)? productByIdSuccess,
+    TResult? Function(ProductByIdError<T> value)? productByIdError,
+    TResult? Function(ReviewsLoading<T> value)? reviewsLoading,
+    TResult? Function(ReviewsSuccess<T> value)? reviewsSuccess,
+    TResult? Function(ReviewsError<T> value)? reviewsError,
+  }) {
+    return reviewsSuccess?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial<T> value)? initial,
+    TResult Function(ProductsLoading<T> value)? productsLoading,
+    TResult Function(ProductsSuccess<T> value)? productsSuccess,
+    TResult Function(ProductsError<T> value)? productsError,
+    TResult Function(ProductByIdLoading<T> value)? productByIdLoading,
+    TResult Function(ProductByIdSuccess<T> value)? productByIdSuccess,
+    TResult Function(ProductByIdError<T> value)? productByIdError,
+    TResult Function(ReviewsLoading<T> value)? reviewsLoading,
+    TResult Function(ReviewsSuccess<T> value)? reviewsSuccess,
+    TResult Function(ReviewsError<T> value)? reviewsError,
+    required TResult orElse(),
+  }) {
+    if (reviewsSuccess != null) {
+      return reviewsSuccess(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class ReviewsSuccess<T> implements ProductsState<T> {
+  const factory ReviewsSuccess(final List<ReviewModel>? rates) =
+      _$ReviewsSuccessImpl<T>;
+
+  List<ReviewModel>? get rates;
+
+  /// Create a copy of ProductsState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$ReviewsSuccessImplCopyWith<T, _$ReviewsSuccessImpl<T>> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$ReviewsErrorImplCopyWith<T, $Res> {
+  factory _$$ReviewsErrorImplCopyWith(_$ReviewsErrorImpl<T> value,
+          $Res Function(_$ReviewsErrorImpl<T>) then) =
+      __$$ReviewsErrorImplCopyWithImpl<T, $Res>;
+  @useResult
+  $Res call({String error});
+}
+
+/// @nodoc
+class __$$ReviewsErrorImplCopyWithImpl<T, $Res>
+    extends _$ProductsStateCopyWithImpl<T, $Res, _$ReviewsErrorImpl<T>>
+    implements _$$ReviewsErrorImplCopyWith<T, $Res> {
+  __$$ReviewsErrorImplCopyWithImpl(
+      _$ReviewsErrorImpl<T> _value, $Res Function(_$ReviewsErrorImpl<T>) _then)
+      : super(_value, _then);
+
+  /// Create a copy of ProductsState
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? error = null,
+  }) {
+    return _then(_$ReviewsErrorImpl<T>(
+      error: null == error
+          ? _value.error
+          : error // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$ReviewsErrorImpl<T>
+    with DiagnosticableTreeMixin
+    implements ReviewsError<T> {
+  const _$ReviewsErrorImpl({required this.error});
+
+  @override
+  final String error;
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'ProductsState<$T>.reviewsError(error: $error)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type', 'ProductsState<$T>.reviewsError'))
+      ..add(DiagnosticsProperty('error', error));
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$ReviewsErrorImpl<T> &&
+            (identical(other.error, error) || other.error == error));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, error);
+
+  /// Create a copy of ProductsState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$ReviewsErrorImplCopyWith<T, _$ReviewsErrorImpl<T>> get copyWith =>
+      __$$ReviewsErrorImplCopyWithImpl<T, _$ReviewsErrorImpl<T>>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() productsLoading,
+    required TResult Function(List<Product> products) productsSuccess,
+    required TResult Function(String error) productsError,
+    required TResult Function() productByIdLoading,
+    required TResult Function(ProductData product) productByIdSuccess,
+    required TResult Function(String error) productByIdError,
+    required TResult Function() reviewsLoading,
+    required TResult Function(List<ReviewModel>? rates) reviewsSuccess,
+    required TResult Function(String error) reviewsError,
+  }) {
+    return reviewsError(error);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? productsLoading,
+    TResult? Function(List<Product> products)? productsSuccess,
+    TResult? Function(String error)? productsError,
+    TResult? Function()? productByIdLoading,
+    TResult? Function(ProductData product)? productByIdSuccess,
+    TResult? Function(String error)? productByIdError,
+    TResult? Function()? reviewsLoading,
+    TResult? Function(List<ReviewModel>? rates)? reviewsSuccess,
+    TResult? Function(String error)? reviewsError,
+  }) {
+    return reviewsError?.call(error);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? productsLoading,
+    TResult Function(List<Product> products)? productsSuccess,
+    TResult Function(String error)? productsError,
+    TResult Function()? productByIdLoading,
+    TResult Function(ProductData product)? productByIdSuccess,
+    TResult Function(String error)? productByIdError,
+    TResult Function()? reviewsLoading,
+    TResult Function(List<ReviewModel>? rates)? reviewsSuccess,
+    TResult Function(String error)? reviewsError,
+    required TResult orElse(),
+  }) {
+    if (reviewsError != null) {
+      return reviewsError(error);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial<T> value) initial,
+    required TResult Function(ProductsLoading<T> value) productsLoading,
+    required TResult Function(ProductsSuccess<T> value) productsSuccess,
+    required TResult Function(ProductsError<T> value) productsError,
+    required TResult Function(ProductByIdLoading<T> value) productByIdLoading,
+    required TResult Function(ProductByIdSuccess<T> value) productByIdSuccess,
+    required TResult Function(ProductByIdError<T> value) productByIdError,
+    required TResult Function(ReviewsLoading<T> value) reviewsLoading,
+    required TResult Function(ReviewsSuccess<T> value) reviewsSuccess,
+    required TResult Function(ReviewsError<T> value) reviewsError,
+  }) {
+    return reviewsError(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial<T> value)? initial,
+    TResult? Function(ProductsLoading<T> value)? productsLoading,
+    TResult? Function(ProductsSuccess<T> value)? productsSuccess,
+    TResult? Function(ProductsError<T> value)? productsError,
+    TResult? Function(ProductByIdLoading<T> value)? productByIdLoading,
+    TResult? Function(ProductByIdSuccess<T> value)? productByIdSuccess,
+    TResult? Function(ProductByIdError<T> value)? productByIdError,
+    TResult? Function(ReviewsLoading<T> value)? reviewsLoading,
+    TResult? Function(ReviewsSuccess<T> value)? reviewsSuccess,
+    TResult? Function(ReviewsError<T> value)? reviewsError,
+  }) {
+    return reviewsError?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial<T> value)? initial,
+    TResult Function(ProductsLoading<T> value)? productsLoading,
+    TResult Function(ProductsSuccess<T> value)? productsSuccess,
+    TResult Function(ProductsError<T> value)? productsError,
+    TResult Function(ProductByIdLoading<T> value)? productByIdLoading,
+    TResult Function(ProductByIdSuccess<T> value)? productByIdSuccess,
+    TResult Function(ProductByIdError<T> value)? productByIdError,
+    TResult Function(ReviewsLoading<T> value)? reviewsLoading,
+    TResult Function(ReviewsSuccess<T> value)? reviewsSuccess,
+    TResult Function(ReviewsError<T> value)? reviewsError,
+    required TResult orElse(),
+  }) {
+    if (reviewsError != null) {
+      return reviewsError(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class ReviewsError<T> implements ProductsState<T> {
+  const factory ReviewsError({required final String error}) =
+      _$ReviewsErrorImpl<T>;
+
+  String get error;
+
+  /// Create a copy of ProductsState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$ReviewsErrorImplCopyWith<T, _$ReviewsErrorImpl<T>> get copyWith =>
       throw _privateConstructorUsedError;
 }

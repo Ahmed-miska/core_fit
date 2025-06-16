@@ -38,10 +38,13 @@ class StaduimItemInStaduimsScreen extends StatelessWidget {
                 width: 100.h,
                 child: ClipRRect(
                   borderRadius: BorderRadius.circular(12),
-                  child: const CustomCachedImage(imageUrl: Assets.cachImage5),
+                  child: const CustomCachedImage(
+                    imageUrl: Assets.cachImage5,
+                    fit: BoxFit.fill,
+                  ),
                 ),
               ),
-              const AddFavoriteIcon( isFavorite: false),
+              const AddFavoriteIcon(isFavorite: false),
             ],
           ),
           horizontalSpace(12),

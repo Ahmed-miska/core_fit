@@ -27,6 +27,7 @@ class MyReservationListItem extends StatelessWidget {
               borderRadius: BorderRadius.circular(12),
               child: const CustomCachedImage(
                 imageUrl: Assets.cachImage5,
+                fit: BoxFit.fill,
               ),
             ),
           ),

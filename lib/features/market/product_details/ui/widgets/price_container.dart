@@ -20,6 +20,7 @@ class PriceContainer extends StatelessWidget {
         color: AppColors.white,
       ),
       child: BlocBuilder<ProductsCubit, ProductsState>(
+        buildWhen: (previous, current) => current is ProductByIdLoading || current is ProductByIdSuccess || current is ProductByIdError,
         builder: (context, state) {
           return Row(
             children: [

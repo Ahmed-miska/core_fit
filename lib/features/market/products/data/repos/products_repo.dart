@@ -3,6 +3,7 @@ import 'package:core_fit/core/networking/api_result.dart';
 import 'package:core_fit/features/market/products/data/apis/products_api_service.dart';
 import 'package:core_fit/features/market/products/data/models/product_by_id_response_model.dart';
 import 'package:core_fit/features/market/products/data/models/products_response_model.dart';
+import 'package:core_fit/features/market/products/data/models/reviews_response_model.dart';
 
 class ProductsRepo {
   final ProductsApiService _productsApiService;
@@ -26,6 +27,15 @@ class ProductsRepo {
   Future<ApiResult<ProductByIdResponseModel>> findProductById(int id) async {
     try {
       final response = await _productsApiService.findProductById(id);
+      return ApiResult.success(response);
+    } catch (e) {
+      return ApiResult.failure(ErrorHandler.handle(e));
+    }
+  }
+
+  Future<ApiResult<ReviewsResponseModel>> findRateByMarket(int marketId) async {
+    try {
+      final response = await _productsApiService.findRateByMarket(marketId, 1000);
       return ApiResult.success(response);
     } catch (e) {
       return ApiResult.failure(ErrorHandler.handle(e));

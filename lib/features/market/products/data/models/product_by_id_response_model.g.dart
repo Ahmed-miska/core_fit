@@ -10,16 +10,31 @@ ProductByIdResponseModel _$ProductByIdResponseModelFromJson(
         Map<String, dynamic> json) =>
     ProductByIdResponseModel(
       message: json['message'] as String?,
-      product: json['data'] == null
+      data: json['data'] == null
           ? null
-          : ProductDetails.fromJson(json['data'] as Map<String, dynamic>),
+          : ProductData.fromJson(json['data'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$ProductByIdResponseModelToJson(
         ProductByIdResponseModel instance) =>
     <String, dynamic>{
       'message': instance.message,
-      'data': instance.product,
+      'data': instance.data,
+    };
+
+ProductData _$ProductDataFromJson(Map<String, dynamic> json) => ProductData(
+      product: json['Product'] == null
+          ? null
+          : ProductDetails.fromJson(json['Product'] as Map<String, dynamic>),
+      averageRate: (json['averageRate'] as num?)?.toDouble(),
+      rateCount: (json['rateCount'] as num?)?.toInt(),
+    );
+
+Map<String, dynamic> _$ProductDataToJson(ProductData instance) =>
+    <String, dynamic>{
+      'averageRate': instance.averageRate,
+      'rateCount': instance.rateCount,
+      'Product': instance.product,
     };
 
 ProductDetails _$ProductDetailsFromJson(Map<String, dynamic> json) =>

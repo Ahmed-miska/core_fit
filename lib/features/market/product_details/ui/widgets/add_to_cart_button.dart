@@ -20,13 +20,13 @@ class AddToCartButton extends StatelessWidget {
   Widget build(BuildContext context) {
     final cubit = context.read<ProductsCubit>();
     return BlocBuilder<CartCubit, CartState>(
+      
       bloc: getIt<CartCubit>(),
       builder: (context, state) {
         return ElevatedButton(
           onPressed: () async {
             loadingDialog(context);
-            await getIt<CartCubit>()
-                .addCartItem(cubit.product!.id!, cubit.productAmount);
+            await getIt<CartCubit>().addCartItem(cubit.product!.product!.id!, cubit.productAmount);
             getIt<CartCubit>().state.maybeWhen(
                   addSuccess: (data) {
                     context.pop();
@@ -40,28 +40,22 @@ class AddToCartButton extends StatelessWidget {
                         return AlertDialog(
                           backgroundColor: AppColors.white,
                           title: Text('Error', style: TextStyles.font28Dark700),
-                          content: Text(
-                              'You can\'t add items from another market. Remove existing cart items first.',
-                              style: TextStyles.font14Dark400),
+                          content: Text('You can\'t add items from another market. Remove existing cart items first.', style: TextStyles.font14Dark400),
                           actions: [
                             TextButton(
-                              child: const Text('Cancel',
-                                  style: TextStyle(color: AppColors.red)),
+                              child: const Text('Cancel', style: TextStyle(color: AppColors.red)),
                               onPressed: () {
                                 context.pop();
                               },
                             ),
                             TextButton(
-                              child: const Text('OK',
-                                  style: TextStyle(color: AppColors.main)),
+                              child: const Text('OK', style: TextStyle(color: AppColors.main)),
                               onPressed: () async {
                                 loadingDialog(context);
                                 await getIt<CartCubit>().deleteCartItem();
                                 getIt<CartCubit>().state.maybeWhen(
                                   deleteSuccess: (data) async {
-                                    await getIt<CartCubit>().addCartItem(
-                                        cubit.product!.id!,
-                                        cubit.productAmount);
+                                    await getIt<CartCubit>().addCartItem(cubit.product!.product!.id!, cubit.productAmount);
                                     // ignore: use_build_context_synchronously
                                     context.pop();
                                     // ignore: use_build_context_synchronously
@@ -87,8 +81,7 @@ class AddToCartButton extends StatelessWidget {
           style: ButtonStyle(
             padding: WidgetStateProperty.all(const EdgeInsets.all(10)),
             backgroundColor: WidgetStateProperty.all(AppColors.main),
-            shape: WidgetStateProperty.all(RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(12))),
+            shape: WidgetStateProperty.all(RoundedRectangleBorder(borderRadius: BorderRadius.circular(12))),
           ),
           child: Row(
             children: [

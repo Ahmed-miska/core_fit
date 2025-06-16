@@ -43,6 +43,7 @@ class _ProductItemState extends State<ProductItem> {
             color: AppColors.white,
           ),
           child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               /// صورة المنتج والمفضلة والعرض
@@ -107,17 +108,15 @@ class _ProductItemState extends State<ProductItem> {
 
               /// وصف المنتج
               Text(
-                widget.productModel.description ?? '',
+                widget.productModel.name ?? '',
                 style: TextStyles.font14Dark400,
-                maxLines: 2,
+                maxLines: 1,
                 overflow: TextOverflow.ellipsis,
               ),
 
-              const Spacer(),
-
               /// اسم المنتج
               Text(
-                widget.productModel.name ?? '',
+                widget.productModel.subCategoryName ?? '',
                 style: TextStyles.font12Main600,
                 maxLines: 1,
                 overflow: TextOverflow.ellipsis,
@@ -133,11 +132,9 @@ class _ProductItemState extends State<ProductItem> {
                   Flexible(
                     child: Text(
                       '${calculateNewPrice(widget.productModel.price!, widget.productModel.offer!)} EG',
-                      style: TextStyles.font16Dark700,
+                      style: TextStyles.font14Dark700,
                     ),
                   ),
-
-                  horizontalSpace(6),
 
                   /// السعر القديم (يظهر فقط إذا كان هناك خصم)
                   if (widget.productModel.offer != 0)

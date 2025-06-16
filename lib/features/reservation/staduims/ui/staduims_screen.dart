@@ -11,11 +11,11 @@ class StaduimsScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: const CustomAppBar(title: 'Staduims'),
-      body: Padding(
+    return Expanded(
+      child: Padding(
         padding: mainPadding(),
         child: ListView(
+          shrinkWrap: true,
           children: [
             const SearchForStaduimBar(),
             verticalSpace(12),

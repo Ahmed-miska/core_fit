@@ -1,3 +1,4 @@
+import 'package:core_fit/core/helpers/function.dart';
 import 'package:core_fit/core/helpers/spacing.dart';
 import 'package:core_fit/core/theming/colors.dart';
 import 'package:core_fit/core/theming/styles.dart';
@@ -42,7 +43,8 @@ class TotalPriceAndDetailsInDetailsOrder extends StatelessWidget {
                       horizontalSpace(8),
                       Text("x ${order.orderItems?[index].count ?? '0'}", style: TextStyles.font14Dark400),
                       horizontalSpace(8),
-                      Text(order.orderItems?[index].price.toString() ?? '', style: TextStyles.font16Dark700),
+                      Text(calculateNewPrice(order.orderItems?[index].price?.toDouble() ?? 0, order.orderItems?[index].offer?.toDouble() ?? 0).toString() ,
+                          style: TextStyles.font16Dark700),
                       horizontalSpace(8),
                       Text('EG', style: TextStyles.font14Gray400),
                     ],

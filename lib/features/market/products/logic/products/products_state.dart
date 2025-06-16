@@ -9,6 +9,10 @@ class ProductsState<T> with _$ProductsState<T> {
 
 
   const factory ProductsState.productByIdLoading() = ProductByIdLoading;
-  const factory ProductsState.productByIdSuccess(ProductByIdResponseModel product) = ProductByIdSuccess<T>;
+  const factory ProductsState.productByIdSuccess(ProductData product) = ProductByIdSuccess<T>;
   const factory ProductsState.productByIdError({required String error}) = ProductByIdError;
+
+  const factory ProductsState.reviewsLoading() = ReviewsLoading;
+  const factory ProductsState.reviewsSuccess(List<ReviewModel>? rates) = ReviewsSuccess<T>;
+  const factory ProductsState.reviewsError({required String error}) = ReviewsError;
 }

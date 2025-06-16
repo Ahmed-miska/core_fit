@@ -1,6 +1,7 @@
 import 'package:core_fit/core/networking/api_constants.dart';
 import 'package:core_fit/features/market/products/data/models/product_by_id_response_model.dart';
 import 'package:core_fit/features/market/products/data/models/products_response_model.dart';
+import 'package:core_fit/features/market/products/data/models/reviews_response_model.dart';
 import 'package:dio/dio.dart';
 import 'package:retrofit/error_logger.dart';
 import 'package:retrofit/http.dart';
@@ -22,5 +23,11 @@ abstract class ProductsApiService {
   @GET('products/find_by_id')
   Future<ProductByIdResponseModel> findProductById(
     @Query('id') int id,
+  );
+
+  @GET('rates/find_by_market')
+  Future<ReviewsResponseModel> findRateByMarket(
+    @Query('marketId') int marketId,
+    @Query('size') int size,
   );
 }
