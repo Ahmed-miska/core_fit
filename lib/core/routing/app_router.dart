@@ -37,6 +37,8 @@ import 'package:core_fit/features/reservation/reservation_type/ui/reservation_ty
 import 'package:core_fit/features/reservation/sport_details.dart/ui/sport_details_screen.dart';
 import 'package:core_fit/features/reservation/sports/ui/sports_home_screen.dart';
 import 'package:core_fit/features/reservation/sports_home/ui/sports_list_screen.dart';
+import 'package:core_fit/features/reservation/staduims/data/models/playgrounds_response_model.dart';
+import 'package:core_fit/features/reservation/staduims/logic/play_grounds_cubit/playgrounds_cubit.dart';
 import 'package:core_fit/features/reservation/staduims/ui/staduim_details_screen.dart';
 import 'package:core_fit/features/reservation/staduims/ui/staduims_screen.dart';
 import 'package:flutter/material.dart';
@@ -153,9 +155,12 @@ class AppRouter {
       case Routes.reservationTypeScreen:
         return _fadeTransition(const ReservationTypeScreen());
       case Routes.staduimsScreen:
-        return _fadeTransition(const StaduimsScreen());
+        return _fadeTransition(BlocProvider(
+          create: (context) => getIt<PlaygroundsCubit>(),
+          child: const StaduimsScreen(),
+        ));
       case Routes.staduimDetailsScreen:
-        return _fadeTransition(const StaduimDetailsScreen());
+        return _fadeTransition( StaduimDetailsScreen(playground: settings.arguments as PlaygroundModel,));
       case Routes.reservationBookingDetailsScreen:
         return _fadeTransition(const ReservationBookingDetailsScreen());
       case Routes.forgetPasswordScreen:

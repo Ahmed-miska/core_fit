@@ -1,16 +1,18 @@
-import 'package:core_fit/core/helpers/assets.dart';
 import 'package:core_fit/core/helpers/spacing.dart';
 import 'package:core_fit/core/theming/colors.dart';
 import 'package:core_fit/core/theming/styles.dart';
 import 'package:core_fit/core/widgets/add_favorite_icon.dart';
 import 'package:core_fit/core/widgets/custom_cached_image.dart';
+import 'package:core_fit/features/reservation/staduims/data/models/playgrounds_response_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_stars/flutter_rating_stars.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class StaduimItemInStaduimsScreen extends StatelessWidget {
+  final PlaygroundModel playground;
   const StaduimItemInStaduimsScreen({
     super.key,
+    required this.playground,
   });
 
   @override
@@ -38,8 +40,8 @@ class StaduimItemInStaduimsScreen extends StatelessWidget {
                 width: 100.h,
                 child: ClipRRect(
                   borderRadius: BorderRadius.circular(12),
-                  child: const CustomCachedImage(
-                    imageUrl: Assets.cachImage5,
+                  child: CustomCachedImage(
+                    imageUrl: playground.images!.isEmpty ? '' : playground.images!.first,
                     fit: BoxFit.fill,
                   ),
                 ),
@@ -57,7 +59,7 @@ class StaduimItemInStaduimsScreen extends StatelessWidget {
                   children: [
                     Expanded(
                       child: Text(
-                        'Santiago Bernabeu Stadium',
+                        playground.name ?? '',
                         style: TextStyles.font16Dark700,
                         textAlign: TextAlign.start,
                       ),
@@ -75,20 +77,18 @@ class StaduimItemInStaduimsScreen extends StatelessWidget {
                           ),
                         ],
                       ),
-                      child: Text('7x7', style: TextStyles.font12White400),
+                      child: Text('${playground.teemMembers} X ${playground.teemMembers}', style: TextStyles.font12White400),
                     )
                   ],
                 ),
                 verticalSpace(10),
-                const RatingStars(value: 4, starCount: 5, starSize: 16, valueLabelVisibility: false),
+                RatingStars(value: (playground.avgRate ?? 0).toDouble(), starCount: 5, starSize: 16, valueLabelVisibility: false),
                 verticalSpace(10),
                 Row(
                   children: [
                     const Icon(Icons.location_on_outlined, color: AppColors.main, size: 16),
                     horizontalSpace(4),
-                    Text('Span , Madrid', style: TextStyles.font14Dark400),
-                    const Spacer(),
-                    Text('2.4 km', style: TextStyles.font16Dark700),
+                    Expanded(child: Text(playground.address ?? '', style: TextStyles.font14Dark400)),
                   ],
                 )
               ],

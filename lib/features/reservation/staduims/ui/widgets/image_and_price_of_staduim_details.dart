@@ -7,12 +7,15 @@ import 'package:core_fit/core/theming/styles.dart';
 import 'package:core_fit/core/widgets/add_favorite_icon.dart';
 import 'package:core_fit/core/widgets/custom_cached_image.dart';
 import 'package:core_fit/features/market/market_store/ui/widgets/offer_padge.dart';
+import 'package:core_fit/features/reservation/staduims/data/models/playgrounds_response_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class ImageAndPriceOfStaduimDetails extends StatelessWidget {
+  final PlaygroundModel playground; // Assuming productImages is defined in your imports
   const ImageAndPriceOfStaduimDetails({
     super.key,
+    required this.playground,
   });
 
   @override
@@ -24,16 +27,18 @@ class ImageAndPriceOfStaduimDetails extends StatelessWidget {
           SizedBox(
             height: 250.h,
             child: Swiper(
-              itemCount: 5,
+              itemCount: playground.images?.length ?? 0,
               itemBuilder: (context, index) {
-                return CustomCachedImage(imageUrl: productImages[index]);
+                return CustomCachedImage(
+                  imageUrl: playground.images?[index] ?? '',
+                  fit: BoxFit.fill,
+                );
               },
               autoplay: true,
               pagination: const SwiperPagination(alignment: Alignment.topCenter),
             ),
           ),
-          const Align(alignment: Alignment.topRight, child: AddFavoriteIcon( isFavorite: false)),
-          const Align(alignment: Alignment.topLeft, child: OfferPadge(title: '10%')),
+          const Align(alignment: Alignment.topRight, child: AddFavoriteIcon(isFavorite: false)),
           Align(
             alignment: Alignment.bottomCenter,
             child: Padding(
@@ -49,20 +54,11 @@ class ImageAndPriceOfStaduimDetails extends StatelessWidget {
                   children: [
                     Row(
                       children: [
-                        const Icon(Icons.location_on_outlined, color: Colors.white, size: 24),
-                        Text('Away from you :', style: TextStyles.font14White700),
-                        const Spacer(),
-                        Text('2.4 km', style: TextStyles.font14White700),
-                      ],
-                    ),
-                    verticalSpace(16),
-                    Row(
-                      children: [
                         const Icon(Icons.wallet, color: Colors.white, size: 24),
                         horizontalSpace(4),
                         Text('Booking price :', style: TextStyles.font14White700),
                         const Spacer(),
-                        Text('100', style: TextStyles.font16White700),
+                        Text('${playground.bookingPrice}', style: TextStyles.font16White700),
                         horizontalSpace(4),
                         Text('EG / hour', style: TextStyles.font14White700),
                       ],

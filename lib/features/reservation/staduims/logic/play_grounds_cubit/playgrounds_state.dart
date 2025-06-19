@@ -1,0 +1,17 @@
+part of 'playgrounds_cubit.dart';
+
+@freezed
+class PlaygroundsState<T> with _$PlaygroundsState<T> {
+  const factory PlaygroundsState.initial() = _Initial;
+
+  const factory PlaygroundsState.getPlaygroundsLoading() = GetPlaygroundsLoading;
+
+  const factory PlaygroundsState.getPlaygroundsSuccess(List<PlaygroundModel> playgrounds) = GetPlaygroundsSuccess;
+
+  const factory PlaygroundsState.getPlaygroundsFailure({required String error}) = GetPlaygroundsFailure;
+
+  // Cities
+  const factory PlaygroundsState.citiesLoading() = CitiesLoading;
+  const factory PlaygroundsState.citiesSuccess(List<City> response) = CitiesSuccess<T>;
+  const factory PlaygroundsState.citiesError({required String error}) = CitiesError;
+}
