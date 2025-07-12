@@ -3,9 +3,13 @@ import 'package:core_fit/features/market/market_home/data/market_model.dart';
 import 'package:core_fit/features/market/market_home/data/product_model.dart';
 
 List<String> testSwiperImages = [
-  'assets/images/1.png',
-  'assets/images/2.png',
-  'assets/images/3.png',
+  'assets/images/a.jpg',
+  'assets/images/b.jpg',
+  'assets/images/c.jpg',
+  'assets/images/d.jpg',
+  'assets/images/e.jpg',
+  'assets/images/f.jpg',
+  'assets/images/j.jpg',
 ];
 
 List<ItemTypesModel> testItemTypes = [

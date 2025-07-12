@@ -76,7 +76,7 @@ class _ProductsListInProductsScreenState extends State<ProductsListInProductsScr
                         physics: const BouncingScrollPhysics(),
                         gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                           crossAxisCount: 2,
-                          childAspectRatio: 0.6,
+                          childAspectRatio: 0.69.sp,
                           crossAxisSpacing: 8.w,
                           mainAxisSpacing: 10.h,
                         ),

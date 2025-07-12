@@ -22,6 +22,21 @@ import 'package:core_fit/features/market/market_store/data/repo/category_repo.da
 import 'package:core_fit/features/market/market_store/data/repo/market_repo.dart';
 import 'package:core_fit/features/market/products/data/apis/products_api_service.dart';
 import 'package:core_fit/features/market/products/data/repos/products_repo.dart';
+import 'package:core_fit/features/notifacation/data/apis/notifactions_services.dart';
+import 'package:core_fit/features/notifacation/data/repos/notifactions_repo.dart';
+import 'package:core_fit/features/notifacation/logic/cubit/notifactions_cubit.dart';
+import 'package:core_fit/features/profile/data/api/setting_services.dart';
+import 'package:core_fit/features/profile/data/repos/setting_repo.dart';
+import 'package:core_fit/features/profile/logic/cubit/setting_cubit.dart';
+import 'package:core_fit/features/recommendation/chat_bot/data/apis/chat_bot_services.dart';
+import 'package:core_fit/features/recommendation/chat_bot/data/repos/chat_bot_repo.dart';
+import 'package:core_fit/features/recommendation/chat_bot/logic/cubit/chatbot_cubit.dart';
+import 'package:core_fit/features/recommendation/diet_system/data/apis/ai_services.dart';
+import 'package:core_fit/features/recommendation/diet_system/data/repos/ai_repo.dart';
+import 'package:core_fit/features/recommendation/diet_system/logic/cubit/ai_cubit.dart';
+import 'package:core_fit/features/reservation/my_reservation/data/apis/resevations_services.dart';
+import 'package:core_fit/features/reservation/my_reservation/data/repos/reservation_repo.dart';
+import 'package:core_fit/features/reservation/my_reservation/logic/cubit/reservations_cubit.dart';
 import 'package:core_fit/features/reservation/staduims/data/apis/playgrounds_api_service.dart';
 import 'package:core_fit/features/reservation/staduims/data/repos/playgrounds_repo.dart';
 import 'package:core_fit/features/reservation/staduims/logic/play_grounds_cubit/playgrounds_cubit.dart';
@@ -81,4 +96,29 @@ Future<void> setupGetIt() async {
   getIt.registerLazySingleton<PlaygroundsApiService>(() => PlaygroundsApiService(dio));
   getIt.registerLazySingleton<PlaygroundsRepo>(() => PlaygroundsRepo(getIt()));
   getIt.registerFactory<PlaygroundsCubit>(() => PlaygroundsCubit(getIt()));
+
+  // reservation
+  getIt.registerLazySingleton<ReservationsServices>(() => ReservationsServices(dio));
+  getIt.registerLazySingleton<ReservationRepo>(() => ReservationRepo(getIt()));
+  getIt.registerLazySingleton<ReservationsCubit>(() => ReservationsCubit(getIt()));
+
+  // setting
+  getIt.registerLazySingleton<SettingServices>(() => SettingServices(dio));
+  getIt.registerLazySingleton<SettingRepo>(() => SettingRepo(getIt()));
+  getIt.registerLazySingleton<SettingCubit>(() => SettingCubit(getIt()));
+
+  // notifacation
+  getIt.registerLazySingleton<NotifactionsServices>(() => NotifactionsServices(dio));
+  getIt.registerLazySingleton<NotifactionsRepo>(() => NotifactionsRepo(getIt()));
+  getIt.registerLazySingleton<NotifactionsCubit>(() => NotifactionsCubit(getIt()));
+
+  // ai
+  getIt.registerLazySingleton<AIServices>(() => AIServices(dio));
+  getIt.registerLazySingleton<AiRepo>(() => AiRepo(getIt()));
+  getIt.registerLazySingleton<AiCubit>(() => AiCubit(getIt()));
+
+  // chatbot
+  getIt.registerLazySingleton<ChatBotServices>(() => ChatBotServices(dio));
+  getIt.registerLazySingleton<ChatBotRepo>(() => ChatBotRepo(getIt()));
+  getIt.registerLazySingleton<ChatbotCubit>(() => ChatbotCubit(getIt()));
 }

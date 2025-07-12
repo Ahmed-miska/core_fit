@@ -48,7 +48,7 @@ class MarketStoresScreen extends StatelessWidget {
           ),
         ),
         verticalSpace(16),
-        SizedBox(height: 280.h, child: const MarketHomeProductsListView()),
+        SizedBox(height: 250.h, child: const MarketHomeProductsListView()),
         verticalSpace(16),
       ],
     );

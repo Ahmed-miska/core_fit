@@ -47,7 +47,10 @@ class ImageAndRatingContainer extends StatelessWidget {
                       pagination: const SwiperPagination(alignment: Alignment.bottomCenter),
                       itemBuilder: (context, index) => ClipRRect(
                         borderRadius: BorderRadius.circular(12),
-                        child: CustomCachedImage(imageUrl: product.product!.images![index]),
+                        child: CustomCachedImage(
+                          imageUrl: product.product!.images![index],
+                          fit: BoxFit.fill,
+                        ),
                       ),
                     ),
                   ),
@@ -89,7 +92,8 @@ class ImageAndRatingContainer extends StatelessWidget {
                                 builder: (contextt) {
                                   return ReviewsBottomSheet(
                                     marketId: product.product!.market!.id ?? 0,
-                                    cc: context, avarageRate: product.averageRate ?? 0,
+                                    cc: context,
+                                    avarageRate: product.averageRate ?? 0,
                                   );
                                 });
                           },

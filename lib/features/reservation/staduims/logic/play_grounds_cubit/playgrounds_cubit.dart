@@ -1,5 +1,6 @@
 import 'package:core_fit/features/auth/sign_up/data/models/cities_response_model.dart';
 import 'package:core_fit/features/reservation/staduims/data/models/playgrounds_response_model.dart';
+import 'package:core_fit/features/reservation/staduims/data/models/reserve_request_model.dart';
 import 'package:core_fit/features/reservation/staduims/data/repos/playgrounds_repo.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -18,7 +19,6 @@ class PlaygroundsCubit extends Cubit<PlaygroundsState> {
   TextEditingController searchController = TextEditingController();
   int? avgRate;
   int? selectedCityId = 0;
-
   bool isLoadingMore = false;
 
   Future<void> getPlaygrounds() async {
@@ -56,6 +56,80 @@ class PlaygroundsCubit extends Cubit<PlaygroundsState> {
     );
   }
 
+  List<String> selectedReservationSlots = [];
+  String selectedDay = DateTime.now().toIso8601String().split('T').first;
+
+  void setSelectedSlots(List<String> slots) {
+    selectedReservationSlots = slots;
+    // لو حبيت تبعت state، اعمل emit لحالة جديدة مثلاً
+  }
+
+  void setSelectedDay(String day) {
+    selectedDay = day;
+    // لو حبيت تبعت state، اعمل emit لحالة جديدة مثلاً
+  }
+
+  PlaygroundModel? playgroundModel;
+  void setPlaygroundModel(PlaygroundModel model) {
+    playgroundModel = model;
+    // لو حبيت تبعت state، اعمل emit لحالة جديدة مثلاً
+  }
+
+  Future<void> getReservationSlots(int playgroundId, String day) async {
+    emit(PlaygroundsState.reservationSlotsLoading());
+    final result = await _playgroundsRepo.getReservationSlots(playgroundId: playgroundId, day: day);
+    result.when(
+      success: (response) {
+        emit(PlaygroundsState.reservationSlotsSuccess(response.data ?? []));
+      },
+      failure: (error) {
+        emit(PlaygroundsState.reservationSlotsError(error: error.apiErrorModel.message ?? ''));
+      },
+    );
+  }
+
+  Future<void> bookReservation(String paymentMethod) async {
+    emit(PlaygroundsState.reserveLoading());
+    final result = await _playgroundsRepo.bookReservation(ReserveRequestModel(
+      playgroundId: playgroundModel!.id!,
+      date: selectedDay,
+      slots: selectedReservationSlots,
+      paymentMethod: paymentMethod,
+    ));
+    result.when(
+      success: (response) {
+        emit(PlaygroundsState.reserveSuccess());
+      },
+      failure: (error) {
+        emit(PlaygroundsState.reserveError(error: error.apiErrorModel.message ?? ''));
+      },
+    );
+  }
+
+  Future<void> toggleFavourite(int playgroundId, bool type) async {
+    emit(PlaygroundsState.favoriteLoading());
+    final result = await _playgroundsRepo.addToFavourites(playgroundId, type);
+    result.when(
+      success: (response) {
+        updatePlaygroundFavourites(playgroundId);
+        emit(PlaygroundsState.favoriteSuccess());
+      },
+      failure: (error) {
+        emit(PlaygroundsState.favoriteError(error: error.apiErrorModel.message ?? ''));
+      },
+    );
+  }
+
+  void updatePlaygroundFavourites(int playgroundId) {
+    for (var i = 0; i < playgrounds.length; i++) {
+      if (playgrounds[i].id == playgroundId) {
+        playgrounds[i].favourite = !playgrounds[i].favourite!;
+        break;
+      }
+    }
+    emit(PlaygroundsState.getPlaygroundsSuccess(playgrounds));
+  }
+
   void resetFilters() {
     searchController.clear();
     avgRate = null;
@@ -65,6 +139,4 @@ class PlaygroundsCubit extends Cubit<PlaygroundsState> {
     totalPages = 1;
     isLoadingMore = false;
   }
-
- 
 }

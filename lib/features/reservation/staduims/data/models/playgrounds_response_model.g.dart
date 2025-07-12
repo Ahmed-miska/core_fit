@@ -59,12 +59,12 @@ PlaygroundModel _$PlaygroundModelFromJson(Map<String, dynamic> json) =>
       avgRate: json['avgRate'] as num?,
       favourite: json['favourite'] as bool?,
       opened: json['opened'] as bool?,
-    )..teemMembers = (json['teemMembers'] as num?)?.toInt();
+    )..teemMembers = (json['teamMembers'] as num?)?.toInt();
 
 Map<String, dynamic> _$PlaygroundModelToJson(PlaygroundModel instance) =>
     <String, dynamic>{
       'id': instance.id,
-      'teemMembers': instance.teemMembers,
+      'teamMembers': instance.teemMembers,
       'name': instance.name,
       'description': instance.description,
       'city': instance.city,

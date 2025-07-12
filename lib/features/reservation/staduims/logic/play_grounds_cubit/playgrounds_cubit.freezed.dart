@@ -26,6 +26,15 @@ mixin _$PlaygroundsState<T> {
     required TResult Function() citiesLoading,
     required TResult Function(List<City> response) citiesSuccess,
     required TResult Function(String error) citiesError,
+    required TResult Function() reservationSlotsLoading,
+    required TResult Function(List<String> slots) reservationSlotsSuccess,
+    required TResult Function(String error) reservationSlotsError,
+    required TResult Function() reserveLoading,
+    required TResult Function() reserveSuccess,
+    required TResult Function(String error) reserveError,
+    required TResult Function() favoriteLoading,
+    required TResult Function() favoriteSuccess,
+    required TResult Function(String error) favoriteError,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -37,6 +46,15 @@ mixin _$PlaygroundsState<T> {
     TResult? Function()? citiesLoading,
     TResult? Function(List<City> response)? citiesSuccess,
     TResult? Function(String error)? citiesError,
+    TResult? Function()? reservationSlotsLoading,
+    TResult? Function(List<String> slots)? reservationSlotsSuccess,
+    TResult? Function(String error)? reservationSlotsError,
+    TResult? Function()? reserveLoading,
+    TResult? Function()? reserveSuccess,
+    TResult? Function(String error)? reserveError,
+    TResult? Function()? favoriteLoading,
+    TResult? Function()? favoriteSuccess,
+    TResult? Function(String error)? favoriteError,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -48,6 +66,15 @@ mixin _$PlaygroundsState<T> {
     TResult Function()? citiesLoading,
     TResult Function(List<City> response)? citiesSuccess,
     TResult Function(String error)? citiesError,
+    TResult Function()? reservationSlotsLoading,
+    TResult Function(List<String> slots)? reservationSlotsSuccess,
+    TResult Function(String error)? reservationSlotsError,
+    TResult Function()? reserveLoading,
+    TResult Function()? reserveSuccess,
+    TResult Function(String error)? reserveError,
+    TResult Function()? favoriteLoading,
+    TResult Function()? favoriteSuccess,
+    TResult Function(String error)? favoriteError,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -63,6 +90,18 @@ mixin _$PlaygroundsState<T> {
     required TResult Function(CitiesLoading<T> value) citiesLoading,
     required TResult Function(CitiesSuccess<T> value) citiesSuccess,
     required TResult Function(CitiesError<T> value) citiesError,
+    required TResult Function(ReservationSlotsLoading<T> value)
+        reservationSlotsLoading,
+    required TResult Function(ReservationSlotsSuccess<T> value)
+        reservationSlotsSuccess,
+    required TResult Function(ReservationSlotsError<T> value)
+        reservationSlotsError,
+    required TResult Function(ReserveLoading<T> value) reserveLoading,
+    required TResult Function(ReserveSuccess<T> value) reserveSuccess,
+    required TResult Function(ReserveError<T> value) reserveError,
+    required TResult Function(FavoriteLoading<T> value) favoriteLoading,
+    required TResult Function(FavoriteSuccess<T> value) favoriteSuccess,
+    required TResult Function(FavoriteError<T> value) favoriteError,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -74,6 +113,17 @@ mixin _$PlaygroundsState<T> {
     TResult? Function(CitiesLoading<T> value)? citiesLoading,
     TResult? Function(CitiesSuccess<T> value)? citiesSuccess,
     TResult? Function(CitiesError<T> value)? citiesError,
+    TResult? Function(ReservationSlotsLoading<T> value)?
+        reservationSlotsLoading,
+    TResult? Function(ReservationSlotsSuccess<T> value)?
+        reservationSlotsSuccess,
+    TResult? Function(ReservationSlotsError<T> value)? reservationSlotsError,
+    TResult? Function(ReserveLoading<T> value)? reserveLoading,
+    TResult? Function(ReserveSuccess<T> value)? reserveSuccess,
+    TResult? Function(ReserveError<T> value)? reserveError,
+    TResult? Function(FavoriteLoading<T> value)? favoriteLoading,
+    TResult? Function(FavoriteSuccess<T> value)? favoriteSuccess,
+    TResult? Function(FavoriteError<T> value)? favoriteError,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -85,6 +135,15 @@ mixin _$PlaygroundsState<T> {
     TResult Function(CitiesLoading<T> value)? citiesLoading,
     TResult Function(CitiesSuccess<T> value)? citiesSuccess,
     TResult Function(CitiesError<T> value)? citiesError,
+    TResult Function(ReservationSlotsLoading<T> value)? reservationSlotsLoading,
+    TResult Function(ReservationSlotsSuccess<T> value)? reservationSlotsSuccess,
+    TResult Function(ReservationSlotsError<T> value)? reservationSlotsError,
+    TResult Function(ReserveLoading<T> value)? reserveLoading,
+    TResult Function(ReserveSuccess<T> value)? reserveSuccess,
+    TResult Function(ReserveError<T> value)? reserveError,
+    TResult Function(FavoriteLoading<T> value)? favoriteLoading,
+    TResult Function(FavoriteSuccess<T> value)? favoriteSuccess,
+    TResult Function(FavoriteError<T> value)? favoriteError,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -160,6 +219,15 @@ class _$InitialImpl<T> implements _Initial<T> {
     required TResult Function() citiesLoading,
     required TResult Function(List<City> response) citiesSuccess,
     required TResult Function(String error) citiesError,
+    required TResult Function() reservationSlotsLoading,
+    required TResult Function(List<String> slots) reservationSlotsSuccess,
+    required TResult Function(String error) reservationSlotsError,
+    required TResult Function() reserveLoading,
+    required TResult Function() reserveSuccess,
+    required TResult Function(String error) reserveError,
+    required TResult Function() favoriteLoading,
+    required TResult Function() favoriteSuccess,
+    required TResult Function(String error) favoriteError,
   }) {
     return initial();
   }
@@ -174,6 +242,15 @@ class _$InitialImpl<T> implements _Initial<T> {
     TResult? Function()? citiesLoading,
     TResult? Function(List<City> response)? citiesSuccess,
     TResult? Function(String error)? citiesError,
+    TResult? Function()? reservationSlotsLoading,
+    TResult? Function(List<String> slots)? reservationSlotsSuccess,
+    TResult? Function(String error)? reservationSlotsError,
+    TResult? Function()? reserveLoading,
+    TResult? Function()? reserveSuccess,
+    TResult? Function(String error)? reserveError,
+    TResult? Function()? favoriteLoading,
+    TResult? Function()? favoriteSuccess,
+    TResult? Function(String error)? favoriteError,
   }) {
     return initial?.call();
   }
@@ -188,6 +265,15 @@ class _$InitialImpl<T> implements _Initial<T> {
     TResult Function()? citiesLoading,
     TResult Function(List<City> response)? citiesSuccess,
     TResult Function(String error)? citiesError,
+    TResult Function()? reservationSlotsLoading,
+    TResult Function(List<String> slots)? reservationSlotsSuccess,
+    TResult Function(String error)? reservationSlotsError,
+    TResult Function()? reserveLoading,
+    TResult Function()? reserveSuccess,
+    TResult Function(String error)? reserveError,
+    TResult Function()? favoriteLoading,
+    TResult Function()? favoriteSuccess,
+    TResult Function(String error)? favoriteError,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -209,6 +295,18 @@ class _$InitialImpl<T> implements _Initial<T> {
     required TResult Function(CitiesLoading<T> value) citiesLoading,
     required TResult Function(CitiesSuccess<T> value) citiesSuccess,
     required TResult Function(CitiesError<T> value) citiesError,
+    required TResult Function(ReservationSlotsLoading<T> value)
+        reservationSlotsLoading,
+    required TResult Function(ReservationSlotsSuccess<T> value)
+        reservationSlotsSuccess,
+    required TResult Function(ReservationSlotsError<T> value)
+        reservationSlotsError,
+    required TResult Function(ReserveLoading<T> value) reserveLoading,
+    required TResult Function(ReserveSuccess<T> value) reserveSuccess,
+    required TResult Function(ReserveError<T> value) reserveError,
+    required TResult Function(FavoriteLoading<T> value) favoriteLoading,
+    required TResult Function(FavoriteSuccess<T> value) favoriteSuccess,
+    required TResult Function(FavoriteError<T> value) favoriteError,
   }) {
     return initial(this);
   }
@@ -223,6 +321,17 @@ class _$InitialImpl<T> implements _Initial<T> {
     TResult? Function(CitiesLoading<T> value)? citiesLoading,
     TResult? Function(CitiesSuccess<T> value)? citiesSuccess,
     TResult? Function(CitiesError<T> value)? citiesError,
+    TResult? Function(ReservationSlotsLoading<T> value)?
+        reservationSlotsLoading,
+    TResult? Function(ReservationSlotsSuccess<T> value)?
+        reservationSlotsSuccess,
+    TResult? Function(ReservationSlotsError<T> value)? reservationSlotsError,
+    TResult? Function(ReserveLoading<T> value)? reserveLoading,
+    TResult? Function(ReserveSuccess<T> value)? reserveSuccess,
+    TResult? Function(ReserveError<T> value)? reserveError,
+    TResult? Function(FavoriteLoading<T> value)? favoriteLoading,
+    TResult? Function(FavoriteSuccess<T> value)? favoriteSuccess,
+    TResult? Function(FavoriteError<T> value)? favoriteError,
   }) {
     return initial?.call(this);
   }
@@ -237,6 +346,15 @@ class _$InitialImpl<T> implements _Initial<T> {
     TResult Function(CitiesLoading<T> value)? citiesLoading,
     TResult Function(CitiesSuccess<T> value)? citiesSuccess,
     TResult Function(CitiesError<T> value)? citiesError,
+    TResult Function(ReservationSlotsLoading<T> value)? reservationSlotsLoading,
+    TResult Function(ReservationSlotsSuccess<T> value)? reservationSlotsSuccess,
+    TResult Function(ReservationSlotsError<T> value)? reservationSlotsError,
+    TResult Function(ReserveLoading<T> value)? reserveLoading,
+    TResult Function(ReserveSuccess<T> value)? reserveSuccess,
+    TResult Function(ReserveError<T> value)? reserveError,
+    TResult Function(FavoriteLoading<T> value)? favoriteLoading,
+    TResult Function(FavoriteSuccess<T> value)? favoriteSuccess,
+    TResult Function(FavoriteError<T> value)? favoriteError,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -303,6 +421,15 @@ class _$GetPlaygroundsLoadingImpl<T> implements GetPlaygroundsLoading<T> {
     required TResult Function() citiesLoading,
     required TResult Function(List<City> response) citiesSuccess,
     required TResult Function(String error) citiesError,
+    required TResult Function() reservationSlotsLoading,
+    required TResult Function(List<String> slots) reservationSlotsSuccess,
+    required TResult Function(String error) reservationSlotsError,
+    required TResult Function() reserveLoading,
+    required TResult Function() reserveSuccess,
+    required TResult Function(String error) reserveError,
+    required TResult Function() favoriteLoading,
+    required TResult Function() favoriteSuccess,
+    required TResult Function(String error) favoriteError,
   }) {
     return getPlaygroundsLoading();
   }
@@ -317,6 +444,15 @@ class _$GetPlaygroundsLoadingImpl<T> implements GetPlaygroundsLoading<T> {
     TResult? Function()? citiesLoading,
     TResult? Function(List<City> response)? citiesSuccess,
     TResult? Function(String error)? citiesError,
+    TResult? Function()? reservationSlotsLoading,
+    TResult? Function(List<String> slots)? reservationSlotsSuccess,
+    TResult? Function(String error)? reservationSlotsError,
+    TResult? Function()? reserveLoading,
+    TResult? Function()? reserveSuccess,
+    TResult? Function(String error)? reserveError,
+    TResult? Function()? favoriteLoading,
+    TResult? Function()? favoriteSuccess,
+    TResult? Function(String error)? favoriteError,
   }) {
     return getPlaygroundsLoading?.call();
   }
@@ -331,6 +467,15 @@ class _$GetPlaygroundsLoadingImpl<T> implements GetPlaygroundsLoading<T> {
     TResult Function()? citiesLoading,
     TResult Function(List<City> response)? citiesSuccess,
     TResult Function(String error)? citiesError,
+    TResult Function()? reservationSlotsLoading,
+    TResult Function(List<String> slots)? reservationSlotsSuccess,
+    TResult Function(String error)? reservationSlotsError,
+    TResult Function()? reserveLoading,
+    TResult Function()? reserveSuccess,
+    TResult Function(String error)? reserveError,
+    TResult Function()? favoriteLoading,
+    TResult Function()? favoriteSuccess,
+    TResult Function(String error)? favoriteError,
     required TResult orElse(),
   }) {
     if (getPlaygroundsLoading != null) {
@@ -352,6 +497,18 @@ class _$GetPlaygroundsLoadingImpl<T> implements GetPlaygroundsLoading<T> {
     required TResult Function(CitiesLoading<T> value) citiesLoading,
     required TResult Function(CitiesSuccess<T> value) citiesSuccess,
     required TResult Function(CitiesError<T> value) citiesError,
+    required TResult Function(ReservationSlotsLoading<T> value)
+        reservationSlotsLoading,
+    required TResult Function(ReservationSlotsSuccess<T> value)
+        reservationSlotsSuccess,
+    required TResult Function(ReservationSlotsError<T> value)
+        reservationSlotsError,
+    required TResult Function(ReserveLoading<T> value) reserveLoading,
+    required TResult Function(ReserveSuccess<T> value) reserveSuccess,
+    required TResult Function(ReserveError<T> value) reserveError,
+    required TResult Function(FavoriteLoading<T> value) favoriteLoading,
+    required TResult Function(FavoriteSuccess<T> value) favoriteSuccess,
+    required TResult Function(FavoriteError<T> value) favoriteError,
   }) {
     return getPlaygroundsLoading(this);
   }
@@ -366,6 +523,17 @@ class _$GetPlaygroundsLoadingImpl<T> implements GetPlaygroundsLoading<T> {
     TResult? Function(CitiesLoading<T> value)? citiesLoading,
     TResult? Function(CitiesSuccess<T> value)? citiesSuccess,
     TResult? Function(CitiesError<T> value)? citiesError,
+    TResult? Function(ReservationSlotsLoading<T> value)?
+        reservationSlotsLoading,
+    TResult? Function(ReservationSlotsSuccess<T> value)?
+        reservationSlotsSuccess,
+    TResult? Function(ReservationSlotsError<T> value)? reservationSlotsError,
+    TResult? Function(ReserveLoading<T> value)? reserveLoading,
+    TResult? Function(ReserveSuccess<T> value)? reserveSuccess,
+    TResult? Function(ReserveError<T> value)? reserveError,
+    TResult? Function(FavoriteLoading<T> value)? favoriteLoading,
+    TResult? Function(FavoriteSuccess<T> value)? favoriteSuccess,
+    TResult? Function(FavoriteError<T> value)? favoriteError,
   }) {
     return getPlaygroundsLoading?.call(this);
   }
@@ -380,6 +548,15 @@ class _$GetPlaygroundsLoadingImpl<T> implements GetPlaygroundsLoading<T> {
     TResult Function(CitiesLoading<T> value)? citiesLoading,
     TResult Function(CitiesSuccess<T> value)? citiesSuccess,
     TResult Function(CitiesError<T> value)? citiesError,
+    TResult Function(ReservationSlotsLoading<T> value)? reservationSlotsLoading,
+    TResult Function(ReservationSlotsSuccess<T> value)? reservationSlotsSuccess,
+    TResult Function(ReservationSlotsError<T> value)? reservationSlotsError,
+    TResult Function(ReserveLoading<T> value)? reserveLoading,
+    TResult Function(ReserveSuccess<T> value)? reserveSuccess,
+    TResult Function(ReserveError<T> value)? reserveError,
+    TResult Function(FavoriteLoading<T> value)? favoriteLoading,
+    TResult Function(FavoriteSuccess<T> value)? favoriteSuccess,
+    TResult Function(FavoriteError<T> value)? favoriteError,
     required TResult orElse(),
   }) {
     if (getPlaygroundsLoading != null) {
@@ -481,6 +658,15 @@ class _$GetPlaygroundsSuccessImpl<T> implements GetPlaygroundsSuccess<T> {
     required TResult Function() citiesLoading,
     required TResult Function(List<City> response) citiesSuccess,
     required TResult Function(String error) citiesError,
+    required TResult Function() reservationSlotsLoading,
+    required TResult Function(List<String> slots) reservationSlotsSuccess,
+    required TResult Function(String error) reservationSlotsError,
+    required TResult Function() reserveLoading,
+    required TResult Function() reserveSuccess,
+    required TResult Function(String error) reserveError,
+    required TResult Function() favoriteLoading,
+    required TResult Function() favoriteSuccess,
+    required TResult Function(String error) favoriteError,
   }) {
     return getPlaygroundsSuccess(playgrounds);
   }
@@ -495,6 +681,15 @@ class _$GetPlaygroundsSuccessImpl<T> implements GetPlaygroundsSuccess<T> {
     TResult? Function()? citiesLoading,
     TResult? Function(List<City> response)? citiesSuccess,
     TResult? Function(String error)? citiesError,
+    TResult? Function()? reservationSlotsLoading,
+    TResult? Function(List<String> slots)? reservationSlotsSuccess,
+    TResult? Function(String error)? reservationSlotsError,
+    TResult? Function()? reserveLoading,
+    TResult? Function()? reserveSuccess,
+    TResult? Function(String error)? reserveError,
+    TResult? Function()? favoriteLoading,
+    TResult? Function()? favoriteSuccess,
+    TResult? Function(String error)? favoriteError,
   }) {
     return getPlaygroundsSuccess?.call(playgrounds);
   }
@@ -509,6 +704,15 @@ class _$GetPlaygroundsSuccessImpl<T> implements GetPlaygroundsSuccess<T> {
     TResult Function()? citiesLoading,
     TResult Function(List<City> response)? citiesSuccess,
     TResult Function(String error)? citiesError,
+    TResult Function()? reservationSlotsLoading,
+    TResult Function(List<String> slots)? reservationSlotsSuccess,
+    TResult Function(String error)? reservationSlotsError,
+    TResult Function()? reserveLoading,
+    TResult Function()? reserveSuccess,
+    TResult Function(String error)? reserveError,
+    TResult Function()? favoriteLoading,
+    TResult Function()? favoriteSuccess,
+    TResult Function(String error)? favoriteError,
     required TResult orElse(),
   }) {
     if (getPlaygroundsSuccess != null) {
@@ -530,6 +734,18 @@ class _$GetPlaygroundsSuccessImpl<T> implements GetPlaygroundsSuccess<T> {
     required TResult Function(CitiesLoading<T> value) citiesLoading,
     required TResult Function(CitiesSuccess<T> value) citiesSuccess,
     required TResult Function(CitiesError<T> value) citiesError,
+    required TResult Function(ReservationSlotsLoading<T> value)
+        reservationSlotsLoading,
+    required TResult Function(ReservationSlotsSuccess<T> value)
+        reservationSlotsSuccess,
+    required TResult Function(ReservationSlotsError<T> value)
+        reservationSlotsError,
+    required TResult Function(ReserveLoading<T> value) reserveLoading,
+    required TResult Function(ReserveSuccess<T> value) reserveSuccess,
+    required TResult Function(ReserveError<T> value) reserveError,
+    required TResult Function(FavoriteLoading<T> value) favoriteLoading,
+    required TResult Function(FavoriteSuccess<T> value) favoriteSuccess,
+    required TResult Function(FavoriteError<T> value) favoriteError,
   }) {
     return getPlaygroundsSuccess(this);
   }
@@ -544,6 +760,17 @@ class _$GetPlaygroundsSuccessImpl<T> implements GetPlaygroundsSuccess<T> {
     TResult? Function(CitiesLoading<T> value)? citiesLoading,
     TResult? Function(CitiesSuccess<T> value)? citiesSuccess,
     TResult? Function(CitiesError<T> value)? citiesError,
+    TResult? Function(ReservationSlotsLoading<T> value)?
+        reservationSlotsLoading,
+    TResult? Function(ReservationSlotsSuccess<T> value)?
+        reservationSlotsSuccess,
+    TResult? Function(ReservationSlotsError<T> value)? reservationSlotsError,
+    TResult? Function(ReserveLoading<T> value)? reserveLoading,
+    TResult? Function(ReserveSuccess<T> value)? reserveSuccess,
+    TResult? Function(ReserveError<T> value)? reserveError,
+    TResult? Function(FavoriteLoading<T> value)? favoriteLoading,
+    TResult? Function(FavoriteSuccess<T> value)? favoriteSuccess,
+    TResult? Function(FavoriteError<T> value)? favoriteError,
   }) {
     return getPlaygroundsSuccess?.call(this);
   }
@@ -558,6 +785,15 @@ class _$GetPlaygroundsSuccessImpl<T> implements GetPlaygroundsSuccess<T> {
     TResult Function(CitiesLoading<T> value)? citiesLoading,
     TResult Function(CitiesSuccess<T> value)? citiesSuccess,
     TResult Function(CitiesError<T> value)? citiesError,
+    TResult Function(ReservationSlotsLoading<T> value)? reservationSlotsLoading,
+    TResult Function(ReservationSlotsSuccess<T> value)? reservationSlotsSuccess,
+    TResult Function(ReservationSlotsError<T> value)? reservationSlotsError,
+    TResult Function(ReserveLoading<T> value)? reserveLoading,
+    TResult Function(ReserveSuccess<T> value)? reserveSuccess,
+    TResult Function(ReserveError<T> value)? reserveError,
+    TResult Function(FavoriteLoading<T> value)? favoriteLoading,
+    TResult Function(FavoriteSuccess<T> value)? favoriteSuccess,
+    TResult Function(FavoriteError<T> value)? favoriteError,
     required TResult orElse(),
   }) {
     if (getPlaygroundsSuccess != null) {
@@ -660,6 +896,15 @@ class _$GetPlaygroundsFailureImpl<T> implements GetPlaygroundsFailure<T> {
     required TResult Function() citiesLoading,
     required TResult Function(List<City> response) citiesSuccess,
     required TResult Function(String error) citiesError,
+    required TResult Function() reservationSlotsLoading,
+    required TResult Function(List<String> slots) reservationSlotsSuccess,
+    required TResult Function(String error) reservationSlotsError,
+    required TResult Function() reserveLoading,
+    required TResult Function() reserveSuccess,
+    required TResult Function(String error) reserveError,
+    required TResult Function() favoriteLoading,
+    required TResult Function() favoriteSuccess,
+    required TResult Function(String error) favoriteError,
   }) {
     return getPlaygroundsFailure(error);
   }
@@ -674,6 +919,15 @@ class _$GetPlaygroundsFailureImpl<T> implements GetPlaygroundsFailure<T> {
     TResult? Function()? citiesLoading,
     TResult? Function(List<City> response)? citiesSuccess,
     TResult? Function(String error)? citiesError,
+    TResult? Function()? reservationSlotsLoading,
+    TResult? Function(List<String> slots)? reservationSlotsSuccess,
+    TResult? Function(String error)? reservationSlotsError,
+    TResult? Function()? reserveLoading,
+    TResult? Function()? reserveSuccess,
+    TResult? Function(String error)? reserveError,
+    TResult? Function()? favoriteLoading,
+    TResult? Function()? favoriteSuccess,
+    TResult? Function(String error)? favoriteError,
   }) {
     return getPlaygroundsFailure?.call(error);
   }
@@ -688,6 +942,15 @@ class _$GetPlaygroundsFailureImpl<T> implements GetPlaygroundsFailure<T> {
     TResult Function()? citiesLoading,
     TResult Function(List<City> response)? citiesSuccess,
     TResult Function(String error)? citiesError,
+    TResult Function()? reservationSlotsLoading,
+    TResult Function(List<String> slots)? reservationSlotsSuccess,
+    TResult Function(String error)? reservationSlotsError,
+    TResult Function()? reserveLoading,
+    TResult Function()? reserveSuccess,
+    TResult Function(String error)? reserveError,
+    TResult Function()? favoriteLoading,
+    TResult Function()? favoriteSuccess,
+    TResult Function(String error)? favoriteError,
     required TResult orElse(),
   }) {
     if (getPlaygroundsFailure != null) {
@@ -709,6 +972,18 @@ class _$GetPlaygroundsFailureImpl<T> implements GetPlaygroundsFailure<T> {
     required TResult Function(CitiesLoading<T> value) citiesLoading,
     required TResult Function(CitiesSuccess<T> value) citiesSuccess,
     required TResult Function(CitiesError<T> value) citiesError,
+    required TResult Function(ReservationSlotsLoading<T> value)
+        reservationSlotsLoading,
+    required TResult Function(ReservationSlotsSuccess<T> value)
+        reservationSlotsSuccess,
+    required TResult Function(ReservationSlotsError<T> value)
+        reservationSlotsError,
+    required TResult Function(ReserveLoading<T> value) reserveLoading,
+    required TResult Function(ReserveSuccess<T> value) reserveSuccess,
+    required TResult Function(ReserveError<T> value) reserveError,
+    required TResult Function(FavoriteLoading<T> value) favoriteLoading,
+    required TResult Function(FavoriteSuccess<T> value) favoriteSuccess,
+    required TResult Function(FavoriteError<T> value) favoriteError,
   }) {
     return getPlaygroundsFailure(this);
   }
@@ -723,6 +998,17 @@ class _$GetPlaygroundsFailureImpl<T> implements GetPlaygroundsFailure<T> {
     TResult? Function(CitiesLoading<T> value)? citiesLoading,
     TResult? Function(CitiesSuccess<T> value)? citiesSuccess,
     TResult? Function(CitiesError<T> value)? citiesError,
+    TResult? Function(ReservationSlotsLoading<T> value)?
+        reservationSlotsLoading,
+    TResult? Function(ReservationSlotsSuccess<T> value)?
+        reservationSlotsSuccess,
+    TResult? Function(ReservationSlotsError<T> value)? reservationSlotsError,
+    TResult? Function(ReserveLoading<T> value)? reserveLoading,
+    TResult? Function(ReserveSuccess<T> value)? reserveSuccess,
+    TResult? Function(ReserveError<T> value)? reserveError,
+    TResult? Function(FavoriteLoading<T> value)? favoriteLoading,
+    TResult? Function(FavoriteSuccess<T> value)? favoriteSuccess,
+    TResult? Function(FavoriteError<T> value)? favoriteError,
   }) {
     return getPlaygroundsFailure?.call(this);
   }
@@ -737,6 +1023,15 @@ class _$GetPlaygroundsFailureImpl<T> implements GetPlaygroundsFailure<T> {
     TResult Function(CitiesLoading<T> value)? citiesLoading,
     TResult Function(CitiesSuccess<T> value)? citiesSuccess,
     TResult Function(CitiesError<T> value)? citiesError,
+    TResult Function(ReservationSlotsLoading<T> value)? reservationSlotsLoading,
+    TResult Function(ReservationSlotsSuccess<T> value)? reservationSlotsSuccess,
+    TResult Function(ReservationSlotsError<T> value)? reservationSlotsError,
+    TResult Function(ReserveLoading<T> value)? reserveLoading,
+    TResult Function(ReserveSuccess<T> value)? reserveSuccess,
+    TResult Function(ReserveError<T> value)? reserveError,
+    TResult Function(FavoriteLoading<T> value)? favoriteLoading,
+    TResult Function(FavoriteSuccess<T> value)? favoriteSuccess,
+    TResult Function(FavoriteError<T> value)? favoriteError,
     required TResult orElse(),
   }) {
     if (getPlaygroundsFailure != null) {
@@ -808,6 +1103,15 @@ class _$CitiesLoadingImpl<T> implements CitiesLoading<T> {
     required TResult Function() citiesLoading,
     required TResult Function(List<City> response) citiesSuccess,
     required TResult Function(String error) citiesError,
+    required TResult Function() reservationSlotsLoading,
+    required TResult Function(List<String> slots) reservationSlotsSuccess,
+    required TResult Function(String error) reservationSlotsError,
+    required TResult Function() reserveLoading,
+    required TResult Function() reserveSuccess,
+    required TResult Function(String error) reserveError,
+    required TResult Function() favoriteLoading,
+    required TResult Function() favoriteSuccess,
+    required TResult Function(String error) favoriteError,
   }) {
     return citiesLoading();
   }
@@ -822,6 +1126,15 @@ class _$CitiesLoadingImpl<T> implements CitiesLoading<T> {
     TResult? Function()? citiesLoading,
     TResult? Function(List<City> response)? citiesSuccess,
     TResult? Function(String error)? citiesError,
+    TResult? Function()? reservationSlotsLoading,
+    TResult? Function(List<String> slots)? reservationSlotsSuccess,
+    TResult? Function(String error)? reservationSlotsError,
+    TResult? Function()? reserveLoading,
+    TResult? Function()? reserveSuccess,
+    TResult? Function(String error)? reserveError,
+    TResult? Function()? favoriteLoading,
+    TResult? Function()? favoriteSuccess,
+    TResult? Function(String error)? favoriteError,
   }) {
     return citiesLoading?.call();
   }
@@ -836,6 +1149,15 @@ class _$CitiesLoadingImpl<T> implements CitiesLoading<T> {
     TResult Function()? citiesLoading,
     TResult Function(List<City> response)? citiesSuccess,
     TResult Function(String error)? citiesError,
+    TResult Function()? reservationSlotsLoading,
+    TResult Function(List<String> slots)? reservationSlotsSuccess,
+    TResult Function(String error)? reservationSlotsError,
+    TResult Function()? reserveLoading,
+    TResult Function()? reserveSuccess,
+    TResult Function(String error)? reserveError,
+    TResult Function()? favoriteLoading,
+    TResult Function()? favoriteSuccess,
+    TResult Function(String error)? favoriteError,
     required TResult orElse(),
   }) {
     if (citiesLoading != null) {
@@ -857,6 +1179,18 @@ class _$CitiesLoadingImpl<T> implements CitiesLoading<T> {
     required TResult Function(CitiesLoading<T> value) citiesLoading,
     required TResult Function(CitiesSuccess<T> value) citiesSuccess,
     required TResult Function(CitiesError<T> value) citiesError,
+    required TResult Function(ReservationSlotsLoading<T> value)
+        reservationSlotsLoading,
+    required TResult Function(ReservationSlotsSuccess<T> value)
+        reservationSlotsSuccess,
+    required TResult Function(ReservationSlotsError<T> value)
+        reservationSlotsError,
+    required TResult Function(ReserveLoading<T> value) reserveLoading,
+    required TResult Function(ReserveSuccess<T> value) reserveSuccess,
+    required TResult Function(ReserveError<T> value) reserveError,
+    required TResult Function(FavoriteLoading<T> value) favoriteLoading,
+    required TResult Function(FavoriteSuccess<T> value) favoriteSuccess,
+    required TResult Function(FavoriteError<T> value) favoriteError,
   }) {
     return citiesLoading(this);
   }
@@ -871,6 +1205,17 @@ class _$CitiesLoadingImpl<T> implements CitiesLoading<T> {
     TResult? Function(CitiesLoading<T> value)? citiesLoading,
     TResult? Function(CitiesSuccess<T> value)? citiesSuccess,
     TResult? Function(CitiesError<T> value)? citiesError,
+    TResult? Function(ReservationSlotsLoading<T> value)?
+        reservationSlotsLoading,
+    TResult? Function(ReservationSlotsSuccess<T> value)?
+        reservationSlotsSuccess,
+    TResult? Function(ReservationSlotsError<T> value)? reservationSlotsError,
+    TResult? Function(ReserveLoading<T> value)? reserveLoading,
+    TResult? Function(ReserveSuccess<T> value)? reserveSuccess,
+    TResult? Function(ReserveError<T> value)? reserveError,
+    TResult? Function(FavoriteLoading<T> value)? favoriteLoading,
+    TResult? Function(FavoriteSuccess<T> value)? favoriteSuccess,
+    TResult? Function(FavoriteError<T> value)? favoriteError,
   }) {
     return citiesLoading?.call(this);
   }
@@ -885,6 +1230,15 @@ class _$CitiesLoadingImpl<T> implements CitiesLoading<T> {
     TResult Function(CitiesLoading<T> value)? citiesLoading,
     TResult Function(CitiesSuccess<T> value)? citiesSuccess,
     TResult Function(CitiesError<T> value)? citiesError,
+    TResult Function(ReservationSlotsLoading<T> value)? reservationSlotsLoading,
+    TResult Function(ReservationSlotsSuccess<T> value)? reservationSlotsSuccess,
+    TResult Function(ReservationSlotsError<T> value)? reservationSlotsError,
+    TResult Function(ReserveLoading<T> value)? reserveLoading,
+    TResult Function(ReserveSuccess<T> value)? reserveSuccess,
+    TResult Function(ReserveError<T> value)? reserveError,
+    TResult Function(FavoriteLoading<T> value)? favoriteLoading,
+    TResult Function(FavoriteSuccess<T> value)? favoriteSuccess,
+    TResult Function(FavoriteError<T> value)? favoriteError,
     required TResult orElse(),
   }) {
     if (citiesLoading != null) {
@@ -981,6 +1335,15 @@ class _$CitiesSuccessImpl<T> implements CitiesSuccess<T> {
     required TResult Function() citiesLoading,
     required TResult Function(List<City> response) citiesSuccess,
     required TResult Function(String error) citiesError,
+    required TResult Function() reservationSlotsLoading,
+    required TResult Function(List<String> slots) reservationSlotsSuccess,
+    required TResult Function(String error) reservationSlotsError,
+    required TResult Function() reserveLoading,
+    required TResult Function() reserveSuccess,
+    required TResult Function(String error) reserveError,
+    required TResult Function() favoriteLoading,
+    required TResult Function() favoriteSuccess,
+    required TResult Function(String error) favoriteError,
   }) {
     return citiesSuccess(response);
   }
@@ -995,6 +1358,15 @@ class _$CitiesSuccessImpl<T> implements CitiesSuccess<T> {
     TResult? Function()? citiesLoading,
     TResult? Function(List<City> response)? citiesSuccess,
     TResult? Function(String error)? citiesError,
+    TResult? Function()? reservationSlotsLoading,
+    TResult? Function(List<String> slots)? reservationSlotsSuccess,
+    TResult? Function(String error)? reservationSlotsError,
+    TResult? Function()? reserveLoading,
+    TResult? Function()? reserveSuccess,
+    TResult? Function(String error)? reserveError,
+    TResult? Function()? favoriteLoading,
+    TResult? Function()? favoriteSuccess,
+    TResult? Function(String error)? favoriteError,
   }) {
     return citiesSuccess?.call(response);
   }
@@ -1009,6 +1381,15 @@ class _$CitiesSuccessImpl<T> implements CitiesSuccess<T> {
     TResult Function()? citiesLoading,
     TResult Function(List<City> response)? citiesSuccess,
     TResult Function(String error)? citiesError,
+    TResult Function()? reservationSlotsLoading,
+    TResult Function(List<String> slots)? reservationSlotsSuccess,
+    TResult Function(String error)? reservationSlotsError,
+    TResult Function()? reserveLoading,
+    TResult Function()? reserveSuccess,
+    TResult Function(String error)? reserveError,
+    TResult Function()? favoriteLoading,
+    TResult Function()? favoriteSuccess,
+    TResult Function(String error)? favoriteError,
     required TResult orElse(),
   }) {
     if (citiesSuccess != null) {
@@ -1030,6 +1411,18 @@ class _$CitiesSuccessImpl<T> implements CitiesSuccess<T> {
     required TResult Function(CitiesLoading<T> value) citiesLoading,
     required TResult Function(CitiesSuccess<T> value) citiesSuccess,
     required TResult Function(CitiesError<T> value) citiesError,
+    required TResult Function(ReservationSlotsLoading<T> value)
+        reservationSlotsLoading,
+    required TResult Function(ReservationSlotsSuccess<T> value)
+        reservationSlotsSuccess,
+    required TResult Function(ReservationSlotsError<T> value)
+        reservationSlotsError,
+    required TResult Function(ReserveLoading<T> value) reserveLoading,
+    required TResult Function(ReserveSuccess<T> value) reserveSuccess,
+    required TResult Function(ReserveError<T> value) reserveError,
+    required TResult Function(FavoriteLoading<T> value) favoriteLoading,
+    required TResult Function(FavoriteSuccess<T> value) favoriteSuccess,
+    required TResult Function(FavoriteError<T> value) favoriteError,
   }) {
     return citiesSuccess(this);
   }
@@ -1044,6 +1437,17 @@ class _$CitiesSuccessImpl<T> implements CitiesSuccess<T> {
     TResult? Function(CitiesLoading<T> value)? citiesLoading,
     TResult? Function(CitiesSuccess<T> value)? citiesSuccess,
     TResult? Function(CitiesError<T> value)? citiesError,
+    TResult? Function(ReservationSlotsLoading<T> value)?
+        reservationSlotsLoading,
+    TResult? Function(ReservationSlotsSuccess<T> value)?
+        reservationSlotsSuccess,
+    TResult? Function(ReservationSlotsError<T> value)? reservationSlotsError,
+    TResult? Function(ReserveLoading<T> value)? reserveLoading,
+    TResult? Function(ReserveSuccess<T> value)? reserveSuccess,
+    TResult? Function(ReserveError<T> value)? reserveError,
+    TResult? Function(FavoriteLoading<T> value)? favoriteLoading,
+    TResult? Function(FavoriteSuccess<T> value)? favoriteSuccess,
+    TResult? Function(FavoriteError<T> value)? favoriteError,
   }) {
     return citiesSuccess?.call(this);
   }
@@ -1058,6 +1462,15 @@ class _$CitiesSuccessImpl<T> implements CitiesSuccess<T> {
     TResult Function(CitiesLoading<T> value)? citiesLoading,
     TResult Function(CitiesSuccess<T> value)? citiesSuccess,
     TResult Function(CitiesError<T> value)? citiesError,
+    TResult Function(ReservationSlotsLoading<T> value)? reservationSlotsLoading,
+    TResult Function(ReservationSlotsSuccess<T> value)? reservationSlotsSuccess,
+    TResult Function(ReservationSlotsError<T> value)? reservationSlotsError,
+    TResult Function(ReserveLoading<T> value)? reserveLoading,
+    TResult Function(ReserveSuccess<T> value)? reserveSuccess,
+    TResult Function(ReserveError<T> value)? reserveError,
+    TResult Function(FavoriteLoading<T> value)? favoriteLoading,
+    TResult Function(FavoriteSuccess<T> value)? favoriteSuccess,
+    TResult Function(FavoriteError<T> value)? favoriteError,
     required TResult orElse(),
   }) {
     if (citiesSuccess != null) {
@@ -1157,6 +1570,15 @@ class _$CitiesErrorImpl<T> implements CitiesError<T> {
     required TResult Function() citiesLoading,
     required TResult Function(List<City> response) citiesSuccess,
     required TResult Function(String error) citiesError,
+    required TResult Function() reservationSlotsLoading,
+    required TResult Function(List<String> slots) reservationSlotsSuccess,
+    required TResult Function(String error) reservationSlotsError,
+    required TResult Function() reserveLoading,
+    required TResult Function() reserveSuccess,
+    required TResult Function(String error) reserveError,
+    required TResult Function() favoriteLoading,
+    required TResult Function() favoriteSuccess,
+    required TResult Function(String error) favoriteError,
   }) {
     return citiesError(error);
   }
@@ -1171,6 +1593,15 @@ class _$CitiesErrorImpl<T> implements CitiesError<T> {
     TResult? Function()? citiesLoading,
     TResult? Function(List<City> response)? citiesSuccess,
     TResult? Function(String error)? citiesError,
+    TResult? Function()? reservationSlotsLoading,
+    TResult? Function(List<String> slots)? reservationSlotsSuccess,
+    TResult? Function(String error)? reservationSlotsError,
+    TResult? Function()? reserveLoading,
+    TResult? Function()? reserveSuccess,
+    TResult? Function(String error)? reserveError,
+    TResult? Function()? favoriteLoading,
+    TResult? Function()? favoriteSuccess,
+    TResult? Function(String error)? favoriteError,
   }) {
     return citiesError?.call(error);
   }
@@ -1185,6 +1616,15 @@ class _$CitiesErrorImpl<T> implements CitiesError<T> {
     TResult Function()? citiesLoading,
     TResult Function(List<City> response)? citiesSuccess,
     TResult Function(String error)? citiesError,
+    TResult Function()? reservationSlotsLoading,
+    TResult Function(List<String> slots)? reservationSlotsSuccess,
+    TResult Function(String error)? reservationSlotsError,
+    TResult Function()? reserveLoading,
+    TResult Function()? reserveSuccess,
+    TResult Function(String error)? reserveError,
+    TResult Function()? favoriteLoading,
+    TResult Function()? favoriteSuccess,
+    TResult Function(String error)? favoriteError,
     required TResult orElse(),
   }) {
     if (citiesError != null) {
@@ -1206,6 +1646,18 @@ class _$CitiesErrorImpl<T> implements CitiesError<T> {
     required TResult Function(CitiesLoading<T> value) citiesLoading,
     required TResult Function(CitiesSuccess<T> value) citiesSuccess,
     required TResult Function(CitiesError<T> value) citiesError,
+    required TResult Function(ReservationSlotsLoading<T> value)
+        reservationSlotsLoading,
+    required TResult Function(ReservationSlotsSuccess<T> value)
+        reservationSlotsSuccess,
+    required TResult Function(ReservationSlotsError<T> value)
+        reservationSlotsError,
+    required TResult Function(ReserveLoading<T> value) reserveLoading,
+    required TResult Function(ReserveSuccess<T> value) reserveSuccess,
+    required TResult Function(ReserveError<T> value) reserveError,
+    required TResult Function(FavoriteLoading<T> value) favoriteLoading,
+    required TResult Function(FavoriteSuccess<T> value) favoriteSuccess,
+    required TResult Function(FavoriteError<T> value) favoriteError,
   }) {
     return citiesError(this);
   }
@@ -1220,6 +1672,17 @@ class _$CitiesErrorImpl<T> implements CitiesError<T> {
     TResult? Function(CitiesLoading<T> value)? citiesLoading,
     TResult? Function(CitiesSuccess<T> value)? citiesSuccess,
     TResult? Function(CitiesError<T> value)? citiesError,
+    TResult? Function(ReservationSlotsLoading<T> value)?
+        reservationSlotsLoading,
+    TResult? Function(ReservationSlotsSuccess<T> value)?
+        reservationSlotsSuccess,
+    TResult? Function(ReservationSlotsError<T> value)? reservationSlotsError,
+    TResult? Function(ReserveLoading<T> value)? reserveLoading,
+    TResult? Function(ReserveSuccess<T> value)? reserveSuccess,
+    TResult? Function(ReserveError<T> value)? reserveError,
+    TResult? Function(FavoriteLoading<T> value)? favoriteLoading,
+    TResult? Function(FavoriteSuccess<T> value)? favoriteSuccess,
+    TResult? Function(FavoriteError<T> value)? favoriteError,
   }) {
     return citiesError?.call(this);
   }
@@ -1234,6 +1697,15 @@ class _$CitiesErrorImpl<T> implements CitiesError<T> {
     TResult Function(CitiesLoading<T> value)? citiesLoading,
     TResult Function(CitiesSuccess<T> value)? citiesSuccess,
     TResult Function(CitiesError<T> value)? citiesError,
+    TResult Function(ReservationSlotsLoading<T> value)? reservationSlotsLoading,
+    TResult Function(ReservationSlotsSuccess<T> value)? reservationSlotsSuccess,
+    TResult Function(ReservationSlotsError<T> value)? reservationSlotsError,
+    TResult Function(ReserveLoading<T> value)? reserveLoading,
+    TResult Function(ReserveSuccess<T> value)? reserveSuccess,
+    TResult Function(ReserveError<T> value)? reserveError,
+    TResult Function(FavoriteLoading<T> value)? favoriteLoading,
+    TResult Function(FavoriteSuccess<T> value)? favoriteSuccess,
+    TResult Function(FavoriteError<T> value)? favoriteError,
     required TResult orElse(),
   }) {
     if (citiesError != null) {
@@ -1253,5 +1725,1952 @@ abstract class CitiesError<T> implements PlaygroundsState<T> {
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   _$$CitiesErrorImplCopyWith<T, _$CitiesErrorImpl<T>> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$ReservationSlotsLoadingImplCopyWith<T, $Res> {
+  factory _$$ReservationSlotsLoadingImplCopyWith(
+          _$ReservationSlotsLoadingImpl<T> value,
+          $Res Function(_$ReservationSlotsLoadingImpl<T>) then) =
+      __$$ReservationSlotsLoadingImplCopyWithImpl<T, $Res>;
+}
+
+/// @nodoc
+class __$$ReservationSlotsLoadingImplCopyWithImpl<T, $Res>
+    extends _$PlaygroundsStateCopyWithImpl<T, $Res,
+        _$ReservationSlotsLoadingImpl<T>>
+    implements _$$ReservationSlotsLoadingImplCopyWith<T, $Res> {
+  __$$ReservationSlotsLoadingImplCopyWithImpl(
+      _$ReservationSlotsLoadingImpl<T> _value,
+      $Res Function(_$ReservationSlotsLoadingImpl<T>) _then)
+      : super(_value, _then);
+
+  /// Create a copy of PlaygroundsState
+  /// with the given fields replaced by the non-null parameter values.
+}
+
+/// @nodoc
+
+class _$ReservationSlotsLoadingImpl<T> implements ReservationSlotsLoading<T> {
+  const _$ReservationSlotsLoadingImpl();
+
+  @override
+  String toString() {
+    return 'PlaygroundsState<$T>.reservationSlotsLoading()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$ReservationSlotsLoadingImpl<T>);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() getPlaygroundsLoading,
+    required TResult Function(List<PlaygroundModel> playgrounds)
+        getPlaygroundsSuccess,
+    required TResult Function(String error) getPlaygroundsFailure,
+    required TResult Function() citiesLoading,
+    required TResult Function(List<City> response) citiesSuccess,
+    required TResult Function(String error) citiesError,
+    required TResult Function() reservationSlotsLoading,
+    required TResult Function(List<String> slots) reservationSlotsSuccess,
+    required TResult Function(String error) reservationSlotsError,
+    required TResult Function() reserveLoading,
+    required TResult Function() reserveSuccess,
+    required TResult Function(String error) reserveError,
+    required TResult Function() favoriteLoading,
+    required TResult Function() favoriteSuccess,
+    required TResult Function(String error) favoriteError,
+  }) {
+    return reservationSlotsLoading();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? getPlaygroundsLoading,
+    TResult? Function(List<PlaygroundModel> playgrounds)? getPlaygroundsSuccess,
+    TResult? Function(String error)? getPlaygroundsFailure,
+    TResult? Function()? citiesLoading,
+    TResult? Function(List<City> response)? citiesSuccess,
+    TResult? Function(String error)? citiesError,
+    TResult? Function()? reservationSlotsLoading,
+    TResult? Function(List<String> slots)? reservationSlotsSuccess,
+    TResult? Function(String error)? reservationSlotsError,
+    TResult? Function()? reserveLoading,
+    TResult? Function()? reserveSuccess,
+    TResult? Function(String error)? reserveError,
+    TResult? Function()? favoriteLoading,
+    TResult? Function()? favoriteSuccess,
+    TResult? Function(String error)? favoriteError,
+  }) {
+    return reservationSlotsLoading?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? getPlaygroundsLoading,
+    TResult Function(List<PlaygroundModel> playgrounds)? getPlaygroundsSuccess,
+    TResult Function(String error)? getPlaygroundsFailure,
+    TResult Function()? citiesLoading,
+    TResult Function(List<City> response)? citiesSuccess,
+    TResult Function(String error)? citiesError,
+    TResult Function()? reservationSlotsLoading,
+    TResult Function(List<String> slots)? reservationSlotsSuccess,
+    TResult Function(String error)? reservationSlotsError,
+    TResult Function()? reserveLoading,
+    TResult Function()? reserveSuccess,
+    TResult Function(String error)? reserveError,
+    TResult Function()? favoriteLoading,
+    TResult Function()? favoriteSuccess,
+    TResult Function(String error)? favoriteError,
+    required TResult orElse(),
+  }) {
+    if (reservationSlotsLoading != null) {
+      return reservationSlotsLoading();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial<T> value) initial,
+    required TResult Function(GetPlaygroundsLoading<T> value)
+        getPlaygroundsLoading,
+    required TResult Function(GetPlaygroundsSuccess<T> value)
+        getPlaygroundsSuccess,
+    required TResult Function(GetPlaygroundsFailure<T> value)
+        getPlaygroundsFailure,
+    required TResult Function(CitiesLoading<T> value) citiesLoading,
+    required TResult Function(CitiesSuccess<T> value) citiesSuccess,
+    required TResult Function(CitiesError<T> value) citiesError,
+    required TResult Function(ReservationSlotsLoading<T> value)
+        reservationSlotsLoading,
+    required TResult Function(ReservationSlotsSuccess<T> value)
+        reservationSlotsSuccess,
+    required TResult Function(ReservationSlotsError<T> value)
+        reservationSlotsError,
+    required TResult Function(ReserveLoading<T> value) reserveLoading,
+    required TResult Function(ReserveSuccess<T> value) reserveSuccess,
+    required TResult Function(ReserveError<T> value) reserveError,
+    required TResult Function(FavoriteLoading<T> value) favoriteLoading,
+    required TResult Function(FavoriteSuccess<T> value) favoriteSuccess,
+    required TResult Function(FavoriteError<T> value) favoriteError,
+  }) {
+    return reservationSlotsLoading(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial<T> value)? initial,
+    TResult? Function(GetPlaygroundsLoading<T> value)? getPlaygroundsLoading,
+    TResult? Function(GetPlaygroundsSuccess<T> value)? getPlaygroundsSuccess,
+    TResult? Function(GetPlaygroundsFailure<T> value)? getPlaygroundsFailure,
+    TResult? Function(CitiesLoading<T> value)? citiesLoading,
+    TResult? Function(CitiesSuccess<T> value)? citiesSuccess,
+    TResult? Function(CitiesError<T> value)? citiesError,
+    TResult? Function(ReservationSlotsLoading<T> value)?
+        reservationSlotsLoading,
+    TResult? Function(ReservationSlotsSuccess<T> value)?
+        reservationSlotsSuccess,
+    TResult? Function(ReservationSlotsError<T> value)? reservationSlotsError,
+    TResult? Function(ReserveLoading<T> value)? reserveLoading,
+    TResult? Function(ReserveSuccess<T> value)? reserveSuccess,
+    TResult? Function(ReserveError<T> value)? reserveError,
+    TResult? Function(FavoriteLoading<T> value)? favoriteLoading,
+    TResult? Function(FavoriteSuccess<T> value)? favoriteSuccess,
+    TResult? Function(FavoriteError<T> value)? favoriteError,
+  }) {
+    return reservationSlotsLoading?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial<T> value)? initial,
+    TResult Function(GetPlaygroundsLoading<T> value)? getPlaygroundsLoading,
+    TResult Function(GetPlaygroundsSuccess<T> value)? getPlaygroundsSuccess,
+    TResult Function(GetPlaygroundsFailure<T> value)? getPlaygroundsFailure,
+    TResult Function(CitiesLoading<T> value)? citiesLoading,
+    TResult Function(CitiesSuccess<T> value)? citiesSuccess,
+    TResult Function(CitiesError<T> value)? citiesError,
+    TResult Function(ReservationSlotsLoading<T> value)? reservationSlotsLoading,
+    TResult Function(ReservationSlotsSuccess<T> value)? reservationSlotsSuccess,
+    TResult Function(ReservationSlotsError<T> value)? reservationSlotsError,
+    TResult Function(ReserveLoading<T> value)? reserveLoading,
+    TResult Function(ReserveSuccess<T> value)? reserveSuccess,
+    TResult Function(ReserveError<T> value)? reserveError,
+    TResult Function(FavoriteLoading<T> value)? favoriteLoading,
+    TResult Function(FavoriteSuccess<T> value)? favoriteSuccess,
+    TResult Function(FavoriteError<T> value)? favoriteError,
+    required TResult orElse(),
+  }) {
+    if (reservationSlotsLoading != null) {
+      return reservationSlotsLoading(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class ReservationSlotsLoading<T> implements PlaygroundsState<T> {
+  const factory ReservationSlotsLoading() = _$ReservationSlotsLoadingImpl<T>;
+}
+
+/// @nodoc
+abstract class _$$ReservationSlotsSuccessImplCopyWith<T, $Res> {
+  factory _$$ReservationSlotsSuccessImplCopyWith(
+          _$ReservationSlotsSuccessImpl<T> value,
+          $Res Function(_$ReservationSlotsSuccessImpl<T>) then) =
+      __$$ReservationSlotsSuccessImplCopyWithImpl<T, $Res>;
+  @useResult
+  $Res call({List<String> slots});
+}
+
+/// @nodoc
+class __$$ReservationSlotsSuccessImplCopyWithImpl<T, $Res>
+    extends _$PlaygroundsStateCopyWithImpl<T, $Res,
+        _$ReservationSlotsSuccessImpl<T>>
+    implements _$$ReservationSlotsSuccessImplCopyWith<T, $Res> {
+  __$$ReservationSlotsSuccessImplCopyWithImpl(
+      _$ReservationSlotsSuccessImpl<T> _value,
+      $Res Function(_$ReservationSlotsSuccessImpl<T>) _then)
+      : super(_value, _then);
+
+  /// Create a copy of PlaygroundsState
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? slots = null,
+  }) {
+    return _then(_$ReservationSlotsSuccessImpl<T>(
+      null == slots
+          ? _value._slots
+          : slots // ignore: cast_nullable_to_non_nullable
+              as List<String>,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$ReservationSlotsSuccessImpl<T> implements ReservationSlotsSuccess<T> {
+  const _$ReservationSlotsSuccessImpl(final List<String> slots)
+      : _slots = slots;
+
+  final List<String> _slots;
+  @override
+  List<String> get slots {
+    if (_slots is EqualUnmodifiableListView) return _slots;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_slots);
+  }
+
+  @override
+  String toString() {
+    return 'PlaygroundsState<$T>.reservationSlotsSuccess(slots: $slots)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$ReservationSlotsSuccessImpl<T> &&
+            const DeepCollectionEquality().equals(other._slots, _slots));
+  }
+
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(_slots));
+
+  /// Create a copy of PlaygroundsState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$ReservationSlotsSuccessImplCopyWith<T, _$ReservationSlotsSuccessImpl<T>>
+      get copyWith => __$$ReservationSlotsSuccessImplCopyWithImpl<T,
+          _$ReservationSlotsSuccessImpl<T>>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() getPlaygroundsLoading,
+    required TResult Function(List<PlaygroundModel> playgrounds)
+        getPlaygroundsSuccess,
+    required TResult Function(String error) getPlaygroundsFailure,
+    required TResult Function() citiesLoading,
+    required TResult Function(List<City> response) citiesSuccess,
+    required TResult Function(String error) citiesError,
+    required TResult Function() reservationSlotsLoading,
+    required TResult Function(List<String> slots) reservationSlotsSuccess,
+    required TResult Function(String error) reservationSlotsError,
+    required TResult Function() reserveLoading,
+    required TResult Function() reserveSuccess,
+    required TResult Function(String error) reserveError,
+    required TResult Function() favoriteLoading,
+    required TResult Function() favoriteSuccess,
+    required TResult Function(String error) favoriteError,
+  }) {
+    return reservationSlotsSuccess(slots);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? getPlaygroundsLoading,
+    TResult? Function(List<PlaygroundModel> playgrounds)? getPlaygroundsSuccess,
+    TResult? Function(String error)? getPlaygroundsFailure,
+    TResult? Function()? citiesLoading,
+    TResult? Function(List<City> response)? citiesSuccess,
+    TResult? Function(String error)? citiesError,
+    TResult? Function()? reservationSlotsLoading,
+    TResult? Function(List<String> slots)? reservationSlotsSuccess,
+    TResult? Function(String error)? reservationSlotsError,
+    TResult? Function()? reserveLoading,
+    TResult? Function()? reserveSuccess,
+    TResult? Function(String error)? reserveError,
+    TResult? Function()? favoriteLoading,
+    TResult? Function()? favoriteSuccess,
+    TResult? Function(String error)? favoriteError,
+  }) {
+    return reservationSlotsSuccess?.call(slots);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? getPlaygroundsLoading,
+    TResult Function(List<PlaygroundModel> playgrounds)? getPlaygroundsSuccess,
+    TResult Function(String error)? getPlaygroundsFailure,
+    TResult Function()? citiesLoading,
+    TResult Function(List<City> response)? citiesSuccess,
+    TResult Function(String error)? citiesError,
+    TResult Function()? reservationSlotsLoading,
+    TResult Function(List<String> slots)? reservationSlotsSuccess,
+    TResult Function(String error)? reservationSlotsError,
+    TResult Function()? reserveLoading,
+    TResult Function()? reserveSuccess,
+    TResult Function(String error)? reserveError,
+    TResult Function()? favoriteLoading,
+    TResult Function()? favoriteSuccess,
+    TResult Function(String error)? favoriteError,
+    required TResult orElse(),
+  }) {
+    if (reservationSlotsSuccess != null) {
+      return reservationSlotsSuccess(slots);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial<T> value) initial,
+    required TResult Function(GetPlaygroundsLoading<T> value)
+        getPlaygroundsLoading,
+    required TResult Function(GetPlaygroundsSuccess<T> value)
+        getPlaygroundsSuccess,
+    required TResult Function(GetPlaygroundsFailure<T> value)
+        getPlaygroundsFailure,
+    required TResult Function(CitiesLoading<T> value) citiesLoading,
+    required TResult Function(CitiesSuccess<T> value) citiesSuccess,
+    required TResult Function(CitiesError<T> value) citiesError,
+    required TResult Function(ReservationSlotsLoading<T> value)
+        reservationSlotsLoading,
+    required TResult Function(ReservationSlotsSuccess<T> value)
+        reservationSlotsSuccess,
+    required TResult Function(ReservationSlotsError<T> value)
+        reservationSlotsError,
+    required TResult Function(ReserveLoading<T> value) reserveLoading,
+    required TResult Function(ReserveSuccess<T> value) reserveSuccess,
+    required TResult Function(ReserveError<T> value) reserveError,
+    required TResult Function(FavoriteLoading<T> value) favoriteLoading,
+    required TResult Function(FavoriteSuccess<T> value) favoriteSuccess,
+    required TResult Function(FavoriteError<T> value) favoriteError,
+  }) {
+    return reservationSlotsSuccess(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial<T> value)? initial,
+    TResult? Function(GetPlaygroundsLoading<T> value)? getPlaygroundsLoading,
+    TResult? Function(GetPlaygroundsSuccess<T> value)? getPlaygroundsSuccess,
+    TResult? Function(GetPlaygroundsFailure<T> value)? getPlaygroundsFailure,
+    TResult? Function(CitiesLoading<T> value)? citiesLoading,
+    TResult? Function(CitiesSuccess<T> value)? citiesSuccess,
+    TResult? Function(CitiesError<T> value)? citiesError,
+    TResult? Function(ReservationSlotsLoading<T> value)?
+        reservationSlotsLoading,
+    TResult? Function(ReservationSlotsSuccess<T> value)?
+        reservationSlotsSuccess,
+    TResult? Function(ReservationSlotsError<T> value)? reservationSlotsError,
+    TResult? Function(ReserveLoading<T> value)? reserveLoading,
+    TResult? Function(ReserveSuccess<T> value)? reserveSuccess,
+    TResult? Function(ReserveError<T> value)? reserveError,
+    TResult? Function(FavoriteLoading<T> value)? favoriteLoading,
+    TResult? Function(FavoriteSuccess<T> value)? favoriteSuccess,
+    TResult? Function(FavoriteError<T> value)? favoriteError,
+  }) {
+    return reservationSlotsSuccess?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial<T> value)? initial,
+    TResult Function(GetPlaygroundsLoading<T> value)? getPlaygroundsLoading,
+    TResult Function(GetPlaygroundsSuccess<T> value)? getPlaygroundsSuccess,
+    TResult Function(GetPlaygroundsFailure<T> value)? getPlaygroundsFailure,
+    TResult Function(CitiesLoading<T> value)? citiesLoading,
+    TResult Function(CitiesSuccess<T> value)? citiesSuccess,
+    TResult Function(CitiesError<T> value)? citiesError,
+    TResult Function(ReservationSlotsLoading<T> value)? reservationSlotsLoading,
+    TResult Function(ReservationSlotsSuccess<T> value)? reservationSlotsSuccess,
+    TResult Function(ReservationSlotsError<T> value)? reservationSlotsError,
+    TResult Function(ReserveLoading<T> value)? reserveLoading,
+    TResult Function(ReserveSuccess<T> value)? reserveSuccess,
+    TResult Function(ReserveError<T> value)? reserveError,
+    TResult Function(FavoriteLoading<T> value)? favoriteLoading,
+    TResult Function(FavoriteSuccess<T> value)? favoriteSuccess,
+    TResult Function(FavoriteError<T> value)? favoriteError,
+    required TResult orElse(),
+  }) {
+    if (reservationSlotsSuccess != null) {
+      return reservationSlotsSuccess(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class ReservationSlotsSuccess<T> implements PlaygroundsState<T> {
+  const factory ReservationSlotsSuccess(final List<String> slots) =
+      _$ReservationSlotsSuccessImpl<T>;
+
+  List<String> get slots;
+
+  /// Create a copy of PlaygroundsState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$ReservationSlotsSuccessImplCopyWith<T, _$ReservationSlotsSuccessImpl<T>>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$ReservationSlotsErrorImplCopyWith<T, $Res> {
+  factory _$$ReservationSlotsErrorImplCopyWith(
+          _$ReservationSlotsErrorImpl<T> value,
+          $Res Function(_$ReservationSlotsErrorImpl<T>) then) =
+      __$$ReservationSlotsErrorImplCopyWithImpl<T, $Res>;
+  @useResult
+  $Res call({String error});
+}
+
+/// @nodoc
+class __$$ReservationSlotsErrorImplCopyWithImpl<T, $Res>
+    extends _$PlaygroundsStateCopyWithImpl<T, $Res,
+        _$ReservationSlotsErrorImpl<T>>
+    implements _$$ReservationSlotsErrorImplCopyWith<T, $Res> {
+  __$$ReservationSlotsErrorImplCopyWithImpl(
+      _$ReservationSlotsErrorImpl<T> _value,
+      $Res Function(_$ReservationSlotsErrorImpl<T>) _then)
+      : super(_value, _then);
+
+  /// Create a copy of PlaygroundsState
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? error = null,
+  }) {
+    return _then(_$ReservationSlotsErrorImpl<T>(
+      error: null == error
+          ? _value.error
+          : error // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$ReservationSlotsErrorImpl<T> implements ReservationSlotsError<T> {
+  const _$ReservationSlotsErrorImpl({required this.error});
+
+  @override
+  final String error;
+
+  @override
+  String toString() {
+    return 'PlaygroundsState<$T>.reservationSlotsError(error: $error)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$ReservationSlotsErrorImpl<T> &&
+            (identical(other.error, error) || other.error == error));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, error);
+
+  /// Create a copy of PlaygroundsState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$ReservationSlotsErrorImplCopyWith<T, _$ReservationSlotsErrorImpl<T>>
+      get copyWith => __$$ReservationSlotsErrorImplCopyWithImpl<T,
+          _$ReservationSlotsErrorImpl<T>>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() getPlaygroundsLoading,
+    required TResult Function(List<PlaygroundModel> playgrounds)
+        getPlaygroundsSuccess,
+    required TResult Function(String error) getPlaygroundsFailure,
+    required TResult Function() citiesLoading,
+    required TResult Function(List<City> response) citiesSuccess,
+    required TResult Function(String error) citiesError,
+    required TResult Function() reservationSlotsLoading,
+    required TResult Function(List<String> slots) reservationSlotsSuccess,
+    required TResult Function(String error) reservationSlotsError,
+    required TResult Function() reserveLoading,
+    required TResult Function() reserveSuccess,
+    required TResult Function(String error) reserveError,
+    required TResult Function() favoriteLoading,
+    required TResult Function() favoriteSuccess,
+    required TResult Function(String error) favoriteError,
+  }) {
+    return reservationSlotsError(error);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? getPlaygroundsLoading,
+    TResult? Function(List<PlaygroundModel> playgrounds)? getPlaygroundsSuccess,
+    TResult? Function(String error)? getPlaygroundsFailure,
+    TResult? Function()? citiesLoading,
+    TResult? Function(List<City> response)? citiesSuccess,
+    TResult? Function(String error)? citiesError,
+    TResult? Function()? reservationSlotsLoading,
+    TResult? Function(List<String> slots)? reservationSlotsSuccess,
+    TResult? Function(String error)? reservationSlotsError,
+    TResult? Function()? reserveLoading,
+    TResult? Function()? reserveSuccess,
+    TResult? Function(String error)? reserveError,
+    TResult? Function()? favoriteLoading,
+    TResult? Function()? favoriteSuccess,
+    TResult? Function(String error)? favoriteError,
+  }) {
+    return reservationSlotsError?.call(error);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? getPlaygroundsLoading,
+    TResult Function(List<PlaygroundModel> playgrounds)? getPlaygroundsSuccess,
+    TResult Function(String error)? getPlaygroundsFailure,
+    TResult Function()? citiesLoading,
+    TResult Function(List<City> response)? citiesSuccess,
+    TResult Function(String error)? citiesError,
+    TResult Function()? reservationSlotsLoading,
+    TResult Function(List<String> slots)? reservationSlotsSuccess,
+    TResult Function(String error)? reservationSlotsError,
+    TResult Function()? reserveLoading,
+    TResult Function()? reserveSuccess,
+    TResult Function(String error)? reserveError,
+    TResult Function()? favoriteLoading,
+    TResult Function()? favoriteSuccess,
+    TResult Function(String error)? favoriteError,
+    required TResult orElse(),
+  }) {
+    if (reservationSlotsError != null) {
+      return reservationSlotsError(error);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial<T> value) initial,
+    required TResult Function(GetPlaygroundsLoading<T> value)
+        getPlaygroundsLoading,
+    required TResult Function(GetPlaygroundsSuccess<T> value)
+        getPlaygroundsSuccess,
+    required TResult Function(GetPlaygroundsFailure<T> value)
+        getPlaygroundsFailure,
+    required TResult Function(CitiesLoading<T> value) citiesLoading,
+    required TResult Function(CitiesSuccess<T> value) citiesSuccess,
+    required TResult Function(CitiesError<T> value) citiesError,
+    required TResult Function(ReservationSlotsLoading<T> value)
+        reservationSlotsLoading,
+    required TResult Function(ReservationSlotsSuccess<T> value)
+        reservationSlotsSuccess,
+    required TResult Function(ReservationSlotsError<T> value)
+        reservationSlotsError,
+    required TResult Function(ReserveLoading<T> value) reserveLoading,
+    required TResult Function(ReserveSuccess<T> value) reserveSuccess,
+    required TResult Function(ReserveError<T> value) reserveError,
+    required TResult Function(FavoriteLoading<T> value) favoriteLoading,
+    required TResult Function(FavoriteSuccess<T> value) favoriteSuccess,
+    required TResult Function(FavoriteError<T> value) favoriteError,
+  }) {
+    return reservationSlotsError(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial<T> value)? initial,
+    TResult? Function(GetPlaygroundsLoading<T> value)? getPlaygroundsLoading,
+    TResult? Function(GetPlaygroundsSuccess<T> value)? getPlaygroundsSuccess,
+    TResult? Function(GetPlaygroundsFailure<T> value)? getPlaygroundsFailure,
+    TResult? Function(CitiesLoading<T> value)? citiesLoading,
+    TResult? Function(CitiesSuccess<T> value)? citiesSuccess,
+    TResult? Function(CitiesError<T> value)? citiesError,
+    TResult? Function(ReservationSlotsLoading<T> value)?
+        reservationSlotsLoading,
+    TResult? Function(ReservationSlotsSuccess<T> value)?
+        reservationSlotsSuccess,
+    TResult? Function(ReservationSlotsError<T> value)? reservationSlotsError,
+    TResult? Function(ReserveLoading<T> value)? reserveLoading,
+    TResult? Function(ReserveSuccess<T> value)? reserveSuccess,
+    TResult? Function(ReserveError<T> value)? reserveError,
+    TResult? Function(FavoriteLoading<T> value)? favoriteLoading,
+    TResult? Function(FavoriteSuccess<T> value)? favoriteSuccess,
+    TResult? Function(FavoriteError<T> value)? favoriteError,
+  }) {
+    return reservationSlotsError?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial<T> value)? initial,
+    TResult Function(GetPlaygroundsLoading<T> value)? getPlaygroundsLoading,
+    TResult Function(GetPlaygroundsSuccess<T> value)? getPlaygroundsSuccess,
+    TResult Function(GetPlaygroundsFailure<T> value)? getPlaygroundsFailure,
+    TResult Function(CitiesLoading<T> value)? citiesLoading,
+    TResult Function(CitiesSuccess<T> value)? citiesSuccess,
+    TResult Function(CitiesError<T> value)? citiesError,
+    TResult Function(ReservationSlotsLoading<T> value)? reservationSlotsLoading,
+    TResult Function(ReservationSlotsSuccess<T> value)? reservationSlotsSuccess,
+    TResult Function(ReservationSlotsError<T> value)? reservationSlotsError,
+    TResult Function(ReserveLoading<T> value)? reserveLoading,
+    TResult Function(ReserveSuccess<T> value)? reserveSuccess,
+    TResult Function(ReserveError<T> value)? reserveError,
+    TResult Function(FavoriteLoading<T> value)? favoriteLoading,
+    TResult Function(FavoriteSuccess<T> value)? favoriteSuccess,
+    TResult Function(FavoriteError<T> value)? favoriteError,
+    required TResult orElse(),
+  }) {
+    if (reservationSlotsError != null) {
+      return reservationSlotsError(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class ReservationSlotsError<T> implements PlaygroundsState<T> {
+  const factory ReservationSlotsError({required final String error}) =
+      _$ReservationSlotsErrorImpl<T>;
+
+  String get error;
+
+  /// Create a copy of PlaygroundsState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$ReservationSlotsErrorImplCopyWith<T, _$ReservationSlotsErrorImpl<T>>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$ReserveLoadingImplCopyWith<T, $Res> {
+  factory _$$ReserveLoadingImplCopyWith(_$ReserveLoadingImpl<T> value,
+          $Res Function(_$ReserveLoadingImpl<T>) then) =
+      __$$ReserveLoadingImplCopyWithImpl<T, $Res>;
+}
+
+/// @nodoc
+class __$$ReserveLoadingImplCopyWithImpl<T, $Res>
+    extends _$PlaygroundsStateCopyWithImpl<T, $Res, _$ReserveLoadingImpl<T>>
+    implements _$$ReserveLoadingImplCopyWith<T, $Res> {
+  __$$ReserveLoadingImplCopyWithImpl(_$ReserveLoadingImpl<T> _value,
+      $Res Function(_$ReserveLoadingImpl<T>) _then)
+      : super(_value, _then);
+
+  /// Create a copy of PlaygroundsState
+  /// with the given fields replaced by the non-null parameter values.
+}
+
+/// @nodoc
+
+class _$ReserveLoadingImpl<T> implements ReserveLoading<T> {
+  const _$ReserveLoadingImpl();
+
+  @override
+  String toString() {
+    return 'PlaygroundsState<$T>.reserveLoading()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$ReserveLoadingImpl<T>);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() getPlaygroundsLoading,
+    required TResult Function(List<PlaygroundModel> playgrounds)
+        getPlaygroundsSuccess,
+    required TResult Function(String error) getPlaygroundsFailure,
+    required TResult Function() citiesLoading,
+    required TResult Function(List<City> response) citiesSuccess,
+    required TResult Function(String error) citiesError,
+    required TResult Function() reservationSlotsLoading,
+    required TResult Function(List<String> slots) reservationSlotsSuccess,
+    required TResult Function(String error) reservationSlotsError,
+    required TResult Function() reserveLoading,
+    required TResult Function() reserveSuccess,
+    required TResult Function(String error) reserveError,
+    required TResult Function() favoriteLoading,
+    required TResult Function() favoriteSuccess,
+    required TResult Function(String error) favoriteError,
+  }) {
+    return reserveLoading();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? getPlaygroundsLoading,
+    TResult? Function(List<PlaygroundModel> playgrounds)? getPlaygroundsSuccess,
+    TResult? Function(String error)? getPlaygroundsFailure,
+    TResult? Function()? citiesLoading,
+    TResult? Function(List<City> response)? citiesSuccess,
+    TResult? Function(String error)? citiesError,
+    TResult? Function()? reservationSlotsLoading,
+    TResult? Function(List<String> slots)? reservationSlotsSuccess,
+    TResult? Function(String error)? reservationSlotsError,
+    TResult? Function()? reserveLoading,
+    TResult? Function()? reserveSuccess,
+    TResult? Function(String error)? reserveError,
+    TResult? Function()? favoriteLoading,
+    TResult? Function()? favoriteSuccess,
+    TResult? Function(String error)? favoriteError,
+  }) {
+    return reserveLoading?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? getPlaygroundsLoading,
+    TResult Function(List<PlaygroundModel> playgrounds)? getPlaygroundsSuccess,
+    TResult Function(String error)? getPlaygroundsFailure,
+    TResult Function()? citiesLoading,
+    TResult Function(List<City> response)? citiesSuccess,
+    TResult Function(String error)? citiesError,
+    TResult Function()? reservationSlotsLoading,
+    TResult Function(List<String> slots)? reservationSlotsSuccess,
+    TResult Function(String error)? reservationSlotsError,
+    TResult Function()? reserveLoading,
+    TResult Function()? reserveSuccess,
+    TResult Function(String error)? reserveError,
+    TResult Function()? favoriteLoading,
+    TResult Function()? favoriteSuccess,
+    TResult Function(String error)? favoriteError,
+    required TResult orElse(),
+  }) {
+    if (reserveLoading != null) {
+      return reserveLoading();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial<T> value) initial,
+    required TResult Function(GetPlaygroundsLoading<T> value)
+        getPlaygroundsLoading,
+    required TResult Function(GetPlaygroundsSuccess<T> value)
+        getPlaygroundsSuccess,
+    required TResult Function(GetPlaygroundsFailure<T> value)
+        getPlaygroundsFailure,
+    required TResult Function(CitiesLoading<T> value) citiesLoading,
+    required TResult Function(CitiesSuccess<T> value) citiesSuccess,
+    required TResult Function(CitiesError<T> value) citiesError,
+    required TResult Function(ReservationSlotsLoading<T> value)
+        reservationSlotsLoading,
+    required TResult Function(ReservationSlotsSuccess<T> value)
+        reservationSlotsSuccess,
+    required TResult Function(ReservationSlotsError<T> value)
+        reservationSlotsError,
+    required TResult Function(ReserveLoading<T> value) reserveLoading,
+    required TResult Function(ReserveSuccess<T> value) reserveSuccess,
+    required TResult Function(ReserveError<T> value) reserveError,
+    required TResult Function(FavoriteLoading<T> value) favoriteLoading,
+    required TResult Function(FavoriteSuccess<T> value) favoriteSuccess,
+    required TResult Function(FavoriteError<T> value) favoriteError,
+  }) {
+    return reserveLoading(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial<T> value)? initial,
+    TResult? Function(GetPlaygroundsLoading<T> value)? getPlaygroundsLoading,
+    TResult? Function(GetPlaygroundsSuccess<T> value)? getPlaygroundsSuccess,
+    TResult? Function(GetPlaygroundsFailure<T> value)? getPlaygroundsFailure,
+    TResult? Function(CitiesLoading<T> value)? citiesLoading,
+    TResult? Function(CitiesSuccess<T> value)? citiesSuccess,
+    TResult? Function(CitiesError<T> value)? citiesError,
+    TResult? Function(ReservationSlotsLoading<T> value)?
+        reservationSlotsLoading,
+    TResult? Function(ReservationSlotsSuccess<T> value)?
+        reservationSlotsSuccess,
+    TResult? Function(ReservationSlotsError<T> value)? reservationSlotsError,
+    TResult? Function(ReserveLoading<T> value)? reserveLoading,
+    TResult? Function(ReserveSuccess<T> value)? reserveSuccess,
+    TResult? Function(ReserveError<T> value)? reserveError,
+    TResult? Function(FavoriteLoading<T> value)? favoriteLoading,
+    TResult? Function(FavoriteSuccess<T> value)? favoriteSuccess,
+    TResult? Function(FavoriteError<T> value)? favoriteError,
+  }) {
+    return reserveLoading?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial<T> value)? initial,
+    TResult Function(GetPlaygroundsLoading<T> value)? getPlaygroundsLoading,
+    TResult Function(GetPlaygroundsSuccess<T> value)? getPlaygroundsSuccess,
+    TResult Function(GetPlaygroundsFailure<T> value)? getPlaygroundsFailure,
+    TResult Function(CitiesLoading<T> value)? citiesLoading,
+    TResult Function(CitiesSuccess<T> value)? citiesSuccess,
+    TResult Function(CitiesError<T> value)? citiesError,
+    TResult Function(ReservationSlotsLoading<T> value)? reservationSlotsLoading,
+    TResult Function(ReservationSlotsSuccess<T> value)? reservationSlotsSuccess,
+    TResult Function(ReservationSlotsError<T> value)? reservationSlotsError,
+    TResult Function(ReserveLoading<T> value)? reserveLoading,
+    TResult Function(ReserveSuccess<T> value)? reserveSuccess,
+    TResult Function(ReserveError<T> value)? reserveError,
+    TResult Function(FavoriteLoading<T> value)? favoriteLoading,
+    TResult Function(FavoriteSuccess<T> value)? favoriteSuccess,
+    TResult Function(FavoriteError<T> value)? favoriteError,
+    required TResult orElse(),
+  }) {
+    if (reserveLoading != null) {
+      return reserveLoading(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class ReserveLoading<T> implements PlaygroundsState<T> {
+  const factory ReserveLoading() = _$ReserveLoadingImpl<T>;
+}
+
+/// @nodoc
+abstract class _$$ReserveSuccessImplCopyWith<T, $Res> {
+  factory _$$ReserveSuccessImplCopyWith(_$ReserveSuccessImpl<T> value,
+          $Res Function(_$ReserveSuccessImpl<T>) then) =
+      __$$ReserveSuccessImplCopyWithImpl<T, $Res>;
+}
+
+/// @nodoc
+class __$$ReserveSuccessImplCopyWithImpl<T, $Res>
+    extends _$PlaygroundsStateCopyWithImpl<T, $Res, _$ReserveSuccessImpl<T>>
+    implements _$$ReserveSuccessImplCopyWith<T, $Res> {
+  __$$ReserveSuccessImplCopyWithImpl(_$ReserveSuccessImpl<T> _value,
+      $Res Function(_$ReserveSuccessImpl<T>) _then)
+      : super(_value, _then);
+
+  /// Create a copy of PlaygroundsState
+  /// with the given fields replaced by the non-null parameter values.
+}
+
+/// @nodoc
+
+class _$ReserveSuccessImpl<T> implements ReserveSuccess<T> {
+  const _$ReserveSuccessImpl();
+
+  @override
+  String toString() {
+    return 'PlaygroundsState<$T>.reserveSuccess()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$ReserveSuccessImpl<T>);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() getPlaygroundsLoading,
+    required TResult Function(List<PlaygroundModel> playgrounds)
+        getPlaygroundsSuccess,
+    required TResult Function(String error) getPlaygroundsFailure,
+    required TResult Function() citiesLoading,
+    required TResult Function(List<City> response) citiesSuccess,
+    required TResult Function(String error) citiesError,
+    required TResult Function() reservationSlotsLoading,
+    required TResult Function(List<String> slots) reservationSlotsSuccess,
+    required TResult Function(String error) reservationSlotsError,
+    required TResult Function() reserveLoading,
+    required TResult Function() reserveSuccess,
+    required TResult Function(String error) reserveError,
+    required TResult Function() favoriteLoading,
+    required TResult Function() favoriteSuccess,
+    required TResult Function(String error) favoriteError,
+  }) {
+    return reserveSuccess();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? getPlaygroundsLoading,
+    TResult? Function(List<PlaygroundModel> playgrounds)? getPlaygroundsSuccess,
+    TResult? Function(String error)? getPlaygroundsFailure,
+    TResult? Function()? citiesLoading,
+    TResult? Function(List<City> response)? citiesSuccess,
+    TResult? Function(String error)? citiesError,
+    TResult? Function()? reservationSlotsLoading,
+    TResult? Function(List<String> slots)? reservationSlotsSuccess,
+    TResult? Function(String error)? reservationSlotsError,
+    TResult? Function()? reserveLoading,
+    TResult? Function()? reserveSuccess,
+    TResult? Function(String error)? reserveError,
+    TResult? Function()? favoriteLoading,
+    TResult? Function()? favoriteSuccess,
+    TResult? Function(String error)? favoriteError,
+  }) {
+    return reserveSuccess?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? getPlaygroundsLoading,
+    TResult Function(List<PlaygroundModel> playgrounds)? getPlaygroundsSuccess,
+    TResult Function(String error)? getPlaygroundsFailure,
+    TResult Function()? citiesLoading,
+    TResult Function(List<City> response)? citiesSuccess,
+    TResult Function(String error)? citiesError,
+    TResult Function()? reservationSlotsLoading,
+    TResult Function(List<String> slots)? reservationSlotsSuccess,
+    TResult Function(String error)? reservationSlotsError,
+    TResult Function()? reserveLoading,
+    TResult Function()? reserveSuccess,
+    TResult Function(String error)? reserveError,
+    TResult Function()? favoriteLoading,
+    TResult Function()? favoriteSuccess,
+    TResult Function(String error)? favoriteError,
+    required TResult orElse(),
+  }) {
+    if (reserveSuccess != null) {
+      return reserveSuccess();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial<T> value) initial,
+    required TResult Function(GetPlaygroundsLoading<T> value)
+        getPlaygroundsLoading,
+    required TResult Function(GetPlaygroundsSuccess<T> value)
+        getPlaygroundsSuccess,
+    required TResult Function(GetPlaygroundsFailure<T> value)
+        getPlaygroundsFailure,
+    required TResult Function(CitiesLoading<T> value) citiesLoading,
+    required TResult Function(CitiesSuccess<T> value) citiesSuccess,
+    required TResult Function(CitiesError<T> value) citiesError,
+    required TResult Function(ReservationSlotsLoading<T> value)
+        reservationSlotsLoading,
+    required TResult Function(ReservationSlotsSuccess<T> value)
+        reservationSlotsSuccess,
+    required TResult Function(ReservationSlotsError<T> value)
+        reservationSlotsError,
+    required TResult Function(ReserveLoading<T> value) reserveLoading,
+    required TResult Function(ReserveSuccess<T> value) reserveSuccess,
+    required TResult Function(ReserveError<T> value) reserveError,
+    required TResult Function(FavoriteLoading<T> value) favoriteLoading,
+    required TResult Function(FavoriteSuccess<T> value) favoriteSuccess,
+    required TResult Function(FavoriteError<T> value) favoriteError,
+  }) {
+    return reserveSuccess(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial<T> value)? initial,
+    TResult? Function(GetPlaygroundsLoading<T> value)? getPlaygroundsLoading,
+    TResult? Function(GetPlaygroundsSuccess<T> value)? getPlaygroundsSuccess,
+    TResult? Function(GetPlaygroundsFailure<T> value)? getPlaygroundsFailure,
+    TResult? Function(CitiesLoading<T> value)? citiesLoading,
+    TResult? Function(CitiesSuccess<T> value)? citiesSuccess,
+    TResult? Function(CitiesError<T> value)? citiesError,
+    TResult? Function(ReservationSlotsLoading<T> value)?
+        reservationSlotsLoading,
+    TResult? Function(ReservationSlotsSuccess<T> value)?
+        reservationSlotsSuccess,
+    TResult? Function(ReservationSlotsError<T> value)? reservationSlotsError,
+    TResult? Function(ReserveLoading<T> value)? reserveLoading,
+    TResult? Function(ReserveSuccess<T> value)? reserveSuccess,
+    TResult? Function(ReserveError<T> value)? reserveError,
+    TResult? Function(FavoriteLoading<T> value)? favoriteLoading,
+    TResult? Function(FavoriteSuccess<T> value)? favoriteSuccess,
+    TResult? Function(FavoriteError<T> value)? favoriteError,
+  }) {
+    return reserveSuccess?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial<T> value)? initial,
+    TResult Function(GetPlaygroundsLoading<T> value)? getPlaygroundsLoading,
+    TResult Function(GetPlaygroundsSuccess<T> value)? getPlaygroundsSuccess,
+    TResult Function(GetPlaygroundsFailure<T> value)? getPlaygroundsFailure,
+    TResult Function(CitiesLoading<T> value)? citiesLoading,
+    TResult Function(CitiesSuccess<T> value)? citiesSuccess,
+    TResult Function(CitiesError<T> value)? citiesError,
+    TResult Function(ReservationSlotsLoading<T> value)? reservationSlotsLoading,
+    TResult Function(ReservationSlotsSuccess<T> value)? reservationSlotsSuccess,
+    TResult Function(ReservationSlotsError<T> value)? reservationSlotsError,
+    TResult Function(ReserveLoading<T> value)? reserveLoading,
+    TResult Function(ReserveSuccess<T> value)? reserveSuccess,
+    TResult Function(ReserveError<T> value)? reserveError,
+    TResult Function(FavoriteLoading<T> value)? favoriteLoading,
+    TResult Function(FavoriteSuccess<T> value)? favoriteSuccess,
+    TResult Function(FavoriteError<T> value)? favoriteError,
+    required TResult orElse(),
+  }) {
+    if (reserveSuccess != null) {
+      return reserveSuccess(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class ReserveSuccess<T> implements PlaygroundsState<T> {
+  const factory ReserveSuccess() = _$ReserveSuccessImpl<T>;
+}
+
+/// @nodoc
+abstract class _$$ReserveErrorImplCopyWith<T, $Res> {
+  factory _$$ReserveErrorImplCopyWith(_$ReserveErrorImpl<T> value,
+          $Res Function(_$ReserveErrorImpl<T>) then) =
+      __$$ReserveErrorImplCopyWithImpl<T, $Res>;
+  @useResult
+  $Res call({String error});
+}
+
+/// @nodoc
+class __$$ReserveErrorImplCopyWithImpl<T, $Res>
+    extends _$PlaygroundsStateCopyWithImpl<T, $Res, _$ReserveErrorImpl<T>>
+    implements _$$ReserveErrorImplCopyWith<T, $Res> {
+  __$$ReserveErrorImplCopyWithImpl(
+      _$ReserveErrorImpl<T> _value, $Res Function(_$ReserveErrorImpl<T>) _then)
+      : super(_value, _then);
+
+  /// Create a copy of PlaygroundsState
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? error = null,
+  }) {
+    return _then(_$ReserveErrorImpl<T>(
+      error: null == error
+          ? _value.error
+          : error // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$ReserveErrorImpl<T> implements ReserveError<T> {
+  const _$ReserveErrorImpl({required this.error});
+
+  @override
+  final String error;
+
+  @override
+  String toString() {
+    return 'PlaygroundsState<$T>.reserveError(error: $error)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$ReserveErrorImpl<T> &&
+            (identical(other.error, error) || other.error == error));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, error);
+
+  /// Create a copy of PlaygroundsState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$ReserveErrorImplCopyWith<T, _$ReserveErrorImpl<T>> get copyWith =>
+      __$$ReserveErrorImplCopyWithImpl<T, _$ReserveErrorImpl<T>>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() getPlaygroundsLoading,
+    required TResult Function(List<PlaygroundModel> playgrounds)
+        getPlaygroundsSuccess,
+    required TResult Function(String error) getPlaygroundsFailure,
+    required TResult Function() citiesLoading,
+    required TResult Function(List<City> response) citiesSuccess,
+    required TResult Function(String error) citiesError,
+    required TResult Function() reservationSlotsLoading,
+    required TResult Function(List<String> slots) reservationSlotsSuccess,
+    required TResult Function(String error) reservationSlotsError,
+    required TResult Function() reserveLoading,
+    required TResult Function() reserveSuccess,
+    required TResult Function(String error) reserveError,
+    required TResult Function() favoriteLoading,
+    required TResult Function() favoriteSuccess,
+    required TResult Function(String error) favoriteError,
+  }) {
+    return reserveError(error);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? getPlaygroundsLoading,
+    TResult? Function(List<PlaygroundModel> playgrounds)? getPlaygroundsSuccess,
+    TResult? Function(String error)? getPlaygroundsFailure,
+    TResult? Function()? citiesLoading,
+    TResult? Function(List<City> response)? citiesSuccess,
+    TResult? Function(String error)? citiesError,
+    TResult? Function()? reservationSlotsLoading,
+    TResult? Function(List<String> slots)? reservationSlotsSuccess,
+    TResult? Function(String error)? reservationSlotsError,
+    TResult? Function()? reserveLoading,
+    TResult? Function()? reserveSuccess,
+    TResult? Function(String error)? reserveError,
+    TResult? Function()? favoriteLoading,
+    TResult? Function()? favoriteSuccess,
+    TResult? Function(String error)? favoriteError,
+  }) {
+    return reserveError?.call(error);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? getPlaygroundsLoading,
+    TResult Function(List<PlaygroundModel> playgrounds)? getPlaygroundsSuccess,
+    TResult Function(String error)? getPlaygroundsFailure,
+    TResult Function()? citiesLoading,
+    TResult Function(List<City> response)? citiesSuccess,
+    TResult Function(String error)? citiesError,
+    TResult Function()? reservationSlotsLoading,
+    TResult Function(List<String> slots)? reservationSlotsSuccess,
+    TResult Function(String error)? reservationSlotsError,
+    TResult Function()? reserveLoading,
+    TResult Function()? reserveSuccess,
+    TResult Function(String error)? reserveError,
+    TResult Function()? favoriteLoading,
+    TResult Function()? favoriteSuccess,
+    TResult Function(String error)? favoriteError,
+    required TResult orElse(),
+  }) {
+    if (reserveError != null) {
+      return reserveError(error);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial<T> value) initial,
+    required TResult Function(GetPlaygroundsLoading<T> value)
+        getPlaygroundsLoading,
+    required TResult Function(GetPlaygroundsSuccess<T> value)
+        getPlaygroundsSuccess,
+    required TResult Function(GetPlaygroundsFailure<T> value)
+        getPlaygroundsFailure,
+    required TResult Function(CitiesLoading<T> value) citiesLoading,
+    required TResult Function(CitiesSuccess<T> value) citiesSuccess,
+    required TResult Function(CitiesError<T> value) citiesError,
+    required TResult Function(ReservationSlotsLoading<T> value)
+        reservationSlotsLoading,
+    required TResult Function(ReservationSlotsSuccess<T> value)
+        reservationSlotsSuccess,
+    required TResult Function(ReservationSlotsError<T> value)
+        reservationSlotsError,
+    required TResult Function(ReserveLoading<T> value) reserveLoading,
+    required TResult Function(ReserveSuccess<T> value) reserveSuccess,
+    required TResult Function(ReserveError<T> value) reserveError,
+    required TResult Function(FavoriteLoading<T> value) favoriteLoading,
+    required TResult Function(FavoriteSuccess<T> value) favoriteSuccess,
+    required TResult Function(FavoriteError<T> value) favoriteError,
+  }) {
+    return reserveError(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial<T> value)? initial,
+    TResult? Function(GetPlaygroundsLoading<T> value)? getPlaygroundsLoading,
+    TResult? Function(GetPlaygroundsSuccess<T> value)? getPlaygroundsSuccess,
+    TResult? Function(GetPlaygroundsFailure<T> value)? getPlaygroundsFailure,
+    TResult? Function(CitiesLoading<T> value)? citiesLoading,
+    TResult? Function(CitiesSuccess<T> value)? citiesSuccess,
+    TResult? Function(CitiesError<T> value)? citiesError,
+    TResult? Function(ReservationSlotsLoading<T> value)?
+        reservationSlotsLoading,
+    TResult? Function(ReservationSlotsSuccess<T> value)?
+        reservationSlotsSuccess,
+    TResult? Function(ReservationSlotsError<T> value)? reservationSlotsError,
+    TResult? Function(ReserveLoading<T> value)? reserveLoading,
+    TResult? Function(ReserveSuccess<T> value)? reserveSuccess,
+    TResult? Function(ReserveError<T> value)? reserveError,
+    TResult? Function(FavoriteLoading<T> value)? favoriteLoading,
+    TResult? Function(FavoriteSuccess<T> value)? favoriteSuccess,
+    TResult? Function(FavoriteError<T> value)? favoriteError,
+  }) {
+    return reserveError?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial<T> value)? initial,
+    TResult Function(GetPlaygroundsLoading<T> value)? getPlaygroundsLoading,
+    TResult Function(GetPlaygroundsSuccess<T> value)? getPlaygroundsSuccess,
+    TResult Function(GetPlaygroundsFailure<T> value)? getPlaygroundsFailure,
+    TResult Function(CitiesLoading<T> value)? citiesLoading,
+    TResult Function(CitiesSuccess<T> value)? citiesSuccess,
+    TResult Function(CitiesError<T> value)? citiesError,
+    TResult Function(ReservationSlotsLoading<T> value)? reservationSlotsLoading,
+    TResult Function(ReservationSlotsSuccess<T> value)? reservationSlotsSuccess,
+    TResult Function(ReservationSlotsError<T> value)? reservationSlotsError,
+    TResult Function(ReserveLoading<T> value)? reserveLoading,
+    TResult Function(ReserveSuccess<T> value)? reserveSuccess,
+    TResult Function(ReserveError<T> value)? reserveError,
+    TResult Function(FavoriteLoading<T> value)? favoriteLoading,
+    TResult Function(FavoriteSuccess<T> value)? favoriteSuccess,
+    TResult Function(FavoriteError<T> value)? favoriteError,
+    required TResult orElse(),
+  }) {
+    if (reserveError != null) {
+      return reserveError(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class ReserveError<T> implements PlaygroundsState<T> {
+  const factory ReserveError({required final String error}) =
+      _$ReserveErrorImpl<T>;
+
+  String get error;
+
+  /// Create a copy of PlaygroundsState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$ReserveErrorImplCopyWith<T, _$ReserveErrorImpl<T>> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$FavoriteLoadingImplCopyWith<T, $Res> {
+  factory _$$FavoriteLoadingImplCopyWith(_$FavoriteLoadingImpl<T> value,
+          $Res Function(_$FavoriteLoadingImpl<T>) then) =
+      __$$FavoriteLoadingImplCopyWithImpl<T, $Res>;
+}
+
+/// @nodoc
+class __$$FavoriteLoadingImplCopyWithImpl<T, $Res>
+    extends _$PlaygroundsStateCopyWithImpl<T, $Res, _$FavoriteLoadingImpl<T>>
+    implements _$$FavoriteLoadingImplCopyWith<T, $Res> {
+  __$$FavoriteLoadingImplCopyWithImpl(_$FavoriteLoadingImpl<T> _value,
+      $Res Function(_$FavoriteLoadingImpl<T>) _then)
+      : super(_value, _then);
+
+  /// Create a copy of PlaygroundsState
+  /// with the given fields replaced by the non-null parameter values.
+}
+
+/// @nodoc
+
+class _$FavoriteLoadingImpl<T> implements FavoriteLoading<T> {
+  const _$FavoriteLoadingImpl();
+
+  @override
+  String toString() {
+    return 'PlaygroundsState<$T>.favoriteLoading()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$FavoriteLoadingImpl<T>);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() getPlaygroundsLoading,
+    required TResult Function(List<PlaygroundModel> playgrounds)
+        getPlaygroundsSuccess,
+    required TResult Function(String error) getPlaygroundsFailure,
+    required TResult Function() citiesLoading,
+    required TResult Function(List<City> response) citiesSuccess,
+    required TResult Function(String error) citiesError,
+    required TResult Function() reservationSlotsLoading,
+    required TResult Function(List<String> slots) reservationSlotsSuccess,
+    required TResult Function(String error) reservationSlotsError,
+    required TResult Function() reserveLoading,
+    required TResult Function() reserveSuccess,
+    required TResult Function(String error) reserveError,
+    required TResult Function() favoriteLoading,
+    required TResult Function() favoriteSuccess,
+    required TResult Function(String error) favoriteError,
+  }) {
+    return favoriteLoading();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? getPlaygroundsLoading,
+    TResult? Function(List<PlaygroundModel> playgrounds)? getPlaygroundsSuccess,
+    TResult? Function(String error)? getPlaygroundsFailure,
+    TResult? Function()? citiesLoading,
+    TResult? Function(List<City> response)? citiesSuccess,
+    TResult? Function(String error)? citiesError,
+    TResult? Function()? reservationSlotsLoading,
+    TResult? Function(List<String> slots)? reservationSlotsSuccess,
+    TResult? Function(String error)? reservationSlotsError,
+    TResult? Function()? reserveLoading,
+    TResult? Function()? reserveSuccess,
+    TResult? Function(String error)? reserveError,
+    TResult? Function()? favoriteLoading,
+    TResult? Function()? favoriteSuccess,
+    TResult? Function(String error)? favoriteError,
+  }) {
+    return favoriteLoading?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? getPlaygroundsLoading,
+    TResult Function(List<PlaygroundModel> playgrounds)? getPlaygroundsSuccess,
+    TResult Function(String error)? getPlaygroundsFailure,
+    TResult Function()? citiesLoading,
+    TResult Function(List<City> response)? citiesSuccess,
+    TResult Function(String error)? citiesError,
+    TResult Function()? reservationSlotsLoading,
+    TResult Function(List<String> slots)? reservationSlotsSuccess,
+    TResult Function(String error)? reservationSlotsError,
+    TResult Function()? reserveLoading,
+    TResult Function()? reserveSuccess,
+    TResult Function(String error)? reserveError,
+    TResult Function()? favoriteLoading,
+    TResult Function()? favoriteSuccess,
+    TResult Function(String error)? favoriteError,
+    required TResult orElse(),
+  }) {
+    if (favoriteLoading != null) {
+      return favoriteLoading();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial<T> value) initial,
+    required TResult Function(GetPlaygroundsLoading<T> value)
+        getPlaygroundsLoading,
+    required TResult Function(GetPlaygroundsSuccess<T> value)
+        getPlaygroundsSuccess,
+    required TResult Function(GetPlaygroundsFailure<T> value)
+        getPlaygroundsFailure,
+    required TResult Function(CitiesLoading<T> value) citiesLoading,
+    required TResult Function(CitiesSuccess<T> value) citiesSuccess,
+    required TResult Function(CitiesError<T> value) citiesError,
+    required TResult Function(ReservationSlotsLoading<T> value)
+        reservationSlotsLoading,
+    required TResult Function(ReservationSlotsSuccess<T> value)
+        reservationSlotsSuccess,
+    required TResult Function(ReservationSlotsError<T> value)
+        reservationSlotsError,
+    required TResult Function(ReserveLoading<T> value) reserveLoading,
+    required TResult Function(ReserveSuccess<T> value) reserveSuccess,
+    required TResult Function(ReserveError<T> value) reserveError,
+    required TResult Function(FavoriteLoading<T> value) favoriteLoading,
+    required TResult Function(FavoriteSuccess<T> value) favoriteSuccess,
+    required TResult Function(FavoriteError<T> value) favoriteError,
+  }) {
+    return favoriteLoading(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial<T> value)? initial,
+    TResult? Function(GetPlaygroundsLoading<T> value)? getPlaygroundsLoading,
+    TResult? Function(GetPlaygroundsSuccess<T> value)? getPlaygroundsSuccess,
+    TResult? Function(GetPlaygroundsFailure<T> value)? getPlaygroundsFailure,
+    TResult? Function(CitiesLoading<T> value)? citiesLoading,
+    TResult? Function(CitiesSuccess<T> value)? citiesSuccess,
+    TResult? Function(CitiesError<T> value)? citiesError,
+    TResult? Function(ReservationSlotsLoading<T> value)?
+        reservationSlotsLoading,
+    TResult? Function(ReservationSlotsSuccess<T> value)?
+        reservationSlotsSuccess,
+    TResult? Function(ReservationSlotsError<T> value)? reservationSlotsError,
+    TResult? Function(ReserveLoading<T> value)? reserveLoading,
+    TResult? Function(ReserveSuccess<T> value)? reserveSuccess,
+    TResult? Function(ReserveError<T> value)? reserveError,
+    TResult? Function(FavoriteLoading<T> value)? favoriteLoading,
+    TResult? Function(FavoriteSuccess<T> value)? favoriteSuccess,
+    TResult? Function(FavoriteError<T> value)? favoriteError,
+  }) {
+    return favoriteLoading?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial<T> value)? initial,
+    TResult Function(GetPlaygroundsLoading<T> value)? getPlaygroundsLoading,
+    TResult Function(GetPlaygroundsSuccess<T> value)? getPlaygroundsSuccess,
+    TResult Function(GetPlaygroundsFailure<T> value)? getPlaygroundsFailure,
+    TResult Function(CitiesLoading<T> value)? citiesLoading,
+    TResult Function(CitiesSuccess<T> value)? citiesSuccess,
+    TResult Function(CitiesError<T> value)? citiesError,
+    TResult Function(ReservationSlotsLoading<T> value)? reservationSlotsLoading,
+    TResult Function(ReservationSlotsSuccess<T> value)? reservationSlotsSuccess,
+    TResult Function(ReservationSlotsError<T> value)? reservationSlotsError,
+    TResult Function(ReserveLoading<T> value)? reserveLoading,
+    TResult Function(ReserveSuccess<T> value)? reserveSuccess,
+    TResult Function(ReserveError<T> value)? reserveError,
+    TResult Function(FavoriteLoading<T> value)? favoriteLoading,
+    TResult Function(FavoriteSuccess<T> value)? favoriteSuccess,
+    TResult Function(FavoriteError<T> value)? favoriteError,
+    required TResult orElse(),
+  }) {
+    if (favoriteLoading != null) {
+      return favoriteLoading(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class FavoriteLoading<T> implements PlaygroundsState<T> {
+  const factory FavoriteLoading() = _$FavoriteLoadingImpl<T>;
+}
+
+/// @nodoc
+abstract class _$$FavoriteSuccessImplCopyWith<T, $Res> {
+  factory _$$FavoriteSuccessImplCopyWith(_$FavoriteSuccessImpl<T> value,
+          $Res Function(_$FavoriteSuccessImpl<T>) then) =
+      __$$FavoriteSuccessImplCopyWithImpl<T, $Res>;
+}
+
+/// @nodoc
+class __$$FavoriteSuccessImplCopyWithImpl<T, $Res>
+    extends _$PlaygroundsStateCopyWithImpl<T, $Res, _$FavoriteSuccessImpl<T>>
+    implements _$$FavoriteSuccessImplCopyWith<T, $Res> {
+  __$$FavoriteSuccessImplCopyWithImpl(_$FavoriteSuccessImpl<T> _value,
+      $Res Function(_$FavoriteSuccessImpl<T>) _then)
+      : super(_value, _then);
+
+  /// Create a copy of PlaygroundsState
+  /// with the given fields replaced by the non-null parameter values.
+}
+
+/// @nodoc
+
+class _$FavoriteSuccessImpl<T> implements FavoriteSuccess<T> {
+  const _$FavoriteSuccessImpl();
+
+  @override
+  String toString() {
+    return 'PlaygroundsState<$T>.favoriteSuccess()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$FavoriteSuccessImpl<T>);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() getPlaygroundsLoading,
+    required TResult Function(List<PlaygroundModel> playgrounds)
+        getPlaygroundsSuccess,
+    required TResult Function(String error) getPlaygroundsFailure,
+    required TResult Function() citiesLoading,
+    required TResult Function(List<City> response) citiesSuccess,
+    required TResult Function(String error) citiesError,
+    required TResult Function() reservationSlotsLoading,
+    required TResult Function(List<String> slots) reservationSlotsSuccess,
+    required TResult Function(String error) reservationSlotsError,
+    required TResult Function() reserveLoading,
+    required TResult Function() reserveSuccess,
+    required TResult Function(String error) reserveError,
+    required TResult Function() favoriteLoading,
+    required TResult Function() favoriteSuccess,
+    required TResult Function(String error) favoriteError,
+  }) {
+    return favoriteSuccess();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? getPlaygroundsLoading,
+    TResult? Function(List<PlaygroundModel> playgrounds)? getPlaygroundsSuccess,
+    TResult? Function(String error)? getPlaygroundsFailure,
+    TResult? Function()? citiesLoading,
+    TResult? Function(List<City> response)? citiesSuccess,
+    TResult? Function(String error)? citiesError,
+    TResult? Function()? reservationSlotsLoading,
+    TResult? Function(List<String> slots)? reservationSlotsSuccess,
+    TResult? Function(String error)? reservationSlotsError,
+    TResult? Function()? reserveLoading,
+    TResult? Function()? reserveSuccess,
+    TResult? Function(String error)? reserveError,
+    TResult? Function()? favoriteLoading,
+    TResult? Function()? favoriteSuccess,
+    TResult? Function(String error)? favoriteError,
+  }) {
+    return favoriteSuccess?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? getPlaygroundsLoading,
+    TResult Function(List<PlaygroundModel> playgrounds)? getPlaygroundsSuccess,
+    TResult Function(String error)? getPlaygroundsFailure,
+    TResult Function()? citiesLoading,
+    TResult Function(List<City> response)? citiesSuccess,
+    TResult Function(String error)? citiesError,
+    TResult Function()? reservationSlotsLoading,
+    TResult Function(List<String> slots)? reservationSlotsSuccess,
+    TResult Function(String error)? reservationSlotsError,
+    TResult Function()? reserveLoading,
+    TResult Function()? reserveSuccess,
+    TResult Function(String error)? reserveError,
+    TResult Function()? favoriteLoading,
+    TResult Function()? favoriteSuccess,
+    TResult Function(String error)? favoriteError,
+    required TResult orElse(),
+  }) {
+    if (favoriteSuccess != null) {
+      return favoriteSuccess();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial<T> value) initial,
+    required TResult Function(GetPlaygroundsLoading<T> value)
+        getPlaygroundsLoading,
+    required TResult Function(GetPlaygroundsSuccess<T> value)
+        getPlaygroundsSuccess,
+    required TResult Function(GetPlaygroundsFailure<T> value)
+        getPlaygroundsFailure,
+    required TResult Function(CitiesLoading<T> value) citiesLoading,
+    required TResult Function(CitiesSuccess<T> value) citiesSuccess,
+    required TResult Function(CitiesError<T> value) citiesError,
+    required TResult Function(ReservationSlotsLoading<T> value)
+        reservationSlotsLoading,
+    required TResult Function(ReservationSlotsSuccess<T> value)
+        reservationSlotsSuccess,
+    required TResult Function(ReservationSlotsError<T> value)
+        reservationSlotsError,
+    required TResult Function(ReserveLoading<T> value) reserveLoading,
+    required TResult Function(ReserveSuccess<T> value) reserveSuccess,
+    required TResult Function(ReserveError<T> value) reserveError,
+    required TResult Function(FavoriteLoading<T> value) favoriteLoading,
+    required TResult Function(FavoriteSuccess<T> value) favoriteSuccess,
+    required TResult Function(FavoriteError<T> value) favoriteError,
+  }) {
+    return favoriteSuccess(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial<T> value)? initial,
+    TResult? Function(GetPlaygroundsLoading<T> value)? getPlaygroundsLoading,
+    TResult? Function(GetPlaygroundsSuccess<T> value)? getPlaygroundsSuccess,
+    TResult? Function(GetPlaygroundsFailure<T> value)? getPlaygroundsFailure,
+    TResult? Function(CitiesLoading<T> value)? citiesLoading,
+    TResult? Function(CitiesSuccess<T> value)? citiesSuccess,
+    TResult? Function(CitiesError<T> value)? citiesError,
+    TResult? Function(ReservationSlotsLoading<T> value)?
+        reservationSlotsLoading,
+    TResult? Function(ReservationSlotsSuccess<T> value)?
+        reservationSlotsSuccess,
+    TResult? Function(ReservationSlotsError<T> value)? reservationSlotsError,
+    TResult? Function(ReserveLoading<T> value)? reserveLoading,
+    TResult? Function(ReserveSuccess<T> value)? reserveSuccess,
+    TResult? Function(ReserveError<T> value)? reserveError,
+    TResult? Function(FavoriteLoading<T> value)? favoriteLoading,
+    TResult? Function(FavoriteSuccess<T> value)? favoriteSuccess,
+    TResult? Function(FavoriteError<T> value)? favoriteError,
+  }) {
+    return favoriteSuccess?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial<T> value)? initial,
+    TResult Function(GetPlaygroundsLoading<T> value)? getPlaygroundsLoading,
+    TResult Function(GetPlaygroundsSuccess<T> value)? getPlaygroundsSuccess,
+    TResult Function(GetPlaygroundsFailure<T> value)? getPlaygroundsFailure,
+    TResult Function(CitiesLoading<T> value)? citiesLoading,
+    TResult Function(CitiesSuccess<T> value)? citiesSuccess,
+    TResult Function(CitiesError<T> value)? citiesError,
+    TResult Function(ReservationSlotsLoading<T> value)? reservationSlotsLoading,
+    TResult Function(ReservationSlotsSuccess<T> value)? reservationSlotsSuccess,
+    TResult Function(ReservationSlotsError<T> value)? reservationSlotsError,
+    TResult Function(ReserveLoading<T> value)? reserveLoading,
+    TResult Function(ReserveSuccess<T> value)? reserveSuccess,
+    TResult Function(ReserveError<T> value)? reserveError,
+    TResult Function(FavoriteLoading<T> value)? favoriteLoading,
+    TResult Function(FavoriteSuccess<T> value)? favoriteSuccess,
+    TResult Function(FavoriteError<T> value)? favoriteError,
+    required TResult orElse(),
+  }) {
+    if (favoriteSuccess != null) {
+      return favoriteSuccess(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class FavoriteSuccess<T> implements PlaygroundsState<T> {
+  const factory FavoriteSuccess() = _$FavoriteSuccessImpl<T>;
+}
+
+/// @nodoc
+abstract class _$$FavoriteErrorImplCopyWith<T, $Res> {
+  factory _$$FavoriteErrorImplCopyWith(_$FavoriteErrorImpl<T> value,
+          $Res Function(_$FavoriteErrorImpl<T>) then) =
+      __$$FavoriteErrorImplCopyWithImpl<T, $Res>;
+  @useResult
+  $Res call({String error});
+}
+
+/// @nodoc
+class __$$FavoriteErrorImplCopyWithImpl<T, $Res>
+    extends _$PlaygroundsStateCopyWithImpl<T, $Res, _$FavoriteErrorImpl<T>>
+    implements _$$FavoriteErrorImplCopyWith<T, $Res> {
+  __$$FavoriteErrorImplCopyWithImpl(_$FavoriteErrorImpl<T> _value,
+      $Res Function(_$FavoriteErrorImpl<T>) _then)
+      : super(_value, _then);
+
+  /// Create a copy of PlaygroundsState
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? error = null,
+  }) {
+    return _then(_$FavoriteErrorImpl<T>(
+      error: null == error
+          ? _value.error
+          : error // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$FavoriteErrorImpl<T> implements FavoriteError<T> {
+  const _$FavoriteErrorImpl({required this.error});
+
+  @override
+  final String error;
+
+  @override
+  String toString() {
+    return 'PlaygroundsState<$T>.favoriteError(error: $error)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$FavoriteErrorImpl<T> &&
+            (identical(other.error, error) || other.error == error));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, error);
+
+  /// Create a copy of PlaygroundsState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$FavoriteErrorImplCopyWith<T, _$FavoriteErrorImpl<T>> get copyWith =>
+      __$$FavoriteErrorImplCopyWithImpl<T, _$FavoriteErrorImpl<T>>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() getPlaygroundsLoading,
+    required TResult Function(List<PlaygroundModel> playgrounds)
+        getPlaygroundsSuccess,
+    required TResult Function(String error) getPlaygroundsFailure,
+    required TResult Function() citiesLoading,
+    required TResult Function(List<City> response) citiesSuccess,
+    required TResult Function(String error) citiesError,
+    required TResult Function() reservationSlotsLoading,
+    required TResult Function(List<String> slots) reservationSlotsSuccess,
+    required TResult Function(String error) reservationSlotsError,
+    required TResult Function() reserveLoading,
+    required TResult Function() reserveSuccess,
+    required TResult Function(String error) reserveError,
+    required TResult Function() favoriteLoading,
+    required TResult Function() favoriteSuccess,
+    required TResult Function(String error) favoriteError,
+  }) {
+    return favoriteError(error);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? getPlaygroundsLoading,
+    TResult? Function(List<PlaygroundModel> playgrounds)? getPlaygroundsSuccess,
+    TResult? Function(String error)? getPlaygroundsFailure,
+    TResult? Function()? citiesLoading,
+    TResult? Function(List<City> response)? citiesSuccess,
+    TResult? Function(String error)? citiesError,
+    TResult? Function()? reservationSlotsLoading,
+    TResult? Function(List<String> slots)? reservationSlotsSuccess,
+    TResult? Function(String error)? reservationSlotsError,
+    TResult? Function()? reserveLoading,
+    TResult? Function()? reserveSuccess,
+    TResult? Function(String error)? reserveError,
+    TResult? Function()? favoriteLoading,
+    TResult? Function()? favoriteSuccess,
+    TResult? Function(String error)? favoriteError,
+  }) {
+    return favoriteError?.call(error);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? getPlaygroundsLoading,
+    TResult Function(List<PlaygroundModel> playgrounds)? getPlaygroundsSuccess,
+    TResult Function(String error)? getPlaygroundsFailure,
+    TResult Function()? citiesLoading,
+    TResult Function(List<City> response)? citiesSuccess,
+    TResult Function(String error)? citiesError,
+    TResult Function()? reservationSlotsLoading,
+    TResult Function(List<String> slots)? reservationSlotsSuccess,
+    TResult Function(String error)? reservationSlotsError,
+    TResult Function()? reserveLoading,
+    TResult Function()? reserveSuccess,
+    TResult Function(String error)? reserveError,
+    TResult Function()? favoriteLoading,
+    TResult Function()? favoriteSuccess,
+    TResult Function(String error)? favoriteError,
+    required TResult orElse(),
+  }) {
+    if (favoriteError != null) {
+      return favoriteError(error);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial<T> value) initial,
+    required TResult Function(GetPlaygroundsLoading<T> value)
+        getPlaygroundsLoading,
+    required TResult Function(GetPlaygroundsSuccess<T> value)
+        getPlaygroundsSuccess,
+    required TResult Function(GetPlaygroundsFailure<T> value)
+        getPlaygroundsFailure,
+    required TResult Function(CitiesLoading<T> value) citiesLoading,
+    required TResult Function(CitiesSuccess<T> value) citiesSuccess,
+    required TResult Function(CitiesError<T> value) citiesError,
+    required TResult Function(ReservationSlotsLoading<T> value)
+        reservationSlotsLoading,
+    required TResult Function(ReservationSlotsSuccess<T> value)
+        reservationSlotsSuccess,
+    required TResult Function(ReservationSlotsError<T> value)
+        reservationSlotsError,
+    required TResult Function(ReserveLoading<T> value) reserveLoading,
+    required TResult Function(ReserveSuccess<T> value) reserveSuccess,
+    required TResult Function(ReserveError<T> value) reserveError,
+    required TResult Function(FavoriteLoading<T> value) favoriteLoading,
+    required TResult Function(FavoriteSuccess<T> value) favoriteSuccess,
+    required TResult Function(FavoriteError<T> value) favoriteError,
+  }) {
+    return favoriteError(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial<T> value)? initial,
+    TResult? Function(GetPlaygroundsLoading<T> value)? getPlaygroundsLoading,
+    TResult? Function(GetPlaygroundsSuccess<T> value)? getPlaygroundsSuccess,
+    TResult? Function(GetPlaygroundsFailure<T> value)? getPlaygroundsFailure,
+    TResult? Function(CitiesLoading<T> value)? citiesLoading,
+    TResult? Function(CitiesSuccess<T> value)? citiesSuccess,
+    TResult? Function(CitiesError<T> value)? citiesError,
+    TResult? Function(ReservationSlotsLoading<T> value)?
+        reservationSlotsLoading,
+    TResult? Function(ReservationSlotsSuccess<T> value)?
+        reservationSlotsSuccess,
+    TResult? Function(ReservationSlotsError<T> value)? reservationSlotsError,
+    TResult? Function(ReserveLoading<T> value)? reserveLoading,
+    TResult? Function(ReserveSuccess<T> value)? reserveSuccess,
+    TResult? Function(ReserveError<T> value)? reserveError,
+    TResult? Function(FavoriteLoading<T> value)? favoriteLoading,
+    TResult? Function(FavoriteSuccess<T> value)? favoriteSuccess,
+    TResult? Function(FavoriteError<T> value)? favoriteError,
+  }) {
+    return favoriteError?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial<T> value)? initial,
+    TResult Function(GetPlaygroundsLoading<T> value)? getPlaygroundsLoading,
+    TResult Function(GetPlaygroundsSuccess<T> value)? getPlaygroundsSuccess,
+    TResult Function(GetPlaygroundsFailure<T> value)? getPlaygroundsFailure,
+    TResult Function(CitiesLoading<T> value)? citiesLoading,
+    TResult Function(CitiesSuccess<T> value)? citiesSuccess,
+    TResult Function(CitiesError<T> value)? citiesError,
+    TResult Function(ReservationSlotsLoading<T> value)? reservationSlotsLoading,
+    TResult Function(ReservationSlotsSuccess<T> value)? reservationSlotsSuccess,
+    TResult Function(ReservationSlotsError<T> value)? reservationSlotsError,
+    TResult Function(ReserveLoading<T> value)? reserveLoading,
+    TResult Function(ReserveSuccess<T> value)? reserveSuccess,
+    TResult Function(ReserveError<T> value)? reserveError,
+    TResult Function(FavoriteLoading<T> value)? favoriteLoading,
+    TResult Function(FavoriteSuccess<T> value)? favoriteSuccess,
+    TResult Function(FavoriteError<T> value)? favoriteError,
+    required TResult orElse(),
+  }) {
+    if (favoriteError != null) {
+      return favoriteError(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class FavoriteError<T> implements PlaygroundsState<T> {
+  const factory FavoriteError({required final String error}) =
+      _$FavoriteErrorImpl<T>;
+
+  String get error;
+
+  /// Create a copy of PlaygroundsState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$FavoriteErrorImplCopyWith<T, _$FavoriteErrorImpl<T>> get copyWith =>
       throw _privateConstructorUsedError;
 }

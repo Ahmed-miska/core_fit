@@ -1,5 +1,6 @@
 import 'package:core_fit/core/helpers/function.dart';
 import 'package:core_fit/core/helpers/spacing.dart';
+import 'package:core_fit/core/theming/colors.dart';
 import 'package:core_fit/core/theming/styles.dart';
 import 'package:core_fit/core/widgets/custom_cached_image.dart';
 import 'package:core_fit/features/market/cart/data/models/cart_response_model.dart';
@@ -33,19 +34,20 @@ class ImageAndDescriptionCartItem extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                productModel.description ?? '',
+                productModel.name ?? '',
                 style: TextStyles.font14Dark400,
-                maxLines: 3,
+                maxLines: 1,
+                overflow: TextOverflow.ellipsis,
               ),
               verticalSpace(8),
-              Text(productModel.name ?? '', style: TextStyles.font12Main600, maxLines: 1),
+              Text(productModel.subCategoryName ?? '', style: TextStyles.font12Main600, maxLines: 1),
               verticalSpace(8),
               Row(
                 children: [
                   Text('${calculateNewPrice(productModel.price ?? 0, productModel.offer ?? 0)} EG', style: TextStyles.font14Dark400),
                   const Spacer(),
                   productModel.offer != 0
-                      ? Text('${productModel.price} EG', style: TextStyles.font14Dark400.copyWith(decoration: TextDecoration.lineThrough))
+                      ? Text('${productModel.price} EG', style: TextStyles.font14Dark400.copyWith(color: AppColors.red, decoration: TextDecoration.lineThrough))
                       : Text('', style: TextStyles.font14Dark400),
                 ],
               ),

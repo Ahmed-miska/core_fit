@@ -103,7 +103,7 @@ class _StoresListViewState extends State<StoresListView> {
                                 );
                         },
                         gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                          crossAxisCount: 2,
+                          crossAxisCount: 3,
                           childAspectRatio: .6.sp,
                           mainAxisSpacing: 10.h,
                           crossAxisSpacing: 10.w,

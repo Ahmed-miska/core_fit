@@ -46,8 +46,8 @@ class Data {
 class PlaygroundModel {
   @JsonKey(name: "id")
   int? id;
-  @JsonKey(name: "teemMembers")
-  int? teemMembers;
+  @JsonKey(name: "teamMembers")
+  int? teemMembers; //
   @JsonKey(name: "name")
   String? name;
   @JsonKey(name: "description")
@@ -55,7 +55,7 @@ class PlaygroundModel {
   @JsonKey(name: "city")
   dynamic city;
   @JsonKey(name: "address")
-  String? address;
+  String? address;//
   @JsonKey(name: "morningShiftStart")
   String? morningShiftStart;
   @JsonKey(name: "morningShiftEnd")

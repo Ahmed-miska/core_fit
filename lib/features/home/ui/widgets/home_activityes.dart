@@ -1,4 +1,3 @@
-import 'package:core_fit/core/helpers/assets.dart';
 import 'package:core_fit/core/helpers/extensions.dart';
 import 'package:core_fit/core/helpers/spacing.dart';
 import 'package:core_fit/core/routing/routes.dart';
@@ -20,7 +19,7 @@ class HomeAvtivityes extends StatelessWidget {
               onTap: () {
                 context.pushNamed(Routes.sportsHomeScreen);
               },
-              child: const StacketImage(imageUrl: Assets.cachImage, text: 'Sports Bookings'),
+              child: const StacketImage(network: false, imageUrl: 'assets/images/foot.jpg', text: 'Kickoff Time'),
             ),
           ),
           horizontalSpace(8),
@@ -32,11 +31,18 @@ class HomeAvtivityes extends StatelessWidget {
                     onTap: () {
                       context.pushNamed(Routes.marketHomeScreen);
                     },
-                    child: const StacketImage(imageUrl: Assets.cachImage2, text: 'Sports Market'),
+                    child: const StacketImage(network: false, imageUrl: 'assets/images/ma.jpg', text: 'Shop Now'),
                   ),
                 ),
                 verticalSpace(8),
-                const Expanded(child: StacketImage(imageUrl: Assets.cachImage3, text: 'Tennis')),
+                Expanded(
+                    child: StacketImage(
+                        network: false,
+                        onTap: () {
+                          context.pushNamed(Routes.mainSystemScreen);
+                        },
+                        imageUrl: 'assets/images/ai.jpg',
+                        text: 'Ai Assistant')),
               ],
             ),
           ),

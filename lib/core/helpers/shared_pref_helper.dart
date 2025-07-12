@@ -2,6 +2,7 @@ import 'dart:convert';
 import 'package:core_fit/core/helpers/constants.dart';
 import 'package:core_fit/core/networking/dio_factory.dart';
 import 'package:core_fit/features/auth/login/data/models/login_response.dart';
+import 'package:core_fit/features/recommendation/diet_system/data/models/response/weakly_recommendation_response_model.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class SharedPrefHelper {
@@ -93,4 +94,28 @@ class SharedPrefHelper {
   String getFcmToken() {
     return _prefs.getString(SharedPrefKeys.fcmToken) ?? "";
   }
+
+
+
+  Future<void> saveDietPlan(WeaklyRecommendationResponseModel model) async {
+    try {
+      final jsonString = json.encode(model.toJson());
+      await _prefs.setString(SharedPrefKeys.dietPlan, jsonString);
+    } catch (e) {
+      rethrow;
+    }
+  }
+
+  WeaklyRecommendationResponseModel? getDietPlan() {
+    try {
+      final jsonString = _prefs.getString(SharedPrefKeys.dietPlan);
+      if (jsonString == null) return null;
+
+      final jsonMap = json.decode(jsonString);
+      return WeaklyRecommendationResponseModel.fromJson(jsonMap);
+    } catch (e) {
+      return null;
+    }
+  }
+
 }

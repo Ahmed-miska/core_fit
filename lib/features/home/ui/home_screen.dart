@@ -258,7 +258,7 @@ class _HomeScreenState extends State<HomeScreen> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            verticalSpace(10),
+            // verticalSpace(10),
             const HomeAppBar(),
             verticalSpace(16),
             Expanded(child: HomeSwiper(swiperImages: testSwiperImages)),

@@ -28,18 +28,36 @@ class _MarketHomeNavBarState extends State<MarketHomeNavBar> {
       color: AppColors.grey,
       backgroundColor: AppColors.white,
       activeColor: AppColors.main,
+
+      //  elevation: 5,
       items: [
         TabItem(
-          icon: SvgPicture.asset(Assets.storesGray),
+          icon: Padding(
+            padding: EdgeInsets.only(top: 4),
+            child: SvgPicture.asset(Assets.storesGray),
+          ),
           title: 'Stores',
-          activeIcon: SvgPicture.asset(Assets.storesGreen),
+          activeIcon: Padding(
+            padding: EdgeInsets.only(top: 4),
+            child: SvgPicture.asset(Assets.storesGreen),
+          ),
         ),
-        TabItem(icon: SvgPicture.asset(Assets.circleLogo), title: 'Discovery'),
         TabItem(
-          icon: SvgPicture.asset(Assets.ordersGray),
+            icon: SvgPicture.asset(
+              Assets.circleLogo,
+            ),
+            title: 'Discovery'),
+        TabItem(
+          icon: Padding(
+            padding: EdgeInsets.only(top: 4),
+            child: SvgPicture.asset(Assets.ordersGray),
+          ),
           title: 'Orders',
-          activeIcon: SvgPicture.asset(
-            Assets.ordersGreen,
+          activeIcon: Padding(
+            padding: EdgeInsets.only(top: 4),
+            child: SvgPicture.asset(
+              Assets.ordersGreen,
+            ),
           ),
         ),
       ],

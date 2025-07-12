@@ -43,22 +43,25 @@ class StaduimDetailsScreen extends StatelessWidget {
                   ],
                 ),
                 child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Row(
                       children: [
                         Text(playground.name ?? '', style: TextStyles.font16Dark700),
                         const Spacer(),
-                        Container(
-                          padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 4),
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(8),
-                            color: AppColors.main,
-                            boxShadow: const [
-                              BoxShadow(color: AppColors.lightGrey, blurRadius: 4, offset: Offset(0, 4)),
-                            ],
-                          ),
-                          child: Text('${playground.teemMembers} X ${playground.teemMembers}', style: TextStyles.font12White600),
-                        )
+                        playground.teemMembers == null
+                            ? const SizedBox()
+                            : Container(
+                                padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 4),
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(8),
+                                  color: AppColors.main,
+                                  boxShadow: const [
+                                    BoxShadow(color: AppColors.lightGrey, blurRadius: 4, offset: Offset(0, 4)),
+                                  ],
+                                ),
+                                child: Text('${playground.teemMembers} X ${playground.teemMembers}', style: TextStyles.font12White600),
+                              )
                       ],
                     ),
                     verticalSpace(12),
@@ -72,11 +75,11 @@ class StaduimDetailsScreen extends StatelessWidget {
                       children: [
                         const Icon(Icons.location_on_outlined, color: AppColors.main, size: 16),
                         horizontalSpace(4),
-                        Text(playground.address ?? '', style: TextStyles.font14Main700),
+                        Expanded(child: Text(playground.address ?? '', style: TextStyles.font14Main700)),
                       ],
                     ),
                     verticalSpace(12),
-                    Text(playground.description ?? '', style: TextStyles.font14Dark400),
+                    Text(playground.description ?? '', style: TextStyles.font14Dark400, textAlign: TextAlign.start),
                     verticalSpace(12),
                   ],
                 ),
@@ -97,7 +100,7 @@ class StaduimDetailsScreen extends StatelessWidget {
                     child: AppTextButton(
                       text: 'Book Now',
                       onTap: () {
-                        context.pushNamed(Routes.reservationBookingDetailsScreen);
+                        context.pushNamed(Routes.reservationBookingDetailsScreen, arguments: playground);
                       },
                     ),
                   ),

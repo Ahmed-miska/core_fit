@@ -1,15 +1,17 @@
-import 'package:core_fit/core/helpers/assets.dart';
 import 'package:core_fit/core/helpers/spacing.dart';
 import 'package:core_fit/core/theming/colors.dart';
 import 'package:core_fit/core/theming/styles.dart';
 import 'package:core_fit/core/widgets/custom_cached_image.dart';
+import 'package:core_fit/features/reservation/my_reservation/data/models/reservations_response_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_stars/flutter_rating_stars.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class MyReservationDetailsItem extends StatelessWidget {
+  final ReservationModel reservationModel;
   const MyReservationDetailsItem({
     super.key,
+    required this.reservationModel,
   });
 
   @override
@@ -27,7 +29,7 @@ class MyReservationDetailsItem extends StatelessWidget {
             width: 80.h,
             child: ClipRRect(
               borderRadius: BorderRadius.circular(12),
-              child: const CustomCachedImage(imageUrl: Assets.cachImage5),
+              child: CustomCachedImage(imageUrl: reservationModel.playgroundImages!.first, fit: BoxFit.fill),
             ),
           ),
           horizontalSpace(12),
@@ -35,9 +37,9 @@ class MyReservationDetailsItem extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text('Santiago Bernabeu Stadium', style: TextStyles.font16Dark700),
+                Text(reservationModel.playgroundName ?? "", style: TextStyles.font16Dark700),
                 verticalSpace(10),
-                const RatingStars(value: 4, starSize: 16, valueLabelVisibility: false),
+                RatingStars(value: reservationModel.playgroundAvgRate!.toDouble(), starSize: 16, valueLabelVisibility: false),
               ],
             ),
           ),
@@ -54,7 +56,7 @@ class MyReservationDetailsItem extends StatelessWidget {
                 ),
               ],
             ),
-            child: Text('7 X 7', style: TextStyles.font14White400),
+            child: Text('${reservationModel.teamMembers} X ${reservationModel.teamMembers}', style: TextStyles.font14White400),
           )
         ],
       ),

@@ -1,12 +1,10 @@
 import 'package:card_swiper/card_swiper.dart';
 import 'package:core_fit/core/helpers/extensions.dart';
 import 'package:core_fit/core/helpers/spacing.dart';
-import 'package:core_fit/core/helpers/test_lists.dart';
 import 'package:core_fit/core/theming/colors.dart';
 import 'package:core_fit/core/theming/styles.dart';
 import 'package:core_fit/core/widgets/add_favorite_icon.dart';
 import 'package:core_fit/core/widgets/custom_cached_image.dart';
-import 'package:core_fit/features/market/market_store/ui/widgets/offer_padge.dart';
 import 'package:core_fit/features/reservation/staduims/data/models/playgrounds_response_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -38,7 +36,7 @@ class ImageAndPriceOfStaduimDetails extends StatelessWidget {
               pagination: const SwiperPagination(alignment: Alignment.topCenter),
             ),
           ),
-          const Align(alignment: Alignment.topRight, child: AddFavoriteIcon(isFavorite: false)),
+          Align(alignment: Alignment.topRight, child: AddFavoriteIcon(isFavorite: playground.favourite ?? false)),
           Align(
             alignment: Alignment.bottomCenter,
             child: Padding(

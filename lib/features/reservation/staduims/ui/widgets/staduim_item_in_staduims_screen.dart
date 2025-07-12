@@ -1,9 +1,11 @@
+import 'package:core_fit/core/di/dependency_injection.dart';
 import 'package:core_fit/core/helpers/spacing.dart';
 import 'package:core_fit/core/theming/colors.dart';
 import 'package:core_fit/core/theming/styles.dart';
 import 'package:core_fit/core/widgets/add_favorite_icon.dart';
 import 'package:core_fit/core/widgets/custom_cached_image.dart';
 import 'package:core_fit/features/reservation/staduims/data/models/playgrounds_response_model.dart';
+import 'package:core_fit/features/reservation/staduims/logic/play_grounds_cubit/playgrounds_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_stars/flutter_rating_stars.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -46,7 +48,12 @@ class StaduimItemInStaduimsScreen extends StatelessWidget {
                   ),
                 ),
               ),
-              const AddFavoriteIcon(isFavorite: false),
+              AddFavoriteIcon(
+                isFavorite: playground.favourite!,
+                onTap: () {
+                  getIt<PlaygroundsCubit>().toggleFavourite(playground.id!, playground.favourite!);
+                },
+              ),
             ],
           ),
           horizontalSpace(12),
@@ -64,21 +71,23 @@ class StaduimItemInStaduimsScreen extends StatelessWidget {
                         textAlign: TextAlign.start,
                       ),
                     ),
-                    Container(
-                      padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 4),
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(8),
-                        color: AppColors.main,
-                        boxShadow: const [
-                          BoxShadow(
-                            color: AppColors.lightGrey,
-                            blurRadius: 4,
-                            offset: Offset(0, 4),
-                          ),
-                        ],
-                      ),
-                      child: Text('${playground.teemMembers} X ${playground.teemMembers}', style: TextStyles.font12White400),
-                    )
+                    playground.teemMembers == null
+                        ? const SizedBox()
+                        : Container(
+                            padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 4),
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(8),
+                              color: AppColors.main,
+                              boxShadow: const [
+                                BoxShadow(
+                                  color: AppColors.lightGrey,
+                                  blurRadius: 4,
+                                  offset: Offset(0, 4),
+                                ),
+                              ],
+                            ),
+                            child: Text('${playground.teemMembers} X ${playground.teemMembers}', style: TextStyles.font12White400),
+                          )
                   ],
                 ),
                 verticalSpace(10),
