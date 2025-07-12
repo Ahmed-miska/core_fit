@@ -50,7 +50,7 @@ class _ProductsListInProductsScreenState extends State<ProductsListInProductsScr
                 child: GridView.builder(
                   gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                     crossAxisCount: 2,
-                    childAspectRatio: 0.4.sp,
+                    childAspectRatio: 0.6,
                     crossAxisSpacing: 10.w,
                     mainAxisSpacing: 10.h,
                   ),
@@ -76,8 +76,8 @@ class _ProductsListInProductsScreenState extends State<ProductsListInProductsScr
                         physics: const BouncingScrollPhysics(),
                         gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                           crossAxisCount: 2,
-                          childAspectRatio: 0.49.sp,
-                          crossAxisSpacing: 10.w,
+                          childAspectRatio: 0.69.sp,
+                          crossAxisSpacing: 8.w,
                           mainAxisSpacing: 10.h,
                         ),
                         itemCount: context.read<ProductsCubit>().hasReachedMax ? products.length : products.length + 1,

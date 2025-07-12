@@ -34,8 +34,10 @@ class _FavoriteScreenState extends State<FavoriteScreen> {
         padding: mainPadding(),
         child: BlocConsumer<FavoriteCubit, FavoriteState>(
           bloc: getIt<FavoriteCubit>(),
+
           listener: (BuildContext context, FavoriteState<dynamic> state) {
             state.maybeWhen(
+              
               success: (success) {
                 products = success;
               },
@@ -52,7 +54,7 @@ class _FavoriteScreenState extends State<FavoriteScreen> {
                           crossAxisCount: 2,
                           mainAxisSpacing: 16,
                           crossAxisSpacing: 16,
-                          childAspectRatio: 0.45.sp,
+                          childAspectRatio: 0.6.sp,
                         ),
                         itemCount: products.length,
                         itemBuilder: (context, index) => ProductItem(productModel: products[index]),

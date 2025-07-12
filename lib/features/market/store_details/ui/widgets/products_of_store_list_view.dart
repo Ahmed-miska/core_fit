@@ -24,7 +24,7 @@ class ProductsOfStoreListView extends StatelessWidget {
                 shrinkWrap: true,
                 gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                   crossAxisCount: 2,
-                  childAspectRatio: 0.5.sp,
+                  childAspectRatio: 0.6,
                   crossAxisSpacing: 10.w,
                   mainAxisSpacing: 10.h,
                 ),
@@ -52,7 +52,7 @@ class ProductsOfStoreListView extends StatelessWidget {
                     physics: const NeverScrollableScrollPhysics(),
                     gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                       crossAxisCount: 2,
-                      childAspectRatio: 0.45.sp,
+                      childAspectRatio: 0.6.sp,
                       crossAxisSpacing: 10.w,
                       mainAxisSpacing: 10.h,
                     ),

@@ -1,8 +1,10 @@
+import 'package:core_fit/core/di/dependency_injection.dart';
 import 'package:core_fit/core/helpers/extensions.dart';
 import 'package:core_fit/core/helpers/spacing.dart';
 import 'package:core_fit/core/widgets/custom_app_bar.dart';
 import 'package:core_fit/features/reservation/reservation_type/ui/widgets/search_for_staduim_bar.dart';
 import 'package:core_fit/features/reservation/reservation_type/ui/widgets/staduim_container_item.dart';
+import 'package:core_fit/features/reservation/staduims/logic/play_grounds_cubit/playgrounds_cubit.dart';
 import 'package:flutter/material.dart';
 
 class ReservationTypeScreen extends StatelessWidget {
@@ -16,7 +18,9 @@ class ReservationTypeScreen extends StatelessWidget {
         padding: mainPadding(),
         child: ListView(
           children: [
-            const SearchForStaduimBar(),
+            SearchForStaduimBar(
+              cuibt: getIt<PlaygroundsCubit>(),
+            ),
             verticalSpace(10),
             ListView.builder(
               shrinkWrap: true,

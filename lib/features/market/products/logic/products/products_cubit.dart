@@ -1,7 +1,9 @@
 import 'package:core_fit/core/helpers/function.dart';
 import 'package:core_fit/features/market/products/data/models/product_by_id_response_model.dart';
 import 'package:core_fit/features/market/products/data/models/products_response_model.dart';
+import 'package:core_fit/features/market/products/data/models/reviews_response_model.dart';
 import 'package:core_fit/features/market/products/data/repos/products_repo.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
@@ -49,7 +51,7 @@ class ProductsCubit extends Cubit<ProductsState> {
     );
   }
 
-  ProductDetails? product;
+  ProductData? product;
   int productAmount = 1;
   double productTotalPrice = 0.0;
   Future<void> getProductById(int id) async {
@@ -57,9 +59,9 @@ class ProductsCubit extends Cubit<ProductsState> {
     final result = await _productsRepo.findProductById(id);
     result.when(
       success: (response) async {
-        product = response.product;
-        productTotalPrice = calculateNewPrice(product!.price!, product!.offer!);
-        emit(ProductsState.productByIdSuccess(response));
+        product = response.data!;
+        productTotalPrice = calculateNewPrice(product?.product?.price ?? 0, product?.product?.offer ?? 0);
+        emit(ProductsState.productByIdSuccess(product!));
       },
       failure: (error) {
         emit(ProductsState.productByIdError(error: error.apiErrorModel.message ?? ''));
@@ -68,9 +70,9 @@ class ProductsCubit extends Cubit<ProductsState> {
   }
 
   void getTotalPriceOfProduct() {
-    productTotalPrice = productAmount * calculateNewPrice(product!.price!, product!.offer!);
+    productTotalPrice = productAmount * calculateNewPrice(product!.product!.price!, product!.product!.offer!);
     productTotalPrice = double.parse(productTotalPrice.toStringAsFixed(4));
-    emit(ProductsState.productByIdSuccess(ProductByIdResponseModel(product: product)));
+    emit(ProductsState.productByIdSuccess(product!));
   }
 
   @override
@@ -86,5 +88,18 @@ class ProductsCubit extends Cubit<ProductsState> {
       products[index].favourite = !isAdding;
       emit(ProductsState.productsSuccess(List.from(products)));
     }
+  }
+
+  Future<void> getReviews(int marketId) async {
+    emit(ProductsState.reviewsLoading());
+    final result = await _productsRepo.findRateByMarket(marketId);
+    result.when(
+      success: (response) {
+        emit(ProductsState.reviewsSuccess(response.data!.rates));
+      },
+      failure: (error) {
+        emit(ProductsState.reviewsError(error: error.apiErrorModel.message ?? ''));
+      },
+    );
   }
 }

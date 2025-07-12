@@ -31,4 +31,11 @@ class Routes {
   static const String privatWalletScreen = '/privatWalletScreen';
   static const String favoriteStadiumsScreen = '/favoriteStadiumsScreen';
   static const String marketOrdersScreen = '/marketOrdersScreen';
+  static const String notifactionsScreen = '/notifactionsScreen';
+  static const String dietSystemScreen = '/dietSystemScreen';
+  static const String mainSystemScreen = '/mainSystemScreen';
+  static const String planScreen = '/planScreen';  static const String playerInfo = '/playerInfo';
+    static const String chatBotScreen = '/chatBotScreen';
+
+
 }

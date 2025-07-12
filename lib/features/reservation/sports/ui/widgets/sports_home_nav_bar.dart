@@ -4,6 +4,7 @@ import 'package:core_fit/core/helpers/extensions.dart';
 import 'package:core_fit/core/routing/routes.dart';
 import 'package:core_fit/core/theming/colors.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 
 class SportsHomeNavBar extends StatefulWidget {
@@ -20,7 +21,7 @@ class _SportsHomeNavBarState extends State<SportsHomeNavBar> {
   @override
   Widget build(BuildContext context) {
     return ConvexAppBar(
-      height: 55,
+      height: 60.h,
       style: TabStyle.fixedCircle,
       initialActiveIndex: currentIndex,
       color: AppColors.grey,

@@ -16,7 +16,7 @@ class HomeSwiper extends StatelessWidget {
         itemCount: testSwiperImages.length,
         autoplay: true,
         itemBuilder: (context, index) {
-          return ClipRRect(borderRadius: BorderRadius.circular(16), child: Image.asset(swiperImages[index], fit: BoxFit.fill));
+          return ClipRRect(borderRadius: BorderRadius.circular(16), child: Image.asset(swiperImages[index], fit: BoxFit.cover));
         },
       ),
     );

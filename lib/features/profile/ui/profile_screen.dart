@@ -6,6 +6,7 @@ import 'package:core_fit/core/theming/colors.dart';
 import 'package:core_fit/core/theming/styles.dart';
 import 'package:core_fit/core/widgets/app_text_button.dart';
 import 'package:core_fit/core/widgets/custom_app_bar.dart';
+import 'package:core_fit/features/profile/ui/widgets/about_app_screen.dart';
 import 'package:core_fit/features/profile/ui/widgets/profile_frame_image.dart';
 import 'package:core_fit/features/profile/ui/widgets/profile_item_row.dart';
 import 'package:flutter/material.dart';
@@ -38,16 +39,16 @@ class ProfileScreen extends StatelessWidget {
                     },
                   ),
                 ),
-                horizontalSpace(8),
-                Expanded(
-                  child: AppTextButton(
-                    text: 'Favorite',
-                    icon: const Icon(Icons.favorite_border, color: AppColors.white),
-                    onTap: () {
-                      context.pushNamed(Routes.favoriteStadiumsScreen);
-                    },
-                  ),
-                ),
+                // horizontalSpace(8),
+                // Expanded(
+                //   child: AppTextButton(
+                //     text: 'Favorite',
+                //     icon: const Icon(Icons.favorite_border, color: AppColors.white),
+                //     onTap: () {
+                //       context.pushNamed(Routes.favoriteStadiumsScreen);
+                //     },
+                //   ),
+                // ),
               ],
             ),
             verticalSpace(8),
@@ -86,25 +87,52 @@ class ProfileScreen extends StatelessWidget {
                   ProfileItemRow(
                     title: 'About App',
                     icon: Icons.info_outline,
-                    onTap: () {},
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (_) => InfoScreen(
+                            title: 'About App',
+                            message:
+                                'CoreFit is a platform that connects users with top-rated sports playgrounds and local markets in their area.\n\nYou can easily browse available playgrounds, view available time slots, and make secure reservations.\nThe platform also allows you to explore nearby markets, add items to your cart, and place orders directly.\n\nCoreFit is designed to make your sports experience smoother and your local shopping easier — all in one place!\n',
+                          ),
+                        ),
+                      );
+                    },
                   ),
                   verticalSpace(12),
                   ProfileItemRow(
                     title: 'Terms & Conditions',
                     icon: Icons.description_outlined,
-                    onTap: () {},
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (_) => InfoScreen(
+                            title: 'Terms & Conditions',
+                            message:
+                                'By using the CoreFit app, you agree to the following terms and conditions:\n\n1. You must provide accurate personal information during registration.\n2. Reservation cancellation policies may apply and vary by playground.\n3. Wallet refunds are only applicable in eligible cancellation cases.\n4. Marketplace orders must comply with the sellers return/refund policies.\n5. Abuse of the system (fake reservations, spam orders) may result in account suspension.\n\nCoreFit reserves the right to update these terms at any time. Continued use of the app means you accept all changes.\n',
+                          ),
+                        ),
+                      );
+                    },
                   ),
                   verticalSpace(12),
                   ProfileItemRow(
                     title: 'privacy policy',
                     icon: Icons.verified_user_outlined,
-                    onTap: () {},
-                  ),
-                  verticalSpace(12),
-                  ProfileItemRow(
-                    title: 'About App',
-                    icon: Icons.info_outline,
-                    onTap: () {},
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (_) => InfoScreen(
+                            title: 'privacy policy',
+                            message:
+                                'At CoreFit, we respect your privacy.\n\n- We do not share your personal data (email, phone, location) with third parties without your consent.\n- Your wallet transactions and reservation history are secure and private.\n- All data is stored securely and used only to enhance your user experience.\n\nBy using CoreFit, you agree to our commitment to protecting your personal information.\n',
+                          ),
+                        ),
+                      );
+                    },
                   ),
                   verticalSpace(12),
                   InkWell(
@@ -129,7 +157,8 @@ class ProfileScreen extends StatelessWidget {
                   )
                 ],
               ),
-            )
+            ),
+            verticalSpace(32),
           ],
         ),
       ),

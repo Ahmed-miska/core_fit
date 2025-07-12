@@ -4,6 +4,7 @@ import 'package:core_fit/core/theming/colors.dart';
 import 'package:core_fit/core/theming/styles.dart';
 import 'package:core_fit/core/widgets/custom_cached_image.dart';
 import 'package:core_fit/core/widgets/custom_shimmer.dart';
+import 'package:core_fit/features/market/product_details/ui/widgets/reviws_bottom_sheet.dart';
 import 'package:core_fit/features/market/products/logic/products/products_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -23,6 +24,7 @@ class ImageAndRatingContainer extends StatelessWidget {
         color: AppColors.inputHint,
       ),
       child: BlocBuilder<ProductsCubit, ProductsState>(
+        buildWhen: (previous, current) => current is ProductByIdLoading || current is ProductByIdSuccess || current is ProductByIdError,
         builder: (context, state) {
           return state.maybeWhen(
             productByIdLoading: () {
@@ -45,7 +47,10 @@ class ImageAndRatingContainer extends StatelessWidget {
                       pagination: const SwiperPagination(alignment: Alignment.bottomCenter),
                       itemBuilder: (context, index) => ClipRRect(
                         borderRadius: BorderRadius.circular(12),
-                        child: CustomCachedImage(imageUrl: product.product!.images![index]),
+                        child: CustomCachedImage(
+                          imageUrl: product.product!.images![index],
+                          fit: BoxFit.fill,
+                        ),
                       ),
                     ),
                   ),
@@ -75,20 +80,38 @@ class ImageAndRatingContainer extends StatelessWidget {
                           ),
                         ),
                         horizontalSpace(16),
-                        Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text(product.product!.market!.name ?? '', style: TextStyles.font16Dark700),
-                            verticalSpace(4),
-                            Row(
-                              children: [
-                                const RatingStars(value: 2.5, starCount: 5, starSpacing: 2, valueLabelVisibility: false),
-                                horizontalSpace(8),
-                                Text('[ 25 reviews ]', style: TextStyles.font12Gray400),
-                              ],
-                            )
-                          ],
+                        InkWell(
+                          onTap: () {
+                            showModalBottomSheet(
+                                backgroundColor: AppColors.white,
+                                //  isScrollControlled: true,
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.vertical(top: Radius.circular(16)),
+                                ),
+                                context: context,
+                                builder: (contextt) {
+                                  return ReviewsBottomSheet(
+                                    marketId: product.product!.market!.id ?? 0,
+                                    cc: context,
+                                    avarageRate: product.averageRate ?? 0,
+                                  );
+                                });
+                          },
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(product.product!.market!.name ?? '', style: TextStyles.font16Dark700),
+                              verticalSpace(4),
+                              Row(
+                                children: [
+                                  RatingStars(value: product.averageRate ?? 0, starCount: 5, starSpacing: 2, valueLabelVisibility: false),
+                                  horizontalSpace(8),
+                                  Text('[ ${product.rateCount} reviews ]', style: TextStyles.font12Gray400),
+                                ],
+                              )
+                            ],
+                          ),
                         ),
                       ],
                     ),

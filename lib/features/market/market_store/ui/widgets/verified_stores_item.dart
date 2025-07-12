@@ -4,6 +4,7 @@ import 'package:core_fit/core/routing/routes.dart';
 import 'package:core_fit/core/theming/colors.dart';
 import 'package:core_fit/core/theming/styles.dart';
 import 'package:core_fit/core/widgets/custom_cached_image.dart';
+import 'package:core_fit/core/widgets/custom_toast.dart';
 import 'package:core_fit/features/market/market_store/data/models/markets_response_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -19,7 +20,11 @@ class VerfiedStoresItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return InkWell(
       onTap: () async {
-        await context.pushNamed(Routes.storeDetailsScreen, arguments: model.id);
+        if (model.opened == true) {
+          await context.pushNamed(Routes.storeDetailsScreen, arguments: model.id);
+        } else {
+          customToast('This store is closed now', color: AppColors.red);
+        }
       },
       child: IntrinsicWidth(
         child: Container(
@@ -68,7 +73,7 @@ class VerfiedStoresItem extends StatelessWidget {
                 ),
                 Text(model.name ?? '', style: TextStyles.font14Dark400, maxLines: 1, overflow: TextOverflow.ellipsis, textAlign: TextAlign.center),
                 verticalSpace(4),
-                Text(model.description ?? '', style: TextStyles.font12Main600, maxLines: 3, overflow: TextOverflow.ellipsis, textAlign: TextAlign.center),
+                Text(model.category?.name ?? '', style: TextStyles.font12Main600, maxLines: 1, overflow: TextOverflow.ellipsis, textAlign: TextAlign.center),
                 verticalSpace(4),
               ],
             ),

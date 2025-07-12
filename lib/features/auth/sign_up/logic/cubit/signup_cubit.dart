@@ -1,9 +1,12 @@
 import 'dart:io';
 
+import 'package:core_fit/core/di/dependency_injection.dart';
 import 'package:core_fit/core/helpers/shared_pref_helper.dart';
 import 'package:core_fit/features/auth/sign_up/data/models/governorates_response_model.dart';
 import 'package:core_fit/features/auth/sign_up/data/models/sign_up_request_model.dart';
 import 'package:core_fit/features/auth/sign_up/data/repos/signup_repo.dart';
+import 'package:core_fit/features/recommendation/chat_bot/data/model/auth_request_model.dart';
+import 'package:core_fit/features/recommendation/chat_bot/logic/cubit/chatbot_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
@@ -94,6 +97,7 @@ class SignupCubit extends Cubit<SignupState> {
         if (fcmToken.isNotEmpty) {
           await _signupRepo.sendFirebaseToken(fcmToken);
         }
+        await getIt<ChatbotCubit>().register(AuthRequestModel(username: emailController.text, password: passwordController.text));
       },
       failure: (error) {
         emit(SignupState.signupError(error: error.apiErrorModel.message ?? ''));

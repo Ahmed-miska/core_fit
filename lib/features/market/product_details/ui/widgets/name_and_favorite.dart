@@ -17,6 +17,7 @@ class NameAndFavorite extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<ProductsCubit, ProductsState>(
+      buildWhen: (previous, current) => current is ProductByIdLoading || current is ProductByIdSuccess || current is ProductByIdError,
       builder: (context, state) {
         return state.maybeWhen(
           productByIdLoading: () => CustomShimmer(

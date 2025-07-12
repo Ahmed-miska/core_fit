@@ -16,6 +16,30 @@ class AppTextButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    return InkWell(
+      onTap: onTap,
+      //  borderRadius: BorderRadius.circular(radius ?? 12.r),
+      child: Container(
+        height: hight ?? 45.h,
+        padding: EdgeInsets.symmetric(vertical: 5.h),
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(radius ?? 8.r),
+          color: color ?? AppColors.main,
+        ),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text(
+              text,
+              style: style ?? TextStyles.font14White400,
+            ),
+            horizontalSpace(8.w),
+            icon ?? const SizedBox(),
+          ],
+        ),
+      ),
+    );
+
     return ElevatedButton(
       onPressed: onTap,
       style: ButtonStyle(

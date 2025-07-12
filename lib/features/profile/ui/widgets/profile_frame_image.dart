@@ -17,7 +17,7 @@ class ProfileFrameImage extends StatelessWidget {
         SizedBox(
           height: 150.h,
           width: 130.h,
-          child: CustomCachedImage(imageUrl: SharedPrefHelper().getUserData()!.imageUrl ?? ''),
+          child: CustomCachedImage(imageUrl: SharedPrefHelper().getUserData()!.imageUrl ?? '', fit: BoxFit.cover),
         ),
         SvgPicture.asset(
           'assets/icons/user_frame.svg',

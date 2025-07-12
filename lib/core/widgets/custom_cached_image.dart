@@ -4,8 +4,9 @@ import 'package:lottie/lottie.dart';
 
 class CustomCachedImage extends StatelessWidget {
   final String imageUrl;
+  final BoxFit? fit;
 
-  const CustomCachedImage({super.key, required this.imageUrl});
+  const CustomCachedImage({super.key, required this.imageUrl, this.fit});
 
   @override
   Widget build(BuildContext context) {
@@ -14,7 +15,7 @@ class CustomCachedImage extends StatelessWidget {
       imageUrl: imageUrl,
       errorWidget: (context, url, error) => Icon(Icons.image, color: Colors.grey),
       placeholder: (context, url) => Center(child: Lottie.asset('assets/animation/loading_image.json', height: 50)),
-      fit: BoxFit.contain,
+      fit: fit ??  BoxFit.contain,
     );
   }
 }

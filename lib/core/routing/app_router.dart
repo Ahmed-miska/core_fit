@@ -24,12 +24,24 @@ import 'package:core_fit/features/market/products/logic/products/products_cubit.
 import 'package:core_fit/features/market/products/ui/products_screen.dart';
 import 'package:core_fit/features/market/store_details/ui/store_details_screen.dart';
 import 'package:core_fit/features/market/stores/ui/stores_screen.dart';
+import 'package:core_fit/features/notifacation/logic/cubit/notifactions_cubit.dart';
+import 'package:core_fit/features/notifacation/ui/notifacations_screen.dart';
+import 'package:core_fit/features/profile/logic/cubit/setting_cubit.dart';
 import 'package:core_fit/features/profile/ui/profile_screen.dart';
 import 'package:core_fit/features/profile/ui/widgets/edit_profile_screen.dart';
 import 'package:core_fit/features/profile/ui/widgets/favorite_staduims_screen.dart';
 import 'package:core_fit/features/profile/ui/widgets/private_wallet_screen.dart';
 import 'package:core_fit/features/profile/ui/widgets/support_screen.dart';
+import 'package:core_fit/features/recommendation/chat_bot/logic/cubit/chatbot_cubit.dart';
+import 'package:core_fit/features/recommendation/chat_bot/ui/chat_bot_screen.dart';
+import 'package:core_fit/features/recommendation/diet_system/diet_system_screen.dart';
+import 'package:core_fit/features/recommendation/diet_system/logic/cubit/ai_cubit.dart';
+import 'package:core_fit/features/recommendation/main_ai/main_system_screen.dart';
+import 'package:core_fit/features/recommendation/player_info/player_info_screen.dart';
+import 'package:core_fit/features/recommendation/saved_diet_plane/saved_diet_plane_screen.dart';
 import 'package:core_fit/features/reservation/featured_booking/ui/featured_booking_screen.dart';
+import 'package:core_fit/features/reservation/my_reservation/data/models/reservations_response_model.dart';
+import 'package:core_fit/features/reservation/my_reservation/logic/cubit/reservations_cubit.dart';
 import 'package:core_fit/features/reservation/my_reservation/ui/my_reservation_details_screen.dart';
 import 'package:core_fit/features/reservation/reservation_details/ui/reservation_booking_details_screen.dart';
 import 'package:core_fit/features/reservation/reservation_details/ui/reservation_booking_details_screen_two.dart';
@@ -37,6 +49,8 @@ import 'package:core_fit/features/reservation/reservation_type/ui/reservation_ty
 import 'package:core_fit/features/reservation/sport_details.dart/ui/sport_details_screen.dart';
 import 'package:core_fit/features/reservation/sports/ui/sports_home_screen.dart';
 import 'package:core_fit/features/reservation/sports_home/ui/sports_list_screen.dart';
+import 'package:core_fit/features/reservation/staduims/data/models/playgrounds_response_model.dart';
+import 'package:core_fit/features/reservation/staduims/logic/play_grounds_cubit/playgrounds_cubit.dart';
 import 'package:core_fit/features/reservation/staduims/ui/staduim_details_screen.dart';
 import 'package:core_fit/features/reservation/staduims/ui/staduims_screen.dart';
 import 'package:flutter/material.dart';
@@ -49,22 +63,35 @@ class AppRouter {
     switch (settings.name) {
       case Routes.loginScreen:
         return _slideTransition(
-          BlocProvider(
-            create: (context) => getIt<LoginCubit>(),
+          MultiBlocProvider(
+            providers: [
+              BlocProvider(create: (context) => getIt<LoginCubit>()),
+              BlocProvider(create: (context) => getIt<ChatbotCubit>()),
+            ],
             child: const LoginScreen(),
           ),
         );
       case Routes.signUpScreen:
-        return _slideTransition(
-          BlocProvider(
-            create: (context) => getIt<SignupCubit>(),
-            child: const SignUpScreen(),
-          ),
-        );
+        return _slideTransition(MultiBlocProvider(
+          providers: [
+            BlocProvider(create: (context) => getIt<SignupCubit>()),
+            BlocProvider(create: (context) => getIt<ChatbotCubit>()),
+          ],
+          child: const SignUpScreen(),
+        ));
       case Routes.homeScreen:
-        return _fadeTransition(const HomeScreen());
+        return _fadeTransition(MultiBlocProvider(
+          providers: [
+            BlocProvider(create: (context) => getIt<NotifactionsCubit>()),
+            BlocProvider(create: (context) => getIt<ChatbotCubit>()),
+          ],
+          child: const HomeScreen(),
+        ));
       case Routes.profileScreen:
-        return _slideTransition(const ProfileScreen());
+        return _slideTransition(BlocProvider(
+          create: (context) => getIt<SettingCubit>(),
+          child: const ProfileScreen(),
+        ));
       case Routes.marketHomeScreen:
         return _fadeTransition(MultiBlocProvider(
           providers: [
@@ -74,6 +101,7 @@ class AppRouter {
             BlocProvider(create: (context) => CartCubit(getIt())),
             BlocProvider(create: (context) => FavoriteCubit(getIt())),
             BlocProvider(create: (context) => OrdersCubit(getIt())),
+            BlocProvider(create: (context) => ReservationsCubit(getIt())),
           ],
           child: const MarketHomeScreen(),
         ));
@@ -153,11 +181,21 @@ class AppRouter {
       case Routes.reservationTypeScreen:
         return _fadeTransition(const ReservationTypeScreen());
       case Routes.staduimsScreen:
-        return _fadeTransition(const StaduimsScreen());
+        return _fadeTransition(BlocProvider(
+          create: (context) => getIt<PlaygroundsCubit>(),
+          child: const StaduimsScreen(),
+        ));
       case Routes.staduimDetailsScreen:
-        return _fadeTransition(const StaduimDetailsScreen());
+        return _fadeTransition(StaduimDetailsScreen(
+          playground: settings.arguments as PlaygroundModel,
+        ));
       case Routes.reservationBookingDetailsScreen:
-        return _fadeTransition(const ReservationBookingDetailsScreen());
+        return _fadeTransition(BlocProvider.value(
+          value: getIt<PlaygroundsCubit>(),
+          child: ReservationBookingDetailsScreen(
+            playground: settings.arguments as PlaygroundModel,
+          ),
+        ));
       case Routes.forgetPasswordScreen:
         return _fadeTransition(
           BlocProvider(
@@ -178,15 +216,28 @@ class AppRouter {
           ),
         );
       case Routes.reservationBookingDetailsScreenTwo:
-        return _fadeTransition(const ReservationBookingDetailsScreenTwo());
+        final cubit = settings.arguments as PlaygroundsCubit;
+
+        return _fadeTransition(BlocProvider.value(
+          value: cubit,
+          child: const ReservationBookingDetailsScreenTwo(),
+        ));
       case Routes.myReservationDetailsScreen:
-        return _fadeTransition(const MyReservationDetailsScreen());
+        return _fadeTransition(MyReservationDetailsScreen(
+          reservationModel: settings.arguments as ReservationModel,
+        ));
       case Routes.editProfileScreen:
         return _fadeTransition(const EditProfileScreen());
       case Routes.supportScreen:
-        return _fadeTransition(const SupportScreen());
+        return _fadeTransition(BlocProvider(
+          create: (context) => getIt<SettingCubit>(),
+          child: const SupportScreen(),
+        ));
       case Routes.privatWalletScreen:
-        return _fadeTransition(const PrivateWalletScreen());
+        return _fadeTransition(BlocProvider(
+          create: (context) => getIt<SettingCubit>(),
+          child: const PrivateWalletScreen(),
+        ));
       case Routes.favoriteStadiumsScreen:
         return _fadeTransition(const FavoriteStaduimsScreen());
       case Routes.marketOrdersScreen:
@@ -196,6 +247,32 @@ class AppRouter {
             child: const MarketOrdersScreen(),
           ),
         );
+      case Routes.notifactionsScreen:
+        return _fadeTransition(
+          BlocProvider(
+            create: (context) => getIt<NotifactionsCubit>(),
+            child: NotifacationsScreen(),
+          ),
+        );
+      case Routes.dietSystemScreen:
+        return _fadeTransition(BlocProvider(
+          create: (context) => getIt<AiCubit>(),
+          child: NutritionFormPage(),
+        ));
+      case Routes.planScreen:
+        return _fadeTransition(PlanScreen());
+      case Routes.mainSystemScreen:
+        return _fadeTransition(const MainSystemScreen());
+      case Routes.playerInfo:
+        return _fadeTransition(BlocProvider(
+          create: (context) => getIt<AiCubit>(),
+          child: const PlayerImageScreen(),
+        ));
+      case Routes.chatBotScreen:
+        return _fadeTransition(BlocProvider(
+          create: (context) => getIt<ChatbotCubit>(),
+          child: ChatScreen(),
+        ));
       default:
         return MaterialPageRoute(
           builder: (_) => Scaffold(

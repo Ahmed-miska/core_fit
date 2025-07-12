@@ -14,4 +14,6 @@ class SharedPrefKeys {
   static const String userGender = 'userGender';
   static const String userImage = 'userImage';
   static const String fcmToken = 'fcmToken';
+    static const String dietPlan = 'diet_plan';
+
 }
