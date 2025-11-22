@@ -88,7 +88,6 @@ class SignupCubit extends Cubit<SignupState> {
       cityId: cityId.toString(),
       otp: otpController.text,
       type: 'GENERAL',
-      image: image,
     ));
     result.when(
       success: (response)async {

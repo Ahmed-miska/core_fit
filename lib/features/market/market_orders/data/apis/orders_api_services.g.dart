@@ -10,7 +10,7 @@ part of 'orders_api_services.dart';
 
 class _OrdersApiServices implements OrdersApiServices {
   _OrdersApiServices(this._dio, {this.baseUrl, this.errorLogger}) {
-    baseUrl ??= 'https://core-fit-production.up.railway.app/';
+    baseUrl ??= 'http://corefit-dev.eu-west-1.elasticbeanstalk.com/';
   }
 
   final Dio _dio;

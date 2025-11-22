@@ -10,7 +10,7 @@ part of 'notifactions_services.dart';
 
 class _NotifactionsServices implements NotifactionsServices {
   _NotifactionsServices(this._dio, {this.baseUrl, this.errorLogger}) {
-    baseUrl ??= 'https://core-fit-production.up.railway.app/';
+    baseUrl ??= 'http://corefit-dev.eu-west-1.elasticbeanstalk.com/';
   }
 
   final Dio _dio;

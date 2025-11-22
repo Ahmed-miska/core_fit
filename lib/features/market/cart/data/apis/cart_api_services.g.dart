@@ -10,7 +10,7 @@ part of 'cart_api_services.dart';
 
 class _CartApiServices implements CartApiServices {
   _CartApiServices(this._dio, {this.baseUrl, this.errorLogger}) {
-    baseUrl ??= 'https://core-fit-production.up.railway.app/';
+    baseUrl ??= 'http://corefit-dev.eu-west-1.elasticbeanstalk.com/';
   }
 
   final Dio _dio;

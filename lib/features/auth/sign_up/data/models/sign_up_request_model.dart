@@ -10,7 +10,6 @@ class SignUpRequestModel {
   final String cityId;
   final String type;
   final String otp;
-  final File? image;
 
   SignUpRequestModel({
     required this.username,
@@ -22,7 +21,6 @@ class SignUpRequestModel {
     required this.cityId,
     required this.type,
     required this.otp,
-    required this.image,
   });
 
   Map<String, dynamic> toJson() {
@@ -36,7 +34,6 @@ class SignUpRequestModel {
       "cityId": cityId,
       "type": type,
       "otp": otp,
-      "image": image,
     };
   }
 }

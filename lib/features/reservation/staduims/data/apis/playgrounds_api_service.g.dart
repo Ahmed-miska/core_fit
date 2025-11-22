@@ -10,7 +10,7 @@ part of 'playgrounds_api_service.dart';
 
 class _PlaygroundsApiService implements PlaygroundsApiService {
   _PlaygroundsApiService(this._dio, {this.baseUrl, this.errorLogger}) {
-    baseUrl ??= 'https://core-fit-production.up.railway.app/';
+    baseUrl ??= 'http://corefit-dev.eu-west-1.elasticbeanstalk.com/';
   }
 
   final Dio _dio;

@@ -10,7 +10,7 @@ part of 'category_api_service.dart';
 
 class _CategoryApiService implements CategoryApiService {
   _CategoryApiService(this._dio, {this.baseUrl, this.errorLogger}) {
-    baseUrl ??= 'https://core-fit-production.up.railway.app/';
+    baseUrl ??= 'http://corefit-dev.eu-west-1.elasticbeanstalk.com/';
   }
 
   final Dio _dio;

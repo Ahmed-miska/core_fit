@@ -1,5 +1,5 @@
 class ApiConstants {
-  static const String apiBaseUrl = 'https://core-fit-production.up.railway.app/';
+  static const String apiBaseUrl = 'http://corefit-dev.eu-west-1.elasticbeanstalk.com/';
      static const String aiBaseUrl = 'https://core-fit-ai-production.up.railway.app/';
 
   static const String login = 'auth/login';

@@ -51,7 +51,6 @@ class SignupRepo {
         'cityId': signUpRequestModel.cityId,
         'otp': signUpRequestModel.otp,
         'type': signUpRequestModel.type,
-        if (signUpRequestModel.image != null) 'image': await MultipartFile.fromFile(signUpRequestModel.image!.path),
       },
     );
     try {
